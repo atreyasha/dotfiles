@@ -25,6 +25,9 @@ Tasks
 5.  change background name to simpler one and synchronize throughout all
     references
 
+6.  keep gnupg, ssh, neomutt and other directories in a private stow
+    repo
+
 ### System reproducibility
 
 1.  **TODO** extract all steps list in i3 config file for
@@ -38,8 +41,10 @@ Tasks
     upstream commits (git submodule update --init --recursive --remote),
     and also updates misc. code bases such as melpa, vim, etc.
 
-4.  keep gnupg, ssh, neomutt and other directories in a private stow
-    repo
+4.  work on script which returns arch linux OS state to current state
+    using package list backups, dotfile installation scheme and notes
+    for important steps taken from experience -\> test this with virtual
+    machine -\> perhaps each update backs up package list as well
 
 Completed
 ---------

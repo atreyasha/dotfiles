@@ -374,3 +374,5 @@ focus_wrapping force
 # 15. Install lts and latest kernel, set preference directly in grub for latest kernel
 
 # 16. systemctl enable systemd-timesyncd.service, in order to sync times
+
+# 17. gnupg take note of gpg-agent conf file with key caching
