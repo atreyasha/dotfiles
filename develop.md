@@ -10,18 +10,16 @@ Tasks
 
 ### Dotfiles
 
-1.  **TODO** work on git init script which initializes all
-    submodules where necessary before stowing
+1.  **TODO** fine-tune the leftover files by improving code
+    quality
 
-2.  fine-tune the leftover files by improving code quality
-
-3.  zsh/bash/tmux improved configurations with display of virtual
+2.  zsh/bash/tmux improved configurations with display of virtual
     environment
 
-4.  check for ranger and neomutt and other commands before setting up
+3.  check for ranger and neomutt and other commands before setting up
     code/functions in shellrc\'s
 
-5.  change background name to simpler one and synchronize throughout all
+4.  change background name to simpler one and synchronize throughout all
     references
 
 ### System reproducibility
@@ -34,8 +32,8 @@ Tasks
     spacemacs etc.
 
 3.  work on update script which updates all submodules to latest
-    upstream commits, and also updates misc. code bases such as melpa,
-    vim, etc.
+    upstream commits (git submodule update --init --recursive --remote),
+    and also updates misc. code bases such as melpa, vim, etc.
 
 4.  keep gnupg, ssh, neomutt and other directories in a private stow
     repo

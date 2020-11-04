@@ -1,7 +1,6 @@
 ** Tasks
 *** Dotfiles
-***** TODO work on git init script which initializes all submodules where necessary before stowing
-***** fine-tune the leftover files by improving code quality
+***** TODO fine-tune the leftover files by improving code quality
 ***** zsh/bash/tmux improved configurations with display of virtual environment
 ***** check for ranger and neomutt and other commands before setting up code/functions in shellrc's 
 ***** change background name to simpler one and synchronize throughout all references
@@ -9,7 +8,7 @@
 *** System reproducibility
 ***** TODO extract all steps list in i3 config file for reproducibility
 ***** work on install script which setps up all the necessary git repos for dotfiles that cannot be managed with submodules -> eg. vim, spacemacs etc.
-***** work on update script which updates all submodules to latest upstream commits, and also updates misc. code bases such as melpa, vim, etc.
+***** work on update script which updates all submodules to latest upstream commits (git submodule update --init --recursive --remote), and also updates misc. code bases such as melpa, vim, etc.
 ***** keep gnupg, ssh, neomutt and other directories in a private stow repo
 
 ** Completed
