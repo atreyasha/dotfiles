@@ -1,0 +1,14 @@
+#!/bin/bash
+
+pid=$(pgrep -x i3lock)
+
+if [[ -z $pid ]]; then
+  revert() {
+  xset dpms 300 300 300
+  }
+  trap revert HUP INT TERM
+  xset +dpms dpms 10 10 10
+  sleep 0.1
+  i3lock-fancy-rapid 5 3 -n
+  revert
+fi
