@@ -1,8 +1,9 @@
 ** Tasks
 *** Dotfiles
 ***** TODO fine-tune the leftover files by improving code quality
-***** zsh/bash/tmux improved configurations with display of virtual environment
+***** bash/zsh fix for terminal colors with reduced hard-coding to particular servers
 ***** check for ranger and neomutt and other commands before setting up code/functions in shellrc's 
+***** zsh/bash/tmux improved configurations with display of virtual environment
 ***** change background name to simpler one and synchronize throughout all references
 
 *** System reproducibility

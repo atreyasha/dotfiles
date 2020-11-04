@@ -339,6 +339,7 @@ focus_wrapping force
 # Host *
 # 	AddKeysToAgent yes
 # 	IdentityFile ~/.ssh/id_rsa
+# also add SSH agent to user-based systemd launch, see https://wiki.archlinux.org/index.php/SSH_keys#Start_ssh-agent_with_systemd_user
 
 # 6. live audio device changes between headsets
 # install acpid and enable acpid.service
