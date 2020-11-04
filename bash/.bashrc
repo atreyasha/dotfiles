@@ -41,7 +41,7 @@ case "$TERM" in
     xterm-termite) 
 	    color_prompt=yes
 	    export TERM=xterm-color
-	    tic -x .config/termite.terminfo
+	    tic -x .config/termite/termite.terminfo
 	    eval "`dircolors -b ~/.dircolors`"
 	    ;;
 esac
