@@ -3,11 +3,7 @@
     -   [Dotfiles](#dotfiles)
     -   [System reproducibility](#system-reproducibility)
 -   [Completed](#completed)
-    -   [**DONE** Design non-offending stow command for all
-        -\> put this in
-        readme](#design-non-offending-stow-command-for-all---put-this-in-readme)
-    -   [**DONE** Dotfile initiative
-        started](#dotfile-initiative-started)
+    -   [Dotfiles](#dotfiles-1)
 
 Tasks
 -----
@@ -41,7 +37,8 @@ Tasks
     spacemacs etc.
 
 3.  work on update script which updates all submodules to latest
-    commits, and also updates misc. code bases such as melpa, vim, etc.
+    upstream commits, and also updates misc. code bases such as melpa,
+    vim, etc.
 
 4.  keep gnupg, ssh, neomutt and other directories in a private stow
     repo
@@ -49,6 +46,9 @@ Tasks
 Completed
 ---------
 
-### **DONE**
+### Dotfiles
 
-### **DONE**
+1.  **DONE** Design non-offending stow command for all -\>
+    put this in readme
+
+2.  **DONE** Dotfile initiative started

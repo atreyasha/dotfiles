@@ -11,11 +11,12 @@
 *** System reproducibility
 ***** TODO extract all steps list in i3 config file for reproducibility
 ***** work on install script which setps up all the necessary git repos for dotfiles that cannot be managed with submodules -> eg. vim, spacemacs etc.
-***** work on update script which updates all submodules to latest commits, and also updates misc. code bases such as melpa, vim, etc.
+***** work on update script which updates all submodules to latest upstream commits, and also updates misc. code bases such as melpa, vim, etc.
 ***** keep gnupg, ssh, neomutt and other directories in a private stow repo
 
 ** Completed
-*** DONE Design non-offending stow command for all -> put this in readme
+*** Dotfiles
+***** DONE Design non-offending stow command for all -> put this in readme
     CLOSED: [2020-11-04 Wed 16:14]
-*** DONE Dotfile initiative started
+***** DONE Dotfile initiative started
     CLOSED: [2020-11-04 Wed 12:33]
