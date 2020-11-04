@@ -1,1 +1,2 @@
-./ranger/.config/ranger/commands* -linguist-detectable
+./ranger/.config/ranger/commands_full.py -linguist-detectable
+./qutebrowser/.config/qutebrowser/config.py -linguist-detectable
