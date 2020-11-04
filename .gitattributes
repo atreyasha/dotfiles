@@ -1,1 +1,1 @@
-./ranger/.config/ranger/commands* linguist-vendored
+./ranger/.config/ranger/commands* -linguist-detectable

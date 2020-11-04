@@ -10,21 +10,18 @@ Tasks
 
 ### Dotfiles
 
-1.  **TODO** replace simple git repos with submodules -\>
-    only done for non-offensive git repos
-
-2.  **TODO** work on git init script which initializes all
+1.  **TODO** work on git init script which initializes all
     submodules where necessary before stowing
 
-3.  fine-tune the leftover files by improving code quality
+2.  fine-tune the leftover files by improving code quality
 
-4.  zsh/bash/tmux improved configurations with display of virtual
+3.  zsh/bash/tmux improved configurations with display of virtual
     environment
 
-5.  check for ranger and neomutt and other commands before setting up
+4.  check for ranger and neomutt and other commands before setting up
     code/functions in shellrc\'s
 
-6.  change background name to simpler one and synchronize throughout all
+5.  change background name to simpler one and synchronize throughout all
     references
 
 ### System reproducibility
@@ -48,7 +45,10 @@ Completed
 
 ### Dotfiles
 
-1.  **DONE** Design non-offending stow command for all -\>
+1.  **DONE** replace simple git repos with submodules -\>
+    only done for non-offensive git repos
+
+2.  **DONE** Design non-offending stow command for all -\>
     put this in readme
 
-2.  **DONE** Dotfile initiative started
+3.  **DONE** Dotfile initiative started
