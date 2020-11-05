@@ -1,20 +1,30 @@
 ** Tasks
 *** Dotfiles
-***** TODO fine-tune the leftover files by improving code quality
-***** bash/zsh fix for terminal colors with reduced hard-coding to particular servers
+***** TODO fine-tune the leftover files by improving code quality -> do this in batches -> eg. for shell scripts and other configs
+***** TODO move all special files elsewhere and add jack file as well -> move special scripts to bin instead of in i3 folder
+***** TODO find ways to reduce hard-coding of configs/dotfiles to `/home/shankar` or `~` -> perhaps this could be an additional script before stow
+ 
+***** bash/zsh fix for terminal colors with reduced hard-coding to particular servers -> add if statements to check for certain commands to reduce hard-coding
 ***** check for ranger and neomutt and other commands before setting up code/functions in shellrc's 
 ***** zsh/bash/tmux improved configurations with display of virtual environment
-***** change background name to simpler one and synchronize throughout all references
+***** fix i3 issue with terminal nohups -> not sure what this should be
+***** bash use GPG_TTY as well, similar to zsh
+***** clean up bash numerous profile files, keep them simple
+***** with time, try to also reduce the number of dotfiles for a leaner install
 ***** keep gnupg, ssh, neomutt and other directories in a private stow repo
 
 *** System reproducibility
-***** TODO extract all steps list in i3 config file for reproducibility
+***** TODO extract all steps listed in i3 config file for reproducibility
 ***** work on install script which setps up all the necessary git repos for dotfiles that cannot be managed with submodules -> eg. vim, spacemacs etc.
 ***** work on update script which updates all submodules to latest upstream commits (git submodule update --init --recursive --remote), and also updates misc. code bases such as melpa, vim, etc.
 ***** work on script which returns arch linux OS state to current state using package list backups, dotfile installation scheme and notes for important steps taken from experience -> test this with virtual machine -> perhaps each update backs up package list as well
 
 ** Completed
 *** Dotfiles
+***** DONE change layout names to more agnostic -> make this better
+      CLOSED: [2020-11-05 Thu 13:53]
+***** DONE change background name to simpler one and synchronize throughout all references
+      CLOSED: [2020-11-05 Thu 13:18]
 ***** DONE replace simple git repos with submodules -> only done for non-offensive git repos
       CLOSED: [2020-11-04 Wed 17:15]
 ***** DONE Design non-offending stow command for all -> put this in readme

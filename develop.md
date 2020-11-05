@@ -11,26 +11,41 @@ Tasks
 ### Dotfiles
 
 1.  **TODO** fine-tune the leftover files by improving code
-    quality
+    quality -\> do this in batches -\> eg. for shell scripts and other
+    configs
 
-2.  bash/zsh fix for terminal colors with reduced hard-coding to
-    particular servers
+2.  **TODO** move all special files elsewhere and add jack
+    file as well -\> move special scripts to bin instead of in i3 folder
 
-3.  check for ranger and neomutt and other commands before setting up
+3.  **TODO** find ways to reduce hard-coding of
+    configs/dotfiles to \`/home/shankar\` or \`\~\` -\> perhaps this
+    could be an additional script before stow
+
+4.  bash/zsh fix for terminal colors with reduced hard-coding to
+    particular servers -\> add if statements to check for certain
+    commands to reduce hard-coding
+
+5.  check for ranger and neomutt and other commands before setting up
     code/functions in shellrc\'s
 
-4.  zsh/bash/tmux improved configurations with display of virtual
+6.  zsh/bash/tmux improved configurations with display of virtual
     environment
 
-5.  change background name to simpler one and synchronize throughout all
-    references
+7.  fix i3 issue with terminal nohups -\> not sure what this should be
 
-6.  keep gnupg, ssh, neomutt and other directories in a private stow
+8.  bash use GPG~TTY~ as well, similar to zsh
+
+9.  clean up bash numerous profile files, keep them simple
+
+10. with time, try to also reduce the number of dotfiles for a leaner
+    install
+
+11. keep gnupg, ssh, neomutt and other directories in a private stow
     repo
 
 ### System reproducibility
 
-1.  **TODO** extract all steps list in i3 config file for
+1.  **TODO** extract all steps listed in i3 config file for
     reproducibility
 
 2.  work on install script which setps up all the necessary git repos
@@ -51,10 +66,16 @@ Completed
 
 ### Dotfiles
 
-1.  **DONE** replace simple git repos with submodules -\>
+1.  **DONE** change layout names to more agnostic -\> make
+    this better
+
+2.  **DONE** change background name to simpler one and
+    synchronize throughout all references
+
+3.  **DONE** replace simple git repos with submodules -\>
     only done for non-offensive git repos
 
-2.  **DONE** Design non-offending stow command for all -\>
+4.  **DONE** Design non-offending stow command for all -\>
     put this in readme
 
-3.  **DONE** Dotfile initiative started
+5.  **DONE** Dotfile initiative started

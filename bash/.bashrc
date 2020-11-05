@@ -40,7 +40,7 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
     xterm-termite) 
 	    color_prompt=yes
-	    export TERM=xterm-color
+	    # export TERM=xterm-color
 	    tic -x .config/termite/termite.terminfo
 	    eval "`dircolors -b ~/.dircolors`"
 	    ;;

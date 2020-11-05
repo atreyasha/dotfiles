@@ -1,8 +1,0 @@
-dir /home/shankar/
-depth 0
-only-files enabled
-oc-search-path enabled
-path-sep " / "
-exclude R
-exclude gams
-exclude perl5

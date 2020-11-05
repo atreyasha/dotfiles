@@ -17,11 +17,11 @@
 				"x": 0,
 				"y": 0
 			},
-			"name": "shankar@lt410: ~",
+			"name": "",
 			"percent": 0.5,
 			"swallows": [
 			{
-				"instance": "^tmt1$"
+				"instance": "^vte1$"
 			}
 			],
 			"type": "con"
@@ -36,11 +36,11 @@
 				"x": 0,
 				"y": 0
 			},
-			"name": "shankar@lt410: ~",
+			"name": "",
 			"percent": 0.5,
 			"swallows": [
 			{
-				"instance": "^tmt2$"
+				"instance": "^vte2$"
 			}
 			],
 			"type": "con"
