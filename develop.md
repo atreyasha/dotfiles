@@ -33,7 +33,7 @@ Tasks
     sed replacement
 
 7.  with time, try to also reduce the number of dotfiles for a leaner
-    install
+    installation
 
 8.  zsh improved configuration with display of virtual environment if
     necessary

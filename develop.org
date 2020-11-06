@@ -6,7 +6,7 @@
 ***** consider changing lock before suspend to systemd target, check if this helps
 ***** move all special files elsewhere and add jack file as well -> move special scripts to bin instead of in i3 folder
 ***** find ways to reduce hard-coding of configs/dotfiles to `/home/shankar` or `~` -> perhaps this could be an additional script before stow -> perhaps with some makefile configuration or sed replacement 
-***** with time, try to also reduce the number of dotfiles for a leaner install
+***** with time, try to also reduce the number of dotfiles for a leaner installation
 ***** zsh improved configuration with display of virtual environment if necessary 
 ***** keep gnupg, ssh, neomutt and other directories in a private stow repo
 
