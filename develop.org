@@ -1,6 +1,5 @@
 ** Tasks
 *** Dotfiles
-***** TODO export public and private git key to s3it for better git experience
 ***** TODO bash/zsh fix reduced hard-coding to particular servers -> add if statements to check for certain commands to reduce hard-coding -> check for ranger and neomutt and other commands before setting up code/functions in shellrc's -> same for environments such as cuda etc.
 ***** TODO improve quality and formatting of all code, especially for bash/zsh/i3 and other shell scripts
 ***** fix i3 issue with terminal nohups -> not sure what this should be
@@ -9,7 +8,7 @@
 ***** find ways to reduce hard-coding of configs/dotfiles to `/home/shankar` or `~` -> perhaps this could be an additional script before stow -> perhaps with some makefile configuration or sed replacement 
 ***** with time, try to also reduce the number of dotfiles for a leaner installation
 ***** zsh improved configuration with display of virtual environment if necessary 
-***** keep gnupg, ssh, neomutt and other directories in a private stow repo
+***** keep gnupg, ssh, neomutt and other directories in private stow repo
 
 *** System reproducibility
 ***** TODO extract all steps listed in i3 config file for reproducibility
