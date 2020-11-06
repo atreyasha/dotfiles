@@ -9,7 +9,7 @@
 ***** find ways to reduce hard-coding of configs/dotfiles to `/home/shankar` or `~` -> perhaps this could be an additional script before stow -> perhaps with some makefile configuration or sed replacement 
 ***** with time, try to also reduce the number of dotfiles for a leaner installation
 ***** zsh improved configuration with display of virtual environment if necessary 
-***** keep gnupg, ssh, neomutt and other directories in a private stow repo
+***** keep gnupg, ssh, neomutt and other directories in private stow repo
 
 *** System reproducibility
 ***** TODO extract all steps listed in i3 config file for reproducibility
