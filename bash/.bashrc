@@ -40,7 +40,7 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
     xterm-termite) 
 	    color_prompt=yes
-	    tic -x .config/termite/termite.terminfo
+	    tic -x "$HOME/.config/termite/termite.terminfo"
 	    eval "`dircolors -b ~/.dircolors`"
 	    ;;
 esac
@@ -140,20 +140,3 @@ function ranger-cd {
 
 # This binds Ctrl-r to ranger-cd:
 bind '"\C-r":"ranger-cd\C-m"'
-
-# cuda related adjustments
-export CUDA_HOME="/usr/local/cuda"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CUDA_HOME/lib64" 
-
-# update PATH variable
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
-export PATH="$PATH:$CUDA_HOME/bin" 
-
-# update environmental variables
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export EDITOR="vim"
-export TERMINAL="termite"
-export R_PROFILE_USER="$HOME/.Rprofile"
-export QT_QPA_PLATFORMTHEME="qt5ct"
