@@ -38,8 +38,7 @@ Tasks
 8.  zsh improved configuration with display of virtual environment if
     necessary
 
-9.  keep gnupg, ssh, neomutt and other directories in a private stow
-    repo
+9.  keep gnupg, ssh, neomutt and other directories in private stow repo
 
 ### System reproducibility
 
