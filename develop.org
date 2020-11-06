@@ -1,6 +1,7 @@
 ** Tasks
 *** Dotfiles
-***** TODO bash/zsh fix reduced hard-coding to particular servers -> add if statements to check for certain commands to reduce hard-coding -> check for ranger and neomutt and other commands before setting up code/functions in shellrc's -> same for environments such as cuda etc. 
+***** TODO export public and private git key to s3it for better git experience
+***** TODO bash/zsh fix reduced hard-coding to particular servers -> add if statements to check for certain commands to reduce hard-coding -> check for ranger and neomutt and other commands before setting up code/functions in shellrc's -> same for environments such as cuda etc.
 ***** TODO improve quality and formatting of all code, especially for bash/zsh/i3 and other shell scripts
 ***** fix i3 issue with terminal nohups -> not sure what this should be
 ***** consider changing lock before suspend to systemd target, check if this helps
