@@ -363,6 +363,8 @@ focus_wrapping force
 
 # 11. i3lock post-suspend requires sleep to prevent short real display
 # this is updated in current i3lock post-sleep hook in systemd
+# copy this script to /etc/systemd/system/multi-user.target.wants
+# then enable with systemctl enable -> or can possibly use in local systemd location for user -> did not try this
 
 # 12. To prevent no screen found error on `startx`, add graphics
 # to early KMS start protocol, take note of adjustment in /etc/mkinitcpio.conf
