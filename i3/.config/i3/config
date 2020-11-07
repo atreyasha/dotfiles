@@ -192,8 +192,8 @@ mode "swap selected container" {
   # swap containers
   bindsym Return swap container with mark "swapee"; unmark "swapee"; mode "default";
   # exit mode
-	bindsym Escape unmark "swapee"; mode "default";
-	bindsym $mod+Shift+i unmark "swapee"; mode "default";
+  bindsym Escape unmark "swapee"; mode "default";
+  bindsym $mod+Shift+i unmark "swapee"; mode "default";
 }
 
 # keybinding for qutebrowser
