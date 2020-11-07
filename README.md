@@ -30,8 +30,6 @@ Alternatively, if only a subset of the dotfiles are desired, simply indicate the
 $ stow -v -R -t "$HOME" dotfile_1 dotfile_2 ...
 ```
 
-**Note:** In case it is not possible to have GNU `stow` installed on a remote server, it is also possible to use the Python-based tool [`dploy`](https://github.com/arecarn/dploy).
-
 ### Development
 
 Check out our development [log](develop.md) for details on upcoming developments.
