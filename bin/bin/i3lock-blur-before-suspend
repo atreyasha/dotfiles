@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# check for i3lock
+pid="$(pgrep -x i3lock)"
+
+# execute if no i3lock present
+if [ -z "$pid" ]; then
+  sleep 0.1
+  i3lock-fancy-rapid 5 3
+fi

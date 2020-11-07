@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-pid=$(pgrep -x i3lock)
+# check for running i3lock
+pid="$(pgrep -x i3lock)"
 
-if [[ -z $pid ]]; then
+# execute if no i3lock present
+if [ -z "$pid" ]; then
   revert() {
-  xset dpms 300 300 300
+    xset dpms 300 300 300
   }
   trap revert HUP INT TERM
   xset +dpms dpms 10 10 10

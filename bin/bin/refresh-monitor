@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# check for monitor connections
+dp="$(xrandr | grep -e "^DP" | cut -d " " -f 2 | grep -w "connected")"
+vga="$(xrandr | grep -e "^VGA" | cut -d " " -f 2 | grep -w "connected")"
+
+# execute based on connection types
+if [ -z "$dp" ] && [ -z "$vga" ]; then
+  "$HOME/.screenlayout/home_1.sh"
+elif [ -z "$dp" ] && [ -n "$vga" ]; then
+  "$HOME/.screenlayout/home_2.sh"
+elif [ -n "$dp" ] && [ -z "$vga" ]; then
+  "$HOME/.screenlayout/home_2.sh"
+else
+  xrandr --auto
+fi
