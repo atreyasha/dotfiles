@@ -2,12 +2,7 @@
 
 ** Tasks
 *** Dotfiles
-**** Current
-***** TODO fix git related issues regarding structural changes -> destroy and create submodules again
-***** TODO fine tune installation script for user and root level dotfiles -> work with install for root and use stow for user
-***** fix i3 issue with terminal nohups -> not sure what this should be
-
-**** Long-term
+***** TODO fine tune installation script for user and root level dotfiles -> think about whether user files belong in dotfiles
 ***** find ways to reduce hard-coding of configs/dotfiles to `/home/shankar` or `~` -> perhaps with makefile
 ***** consider using different configs for remote and local shells
 ***** look into user level acpi, udev and systemd services -> add these where possible after clearing logs
@@ -24,47 +19,47 @@
 ***** figure out how to dump all package names and associated systemd rules which need to be recreated
       
 ** System reproduction logs after basic Arch installation
-**** 1.sudo
+**** sudo
 ***** install `sudo`
 ***** add or uncomment the following `%wheel      ALL=(ALL) ALL` to allow for wheel users to access sudo
 ***** use `visudo` to prevent any syntax errors
-**** 2. tlp runner
+**** tlp runner
 ***** instal `tlp` 
 ***** copy existing tlp.conf to /etc/tlp.conf for disabling bluetooth, wifi and wwan at startup
 ***** run `sudo systemctl enable tlp.service` and `sudo systemctl start tlp.service`  
-**** 3. light
+**** light
 ***** install `light` for managing backlight
 ***** add local user to `video` group by running `usermod -a -G video shankar`  
-**** 4. mesa video driver
+**** mesa video driver
 ***** install `mesa` package and avoid `xf86-video-intel`
-**** 5. udev battery rules
+**** udev battery rules
 ***** copy 60-onbattery.rules and 61-onpower.rules to /etc/udev/rules.d
 ***** reload rules `sudo udevadm control --reload`
-**** 6. ufw firewall
+**** ufw firewall
 ***** install `ufw` 
 ***** retain default settings that deny incoming requests while allowing outgoing
 ***** run `sudo systemctl enable ufw.service` and `sudo systemctl start ufw.service`
 ***** run `sudo ufw enable` to enable it outside systemd
-**** 7. openssh
+**** openssh
 ***** install `openssh`
 ***** run `systemctl --user enable ssh-agent.service` and `systemctl --user start ssh-agent.service` on local file
 ***** SSH_AUTH_SOCK environmental variable needs to be set in shellrc
 ***** stow ~/.ssh/config with instructions for adding keys to ssh agent
-**** 8. gnupg
+**** gnupg
 ***** install `gnupg`
 ***** stow ~/.gnupg/gpg-agent to get relevant agent functionalities and cached keys, along with shell GPG_TTY environmental variable
-**** 9. ACPI audio jack
+**** ACPI audio jack
 ***** install `acpid`
 ***** copy `audio_jack` to /etc/acpi/events
 ***** run `sudo sytemctl enable acpid.service` and `sudo sytemctl start acpid.service`
-**** 10. pre-suspend i3lock workflow
+**** pre-suspend i3lock workflow
 ***** i3lock post-suspend requires sleep to prevent short real display
 ***** copy suspend@.service to /etc/systemd/system
 ***** run `sudo systemctl enable suspend@$USER.service`, remember to replace $USER with the actual user 
-**** 11. early KMS
+**** early KMS
 ***** add `MODULES=(intel_agp i915)` to /etc/mkinitcpio.conf
 ***** run `sudo mkinitcpio -P`
-**** 12. timesync
+**** timesync
 ***** run `sudo systemctl enable systemd-timesyncd.service` in order to sync time
 
 ** Completed

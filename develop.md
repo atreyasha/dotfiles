@@ -11,36 +11,23 @@ Tasks
 
 ### Dotfiles
 
-1.  Current
+1.  **TODO** fine tune installation script for user and root
+    level dotfiles -\> think about whether user files belong in dotfiles
 
-    1.  **TODO** fix git related issues regarding structural
-        changes -\> destroy and create submodules again
+2.  find ways to reduce hard-coding of configs/dotfiles to
+    \`/home/shankar\` or \`\~\` -\> perhaps with makefile
 
-    2.  **TODO** fine tune installation script for user and
-        root level dotfiles -\> work with install for root and use stow
-        for user
+3.  consider using different configs for remote and local shells
 
-    3.  fix i3 issue with terminal nohups -\> not sure what this should
-        be
+4.  look into user level acpi, udev and systemd services -\> add these
+    where possible after clearing logs
 
-2.  Long-term
+5.  bash/zsh fix reduced hard-coding to particular servers -\> add if
+    statements to check for certain commands to reduce hard-coding
 
-    1.  find ways to reduce hard-coding of configs/dotfiles to
-        \`/home/shankar\` or \`\~\` -\> perhaps with makefile
+6.  reduce the number of dotfiles for a leaner installation
 
-    2.  consider using different configs for remote and local shells
-
-    3.  look into user level acpi, udev and systemd services -\> add
-        these where possible after clearing logs
-
-    4.  bash/zsh fix reduced hard-coding to particular servers -\> add
-        if statements to check for certain commands to reduce
-        hard-coding
-
-    5.  reduce the number of dotfiles for a leaner installation
-
-    6.  keep gnupg, ssh, neomutt and other directories in private stow
-        repo
+7.  keep gnupg, ssh, neomutt and other directories in private stow repo
 
 ### System reproducibility
 
@@ -69,7 +56,7 @@ Tasks
 System reproduction logs after basic Arch installation
 ------------------------------------------------------
 
-1.sudo
+sudo
 
 1.  install \`sudo\`
 
@@ -78,7 +65,7 @@ System reproduction logs after basic Arch installation
 
 3.  use \`visudo\` to prevent any syntax errors
 
-2\. tlp runner
+tlp runner
 
 1.  instal \`tlp\`
 
@@ -88,24 +75,24 @@ System reproduction logs after basic Arch installation
 3.  run \`sudo systemctl enable tlp.service\` and \`sudo systemctl start
     tlp.service\`
 
-3\. light
+light
 
 1.  install \`light\` for managing backlight
 
 2.  add local user to \`video\` group by running \`usermod -a -G video
     shankar\`
 
-4\. mesa video driver
+mesa video driver
 
 1.  install \`mesa\` package and avoid \`xf86-video-intel\`
 
-5\. udev battery rules
+udev battery rules
 
 1.  copy 60-onbattery.rules and 61-onpower.rules to /etc/udev/rules.d
 
 2.  reload rules \`sudo udevadm control --reload\`
 
-6\. ufw firewall
+ufw firewall
 
 1.  install \`ufw\`
 
@@ -117,7 +104,7 @@ System reproduction logs after basic Arch installation
 
 4.  run \`sudo ufw enable\` to enable it outside systemd
 
-7\. openssh
+openssh
 
 1.  install \`openssh\`
 
@@ -128,14 +115,14 @@ System reproduction logs after basic Arch installation
 
 4.  stow \~/.ssh/config with instructions for adding keys to ssh agent
 
-8\. gnupg
+gnupg
 
 1.  install \`gnupg\`
 
 2.  stow \~/.gnupg/gpg-agent to get relevant agent functionalities and
     cached keys, along with shell GPG~TTY~ environmental variable
 
-9\. ACPI audio jack
+ACPI audio jack
 
 1.  install \`acpid\`
 
@@ -144,7 +131,7 @@ System reproduction logs after basic Arch installation
 3.  run \`sudo sytemctl enable acpid.service\` and \`sudo sytemctl start
     acpid.service\`
 
-10\. pre-suspend i3lock workflow
+pre-suspend i3lock workflow
 
 1.  i3lock post-suspend requires sleep to prevent short real display
 
@@ -153,13 +140,13 @@ System reproduction logs after basic Arch installation
 3.  run \`sudo systemctl enable suspend@\$USER.service\`, remember to
     replace \$USER with the actual user
 
-11\. early KMS
+early KMS
 
 1.  add \`MODULES=(intel~agp~ i915)\` to /etc/mkinitcpio.conf
 
 2.  run \`sudo mkinitcpio -P\`
 
-12\. timesync
+timesync
 
 1.  run \`sudo systemctl enable systemd-timesyncd.service\` in order to
     sync time
