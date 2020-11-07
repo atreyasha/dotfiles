@@ -12,7 +12,8 @@ Tasks
 ### Dotfiles
 
 1.  **TODO** fine tune installation script for user and root
-    level dotfiles -\> think about whether user files belong in dotfiles
+    level dotfiles -\> think about whether root files even belong with
+    dotfiles and how they should be managed
 
 2.  find ways to reduce hard-coding of configs/dotfiles to
     \`/home/shankar\` or \`\~\` -\> perhaps with makefile

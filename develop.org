@@ -2,7 +2,7 @@
 
 ** Tasks
 *** Dotfiles
-***** TODO fine tune installation script for user and root level dotfiles -> think about whether user files belong in dotfiles
+***** TODO fine tune installation script for user and root level dotfiles -> think about whether root files even belong with dotfiles and how they should be managed
 ***** find ways to reduce hard-coding of configs/dotfiles to `/home/shankar` or `~` -> perhaps with makefile
 ***** consider using different configs for remote and local shells
 ***** look into user level acpi, udev and systemd services -> add these where possible after clearing logs
