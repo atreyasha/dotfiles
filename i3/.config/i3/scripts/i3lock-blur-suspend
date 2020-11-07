@@ -1,8 +1,0 @@
-#!/bin/bash
-pid=$(pgrep -x i3lock)
-if [[ -z $pid ]]; then
-	sleep 0.1
-	scrot --quality 10 -o /tmp/screenshot.png
-	convert /tmp/screenshot.png -blur 0x5 /tmp/screenshot.png
-	i3lock -i /tmp/screenshot.png
-fi

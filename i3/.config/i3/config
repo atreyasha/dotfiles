@@ -165,18 +165,10 @@ bindsym XF86MonBrightnessUp exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
 
 # Touchpad controls
-# toggle touchpad
-bindsym XF86TouchpadToggle exec ~/.config/i3/scripts/toggletouchpad.sh
+# bindsym XF86TouchpadToggle exec ~/.config/i3/scripts/toggletouchpad.sh
 
 # Turn on wifi signal
-bindsym $mod+Shift+W exec ~/.config/i3/scripts/toggleRadio.sh
-
-# Toggle keyboard layouts
-# bindsym $mod+k exec ~/.config/i3/scripts/keyboard_change.sh && pkill -RTMIN+11 i3blocks
-
-# Toggle caps/num-lock
-# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Shift+W exec ~/bin/toggle-radio
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -279,13 +271,13 @@ smart_gaps on
 smart_borders on
 
 # change monitors based on new connection
-bindsym $mod+Shift+m exec --no-startup-id "~/.config/i3/scripts/change_monitor.sh && feh --bg-fill ~/.backgrounds/trippy-background.jpg" 
+bindsym $mod+Shift+m exec --no-startup-id "~/bin/refresh-monitor && feh --bg-fill ~/.backgrounds/trippy-background.jpg" 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
   # output primary
-  status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  status_command SCRIPT_DIR=~/.config/i3/i3blocks-contrib SCRIPT_DIR_CUSTOM=~/.config/i3/scripts i3blocks -c ~/.config/i3/i3blocks.conf
   position top
 }
 
@@ -301,13 +293,13 @@ exec --no-startup-id i3-msg "workspace $ws1; append_layout /home/shankar/.layout
 exec --no-startup-id amixer -q sset Master mute && pkill -RTMIN+10 i3blocks
 
 # check monitors and reset wallpaper at startup
-exec --no-startup-id "~/.config/i3/scripts/change_monitor.sh && feh --bg-fill ~/.backgrounds/trippy-background.jpg" 
+exec --no-startup-id "~/.config/i3/scripts/refresh-monitor && feh --bg-fill ~/.backgrounds/trippy-background.jpg" 
 
 # disable wifi on i3 startup
 # exec --no-startup-id sleep 2 && nmcli radio wifi off && pkill -RTMIN+8 i3blocks
 
 # startup picom for better graphics and stop flickering
-exec_always --no-startup-id ~/.config/i3/scripts/picom.sh
+exec_always --no-startup-id ~/bin/launch-picom
 
 # disable mouse-wise hover-focus
 focus_follows_mouse no
