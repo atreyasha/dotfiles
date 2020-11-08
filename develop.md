@@ -159,10 +159,11 @@ pre-suspend i3lock workflow
 5.  run \`xset -display :0 dpms force on\` to ensure screen lights up
     after suspend, in case it was locked and dimmed earlier
 
-6.  copy suspend@.service to /etc/systemd/system
+6.  copy pre-sleep@.service and post-sleep@.service to
+    /etc/systemd/system
 
-7.  run \`sudo systemctl enable suspend@\$USER.service\`, remember to
-    replace \$USER with the actual user
+7.  run \`sudo systemctl enable (pre\|post)-sleep@\$USER.service\`,
+    remember to replace \$USER with the actual user
 
 8.  suspension after i3lock is delayed if less than or equal to 10
     seconds are left before dpms down

@@ -61,8 +61,8 @@
 ***** i3lock uses no forking `-n` for simple lock in order to modify dpms settings, otherwise it won't work
 ***** i3lock was tested with concurrent lock and suspend, and there is a PID check to ensure no double i3locks are created
 ***** run `xset -display :0 dpms force on` to ensure screen lights up after suspend, in case it was locked and dimmed earlier
-***** copy suspend@.service to /etc/systemd/system
-***** run `sudo systemctl enable suspend@$USER.service`, remember to replace $USER with the actual user
+***** copy pre-sleep@.service and post-sleep@.service to /etc/systemd/system
+***** run `sudo systemctl enable (pre|post)-sleep@$USER.service`, remember to replace $USER with the actual user
 ***** suspension after i3lock is delayed if less than or equal to 10 seconds are left before dpms down
 **** early KMS
 ***** add `MODULES=(intel_agp i915)` to /etc/mkinitcpio.conf
