@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# wake up monitor in case dpms was down
+xset -display :0 dpms force on

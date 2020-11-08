@@ -135,6 +135,13 @@ ACPI audio jack
 3.  run \`sudo sytemctl enable acpid.service\` and \`sudo sytemctl start
     acpid.service\`
 
+i3-cycle
+
+1.  run \`pip install --user i3-cycle\`
+
+2.  move raw python script to \~/bin because installed script gets
+    slowed down due to path regexes
+
 pre-suspend i3lock workflow
 
 1.  all i3lock scripts have \`sleep 0.1\` to prevent i3 mode red color
@@ -149,9 +156,8 @@ pre-suspend i3lock workflow
 4.  i3lock was tested with concurrent lock and suspend, and there is a
     PID check to ensure no double i3locks are created
 
-5.  **untested and edge-case:** it could be possible to run \`xset
-    -display :0 dpms force on\` to ensure screen lights up after
-    suspend, in case it was locked and dimmed earlier
+5.  run \`xset -display :0 dpms force on\` to ensure screen lights up
+    after suspend, in case it was locked and dimmed earlier
 
 6.  copy suspend@.service to /etc/systemd/system
 
