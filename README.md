@@ -21,13 +21,13 @@ This repository uses [GNU Stow](https://www.gnu.org/software/stow/) for managing
 To deploy all the dotfiles here, we need to provide `stow` with a list of all dotfile directories:
 
 ```shell
-$ stow -v -R -t "$HOME" $(ls -d */)
+$ stow -v -R -t ~ $(ls -d */)
 ```
 
 Alternatively, if only a subset of the dotfiles are desired, simply indicate the name of the dotfile directories:
 
 ```shell
-$ stow -v -R -t "$HOME" dotfile_1 dotfile_2 ...
+$ stow -v -R -t ~ dotfile_1 dotfile_2 ...
 ```
 
 ### Development

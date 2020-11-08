@@ -11,17 +11,20 @@ Tasks
 
 ### Dotfiles
 
-1.  **TODO** try to replace \$HOME with tilde for
-    standardization
+1.  **TODO** standardize or make uniform colors among
+    i3blocks blocklets -\> check exact hexes
 
-2.  **TODO** bash/zsh fix reduced hard-coding -\> add if
+2.  **TODO** try to replace \$HOME with tilde for
+    standardization -\> including for readme
+
+3.  **TODO** bash/zsh fix reduced hard-coding -\> add if
     statements to check for certain commands to reduce hard-coding
 
-3.  reduce the number of dotfiles for a leaner installation
+4.  reduce the number of dotfiles for a leaner installation
 
-4.  consider using different configs for remote and local shells
+5.  consider using different configs for remote and local shells
 
-5.  keep gnupg, ssh, neomutt and other directories in private stow repo
+6.  keep gnupg, ssh, neomutt and other directories in private stow repo
 
 ### System reproducibility
 
@@ -137,11 +140,14 @@ ACPI audio jack
 
 pre-suspend i3lock workflow
 
-1.  i3lock post-suspend requires sleep to prevent short real display
+1.  all i3lock scripts have \`sleep 0.1\` to prevent i3 mode from being
+    captured in screenshot
 
-2.  copy suspend@.service to /etc/systemd/system
+2.  i3lock post-suspend requires sleep to prevent short real display
 
-3.  run \`sudo systemctl enable suspend@\$USER.service\`, remember to
+3.  copy suspend@.service to /etc/systemd/system
+
+4.  run \`sudo systemctl enable suspend@\$USER.service\`, remember to
     replace \$USER with the actual user
 
 early KMS
@@ -155,8 +161,21 @@ timesync
 1.  run \`sudo systemctl enable systemd-timesyncd.service\` in order to
     sync time
 
+fonts
+
+1.  install \`ttf-dejavu\`,\`ttf-font-awesome\`, \`otf-font-awesome\`
+    and AUR \`nerd-fonts-bitstream-vera-mono\` for terminal font
+
+2.  update cache using \`fc-cache -fv\`
+
+3.  i3 uses fc-match to find best font which mostly ends up defaulting
+    to \`DejaVu Sans\`, which is why it appears as a default
+
 Completed
 ---------
+
+**DONE** find out i3 default working font and name it
+properly
 
 **DONE** find ways to reduce hard-coding of configs/dotfiles
 to \`/home/shankar\` or \`\~\`

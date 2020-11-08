@@ -2,7 +2,8 @@
 
 ** Tasks
 *** Dotfiles
-***** TODO try to replace $HOME with tilde for standardization
+***** TODO standardize or make uniform colors among i3blocks blocklets -> check exact hexes
+***** TODO try to replace $HOME with tilde for standardization -> including for readme
 ***** TODO bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding
 ***** reduce the number of dotfiles for a leaner installation
 ***** consider using different configs for remote and local shells
@@ -53,6 +54,7 @@
 ***** copy `audio_jack` to /etc/acpi/events
 ***** run `sudo sytemctl enable acpid.service` and `sudo sytemctl start acpid.service`
 **** pre-suspend i3lock workflow
+***** all i3lock scripts have `sleep 0.1` to prevent i3 mode from being captured in screenshot
 ***** i3lock post-suspend requires sleep to prevent short real display
 ***** copy suspend@.service to /etc/systemd/system
 ***** run `sudo systemctl enable suspend@$USER.service`, remember to replace $USER with the actual user 
@@ -61,8 +63,14 @@
 ***** run `sudo mkinitcpio -P`
 **** timesync
 ***** run `sudo systemctl enable systemd-timesyncd.service` in order to sync time
-
+**** fonts
+***** install `ttf-dejavu`,`ttf-font-awesome`, `otf-font-awesome` and AUR `nerd-fonts-bitstream-vera-mono` for terminal font
+***** update cache using `fc-cache -fv`
+***** i3 uses fc-match to find best font which mostly ends up defaulting to `DejaVu Sans`, which is why it appears as a default
+      
 ** Completed
+***** DONE find out i3 default working font and name it properly
+      CLOSED: [2020-11-08 Sun 15:44]
 ***** DONE find ways to reduce hard-coding of configs/dotfiles to `/home/shankar` or `~`
       CLOSED: [2020-11-08 Sun 02:22]
 ***** DONE extract all steps listed in i3 config file for reproducibility -> store them neatly with explanations and commands
