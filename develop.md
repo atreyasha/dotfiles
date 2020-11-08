@@ -11,46 +11,50 @@ Tasks
 
 ### Dotfiles
 
-1.  **TODO** fine tune installation script for user and root
-    level dotfiles
+1.  **TODO** try to replace \$HOME with tilde for
+    standardization
 
-2.  find ways to reduce hard-coding of configs/dotfiles to
-    \`/home/shankar\` or \`\~\` -\> perhaps with makefile
+2.  **TODO** bash/zsh fix reduced hard-coding -\> add if
+    statements to check for certain commands to reduce hard-coding
 
-3.  bash/zsh fix reduced hard-coding -\> add if statements to check for
-    certain commands to reduce hard-coding
+3.  reduce the number of dotfiles for a leaner installation
 
-4.  reduce the number of dotfiles for a leaner installation
+4.  consider using different configs for remote and local shells
 
-5.  consider using different configs for remote and local shells
-
-6.  keep gnupg, ssh, neomutt and other directories in private stow repo
+5.  keep gnupg, ssh, neomutt and other directories in private stow repo
 
 ### System reproducibility
 
-1.  work on install script which setps up all the necessary git repos
+1.  **TODO** Root files need to be added via hard files,
+    migrate them to separate system local repo which holds package lists
+    and installation script to revert things back to current state, use
+    gnu install for those commands, make simple root install script
+    which uses directory structure for installs, migrate system
+    reproducibility log to this repo
+
+2.  work on install script which setps up all the necessary git repos
     for dotfiles that cannot be managed with submodules -\> eg. vim,
     spacemacs etc.
 
-2.  work on update script which updates all submodules and git repos to
+3.  work on update script which updates all submodules and git repos to
     latest upstream commits (git submodule update --init --recursive
     --remote), and also updates misc. code bases such as melpa, vim,
     spacemacs, etc.
 
-3.  work on script which returns arch linux OS state to current state
+4.  work on script which returns arch linux OS state to current state
     using package list backups, dotfile installation scheme and notes
     for important steps taken from experience -\> test this with virtual
     machine -\> perhaps each update backs up package list as well
 
-4.  make all audio channels muted at boot (now only main channel is
+5.  make all audio channels muted at boot (now only main channel is
     muted)
 
-5.  check if possible to flash open dpms when recovering from suspend
+6.  check if possible to flash open dpms when recovering from suspend
     where lock resulted in dpms down
 
-6.  synchronize mime system program defaults to same as ranger\'s rifle
+7.  synchronize mime system program defaults to same as ranger\'s rifle
 
-7.  figure out how to dump all package names and associated systemd
+8.  figure out how to dump all package names and associated systemd
     rules which need to be recreated
 
 System reproduction logs after basic Arch installation
@@ -153,6 +157,9 @@ timesync
 
 Completed
 ---------
+
+**DONE** find ways to reduce hard-coding of configs/dotfiles
+to \`/home/shankar\` or \`\~\`
 
 **DONE** extract all steps listed in i3 config file for
 reproducibility -\> store them neatly with explanations and commands

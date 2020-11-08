@@ -2,14 +2,14 @@
 
 ** Tasks
 *** Dotfiles
-***** TODO fine tune installation script for user and root level dotfiles
-***** find ways to reduce hard-coding of configs/dotfiles to `/home/shankar` or `~` -> perhaps with makefile
-***** bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding
+***** TODO try to replace $HOME with tilde for standardization
+***** TODO bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding
 ***** reduce the number of dotfiles for a leaner installation
 ***** consider using different configs for remote and local shells
 ***** keep gnupg, ssh, neomutt and other directories in private stow repo
 
 *** System reproducibility
+***** TODO Root files need to be added via hard files, migrate them to separate system local repo which holds package lists and installation script to revert things back to current state, use gnu install for those commands, make simple root install script which uses directory structure for installs, migrate system reproducibility log to this repo 
 ***** work on install script which setps up all the necessary git repos for dotfiles that cannot be managed with submodules -> eg. vim, spacemacs etc.
 ***** work on update script which updates all submodules and git repos to latest upstream commits (git submodule update --init --recursive --remote), and also updates misc. code bases such as melpa, vim, spacemacs, etc.
 ***** work on script which returns arch linux OS state to current state using package list backups, dotfile installation scheme and notes for important steps taken from experience -> test this with virtual machine -> perhaps each update backs up package list as well
@@ -63,6 +63,8 @@
 ***** run `sudo systemctl enable systemd-timesyncd.service` in order to sync time
 
 ** Completed
+***** DONE find ways to reduce hard-coding of configs/dotfiles to `/home/shankar` or `~`
+      CLOSED: [2020-11-08 Sun 02:22]
 ***** DONE extract all steps listed in i3 config file for reproducibility -> store them neatly with explanations and commands
       CLOSED: [2020-11-07 Sat 19:19]
 ***** DONE move all special files elsewhere and add jack file as well
