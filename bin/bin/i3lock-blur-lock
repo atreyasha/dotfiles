@@ -9,7 +9,7 @@ if [ -z "$pid" ]; then
     xset dpms 300 300 300
   }
   trap revert HUP INT TERM
-  xset +dpms dpms 10 10 10
+  xset +dpms dpms 15 15 15
   sleep 0.1
   i3lock-fancy-rapid 5 3 -n
   revert

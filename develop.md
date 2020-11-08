@@ -115,7 +115,7 @@ openssh
 2.  run \`systemctl --user enable ssh-agent.service\` and \`systemctl
     --user start ssh-agent.service\` on local file
 
-3.  SSH~AUTHSOCK~ environmental variable needs to be set in shellrc
+3.  \`SSH~AUTHSOCK~\` environmental variable needs to be set in shellrc
 
 4.  stow \~/.ssh/config with instructions for adding keys to ssh agent
 
@@ -124,7 +124,7 @@ gnupg
 1.  install \`gnupg\`
 
 2.  stow \~/.gnupg/gpg-agent to get relevant agent functionalities and
-    cached keys, along with shell GPG~TTY~ environmental variable
+    cached keys, along with shell \`GPG~TTY~\` environmental variable
 
 ACPI audio jack
 
@@ -137,15 +137,29 @@ ACPI audio jack
 
 pre-suspend i3lock workflow
 
-1.  all i3lock scripts have \`sleep 0.1\` to prevent i3 mode from being
-    captured in screenshot
+1.  all i3lock scripts have \`sleep 0.1\` to prevent i3 mode red color
+    from being captured in screenshot
 
-2.  i3lock post-suspend requires sleep to prevent short real display
+2.  i3lock post-suspend requires \`sleep 1\` to prevent short real
+    display
 
-3.  copy suspend@.service to /etc/systemd/system
+3.  i3lock uses no forking \`-n\` for simple lock in order to modify
+    dpms settings, otherwise it won\'t work
 
-4.  run \`sudo systemctl enable suspend@\$USER.service\`, remember to
+4.  i3lock was tested with concurrent lock and suspend, and there is a
+    PID check to ensure no double i3locks are created
+
+5.  **untested and edge-case:** it could be possible to run \`xset
+    -display :0 dpms force on\` to ensure screen lights up after
+    suspend, in case it was locked and dimmed earlier
+
+6.  copy suspend@.service to /etc/systemd/system
+
+7.  run \`sudo systemctl enable suspend@\$USER.service\`, remember to
     replace \$USER with the actual user
+
+8.  suspension after i3lock is delayed if less than or equal to 10
+    seconds are left before dpms down
 
 early KMS
 

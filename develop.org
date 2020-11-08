@@ -43,20 +43,24 @@
 **** openssh
 ***** install `openssh`
 ***** run `systemctl --user enable ssh-agent.service` and `systemctl --user start ssh-agent.service` on local file
-***** SSH_AUTH_SOCK environmental variable needs to be set in shellrc
+***** `SSH_AUTH_SOCK` environmental variable needs to be set in shellrc
 ***** stow ~/.ssh/config with instructions for adding keys to ssh agent
 **** gnupg
 ***** install `gnupg`
-***** stow ~/.gnupg/gpg-agent to get relevant agent functionalities and cached keys, along with shell GPG_TTY environmental variable
+***** stow ~/.gnupg/gpg-agent to get relevant agent functionalities and cached keys, along with shell `GPG_TTY` environmental variable
 **** ACPI audio jack
 ***** install `acpid`
 ***** copy `audio_jack` to /etc/acpi/events
 ***** run `sudo sytemctl enable acpid.service` and `sudo sytemctl start acpid.service`
 **** pre-suspend i3lock workflow
-***** all i3lock scripts have `sleep 0.1` to prevent i3 mode from being captured in screenshot
-***** i3lock post-suspend requires sleep to prevent short real display
+***** all i3lock scripts have `sleep 0.1` to prevent i3 mode red color from being captured in screenshot
+***** i3lock post-suspend requires `sleep 1` to prevent short real display
+***** i3lock uses no forking `-n` for simple lock in order to modify dpms settings, otherwise it won't work
+***** i3lock was tested with concurrent lock and suspend, and there is a PID check to ensure no double i3locks are created
+***** *untested and edge-case:* it could be possible to run `xset -display :0 dpms force on` to ensure screen lights up after suspend, in case it was locked and dimmed earlier
 ***** copy suspend@.service to /etc/systemd/system
-***** run `sudo systemctl enable suspend@$USER.service`, remember to replace $USER with the actual user 
+***** run `sudo systemctl enable suspend@$USER.service`, remember to replace $USER with the actual user
+***** suspension after i3lock is delayed if less than or equal to 10 seconds are left before dpms down
 **** early KMS
 ***** add `MODULES=(intel_agp i915)` to /etc/mkinitcpio.conf
 ***** run `sudo mkinitcpio -P`
