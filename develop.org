@@ -2,12 +2,11 @@
 
 ** Tasks
 *** Dotfiles
-***** TODO fine tune installation script for user and root level dotfiles -> think about whether root files even belong with dotfiles and how they should be managed
+***** TODO fine tune installation script for user and root level dotfiles
 ***** find ways to reduce hard-coding of configs/dotfiles to `/home/shankar` or `~` -> perhaps with makefile
-***** consider using different configs for remote and local shells
-***** look into user level acpi, udev and systemd services -> add these where possible after clearing logs
-***** bash/zsh fix reduced hard-coding to particular servers -> add if statements to check for certain commands to reduce hard-coding
+***** bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding
 ***** reduce the number of dotfiles for a leaner installation
+***** consider using different configs for remote and local shells
 ***** keep gnupg, ssh, neomutt and other directories in private stow repo
 
 *** System reproducibility
@@ -15,6 +14,7 @@
 ***** work on update script which updates all submodules and git repos to latest upstream commits (git submodule update --init --recursive --remote), and also updates misc. code bases such as melpa, vim, spacemacs, etc.
 ***** work on script which returns arch linux OS state to current state using package list backups, dotfile installation scheme and notes for important steps taken from experience -> test this with virtual machine -> perhaps each update backs up package list as well
 ***** make all audio channels muted at boot (now only main channel is muted)
+***** check if possible to flash open dpms when recovering from suspend where lock resulted in dpms down
 ***** synchronize mime system program defaults to same as ranger's rifle
 ***** figure out how to dump all package names and associated systemd rules which need to be recreated
       

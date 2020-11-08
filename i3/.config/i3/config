@@ -200,7 +200,7 @@ mode "swap selected container" {
 bindsym $mod+q exec --no-startup-id qutebrowser
 
 # change monitors based on new connection
-bindsym $mod+Shift+m exec --no-startup-id "refresh-monitor && ~/.fehbg" 
+bindsym $mod+Shift+m exec --no-startup-id "refresh-monitor && feh-background" 
 
 # balance workspace
 bindsym $mod+Shift+b exec "i3_balance_workspace"
@@ -216,7 +216,7 @@ exec --no-startup-id i3-msg workspace $ws1; append_layout ~/.layouts/layout-WORK
 exec --no-startup-id "amixer -q sset Master mute && refresh-i3blocks-audio"
 
 # check monitors and reset wallpaper at startup
-exec --no-startup-id "refresh-monitor && ~/.fehbg" 
+exec --no-startup-id "refresh-monitor && feh-background" 
 
 # startup picom for better graphics and stop flickering
 exec_always --no-startup-id "launch-picom"

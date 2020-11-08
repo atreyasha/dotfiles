@@ -12,23 +12,19 @@ Tasks
 ### Dotfiles
 
 1.  **TODO** fine tune installation script for user and root
-    level dotfiles -\> think about whether root files even belong with
-    dotfiles and how they should be managed
+    level dotfiles
 
 2.  find ways to reduce hard-coding of configs/dotfiles to
     \`/home/shankar\` or \`\~\` -\> perhaps with makefile
 
-3.  consider using different configs for remote and local shells
+3.  bash/zsh fix reduced hard-coding -\> add if statements to check for
+    certain commands to reduce hard-coding
 
-4.  look into user level acpi, udev and systemd services -\> add these
-    where possible after clearing logs
+4.  reduce the number of dotfiles for a leaner installation
 
-5.  bash/zsh fix reduced hard-coding to particular servers -\> add if
-    statements to check for certain commands to reduce hard-coding
+5.  consider using different configs for remote and local shells
 
-6.  reduce the number of dotfiles for a leaner installation
-
-7.  keep gnupg, ssh, neomutt and other directories in private stow repo
+6.  keep gnupg, ssh, neomutt and other directories in private stow repo
 
 ### System reproducibility
 
@@ -49,9 +45,12 @@ Tasks
 4.  make all audio channels muted at boot (now only main channel is
     muted)
 
-5.  synchronize mime system program defaults to same as ranger\'s rifle
+5.  check if possible to flash open dpms when recovering from suspend
+    where lock resulted in dpms down
 
-6.  figure out how to dump all package names and associated systemd
+6.  synchronize mime system program defaults to same as ranger\'s rifle
+
+7.  figure out how to dump all package names and associated systemd
     rules which need to be recreated
 
 System reproduction logs after basic Arch installation
