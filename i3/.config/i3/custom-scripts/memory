@@ -51,15 +51,15 @@ END {
 		pct=free/total*100
 	}
 
-    # full text
+	# full text
 	printf("%.1fG (%.f%%)\n", free, pct)
 	
-    # short text
+    	# short text
 	printf("%.f%%\n", pct)
 
-    # color
-    if (pct > 60) {
-        print("#00FF00")
+    	# color
+    	if (pct > 60) {
+		print("#00FF00")
 	} else if (pct > 30) {
 		print("#FFFC00")
 	} else {
