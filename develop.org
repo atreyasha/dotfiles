@@ -2,7 +2,6 @@
 
 ** Tasks
 *** Dotfiles
-***** TODO standardize or make uniform colors among i3blocks blocklets -> check exact hexes
 ***** TODO try to replace $HOME with tilde for standardization -> including for readme
 ***** TODO bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding
 ***** reduce the number of dotfiles for a leaner installation
@@ -69,6 +68,8 @@
 ***** i3 uses fc-match to find best font which mostly ends up defaulting to `DejaVu Sans`, which is why it appears as a default
       
 ** Completed
+***** DONE standardize or make uniform colors among i3blocks blocklets -> check exact hexes
+      CLOSED: [2020-11-08 Sun 16:06]
 ***** DONE find out i3 default working font and name it properly
       CLOSED: [2020-11-08 Sun 15:44]
 ***** DONE find ways to reduce hard-coding of configs/dotfiles to `/home/shankar` or `~`

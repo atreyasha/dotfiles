@@ -207,7 +207,7 @@ bindsym $mod+Shift+b exec "i3_balance_workspace"
 bindsym $mod+b exec "i3_balance_workspace --scope focus"
 
 # start termite with different names for them to be swallowed
-exec --no-startup-id i3-msg workspace $ws1; { termite --name 'vte1' & }; { termite --name 'vte2' & }
+exec --no-startup-id i3-msg workspace $ws1; { termite --name 'vte1' --directory ~ & }; { termite --name 'vte2' --directory ~ & }
 
 # set up layout to absorb terminals
 exec --no-startup-id i3-msg workspace $ws1; append_layout ~/.layouts/layout-WORKSPACE-1-2.json

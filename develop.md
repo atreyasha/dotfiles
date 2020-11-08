@@ -11,20 +11,17 @@ Tasks
 
 ### Dotfiles
 
-1.  **TODO** standardize or make uniform colors among
-    i3blocks blocklets -\> check exact hexes
-
-2.  **TODO** try to replace \$HOME with tilde for
+1.  **TODO** try to replace \$HOME with tilde for
     standardization -\> including for readme
 
-3.  **TODO** bash/zsh fix reduced hard-coding -\> add if
+2.  **TODO** bash/zsh fix reduced hard-coding -\> add if
     statements to check for certain commands to reduce hard-coding
 
-4.  reduce the number of dotfiles for a leaner installation
+3.  reduce the number of dotfiles for a leaner installation
 
-5.  consider using different configs for remote and local shells
+4.  consider using different configs for remote and local shells
 
-6.  keep gnupg, ssh, neomutt and other directories in private stow repo
+5.  keep gnupg, ssh, neomutt and other directories in private stow repo
 
 ### System reproducibility
 
@@ -173,6 +170,9 @@ fonts
 
 Completed
 ---------
+
+**DONE** standardize or make uniform colors among i3blocks
+blocklets -\> check exact hexes
 
 **DONE** find out i3 default working font and name it
 properly
