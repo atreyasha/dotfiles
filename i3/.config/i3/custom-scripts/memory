@@ -64,6 +64,7 @@ END {
 		print("#FFFC00")
 	} else {
 		print("#FF0000")
+	        exit 33
 	}
 }
 ' /proc/meminfo
