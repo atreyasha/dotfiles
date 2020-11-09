@@ -17,11 +17,12 @@ Tasks
         standardization across files
 
     2.  **TODO** reduce redundant code in bash/zsh and clean
-        workflows like dircolors up -\> clean out user-specific code
-        such as vpns and put them in misc/alias files
+        workflows (like dircolors) up
 
     3.  **TODO** bash/zsh fix reduced hard-coding -\> add if
         statements to check for certain commands to reduce hard-coding
+        -\> clean out user-specific code such as vpns and put them in
+        misc/alias files
 
     4.  **TODO** find workflow for shfmt on all shell scripts
         including zsh -\> use this as a git hook and replace all tabs

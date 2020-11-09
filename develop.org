@@ -4,8 +4,8 @@
 *** Dotfiles
 **** Current
 ***** TODO try to replace $HOME with tilde for standardization across files
-***** TODO reduce redundant code in bash/zsh and clean workflows like dircolors up -> clean out user-specific code such as vpns and put them in misc/alias files
-***** TODO bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding
+***** TODO reduce redundant code in bash/zsh and clean workflows (like dircolors) up
+***** TODO bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding -> clean out user-specific code such as vpns and put them in misc/alias files
 ***** TODO find workflow for shfmt on all shell scripts including zsh -> use this as a git hook and replace all tabs with 2 spaces for uniformity esp. in zsh script -> port this to git hooks where it could be useful
 ***** consider using different configs for remote and local shells
 ***** synchronize mime system program defaults to same as ranger's rifle
