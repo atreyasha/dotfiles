@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 """
 Cycle through i3 containers
 """
 
 from argparse import ArgumentParser
-
 from i3_tree import i3Tree
 import i3
+
 
 def find_focusable(node):
     """
@@ -28,8 +27,7 @@ def find_parent_split(node, orientation):
     according to the desired orientation
     """
 
-    if (node and node.orientation == orientation
-        and len(node.children) > 1):
+    if (node and node.orientation == orientation and len(node.children) > 1):
         return node
 
     if not node or node.type == "workspace":
@@ -43,10 +41,9 @@ def cycle_windows(tree, direction):
     Cycle through windows of the current workspace
     """
     wanted = {
-        "orientation": ("vertical" if direction in ("up", "down")
-                        else "horizontal"),
-        "direction": (1 if direction in ("down", "right")
-                      else -1),
+        "orientation":
+        ("vertical" if direction in ("up", "down") else "horizontal"),
+        "direction": (1 if direction in ("down", "right") else -1),
     }
     split = find_parent_split(tree.focused.parent, wanted["orientation"])
 
@@ -65,8 +62,9 @@ def cycle_outputs(tree, direction):
     Cycle through directions
     """
     direction = 1 if direction == "next" else -1
-    outputs = [output for output in tree.root.children
-               if output.name != "__i3"]
+    outputs = [
+        output for output in tree.root.children if output.name != "__i3"
+    ]
     focus_idx = outputs.index(tree.root.focused_child)
     next_idx = (focus_idx + direction) % len(outputs)
     next_output = outputs[next_idx]
@@ -79,10 +77,8 @@ def main():
     """
     parser = ArgumentParser()
     parser.add_argument("direction",
-                        choices=(
-                            "up", "down", "left", "right",
-                            "next", "prev"
-                        ),
+                        choices=("up", "down", "left", "right", "next",
+                                 "prev"),
                         help="Direction to put the focus on")
     args = parser.parse_args()
 
