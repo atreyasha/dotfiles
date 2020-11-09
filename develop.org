@@ -8,6 +8,7 @@
 ***** TODO find workflow for shfmt on all shell scripts including zsh -> use this as a git hook and replace all tabs with 2 spaces for uniformity esp. in zsh script -> port this to git hooks where it could be useful -> add another git hook to ensure all shell tildes are replaced with $HOME
 ***** consider using different configs for remote and local shells
 ***** synchronize mime system program defaults to same as ranger's rifle
+***** clean out vimrcs and perhaps simply load a new vimrc to overwrite git upstream defaults
 ***** make all audio channels muted at boot (now only main channel is muted)
 
 **** Long-term
@@ -65,9 +66,10 @@
 ***** i3lock uses no forking `-n` for simple lock in order to modify dpms settings, otherwise it won't work
 ***** i3lock was tested with concurrent lock and suspend, and there is a PID check to ensure no double i3locks are created
 ***** `xset -display :0 dpms force on` to ensure screen lights up after suspend, in case it was locked and dimmed earlier
-***** copy pre-sleep@.service and post-sleep@.service to /etc/systemd/system
-***** run `sudo systemctl enable (pre|post)-sleep@$USER.service`, remember to replace $USER with the actual user
+***** copy pre-sleep@.service to /etc/systemd/system
+***** run `sudo systemctl enable pre-sleep@$USER.service`, remember to replace $USER with the actual user
 ***** suspension after i3lock is delayed if less than or equal to 10 seconds are left before dpms down -> not sure about this but it is possible
+***** *untested:* perhaps try to unset dpms before sleep -> leads to problems waking from sleep
 **** early KMS
 ***** add `MODULES=(intel_agp i915)` to /etc/mkinitcpio.conf
 ***** run `sudo mkinitcpio -P`

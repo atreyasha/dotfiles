@@ -32,7 +32,10 @@ Tasks
     5.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-    6.  make all audio channels muted at boot (now only main channel is
+    6.  clean out vimrcs and perhaps simply load a new vimrc to
+        overwrite git upstream defaults
+
+    7.  make all audio channels muted at boot (now only main channel is
         muted)
 
 2.  Long-term
@@ -172,15 +175,17 @@ pre-suspend i3lock workflow
 5.  \`xset -display :0 dpms force on\` to ensure screen lights up after
     suspend, in case it was locked and dimmed earlier
 
-6.  copy pre-sleep@.service and post-sleep@.service to
-    /etc/systemd/system
+6.  copy pre-sleep@.service to /etc/systemd/system
 
-7.  run \`sudo systemctl enable (pre\|post)-sleep@\$USER.service\`,
-    remember to replace \$USER with the actual user
+7.  run \`sudo systemctl enable pre-sleep@\$USER.service\`, remember to
+    replace \$USER with the actual user
 
 8.  suspension after i3lock is delayed if less than or equal to 10
     seconds are left before dpms down -\> not sure about this but it is
     possible
+
+9.  **untested:** perhaps try to unset dpms before sleep -\> leads to
+    problems waking from sleep
 
 early KMS
 
