@@ -13,29 +13,27 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** replace all tab characters with 2 spaces for
-        consistency -\> add this as a git hook
-
-    2.  **TODO** try to replace \$HOME with tilde for
+    1.  **TODO** try to replace \$HOME with tilde for
         standardization across files
 
-    3.  **TODO** reduce redundant code in bash/zsh and clean
+    2.  **TODO** reduce redundant code in bash/zsh and clean
         workflows like dircolors up -\> clean out user-specific code
         such as vpns and put them in misc/alias files
 
-    4.  **TODO** bash/zsh fix reduced hard-coding -\> add if
+    3.  **TODO** bash/zsh fix reduced hard-coding -\> add if
         statements to check for certain commands to reduce hard-coding
 
-    5.  **TODO** find workflow for shfmt on all shell scripts
+    4.  **TODO** find workflow for shfmt on all shell scripts
         including zsh -\> use this as a git hook and replace all tabs
-        with 2 spaces for uniformity esp. in zsh script
+        with 2 spaces for uniformity esp. in zsh script -\> port this to
+        git hooks where it could be useful
 
-    6.  consider using different configs for remote and local shells
+    5.  consider using different configs for remote and local shells
 
-    7.  synchronize mime system program defaults to same as ranger\'s
+    6.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-    8.  make all audio channels muted at boot (now only main channel is
+    7.  make all audio channels muted at boot (now only main channel is
         muted)
 
 2.  Long-term
