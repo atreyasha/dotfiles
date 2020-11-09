@@ -87,15 +87,15 @@ key[ShiftTab]="${terminfo[kcbt]}"
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
-	autoload -Uz add-zle-hook-widget
-	function zle_application_mode_start {
-		echoti smkx
-	}
-	function zle_application_mode_stop {
-		echoti rmkx
-	}
-	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
-	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+  autoload -Uz add-zle-hook-widget
+  function zle_application_mode_start {
+    echoti smkx
+  }
+  function zle_application_mode_stop {
+    echoti rmkx
+  }
+  add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
+  add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
 # Configure history search keybindings (source:ghttps://wiki.archlinux.org/index.php/Zsh)
@@ -108,16 +108,16 @@ zle -N down-line-or-beginning-search
 # X-term-title (source: https://wiki.archlinux.org/index.php/Zsh)
 autoload -Uz add-zsh-hook
 function xterm_title_precmd () {
-	print -Pn -- '\e]2;%n@%m: %~\a'
-	[[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
+  print -Pn -- '\e]2;%n@%m: %~\a'
+  [[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
 }
 function xterm_title_preexec () {
-	print -Pn -- '\e]2;%n@%m: %~ %(!.#.$) ' && print -n -- "${(q)1}\a"
-	[[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
+  print -Pn -- '\e]2;%n@%m: %~ %(!.#.$) ' && print -n -- "${(q)1}\a"
+  [[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
 }
 if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*) ]]; then
-	add-zsh-hook -Uz precmd xterm_title_precmd
-	add-zsh-hook -Uz preexec xterm_title_preexec
+  add-zsh-hook -Uz precmd xterm_title_precmd
+  add-zsh-hook -Uz preexec xterm_title_preexec
 fi
 
 # Configure command-line edits in editor

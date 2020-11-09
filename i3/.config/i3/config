@@ -183,12 +183,12 @@ mode "swap selected container" {
   bindsym $mod+7 workspace $ws7
   bindsym $mod+8 workspace $ws8
   bindsym $mod+9 workspace $ws9
-  bindsym $mod+0 workspace $ws10	
+  bindsym $mod+0 workspace $ws10  
   # change focus
   bindsym $mod+Left exec i3_cycle left
   bindsym $mod+Down exec i3_cycle down
   bindsym $mod+Up exec i3_cycle up
-  bindsym $mod+Right exec i3_cycle right	
+  bindsym $mod+Right exec i3_cycle right  
   # swap containers
   bindsym Return swap container with mark "swapee"; unmark "swapee"; mode "default";
   # exit mode
