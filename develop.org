@@ -2,12 +2,19 @@
 
 ** Tasks
 *** Dotfiles
-***** TODO try to replace $HOME with tilde for standardization -> including for readme
+**** Current
+***** TODO replace all tab characters with 2 spaces for consistency -> add this as a git hook
+***** TODO try to replace $HOME with tilde for standardization across files
+***** TODO reduce redundant code in bash/zsh and clean workflows like dircolors up -> clean out user-specific code such as vpns and put them in misc/alias files
 ***** TODO bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding
-***** TODO reduce redundant code in bash/zsh and clean workflows like dircolors up -> clean out specific code such as vpns and put them in misc/alias files
-***** TODO find workflow for shfmt on all shell scripts
-***** reduce the number of dotfiles for a leaner installation
+***** TODO find workflow for shfmt on all shell scripts including zsh -> use this as a git hook and replace all tabs with 2 spaces for uniformity esp. in zsh script
 ***** consider using different configs for remote and local shells
+***** synchronize mime system program defaults to same as ranger's rifle
+***** make all audio channels muted at boot (now only main channel is muted)
+
+**** Long-term
+***** reduce the number of dotfiles for a leaner installation
+***** use pam environment to cache passphrase for ssh and gpg keys
 ***** keep gnupg, ssh, neomutt and other directories in private stow repo
 
 *** System reproducibility
@@ -15,11 +22,8 @@
 ***** work on install script which setps up all the necessary git repos for dotfiles that cannot be managed with submodules -> eg. vim, spacemacs etc.
 ***** work on update script which updates all submodules and git repos to latest upstream commits (git submodule update --init --recursive --remote), and also updates misc. code bases such as melpa, vim, spacemacs, etc.
 ***** work on script which returns arch linux OS state to current state using package list backups, dotfile installation scheme and notes for important steps taken from experience -> test this with virtual machine -> perhaps each update backs up package list as well
-***** make all audio channels muted at boot (now only main channel is muted)
-***** check if possible to flash open dpms when recovering from suspend where lock resulted in dpms down
-***** synchronize mime system program defaults to same as ranger's rifle
 ***** figure out how to dump all package names and associated systemd rules which need to be recreated
-      
+ 
 ** System reproduction logs after basic Arch installation
 **** sudo
 ***** install `sudo`
@@ -62,10 +66,10 @@
 ***** i3lock post-suspend requires `sleep 1` to prevent short real display
 ***** i3lock uses no forking `-n` for simple lock in order to modify dpms settings, otherwise it won't work
 ***** i3lock was tested with concurrent lock and suspend, and there is a PID check to ensure no double i3locks are created
-***** run `xset -display :0 dpms force on` to ensure screen lights up after suspend, in case it was locked and dimmed earlier
+***** `xset -display :0 dpms force on` to ensure screen lights up after suspend, in case it was locked and dimmed earlier
 ***** copy pre-sleep@.service and post-sleep@.service to /etc/systemd/system
 ***** run `sudo systemctl enable (pre|post)-sleep@$USER.service`, remember to replace $USER with the actual user
-***** suspension after i3lock is delayed if less than or equal to 10 seconds are left before dpms down
+***** suspension after i3lock is delayed if less than or equal to 10 seconds are left before dpms down -> not sure about this but it is possible
 **** early KMS
 ***** add `MODULES=(intel_agp i915)` to /etc/mkinitcpio.conf
 ***** run `sudo mkinitcpio -P`
@@ -77,6 +81,8 @@
 ***** i3 uses fc-match to find best font which mostly ends up defaulting to `DejaVu Sans`, which is why it appears as a default
       
 ** Completed
+***** DONE check if possible to flash open dpms when recovering from suspend where lock resulted in dpms down
+      CLOSED: [2020-11-09 Mon 01:40]
 ***** DONE standardize or make uniform colors among i3blocks blocklets -> check exact hexes
       CLOSED: [2020-11-08 Sun 16:06]
 ***** DONE find out i3 default working font and name it properly

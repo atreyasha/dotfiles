@@ -1,6 +1,6 @@
 ## dotfiles
 
-This repository contains dotfiles for a laptop running Arch Linux. The applications include `i3-gaps`, `picom`, `zsh` and many more. Below is a screenshot of a sample workspace:
+This repository contains dotfiles for a laptop running Arch Linux. The applications include `i3-gaps`, `emacs`, `neomutt` and many more. Below is a screenshot of a sample workspace:
 
 <p align="center">
 <img src="screenshot.png" width="700">

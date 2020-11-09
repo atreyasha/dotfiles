@@ -11,23 +11,41 @@ Tasks
 
 ### Dotfiles
 
-1.  **TODO** try to replace \$HOME with tilde for
-    standardization -\> including for readme
+1.  Current
 
-2.  **TODO** bash/zsh fix reduced hard-coding -\> add if
-    statements to check for certain commands to reduce hard-coding
+    1.  **TODO** replace all tab characters with 2 spaces for
+        consistency -\> add this as a git hook
 
-3.  **TODO** reduce redundant code in bash/zsh and clean
-    workflows like dircolors up -\> clean out specific code such as vpns
-    and put them in misc/alias files
+    2.  **TODO** try to replace \$HOME with tilde for
+        standardization across files
 
-4.  **TODO** find workflow for shfmt on all shell scripts
+    3.  **TODO** reduce redundant code in bash/zsh and clean
+        workflows like dircolors up -\> clean out user-specific code
+        such as vpns and put them in misc/alias files
 
-5.  reduce the number of dotfiles for a leaner installation
+    4.  **TODO** bash/zsh fix reduced hard-coding -\> add if
+        statements to check for certain commands to reduce hard-coding
 
-6.  consider using different configs for remote and local shells
+    5.  **TODO** find workflow for shfmt on all shell scripts
+        including zsh -\> use this as a git hook and replace all tabs
+        with 2 spaces for uniformity esp. in zsh script
 
-7.  keep gnupg, ssh, neomutt and other directories in private stow repo
+    6.  consider using different configs for remote and local shells
+
+    7.  synchronize mime system program defaults to same as ranger\'s
+        rifle
+
+    8.  make all audio channels muted at boot (now only main channel is
+        muted)
+
+2.  Long-term
+
+    1.  reduce the number of dotfiles for a leaner installation
+
+    2.  use pam environment to cache passphrase for ssh and gpg keys
+
+    3.  keep gnupg, ssh, neomutt and other directories in private stow
+        repo
 
 ### System reproducibility
 
@@ -52,15 +70,7 @@ Tasks
     for important steps taken from experience -\> test this with virtual
     machine -\> perhaps each update backs up package list as well
 
-5.  make all audio channels muted at boot (now only main channel is
-    muted)
-
-6.  check if possible to flash open dpms when recovering from suspend
-    where lock resulted in dpms down
-
-7.  synchronize mime system program defaults to same as ranger\'s rifle
-
-8.  figure out how to dump all package names and associated systemd
+5.  figure out how to dump all package names and associated systemd
     rules which need to be recreated
 
 System reproduction logs after basic Arch installation
@@ -162,8 +172,8 @@ pre-suspend i3lock workflow
 4.  i3lock was tested with concurrent lock and suspend, and there is a
     PID check to ensure no double i3locks are created
 
-5.  run \`xset -display :0 dpms force on\` to ensure screen lights up
-    after suspend, in case it was locked and dimmed earlier
+5.  \`xset -display :0 dpms force on\` to ensure screen lights up after
+    suspend, in case it was locked and dimmed earlier
 
 6.  copy pre-sleep@.service and post-sleep@.service to
     /etc/systemd/system
@@ -172,7 +182,8 @@ pre-suspend i3lock workflow
     remember to replace \$USER with the actual user
 
 8.  suspension after i3lock is delayed if less than or equal to 10
-    seconds are left before dpms down
+    seconds are left before dpms down -\> not sure about this but it is
+    possible
 
 early KMS
 
@@ -197,6 +208,9 @@ fonts
 
 Completed
 ---------
+
+**DONE** check if possible to flash open dpms when recovering
+from suspend where lock resulted in dpms down
 
 **DONE** standardize or make uniform colors among i3blocks
 blocklets -\> check exact hexes
