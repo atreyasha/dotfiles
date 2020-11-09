@@ -15,14 +15,14 @@ zstyle ':completion::complete:*' gain-privileges 1
 
 # Configure dircolors
 if [ ! -f ~/.dircolors ]; then
-    dircolors -p > ~/.dircolors
+  eval "$(dircolors -b)"
 else
-    eval "`dircolors -b ~/.dircolors`"
+  eval "$(dircolors -b ~/.dircolors)"
 fi
 
 # Configure local aliases
 alias vpn_uzh='sudo openconnect --authgroup=ALL --background uzhvpn1.uzh.ch'
-alias vpn_up='sudo openconnect --authgroup=sslvpn --background sslvpn.uni-potsdam.de' 
+alias vpn_up='sudo openconnect --authgroup=sslvpn --background sslvpn.uni-potsdam.de'
 alias ls='ls --color=auto'
 alias ll='ls -al'
 
@@ -31,22 +31,22 @@ export KEYTIMEOUT=1
 
 # Function to return git branch information
 parse_git_branch() {
-    branch="$(git symbolic-ref --short HEAD 2> /dev/null)"
-    [ -n "$branch" ] && echo " @$branch"
+  branch="$(git symbolic-ref --short HEAD 2> /dev/null)"
+  [ -n "$branch" ] && echo " @$branch"
 }
 
 # Define function for changing prompt depending on zsh vim mode
 function zle-line-init zle-keymap-select {
-    # Define prompt prefix 
-    prefix="[%F{011}%B%n@%m%f%b:%F{blue}%B%~%b%f$(parse_git_branch)]"
-    # Start cases
-    case ${KEYMAP} in
-        (vicmd)
-            PROMPT="$prefix%F{green}%#%f " ;;
-        (*)
-            PROMPT="$prefix%# " ;;
-    esac
-    zle reset-prompt
+  # Define prompt prefix
+  prefix="[%F{011}%B%n@%m%f%b:%F{blue}%B%~%b%f$(parse_git_branch)]"
+  # Start cases
+  case ${KEYMAP} in
+    (vicmd)
+      PROMPT="$prefix%F{green}%#%f " ;;
+    (*)
+      PROMPT="$prefix%# " ;;
+  esac
+  zle reset-prompt
 }
 
 # Initialize above functions for dynamic prompts
@@ -69,7 +69,8 @@ key[Right]="${terminfo[kcuf1]}"
 key[PageUp]="${terminfo[kpp]}"
 key[PageDown]="${terminfo[knp]}"
 key[ShiftTab]="${terminfo[kcbt]}"
-# setup key accordingly
+
+# Setup keys accordingly
 [[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"      beginning-of-line
 [[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"       end-of-line
 [[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"    overwrite-mode
@@ -82,6 +83,7 @@ key[ShiftTab]="${terminfo[kcbt]}"
 [[ -n "${key[PageUp]}"    ]] && bindkey -- "${key[PageUp]}"    beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"  end-of-buffer-or-history
 [[ -n "${key[ShiftTab]}"  ]] && bindkey -- "${key[ShiftTab]}"  reverse-menu-complete
+
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
@@ -106,16 +108,16 @@ zle -N down-line-or-beginning-search
 # X-term-title (source: https://wiki.archlinux.org/index.php/Zsh)
 autoload -Uz add-zsh-hook
 function xterm_title_precmd () {
-	  print -Pn -- '\e]2;%n@%m: %~\a'
-	  [[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
+	print -Pn -- '\e]2;%n@%m: %~\a'
+	[[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
 }
 function xterm_title_preexec () {
-	  print -Pn -- '\e]2;%n@%m: %~ %(!.#.$) ' && print -n -- "${(q)1}\a"
-	  [[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
+	print -Pn -- '\e]2;%n@%m: %~ %(!.#.$) ' && print -n -- "${(q)1}\a"
+	[[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
 }
 if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*) ]]; then
-	  add-zsh-hook -Uz precmd xterm_title_precmd
-	  add-zsh-hook -Uz preexec xterm_title_preexec
+	add-zsh-hook -Uz precmd xterm_title_precmd
+	add-zsh-hook -Uz preexec xterm_title_preexec
 fi
 
 # Configure command-line edits in editor
@@ -124,13 +126,13 @@ bindkey '^e' edit-command-line
 
 # Function for ranger-cd
 function ranger-cd() {
-    tempfile="$(mktemp -t tmp.XXXXXX)"
-    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
-    test -f "$tempfile" &&
+  tempfile="$(mktemp -t tmp.XXXXXX)"
+  ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+  test -f "$tempfile" &&
     if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-        cd -- "$(cat "$tempfile")"
+      cd -- "$(cat "$tempfile")"
     fi
-    rm -f -- "$tempfile"
+  rm -f -- "$tempfile"
 }
 
 # Configure keybindings for ranger-cd and neomutt

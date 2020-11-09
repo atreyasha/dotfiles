@@ -17,15 +17,21 @@ Tasks
 2.  **TODO** bash/zsh fix reduced hard-coding -\> add if
     statements to check for certain commands to reduce hard-coding
 
-3.  reduce the number of dotfiles for a leaner installation
+3.  **TODO** reduce redundant code in bash/zsh and clean
+    workflows like dircolors up -\> clean out specific code such as vpns
+    and put them in misc/alias files
 
-4.  consider using different configs for remote and local shells
+4.  **TODO** find workflow for shfmt on all shell scripts
 
-5.  keep gnupg, ssh, neomutt and other directories in private stow repo
+5.  reduce the number of dotfiles for a leaner installation
+
+6.  consider using different configs for remote and local shells
+
+7.  keep gnupg, ssh, neomutt and other directories in private stow repo
 
 ### System reproducibility
 
-1.  **TODO** Root files need to be added via hard files,
+1.  **TODO** root files need to be added via hard files,
     migrate them to separate system local repo which holds package lists
     and installation script to revert things back to current state, use
     gnu install for those commands, make simple root install script
