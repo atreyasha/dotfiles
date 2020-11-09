@@ -3,10 +3,9 @@
 ** Tasks
 *** Dotfiles
 **** Current
-***** TODO try to replace $HOME with tilde for standardization across files
 ***** TODO reduce redundant code in bash/zsh and clean workflows (like dircolors) up
 ***** TODO bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding -> clean out user-specific code such as vpns and put them in misc/alias files
-***** TODO find workflow for shfmt on all shell scripts including zsh -> use this as a git hook and replace all tabs with 2 spaces for uniformity esp. in zsh script -> port this to git hooks where it could be useful
+***** TODO find workflow for shfmt on all shell scripts including zsh -> use this as a git hook and replace all tabs with 2 spaces for uniformity esp. in zsh script -> port this to git hooks where it could be useful -> add another git hook to ensure all shell tildes are replaced with $HOME
 ***** consider using different configs for remote and local shells
 ***** synchronize mime system program defaults to same as ranger's rifle
 ***** make all audio channels muted at boot (now only main channel is muted)
@@ -80,6 +79,8 @@
 ***** i3 uses fc-match to find best font which mostly ends up defaulting to `DejaVu Sans`, which is why it appears as a default
       
 ** Completed
+***** DONE replace tilde with $HOME for standardization in shell scripts -> $HOME is safer as it can be quoted and because it works generally anywhere in a string -> also allows your code to be more portable
+      CLOSED: [2020-11-09 Mon 17:16]
 ***** DONE check if possible to flash open dpms when recovering from suspend where lock resulted in dpms down
       CLOSED: [2020-11-09 Mon 01:40]
 ***** DONE standardize or make uniform colors among i3blocks blocklets -> check exact hexes

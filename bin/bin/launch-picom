@@ -11,4 +11,4 @@ else
 fi
 
 # launch picom
-picom -b --config ~/.config/picom/picom.conf
+picom -b --config "$HOME/.config/picom/picom.conf"

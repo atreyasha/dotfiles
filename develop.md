@@ -13,28 +13,26 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** try to replace \$HOME with tilde for
-        standardization across files
-
-    2.  **TODO** reduce redundant code in bash/zsh and clean
+    1.  **TODO** reduce redundant code in bash/zsh and clean
         workflows (like dircolors) up
 
-    3.  **TODO** bash/zsh fix reduced hard-coding -\> add if
+    2.  **TODO** bash/zsh fix reduced hard-coding -\> add if
         statements to check for certain commands to reduce hard-coding
         -\> clean out user-specific code such as vpns and put them in
         misc/alias files
 
-    4.  **TODO** find workflow for shfmt on all shell scripts
+    3.  **TODO** find workflow for shfmt on all shell scripts
         including zsh -\> use this as a git hook and replace all tabs
         with 2 spaces for uniformity esp. in zsh script -\> port this to
-        git hooks where it could be useful
+        git hooks where it could be useful -\> add another git hook to
+        ensure all shell tildes are replaced with \$HOME
 
-    5.  consider using different configs for remote and local shells
+    4.  consider using different configs for remote and local shells
 
-    6.  synchronize mime system program defaults to same as ranger\'s
+    5.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-    7.  make all audio channels muted at boot (now only main channel is
+    6.  make all audio channels muted at boot (now only main channel is
         muted)
 
 2.  Long-term
@@ -207,6 +205,11 @@ fonts
 
 Completed
 ---------
+
+**DONE** replace tilde with \$HOME for standardization in
+shell scripts -\> \$HOME is safer as it can be quoted and because it
+works generally anywhere in a string -\> also allows your code to be
+more portable
 
 **DONE** check if possible to flash open dpms when recovering
 from suspend where lock resulted in dpms down

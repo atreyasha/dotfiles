@@ -1,5 +1,5 @@
 # Configure history settings
-HISTFILE=~/.histfile
+HISTFILE="$HOME/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 
@@ -14,10 +14,10 @@ setopt COMPLETE_ALIASES
 zstyle ':completion::complete:*' gain-privileges 1
 
 # Configure dircolors
-if [ ! -f ~/.dircolors ]; then
+if [ ! -f "$HOME/.dircolors" ]; then
   eval "$(dircolors -b)"
 else
-  eval "$(dircolors -b ~/.dircolors)"
+  eval "$(dircolors -b "$HOME/.dircolors")"
 fi
 
 # Configure local aliases

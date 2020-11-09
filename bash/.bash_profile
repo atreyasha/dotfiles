@@ -2,8 +2,8 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
-[[ -f ~/.profile ]] && . ~/.profile
+[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"
+[[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
 
 # important environmental variables for gpg and ssh agents
 export GPG_TTY="$(tty)"
