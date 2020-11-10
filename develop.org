@@ -1,4 +1,5 @@
 #+STARTUP: overview
+#+OPTIONS: ^:nil
 
 ** Tasks
 *** Dotfiles
@@ -48,7 +49,7 @@
 **** openssh
 ***** install `openssh`
 ***** run `systemctl --user enable ssh-agent.service` and `systemctl --user start ssh-agent.service` on local file
-***** `SSH_AUTH_SOCK` environmental variable needs to be set in shellrc
+***** `SSH\_AUTH\_SOCK` environmental variable needs to be set in shellrc
 ***** stow ~/.ssh/config with instructions for adding keys to ssh agent
 **** gnupg
 ***** install `gnupg`

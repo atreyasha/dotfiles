@@ -129,7 +129,8 @@ openssh
 2.  run \`systemctl --user enable ssh-agent.service\` and \`systemctl
     --user start ssh-agent.service\` on local file
 
-3.  \`SSH~AUTHSOCK~\` environmental variable needs to be set in shellrc
+3.  \`SSH\\\_AUTH\\\_SOCK\` environmental variable needs to be set in
+    shellrc
 
 4.  stow \~/.ssh/config with instructions for adding keys to ssh agent
 
@@ -144,7 +145,7 @@ ACPI audio jack
 
 1.  install \`acpid\`
 
-2.  copy \`audio~jack~\` to /etc/acpi/events
+2.  copy \`audio_jack\` to /etc/acpi/events
 
 3.  run \`sudo sytemctl enable acpid.service\` and \`sudo sytemctl start
     acpid.service\`
@@ -184,7 +185,7 @@ pre-suspend i3lock workflow
 
 early KMS
 
-1.  add \`MODULES=(intel~agp~ i915)\` to /etc/mkinitcpio.conf
+1.  add \`MODULES=(intel_agp i915)\` to /etc/mkinitcpio.conf
 
 2.  run \`sudo mkinitcpio -P\`
 
@@ -206,7 +207,7 @@ fonts
 Completed
 ---------
 
-**DONE** remove multiple vimrcs and keep only my~configs~.vim
+**DONE** remove multiple vimrcs and keep only my_configs.vim
 for simplicity
 
 **DONE** consider doing away with .profile if not necessary
