@@ -4,14 +4,13 @@
 ** Tasks
 *** Dotfiles
 **** Current
-***** TODO add upstream vim as submodule and then simply source it cleanly + check if somehow possible for spacemacs too (change to .spacemacs.d) -> consider removing env file
 ***** TODO bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding (eg. ranger and neomutt) -> put aliases in dedicated files for both bash and zsh
 ***** TODO reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line
-***** TODO clean up .spacemacs.d and make it organized as per blogpost -> synchronize between elpy layers and spacemacs-elpy repository
+***** TODO clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> synchronize repos between elpy layers and spacemacs-elpy repository
+***** TODO consider using different configs for remote and local shells -> perhaps section them into core, personal etc.
 ***** make all audio channels muted at boot (now only main channel is muted)
 ***** hook to shfmt on all shell scripts including zsh
 ***** problems with xset dpms when waking from sleep -> perhaps add sleep 1 and then wake dpms
-***** consider using different configs for remote and local shells
 
 **** Long-term
 ***** use pam environment to cache passphrase for ssh and gpg keys
@@ -21,10 +20,12 @@
 ***** port gnupg, ssh, neomutt private dotfiles to private stow repo
 
 *** System reproducibility
-***** work on install script which setps up all the necessary git repos for dotfiles that cannot be managed with submodules -> eg. vim, spacemacs etc.
 ***** work on update script which updates all submodules and git repos to latest upstream commits (git submodule update --init --recursive --remote), and also updates misc. code bases such as melpa, vim, spacemacs, etc.
+***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
       
 ** Completed
+***** DONE add upstream vim as submodule and then simply source it cleanly + check if somehow possible for spacemacs too (change to .spacemacs.d) -> consider removing env file
+      CLOSED: [2020-11-10 Tue 15:31]
 ***** DONE add public ssh and gnupg dotfiles, find a way to source additional file from ssh config
       CLOSED: [2020-11-10 Tue 13:27]
 ***** DONE remove multiple vimrcs and keep only my_configs.vim for simplicity

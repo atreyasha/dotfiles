@@ -11,22 +11,21 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** add upstream vim as submodule and then
-        simply source it cleanly + check if somehow possible for
-        spacemacs too (change to .spacemacs.d) -\> consider removing env
-        file
-
-    2.  **TODO** bash/zsh fix reduced hard-coding -\> add if
+    1.  **TODO** bash/zsh fix reduced hard-coding -\> add if
         statements to check for certain commands to reduce hard-coding
         (eg. ranger and neomutt) -\> put aliases in dedicated files for
         both bash and zsh
 
-    3.  **TODO** reduce redundant code in bash/zsh and clean
+    2.  **TODO** reduce redundant code in bash/zsh and clean
         workflows up -\> would require understanding each line
 
-    4.  **TODO** clean up .spacemacs.d and make it organized
-        as per blogpost -\> synchronize between elpy layers and
-        spacemacs-elpy repository
+    3.  **TODO** clean up `~/.spacemacs.d` and make it
+        organized as per blogpost with various sections -\> synchronize
+        repos between elpy layers and spacemacs-elpy repository
+
+    4.  **TODO** consider using different configs for remote
+        and local shells -\> perhaps section them into core, personal
+        etc.
 
     5.  make all audio channels muted at boot (now only main channel is
         muted)
@@ -35,8 +34,6 @@ Tasks
 
     7.  problems with xset dpms when waking from sleep -\> perhaps add
         sleep 1 and then wake dpms
-
-    8.  consider using different configs for remote and local shells
 
 2.  Long-term
 
@@ -54,17 +51,20 @@ Tasks
 
 ### System reproducibility
 
-1.  work on install script which setps up all the necessary git repos
-    for dotfiles that cannot be managed with submodules -\> eg. vim,
-    spacemacs etc.
-
-2.  work on update script which updates all submodules and git repos to
+1.  work on update script which updates all submodules and git repos to
     latest upstream commits (git submodule update --init --recursive
     --remote), and also updates misc. code bases such as melpa, vim,
     spacemacs, etc.
 
+2.  work on install script which sets up all the necessary git repos for
+    dotfiles that cannot be managed with submodules
+
 Completed
 ---------
+
+**DONE** add upstream vim as submodule and then simply source
+it cleanly + check if somehow possible for spacemacs too (change to
+.spacemacs.d) -\> consider removing env file
 
 **DONE** add public ssh and gnupg dotfiles, find a way to
 source additional file from ssh config
