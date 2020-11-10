@@ -76,107 +76,105 @@ System reproduction logs after basic Arch installation
 
 sudo
 
-1.  install \`sudo\`
+1.  install `sudo`
 
-2.  add or uncomment the following \`%wheel ALL=(ALL) ALL\` to allow for
-    wheel users to access sudo
+2.  add or uncomment the following `%wheel      ALL=(ALL) ALL` to allow
+    for wheel users to access sudo
 
-3.  use \`visudo\` to prevent any syntax errors
+3.  use `visudo` to prevent any syntax errors
 
 tlp runner
 
-1.  instal \`tlp\`
+1.  instal `tlp`
 
 2.  copy existing tlp.conf to /etc/tlp.conf for disabling bluetooth,
     wifi and wwan at startup
 
-3.  run \`sudo systemctl enable tlp.service\` and \`sudo systemctl start
-    tlp.service\`
+3.  run `sudo systemctl enable tlp.service` and
+    `sudo systemctl start tlp.service`
 
 light
 
-1.  install \`light\` for managing backlight
+1.  install `light` for managing backlight
 
-2.  add local user to \`video\` group by running \`usermod -a -G video
-    shankar\`
+2.  add local user to `video` group by running
+    `usermod -a -G video shankar`
 
 mesa video driver
 
-1.  install \`mesa\` package and avoid \`xf86-video-intel\`
+1.  install `mesa` package and avoid `xf86-video-intel`
 
 udev battery rules
 
 1.  copy 60-onbattery.rules and 61-onpower.rules to /etc/udev/rules.d
 
-2.  reload rules \`sudo udevadm control --reload\`
+2.  reload rules `sudo udevadm control --reload`
 
 ufw firewall
 
-1.  install \`ufw\`
+1.  install `ufw`
 
 2.  retain default settings that deny incoming requests while allowing
     outgoing
 
-3.  run \`sudo systemctl enable ufw.service\` and \`sudo systemctl start
-    ufw.service\`
+3.  run `sudo systemctl enable ufw.service` and
+    `sudo systemctl start ufw.service`
 
-4.  run \`sudo ufw enable\` to enable it outside systemd
+4.  run `sudo ufw enable` to enable it outside systemd
 
 openssh
 
-1.  install \`openssh\`
+1.  install `openssh`
 
-2.  run \`systemctl --user enable ssh-agent.service\` and \`systemctl
-    --user start ssh-agent.service\` on local file
+2.  run `systemctl --user enable ssh-agent.service` and
+    `systemctl --user start ssh-agent.service` on local file
 
-3.  \`SSH\\\_AUTH\\\_SOCK\` environmental variable needs to be set in
-    shellrc
+3.  `SSH_AUTH_SOCK` environmental variable needs to be set in shellrc
 
 4.  stow \~/.ssh/config with instructions for adding keys to ssh agent
 
 gnupg
 
-1.  install \`gnupg\`
+1.  install `gnupg`
 
 2.  stow \~/.gnupg/gpg-agent to get relevant agent functionalities and
     cached keys
 
 ACPI audio jack
 
-1.  install \`acpid\`
+1.  install `acpid`
 
-2.  copy \`audio_jack\` to /etc/acpi/events
+2.  copy `audio_jack` to /etc/acpi/events
 
-3.  run \`sudo sytemctl enable acpid.service\` and \`sudo sytemctl start
-    acpid.service\`
+3.  run `sudo sytemctl enable acpid.service` and
+    `sudo sytemctl start acpid.service`
 
 i3-cycle
 
-1.  run \`pip install --user i3-cycle\`
+1.  run `pip install --user i3-cycle`
 
 2.  move raw python script to \~/bin because installed script gets
     slowed down due to path regexes
 
 pre-suspend i3lock workflow
 
-1.  all i3lock scripts have \`sleep 0.1\` to prevent i3 mode red color
+1.  all i3lock scripts have `sleep 0.1` to prevent i3 mode red color
     from being captured in screenshot
 
-2.  i3lock post-suspend requires \`sleep 1\` to prevent short real
-    display
+2.  i3lock post-suspend requires `sleep 1` to prevent short real display
 
-3.  i3lock uses no forking \`-n\` for simple lock in order to modify
-    dpms settings, otherwise it won\'t work
+3.  i3lock uses no forking `-n` for simple lock in order to modify dpms
+    settings, otherwise it won\'t work
 
 4.  i3lock was tested with concurrent lock and suspend, and there is a
     PID check to ensure no double i3locks are created
 
-5.  \`xset -display :0 dpms force on\` to ensure screen lights up after
+5.  `xset -display :0 dpms force on` to ensure screen lights up after
     suspend, in case it was locked and dimmed earlier
 
 6.  copy pre-sleep@.service to /etc/systemd/system
 
-7.  run \`sudo systemctl enable pre-sleep@\$USER.service\`, remember to
+7.  run `sudo systemctl enable pre-sleep@$USER.service`, remember to
     replace \$USER with the actual user
 
 8.  suspension after i3lock is delayed if less than or equal to 10
@@ -185,24 +183,24 @@ pre-suspend i3lock workflow
 
 early KMS
 
-1.  add \`MODULES=(intel_agp i915)\` to /etc/mkinitcpio.conf
+1.  add `MODULES=(intel_agp i915)` to /etc/mkinitcpio.conf
 
-2.  run \`sudo mkinitcpio -P\`
+2.  run `sudo mkinitcpio -P`
 
 timesync
 
-1.  run \`sudo systemctl enable systemd-timesyncd.service\` in order to
+1.  run `sudo systemctl enable systemd-timesyncd.service` in order to
     sync time
 
 fonts
 
-1.  install \`ttf-dejavu\`,\`ttf-font-awesome\`, \`otf-font-awesome\`
-    and AUR \`nerd-fonts-bitstream-vera-mono\` for terminal font
+1.  install `ttf-dejavu`,=ttf-font-awesome=, `otf-font-awesome` and AUR
+    `nerd-fonts-bitstream-vera-mono` for terminal font
 
-2.  update cache using \`fc-cache -fv\`
+2.  update cache using `fc-cache -fv`
 
 3.  i3 uses fc-match to find best font which mostly ends up defaulting
-    to \`DejaVu Sans\`, which is why it appears as a default
+    to `DejaVu Sans`, which is why it appears as a default
 
 Completed
 ---------
@@ -228,7 +226,7 @@ blocklets -\> check exact hexes
 properly
 
 **DONE** find ways to reduce hard-coding of configs/dotfiles
-to \`/home/shankar\` or \`\~\`
+to `/home/shankar` or `~`
 
 **DONE** extract all steps listed in i3 config file for
 reproducibility -\> store them neatly with explanations and commands
