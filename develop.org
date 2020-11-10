@@ -4,81 +4,23 @@
 ** Tasks
 *** Dotfiles
 **** Current
+***** TODO add public ssh and gnupg dotfiles, find a way to source additional file from ssh config
 ***** TODO bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding (eg. ranger and neomutt) -> put aliases in dedicated files for both bash and zsh
 ***** TODO reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line
 ***** make all audio channels muted at boot (now only main channel is muted)
 ***** hook to shfmt on all shell scripts including zsh -> replace all tabs with 2 spaces for uniformity -> ensure all shell tildes are replaced with $HOME
+***** problems with xset dpms when waking from sleep -> perhaps add sleep 1 and then wake dpms
+***** consider using different configs for remote and local shells
 
 **** Long-term
-***** synchronize mime system program defaults to same as ranger's rifle
 ***** use pam environment to cache passphrase for ssh and gpg keys
-***** consider using different configs for remote and local shells
-***** problems with xset dpms when waking from sleep -> perhaps add sleep 1 and then wake dpms
-***** keep gnupg, ssh, neomutt and other directories in private stow repo
+***** synchronize mime system program defaults to same as ranger's rifle
 ***** reduce the number of dotfiles for a leaner installation
+***** port gnupg, ssh, neomutt private dotfiles to private stow repo
 
 *** System reproducibility
-***** TODO root files need to be added via hard files, migrate them to separate system local repo which holds package lists and installation script to revert things back to current state, use gnu install for those commands, make simple root install script which uses directory structure for installs, migrate system reproducibility log to this repo 
 ***** work on install script which setps up all the necessary git repos for dotfiles that cannot be managed with submodules -> eg. vim, spacemacs etc.
 ***** work on update script which updates all submodules and git repos to latest upstream commits (git submodule update --init --recursive --remote), and also updates misc. code bases such as melpa, vim, spacemacs, etc.
-***** work on script which returns arch linux OS state to current state using package list backups, dotfile installation scheme and notes for important steps taken from experience -> test this with virtual machine -> perhaps each update backs up package list as well
-***** figure how to dump all package names and associated systemd rules which need to be recreated
- 
-** System reproduction logs after basic Arch installation
-**** sudo
-***** install =sudo=
-***** add or uncomment the following =%wheel      ALL=(ALL) ALL= to allow for wheel users to access sudo
-***** use =visudo= to prevent any syntax errors
-**** tlp runner
-***** instal =tlp= 
-***** copy existing =tlp.conf= to =/etc/tlp.conf= for disabling bluetooth, wifi and wwan at startup
-***** run =sudo systemctl enable tlp.service= and =sudo systemctl start tlp.service=  
-**** light
-***** install =light= for managing backlight
-***** add local user to =video= group by running =usermod -a -G video shankar=  
-**** mesa video driver
-***** install =mesa= package and avoid =xf86-video-intel=
-**** udev battery rules
-***** copy =60-onbattery.rules= and =61-onpower.rules= to =/etc/udev/rules.d=
-***** reload rules =sudo udevadm control --reload=
-**** ufw firewall
-***** install =ufw= 
-***** retain default settings that deny incoming requests while allowing outgoing
-***** run =sudo systemctl enable ufw.service= and =sudo systemctl start ufw.service=
-***** run =sudo ufw enable= to enable it outside systemd
-**** openssh
-***** install =openssh=
-***** run =systemctl --user enable ssh-agent.service= and =systemctl --user start ssh-agent.service= on local file
-***** =SSH_AUTH_SOCK= environmental variable needs to be set in shellrc
-***** stow =~/.ssh/config= with instructions for adding keys to ssh agent
-**** gnupg
-***** install =gnupg=
-***** stow =~/.gnupg/gpg-agent= to get relevant agent functionalities and cached keys
-**** ACPI audio jack
-***** install =acpid=
-***** copy =audio_jack= to =/etc/acpi/events=
-***** run =sudo sytemctl enable acpid.service= and =sudo sytemctl start acpid.service=
-**** i3-cycle
-***** run =pip install --user i3-cycle=
-***** move raw python script to =~/bin= because installed script gets slowed down due to path regexes
-**** pre-suspend i3lock workflow
-***** all i3lock scripts have =sleep 0.1= to prevent i3 mode red color from being captured in screenshot
-***** i3lock post-suspend requires =sleep 1= to prevent short real display
-***** i3lock uses no forking =-n= for simple lock to ensure it does not work in background; this allows dpms changes to persist until unlock
-***** i3lock was tested with concurrent lock and suspend, and there is a PID check to ensure no double i3locks are created
-***** *buggy, needs more testing:* =xset -display :0 dpms force on= to ensure screen lights up after suspend, in case it was locked and dimmed earlier
-***** copy =pre-sleep@.service= to =/etc/systemd/system=
-***** run =sudo systemctl enable pre-sleep@$USER.service=, remember to replace =$USER= with the actual user
-***** suspension after i3lock is delayed if less than or equal to 10 seconds are left before dpms down -> not sure about this but it is possible
-**** early KMS
-***** add =MODULES=(intel_agp i915)= to =/etc/mkinitcpio.conf=
-***** run =sudo mkinitcpio -P=
-**** timesync
-***** run =sudo systemctl enable systemd-timesyncd.service= in order to sync time
-**** fonts
-***** install =ttf-dejavu=, =ttf-font-awesome=, =otf-font-awesome= and AUR =nerd-fonts-bitstream-vera-mono= for terminal font
-***** update cache using =fc-cache -fv=
-***** i3 uses fc-match to find best font which mostly ends up defaulting to =DejaVu Sans=, which is why it appears as a default
       
 ** Completed
 ***** DONE remove multiple vimrcs and keep only my_configs.vim for simplicity
