@@ -27,7 +27,7 @@ values."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/")
    ;; List of configuration layers to load.
    ;; ----------------------------------------------------------------
    ;; Example of useful layers you may want to use right away.
@@ -45,9 +45,6 @@ values."
      semantic
      themes-megapack
      org
-     (elpy-plus :variables python-shell-interpreter "ipython"
-                python-shell-interpreter-args "-i --simple-prompt"
-                elpy-shell-echo-output nil)
      (ess :variables ess-use-flymake nil
           ess-indent-with-fancy-comments nil
           ess-eval-visibly 'nowait)
@@ -65,9 +62,11 @@ values."
             latex-enable-auto-fill nil
             latex-enable-magic nil
             latex-build-command "LatexMk")
-     ;; (elpy :variables python-shell-interpreter "ipython"
-     ;;       python-shell-interpreter-args "-i --simple-prompt"
-     ;;       elpy-shell-echo-output nil)
+     ;; load local elpy layer
+     (elpy-plus :location local
+                :variables python-shell-interpreter "ipython"
+                python-shell-interpreter-args "-i --simple-prompt"
+                elpy-shell-echo-output nil)
      ;; (auto-completion :variables
      ;;                  auto-completion-complete-with-key-sequence nil
      ;;                  auto-completion-idle-delay nil)

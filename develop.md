@@ -13,7 +13,8 @@ Tasks
 
     1.  **TODO** add upstream vim as submodule and then
         simply source it cleanly + check if somehow possible for
-        spacemacs too
+        spacemacs too (change to .spacemacs.d) -\> consider removing env
+        file
 
     2.  **TODO** bash/zsh fix reduced hard-coding -\> add if
         statements to check for certain commands to reduce hard-coding
@@ -23,15 +24,19 @@ Tasks
     3.  **TODO** reduce redundant code in bash/zsh and clean
         workflows up -\> would require understanding each line
 
-    4.  make all audio channels muted at boot (now only main channel is
+    4.  **TODO** clean up .spacemacs.d and make it organized
+        as per blogpost -\> synchronize between elpy layers and
+        spacemacs-elpy repository
+
+    5.  make all audio channels muted at boot (now only main channel is
         muted)
 
-    5.  hook to shfmt on all shell scripts including zsh
+    6.  hook to shfmt on all shell scripts including zsh
 
-    6.  problems with xset dpms when waking from sleep -\> perhaps add
+    7.  problems with xset dpms when waking from sleep -\> perhaps add
         sleep 1 and then wake dpms
 
-    7.  consider using different configs for remote and local shells
+    8.  consider using different configs for remote and local shells
 
 2.  Long-term
 
