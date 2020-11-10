@@ -8,3 +8,6 @@
 [submodule "i3/.config/i3/i3blocks-contrib"]
   path = i3/.config/i3/i3blocks-contrib
   url = https://github.com/vivien/i3blocks-contrib.git
+[submodule "vim/.vim_runtime"]
+	path = vim/.vim_runtime
+	url = https://github.com/amix/vimrc.git
