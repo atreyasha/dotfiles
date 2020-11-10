@@ -19,13 +19,11 @@ Tasks
     2.  **TODO** reduce redundant code in bash/zsh and clean
         workflows up -\> would require understanding each line
 
-    3.  **TODO** clean up `~/.spacemacs.d` and make it
-        organized as per blogpost with various sections -\> synchronize
-        repos between elpy layers and spacemacs-elpy repository
+    3.  clean up `~/.spacemacs.d` and make it organized as per blogpost
+        with various sections -\> use consistent naming practices
 
-    4.  **TODO** consider using different configs for remote
-        and local shells -\> perhaps section them into core, personal
-        etc.
+    4.  consider using different configs for remote and local shells -\>
+        perhaps section them into core, personal etc.
 
     5.  make all audio channels muted at boot (now only main channel is
         muted)
@@ -47,7 +45,10 @@ Tasks
 
     4.  reduce the number of dotfiles for a leaner installation
 
-    5.  port gnupg, ssh, neomutt private dotfiles to private stow repo
+    5.  consider running emacs as a service to have everything
+        synchronized in one run
+
+    6.  port gnupg, ssh, neomutt private dotfiles to private stow repo
 
 ### System reproducibility
 

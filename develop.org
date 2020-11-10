@@ -6,8 +6,8 @@
 **** Current
 ***** TODO bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding (eg. ranger and neomutt) -> put aliases in dedicated files for both bash and zsh
 ***** TODO reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line
-***** TODO clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> synchronize repos between elpy layers and spacemacs-elpy repository
-***** TODO consider using different configs for remote and local shells -> perhaps section them into core, personal etc.
+***** clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> use consistent naming practices
+***** consider using different configs for remote and local shells -> perhaps section them into core, personal etc.
 ***** make all audio channels muted at boot (now only main channel is muted)
 ***** hook to shfmt on all shell scripts including zsh
 ***** problems with xset dpms when waking from sleep -> perhaps add sleep 1 and then wake dpms
@@ -17,6 +17,7 @@
 ***** special shell-check to ensure all shell tildes are replaced with $HOME
 ***** synchronize mime system program defaults to same as ranger's rifle
 ***** reduce the number of dotfiles for a leaner installation
+***** consider running emacs as a service to have everything synchronized in one run
 ***** port gnupg, ssh, neomutt private dotfiles to private stow repo
 
 *** System reproducibility
