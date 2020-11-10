@@ -68,8 +68,8 @@ Tasks
     for important steps taken from experience -\> test this with virtual
     machine -\> perhaps each update backs up package list as well
 
-5.  figure out how to dump all package names and associated systemd
-    rules which need to be recreated
+5.  figure how to dump all package names and associated systemd rules
+    which need to be recreated
 
 System reproduction logs after basic Arch installation
 ------------------------------------------------------

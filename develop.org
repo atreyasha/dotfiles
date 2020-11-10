@@ -22,7 +22,7 @@
 ***** work on install script which setps up all the necessary git repos for dotfiles that cannot be managed with submodules -> eg. vim, spacemacs etc.
 ***** work on update script which updates all submodules and git repos to latest upstream commits (git submodule update --init --recursive --remote), and also updates misc. code bases such as melpa, vim, spacemacs, etc.
 ***** work on script which returns arch linux OS state to current state using package list backups, dotfile installation scheme and notes for important steps taken from experience -> test this with virtual machine -> perhaps each update backs up package list as well
-***** figure out how to dump all package names and associated systemd rules which need to be recreated
+***** figure how to dump all package names and associated systemd rules which need to be recreated
  
 ** System reproduction logs after basic Arch installation
 **** sudo
