@@ -164,8 +164,8 @@ pre-suspend i3lock workflow
 
 2.  i3lock post-suspend requires `sleep 1` to prevent short real display
 
-3.  i3lock uses no forking `-n` for simple lock in order to modify dpms
-    settings, otherwise it won\'t work
+3.  i3lock uses no forking `-n` for simple lock to ensure it does not
+    work in background; this allows dpms changes to persist until unlock
 
 4.  i3lock was tested with concurrent lock and suspend, and there is a
     PID check to ensure no double i3locks are created
@@ -177,7 +177,7 @@ pre-suspend i3lock workflow
 6.  copy `pre-sleep@.service` to `/etc/systemd/system`
 
 7.  run `sudo systemctl enable pre-sleep@$USER.service`, remember to
-    replace \$USER with the actual user
+    replace `$USER` with the actual user
 
 8.  suspension after i3lock is delayed if less than or equal to 10
     seconds are left before dpms down -\> not sure about this but it is
@@ -196,7 +196,7 @@ timesync
 
 fonts
 
-1.  install `ttf-dejavu`,=ttf-font-awesome=, `otf-font-awesome` and AUR
+1.  install `ttf-dejavu`, `ttf-font-awesome`, `otf-font-awesome` and AUR
     `nerd-fonts-bitstream-vera-mono` for terminal font
 
 2.  update cache using `fc-cache -fv`
