@@ -1,5 +1,3 @@
-# vim: filetype=neomuttrc
-
 # source mutt-wizard upstream defaults
 source /usr/share/mutt-wizard/mutt-wizard.muttrc
 
