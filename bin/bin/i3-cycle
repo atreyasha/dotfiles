@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Source: https://github.com/mota/i3-cycle
-# Place source code directly because this is much faster
+# source: https://github.com/mota/i3-cycle
+# place source code directly because this is much faster
 # than python link because of regex checks
 # see for more details: https://github.com/mota/i3-cycle/issues/1
 """

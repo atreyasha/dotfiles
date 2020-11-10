@@ -13,39 +13,37 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** reduce redundant code in bash/zsh and clean
-        workflows (like dircolors) up
-
-    2.  **TODO** bash/zsh fix reduced hard-coding -\> add if
+    1.  **TODO** bash/zsh fix reduced hard-coding -\> add if
         statements to check for certain commands to reduce hard-coding
-        -\> clean out user-specific code such as vpns and put them in
-        misc/alias files
+        (eg. ranger and neomutt) -\> put aliases in dedicated files for
+        both bash and zsh
 
-    3.  **TODO** find workflow for shfmt on all shell scripts
-        including zsh -\> use this as a git hook and replace all tabs
-        with 2 spaces for uniformity esp. in zsh script -\> port this to
-        git hooks where it could be useful -\> add another git hook to
-        ensure all shell tildes are replaced with \$HOME
+    2.  **TODO** reduce redundant code in bash/zsh and clean
+        workflows up -\> would require understanding each line
 
-    4.  consider using different configs for remote and local shells
-
-    5.  synchronize mime system program defaults to same as ranger\'s
-        rifle
-
-    6.  clean out vimrcs and perhaps simply load a new vimrc to
-        overwrite git upstream defaults
-
-    7.  make all audio channels muted at boot (now only main channel is
+    3.  make all audio channels muted at boot (now only main channel is
         muted)
+
+    4.  hook to shfmt on all shell scripts including zsh -\> replace all
+        tabs with 2 spaces for uniformity -\> ensure all shell tildes
+        are replaced with \$HOME
 
 2.  Long-term
 
-    1.  reduce the number of dotfiles for a leaner installation
+    1.  synchronize mime system program defaults to same as ranger\'s
+        rifle
 
     2.  use pam environment to cache passphrase for ssh and gpg keys
 
-    3.  keep gnupg, ssh, neomutt and other directories in private stow
+    3.  consider using different configs for remote and local shells
+
+    4.  problems with xset dpms when waking from sleep -\> perhaps add
+        sleep 1 and then wake dpms
+
+    5.  keep gnupg, ssh, neomutt and other directories in private stow
         repo
+
+    6.  reduce the number of dotfiles for a leaner installation
 
 ### System reproducibility
 
@@ -140,7 +138,7 @@ gnupg
 1.  install \`gnupg\`
 
 2.  stow \~/.gnupg/gpg-agent to get relevant agent functionalities and
-    cached keys, along with shell \`GPG~TTY~\` environmental variable
+    cached keys
 
 ACPI audio jack
 
@@ -184,9 +182,6 @@ pre-suspend i3lock workflow
     seconds are left before dpms down -\> not sure about this but it is
     possible
 
-9.  **untested:** perhaps try to unset dpms before sleep -\> leads to
-    problems waking from sleep
-
 early KMS
 
 1.  add \`MODULES=(intel~agp~ i915)\` to /etc/mkinitcpio.conf
@@ -210,6 +205,12 @@ fonts
 
 Completed
 ---------
+
+**DONE** remove multiple vimrcs and keep only my~configs~.vim
+for simplicity
+
+**DONE** consider doing away with .profile if not necessary
+-\> or make this leaner -\> lowercase all zshrc comments
 
 **DONE** replace tilde with \$HOME for standardization in
 shell scripts -\> \$HOME is safer as it can be quoted and because it
