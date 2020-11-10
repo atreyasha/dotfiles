@@ -11,39 +11,37 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** add public ssh and gnupg dotfiles, find a
-        way to source additional file from ssh config
-
-    2.  **TODO** bash/zsh fix reduced hard-coding -\> add if
+    1.  **TODO** bash/zsh fix reduced hard-coding -\> add if
         statements to check for certain commands to reduce hard-coding
         (eg. ranger and neomutt) -\> put aliases in dedicated files for
         both bash and zsh
 
-    3.  **TODO** reduce redundant code in bash/zsh and clean
+    2.  **TODO** reduce redundant code in bash/zsh and clean
         workflows up -\> would require understanding each line
 
-    4.  make all audio channels muted at boot (now only main channel is
+    3.  make all audio channels muted at boot (now only main channel is
         muted)
 
-    5.  hook to shfmt on all shell scripts including zsh -\> replace all
-        tabs with 2 spaces for uniformity -\> ensure all shell tildes
-        are replaced with \$HOME
+    4.  hook to shfmt on all shell scripts including zsh
 
-    6.  problems with xset dpms when waking from sleep -\> perhaps add
+    5.  problems with xset dpms when waking from sleep -\> perhaps add
         sleep 1 and then wake dpms
 
-    7.  consider using different configs for remote and local shells
+    6.  consider using different configs for remote and local shells
 
 2.  Long-term
 
     1.  use pam environment to cache passphrase for ssh and gpg keys
 
-    2.  synchronize mime system program defaults to same as ranger\'s
+    2.  special shell-check to ensure all shell tildes are replaced with
+        \$HOME
+
+    3.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-    3.  reduce the number of dotfiles for a leaner installation
+    4.  reduce the number of dotfiles for a leaner installation
 
-    4.  port gnupg, ssh, neomutt private dotfiles to private stow repo
+    5.  port gnupg, ssh, neomutt private dotfiles to private stow repo
 
 ### System reproducibility
 
@@ -58,6 +56,9 @@ Tasks
 
 Completed
 ---------
+
+**DONE** add public ssh and gnupg dotfiles, find a way to
+source additional file from ssh config
 
 **DONE** remove multiple vimrcs and keep only my_configs.vim
 for simplicity

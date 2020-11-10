@@ -1,31 +1,47 @@
+# vim: filetype=neomuttrc
+
 # source mutt-wizard upstream defaults
 source /usr/share/mutt-wizard/mutt-wizard.muttrc
+
 # set preferred text editor
 set editor=vim
+
 # set formats for index and the sidebar
 set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
 set sidebar_format = '%D%?F? [%F]?%* %?N?%N/? %?S?%S?'
+
 # prevent scrolling outside of pager
 set pager_stop=yes
+
 # number of index lines to show
 set pager_index_lines = 10
+
 # number of context lines to show when opening email
 set pager_context = 3
+
 # scroll in menus
 set menu_scroll
+
 # show pretty tildes
 set tilde
+
 # set keybinding for reverse search
 bind index,pager \Cn search-opposite
+
 # disable upstream macro for notmuch search
 bind index \Cf noop
+
 # enable macro for global mbsync
 macro index O "<shell-escape>mbsync -aV<enter>" "run offlineimap to sync all mail"
+
 # always sign outgoing messages
 set crypt_autosign = yes
+
 # always encrypt if recipient's keys are present
 set crypt_opportunistic_encrypt = yes
+
 # PGP encrypted messages will be encrypted for yourself to keep
 set pgp_self_encrypt = yes
+
 # source private email files
 source startup_accounts.muttrc
