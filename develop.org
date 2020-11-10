@@ -60,7 +60,7 @@
 ***** run =sudo sytemctl enable acpid.service= and =sudo sytemctl start acpid.service=
 **** i3-cycle
 ***** run =pip install --user i3-cycle=
-***** move raw python script to ~/bin because installed script gets slowed down due to path regexes
+***** move raw python script to =~/bin= because installed script gets slowed down due to path regexes
 **** pre-suspend i3lock workflow
 ***** all i3lock scripts have =sleep 0.1= to prevent i3 mode red color from being captured in screenshot
 ***** i3lock post-suspend requires =sleep 1= to prevent short real display

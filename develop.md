@@ -154,7 +154,7 @@ i3-cycle
 
 1.  run `pip install --user i3-cycle`
 
-2.  move raw python script to \~/bin because installed script gets
+2.  move raw python script to `~/bin` because installed script gets
     slowed down due to path regexes
 
 pre-suspend i3lock workflow
