@@ -31,7 +31,7 @@
 ***** use =visudo= to prevent any syntax errors
 **** tlp runner
 ***** instal =tlp= 
-***** copy existing tlp.conf to /etc/tlp.conf for disabling bluetooth, wifi and wwan at startup
+***** copy existing =tlp.conf= to =/etc/tlp.conf= for disabling bluetooth, wifi and wwan at startup
 ***** run =sudo systemctl enable tlp.service= and =sudo systemctl start tlp.service=  
 **** light
 ***** install =light= for managing backlight
@@ -39,7 +39,7 @@
 **** mesa video driver
 ***** install =mesa= package and avoid =xf86-video-intel=
 **** udev battery rules
-***** copy 60-onbattery.rules and 61-onpower.rules to /etc/udev/rules.d
+***** copy =60-onbattery.rules= and =61-onpower.rules= to =/etc/udev/rules.d=
 ***** reload rules =sudo udevadm control --reload=
 **** ufw firewall
 ***** install =ufw= 
@@ -56,7 +56,7 @@
 ***** stow ~/.gnupg/gpg-agent to get relevant agent functionalities and cached keys
 **** ACPI audio jack
 ***** install =acpid=
-***** copy =audio_jack= to /etc/acpi/events
+***** copy =audio_jack= to =/etc/acpi/events=
 ***** run =sudo sytemctl enable acpid.service= and =sudo sytemctl start acpid.service=
 **** i3-cycle
 ***** run =pip install --user i3-cycle=
@@ -66,12 +66,12 @@
 ***** i3lock post-suspend requires =sleep 1= to prevent short real display
 ***** i3lock uses no forking =-n= for simple lock in order to modify dpms settings, otherwise it won't work
 ***** i3lock was tested with concurrent lock and suspend, and there is a PID check to ensure no double i3locks are created
-***** =xset -display :0 dpms force on= to ensure screen lights up after suspend, in case it was locked and dimmed earlier
-***** copy pre-sleep@.service to /etc/systemd/system
+***** *buggy, needs more testing:* =xset -display :0 dpms force on= to ensure screen lights up after suspend, in case it was locked and dimmed earlier
+***** copy =pre-sleep@.service= to =/etc/systemd/system=
 ***** run =sudo systemctl enable pre-sleep@$USER.service=, remember to replace $USER with the actual user
 ***** suspension after i3lock is delayed if less than or equal to 10 seconds are left before dpms down -> not sure about this but it is possible
 **** early KMS
-***** add =MODULES=(intel_agp i915)= to /etc/mkinitcpio.conf
+***** add =MODULES=(intel_agp i915)= to =/etc/mkinitcpio.conf=
 ***** run =sudo mkinitcpio -P=
 **** timesync
 ***** run =sudo systemctl enable systemd-timesyncd.service= in order to sync time

@@ -87,7 +87,7 @@ tlp runner
 
 1.  instal `tlp`
 
-2.  copy existing tlp.conf to /etc/tlp.conf for disabling bluetooth,
+2.  copy existing `tlp.conf` to `/etc/tlp.conf` for disabling bluetooth,
     wifi and wwan at startup
 
 3.  run `sudo systemctl enable tlp.service` and
@@ -106,7 +106,8 @@ mesa video driver
 
 udev battery rules
 
-1.  copy 60-onbattery.rules and 61-onpower.rules to /etc/udev/rules.d
+1.  copy `60-onbattery.rules` and `61-onpower.rules` to
+    `/etc/udev/rules.d`
 
 2.  reload rules `sudo udevadm control --reload`
 
@@ -144,7 +145,7 @@ ACPI audio jack
 
 1.  install `acpid`
 
-2.  copy `audio_jack` to /etc/acpi/events
+2.  copy `audio_jack` to `/etc/acpi/events`
 
 3.  run `sudo sytemctl enable acpid.service` and
     `sudo sytemctl start acpid.service`
@@ -169,10 +170,11 @@ pre-suspend i3lock workflow
 4.  i3lock was tested with concurrent lock and suspend, and there is a
     PID check to ensure no double i3locks are created
 
-5.  `xset -display :0 dpms force on` to ensure screen lights up after
-    suspend, in case it was locked and dimmed earlier
+5.  **buggy, needs more testing:** `xset -display :0 dpms force on` to
+    ensure screen lights up after suspend, in case it was locked and
+    dimmed earlier
 
-6.  copy pre-sleep@.service to /etc/systemd/system
+6.  copy `pre-sleep@.service` to `/etc/systemd/system`
 
 7.  run `sudo systemctl enable pre-sleep@$USER.service`, remember to
     replace \$USER with the actual user
@@ -183,7 +185,7 @@ pre-suspend i3lock workflow
 
 early KMS
 
-1.  add `MODULES=(intel_agp i915)` to /etc/mkinitcpio.conf
+1.  add `MODULES=(intel_agp i915)` to `/etc/mkinitcpio.conf`
 
 2.  run `sudo mkinitcpio -P`
 
