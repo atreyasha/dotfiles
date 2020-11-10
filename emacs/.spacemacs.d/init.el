@@ -27,7 +27,7 @@ values."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/")
+   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/submodule-elpy/")
    ;; List of configuration layers to load.
    ;; ----------------------------------------------------------------
    ;; Example of useful layers you may want to use right away.
@@ -67,7 +67,7 @@ values."
                 :variables python-shell-interpreter "ipython"
                 python-shell-interpreter-args "-i --simple-prompt"
                 elpy-shell-echo-output nil
-                elpy-rpc-virtualenv-path "~/.spacemacs.d/elpy/rpc-venv")
+                elpy-rpc-virtualenv-path "~/.spacemacs.d/misc/elpy/rpc-venv")
      ;; (auto-completion :variables
      ;;                  auto-completion-complete-with-key-sequence nil
      ;;                  auto-completion-idle-delay nil)
