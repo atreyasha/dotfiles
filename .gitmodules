@@ -7,3 +7,7 @@
 [submodule "vim/.vim_runtime"]
 	path = vim/.vim_runtime
 	url = https://github.com/amix/vimrc.git
+[submodule "ranger/.config/ranger/plugins/ranger_devicons"]
+	path = ranger/.config/ranger/plugins/ranger_devicons
+	url = https://github.com/alexanderjeurissen/ranger_devicons.git
+	branch = main
