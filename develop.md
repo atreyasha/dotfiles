@@ -132,13 +132,13 @@ openssh
 
 3.  `SSH_AUTH_SOCK` environmental variable needs to be set in shellrc
 
-4.  stow \~/.ssh/config with instructions for adding keys to ssh agent
+4.  stow `~/.ssh/config` with instructions for adding keys to ssh agent
 
 gnupg
 
 1.  install `gnupg`
 
-2.  stow \~/.gnupg/gpg-agent to get relevant agent functionalities and
+2.  stow `~/.gnupg/gpg-agent` to get relevant agent functionalities and
     cached keys
 
 ACPI audio jack
