@@ -1,45 +1,45 @@
-# Configure history settings
+# configure history settings
 HISTFILE="$HOME/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 
-# Configure vim keybindings
+# configure vim keybindings
 bindkey -v
 
-# Configure completions (source: https://wiki.archlinux.org/index.php/Zsh)
+# configure completions (source: https://wiki.archlinux.org/index.php/Zsh)
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 zstyle ':completion::complete:*' gain-privileges 1
 
-# Configure dircolors
+# configure dircolors
 if [ ! -f "$HOME/.dircolors" ]; then
   eval "$(dircolors -b)"
 else
   eval "$(dircolors -b "$HOME/.dircolors")"
 fi
 
-# Configure local aliases
+# configure local aliases
 alias vpn_uzh='sudo openconnect --authgroup=ALL --background uzhvpn1.uzh.ch'
 alias vpn_up='sudo openconnect --authgroup=sslvpn --background sslvpn.uni-potsdam.de'
 alias ls='ls --color=auto'
 alias ll='ls -al'
 
-# Configure low delay for vim mode change
+# configure low delay for vim mode change
 export KEYTIMEOUT=1
 
-# Function to return git branch information
+# function to return git branch information
 parse_git_branch() {
   branch="$(git symbolic-ref --short HEAD 2> /dev/null)"
   [ -n "$branch" ] && echo " @$branch"
 }
 
-# Define function for changing prompt depending on zsh vim mode
+# define function for changing prompt depending on zsh vim mode
 function zle-line-init zle-keymap-select {
-  # Define prompt prefix
+  # define prompt prefix
   prefix="[%F{011}%B%n@%m%f%b:%F{blue}%B%~%b%f$(parse_git_branch)]"
-  # Start cases
+  # start cases
   case ${KEYMAP} in
     (vicmd)
       PROMPT="$prefix%F{green}%#%f " ;;
@@ -49,11 +49,11 @@ function zle-line-init zle-keymap-select {
   zle reset-prompt
 }
 
-# Initialize above functions for dynamic prompts
+# initialize above functions for dynamic prompts
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-# Configure extra keybindings (source: https://wiki.archlinux.org/index.php/Zsh)
+# configure extra keybindings (source: https://wiki.archlinux.org/index.php/Zsh)
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -g -A key
@@ -70,7 +70,7 @@ key[PageUp]="${terminfo[kpp]}"
 key[PageDown]="${terminfo[knp]}"
 key[ShiftTab]="${terminfo[kcbt]}"
 
-# Setup keys accordingly
+# setup keys accordingly
 [[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"      beginning-of-line
 [[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"       end-of-line
 [[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"    overwrite-mode
@@ -84,7 +84,7 @@ key[ShiftTab]="${terminfo[kcbt]}"
 [[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"  end-of-buffer-or-history
 [[ -n "${key[ShiftTab]}"  ]] && bindkey -- "${key[ShiftTab]}"  reverse-menu-complete
 
-# Finally, make sure the terminal is in application mode, when zle is
+# finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
   autoload -Uz add-zle-hook-widget
@@ -98,14 +98,14 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
   add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
-# Configure history search keybindings (source:ghttps://wiki.archlinux.org/index.php/Zsh)
+# configure history search keybindings (source:ghttps://wiki.archlinux.org/index.php/Zsh)
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
-# X-term-title (source: https://wiki.archlinux.org/index.php/Zsh)
+# x-term-title (source: https://wiki.archlinux.org/index.php/Zsh)
 autoload -Uz add-zsh-hook
 function xterm_title_precmd () {
   print -Pn -- '\e]2;%n@%m: %~\a'
@@ -120,11 +120,11 @@ if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*) ]]; then
   add-zsh-hook -Uz preexec xterm_title_preexec
 fi
 
-# Configure command-line edits in editor
+# configure command-line edits in editor
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# Function for ranger-cd
+# function for ranger-cd
 function ranger-cd() {
   tempfile="$(mktemp -t tmp.XXXXXX)"
   ranger --choosedir="$tempfile" "${@:-$(pwd)}"
@@ -135,11 +135,11 @@ function ranger-cd() {
   rm -f -- "$tempfile"
 }
 
-# Configure keybindings for ranger-cd and neomutt
+# configure keybindings for ranger-cd and neomutt
 zle -N ranger-cd
 bindkey '^q' push-line-or-edit
 bindkey -s '^r' '^qranger-cd^m'
 bindkey -s '^n' '^qneomutt^m'
 
-# Source zsh-clipboard to be able to use system clipboard
+# source zsh-clipboard to be able to use system clipboard
 source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
