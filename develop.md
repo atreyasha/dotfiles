@@ -11,23 +11,27 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** bash/zsh fix reduced hard-coding -\> add if
+    1.  **TODO** add upstream vim as submodule and then
+        simply source it cleanly + check if somehow possible for
+        spacemacs too
+
+    2.  **TODO** bash/zsh fix reduced hard-coding -\> add if
         statements to check for certain commands to reduce hard-coding
         (eg. ranger and neomutt) -\> put aliases in dedicated files for
         both bash and zsh
 
-    2.  **TODO** reduce redundant code in bash/zsh and clean
+    3.  **TODO** reduce redundant code in bash/zsh and clean
         workflows up -\> would require understanding each line
 
-    3.  make all audio channels muted at boot (now only main channel is
+    4.  make all audio channels muted at boot (now only main channel is
         muted)
 
-    4.  hook to shfmt on all shell scripts including zsh
+    5.  hook to shfmt on all shell scripts including zsh
 
-    5.  problems with xset dpms when waking from sleep -\> perhaps add
+    6.  problems with xset dpms when waking from sleep -\> perhaps add
         sleep 1 and then wake dpms
 
-    6.  consider using different configs for remote and local shells
+    7.  consider using different configs for remote and local shells
 
 2.  Long-term
 
