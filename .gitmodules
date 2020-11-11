@@ -15,3 +15,7 @@
 	path = emacs/.emacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
 	branch = develop
+[submodule "emacs/.spacemacs.d/layers/langs/spacemacs-elpy"]
+	path = emacs/.spacemacs.d/layers/langs/spacemacs-elpy
+	url = https://github.com/atreyasha/spacemacs-elpy.git
+	branch = main
