@@ -4,23 +4,32 @@
 ** Tasks
 *** Dotfiles
 **** Current
-***** TODO bash/zsh fix reduced hard-coding -> add if statements to check for certain commands to reduce hard-coding (eg. ranger and neomutt) -> put aliases in dedicated files for both bash and zsh
-***** TODO reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line
-***** make all audio channels muted at boot (now only main channel is muted)
-***** consider using different configs for remote and local shells -> perhaps section them into core, personal etc.
-***** hook to shfmt on all shell scripts including zsh
-***** clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> use consistent naming practices and perhaps rename elpy submodule to something that fits semantically
+***** TODO bash/zsh: put aliases in dedicated files for both bash and zsh
+***** TODO bash/zsh: add if statements to check for certain commands to reduce hard-coding (eg. ranger and neomutt)
+***** bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line
+***** emacs: clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections
 
 **** Long-term
-***** use pam environment to cache passphrase for ssh and gpg keys
-***** problems with xset dpms when waking from sleep -> perhaps add sleep 1 and then wake dpms
-***** fix spacemacs conflicts with auto-completion and elpy -> also improve general company autocompletion flow and trigger it only on user request
-***** work on improving personal org mode tricks and standards
-***** special shell-check to ensure all shell tildes are replaced with $HOME
-***** synchronize mime system program defaults to same as ranger's rifle
-***** reduce the number of dotfiles for a leaner installation
-***** consider running emacs as a service to have everything synchronized in one run
-***** port gnupg, ssh, neomutt private dotfiles to private stow repo
+***** Pam
+****** use pam environment to cache passphrase for ssh and gpg keys
+***** emacs
+****** fix spacemacs conflicts with auto-completion and elpy -> also improve general company autocompletion flow and trigger it only on user request
+****** work on improving personal org mode tricks and standards
+****** consider running emacs as a service to have everything synchronized in one run
+***** i3
+****** make all audio channels muted at boot (now only main channel is muted)
+****** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
+****** problems with xset dpms when waking from sleep -> perhaps add sleep 1 and then wake dpms
+***** shell
+****** consider using different configs for remote and local shells by sectioning into personal, core, etc
+****** hook to shfmt on all shell scripts including zsh
+****** special shell-check to ensure all shell tildes are replaced with $HOME
+***** mimeapps
+****** synchronize mime system program defaults to same as ranger's rifle
+***** general
+****** make scripts determine activee $DISPLAY environmental variable instead of hard-coding
+****** port gnupg, ssh, neomutt private dotfiles to private stow repo
+****** reduce the number of dotfiles for a leaner installation
 
 *** System reproducibility
 ***** work on update script which updates all submodules and git repos to latest upstream commits eg. =git submodule update --init --recursive --remote=, and also updates misc. code bases such as melpa, vim, spacemacs, etc.
