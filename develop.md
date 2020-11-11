@@ -86,6 +86,10 @@ Tasks
 Completed
 ---------
 
+**DONE** invest in a minimal tmux configuration file
+
+**CLOSED:** *\[2020-11-11 Wed 19:48\]*
+
 **DONE** bash/zsh: clean up aliases and add if statements to
 check for certain commands to reduce hard-coding (eg. ranger and
 neomutt)
