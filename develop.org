@@ -5,10 +5,10 @@
 ** Tasks
 *** Dotfiles
 **** Current
+***** TODO sort out gpg-agent forgetting keys issue
 ***** TODO emacs: clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections
 ***** TODO make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions
 ***** bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones
-***** fix remote tmux issues
 
 **** Long-term
 ***** Pam

@@ -11,18 +11,18 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** emacs: clean up `~/.spacemacs.d` and make it
+    1.  **TODO** sort out gpg-agent forgetting keys issue
+
+    2.  **TODO** emacs: clean up `~/.spacemacs.d` and make it
         organized as per blogpost with various sections
 
-    2.  **TODO** make all audio channels muted at boot (now
+    3.  **TODO** make all audio channels muted at boot (now
         only main channel is muted) -\> very complicated because of
         pulseaudio and alsa simultaneous actions
 
-    3.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
+    4.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
         up -\> would require understanding each line and then deleting
         unnecessary ones
-
-    4.  fix remote tmux issues
 
 2.  Long-term
 
