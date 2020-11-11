@@ -67,7 +67,7 @@ values."
                 :variables python-shell-interpreter "ipython"
                 python-shell-interpreter-args "-i --simple-prompt"
                 elpy-shell-echo-output nil
-                elpy-rpc-virtualenv-path "~/.spacemacs.d/misc/elpy/rpc-venv")
+                elpy-rpc-virtualenv-path "~/.spacemacs.d/rpc/elpy/rpc-venv")
      ;; (auto-completion :variables
      ;;                  auto-completion-complete-with-key-sequence nil
      ;;                  auto-completion-idle-delay nil)

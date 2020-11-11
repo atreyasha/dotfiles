@@ -1,6 +1,5 @@
 #+STARTUP: overview
 #+OPTIONS: ^:nil
-#+OPTIONS: p:t
 
 ** Tasks
 *** Dotfiles
@@ -24,7 +23,7 @@
 ***** port gnupg, ssh, neomutt private dotfiles to private stow repo
 
 *** System reproducibility
-***** work on update script which updates all submodules and git repos to latest upstream commits (git submodule update --init --recursive --remote), and also updates misc. code bases such as melpa, vim, spacemacs, etc.
+***** work on update script which updates all submodules and git repos to latest upstream commits eg. =git submodule update --init --recursive --remote=, and also updates misc. code bases such as melpa, vim, spacemacs, etc.
 ***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
       
 ** Completed

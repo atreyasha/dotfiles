@@ -19,43 +19,51 @@ Tasks
     2.  **TODO** reduce redundant code in bash/zsh and clean
         workflows up -\> would require understanding each line
 
-    3.  clean up `~/.spacemacs.d` and make it organized as per blogpost
-        with various sections -\> use consistent naming practices
+    3.  make all audio channels muted at boot (now only main channel is
+        muted)
 
     4.  consider using different configs for remote and local shells -\>
         perhaps section them into core, personal etc.
 
-    5.  make all audio channels muted at boot (now only main channel is
-        muted)
+    5.  hook to shfmt on all shell scripts including zsh
 
-    6.  hook to shfmt on all shell scripts including zsh
-
-    7.  problems with xset dpms when waking from sleep -\> perhaps add
-        sleep 1 and then wake dpms
+    6.  clean up `~/.spacemacs.d` and make it organized as per blogpost
+        with various sections -\> use consistent naming practices and
+        perhaps rename elpy submodule to something that fits
+        semantically
 
 2.  Long-term
 
     1.  use pam environment to cache passphrase for ssh and gpg keys
 
-    2.  special shell-check to ensure all shell tildes are replaced with
+    2.  problems with xset dpms when waking from sleep -\> perhaps add
+        sleep 1 and then wake dpms
+
+    3.  fix spacemacs conflicts with auto-completion and elpy -\> also
+        improve general company autocompletion flow and trigger it only
+        on user request
+
+    4.  work on improving personal org mode tricks and standards
+
+    5.  special shell-check to ensure all shell tildes are replaced with
         \$HOME
 
-    3.  synchronize mime system program defaults to same as ranger\'s
+    6.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-    4.  reduce the number of dotfiles for a leaner installation
+    7.  reduce the number of dotfiles for a leaner installation
 
-    5.  consider running emacs as a service to have everything
+    8.  consider running emacs as a service to have everything
         synchronized in one run
 
-    6.  port gnupg, ssh, neomutt private dotfiles to private stow repo
+    9.  port gnupg, ssh, neomutt private dotfiles to private stow repo
 
 ### System reproducibility
 
 1.  work on update script which updates all submodules and git repos to
-    latest upstream commits (git submodule update --init --recursive
-    --remote), and also updates misc. code bases such as melpa, vim,
-    spacemacs, etc.
+    latest upstream commits eg.
+    `git submodule update --init --recursive --remote`, and also updates
+    misc. code bases such as melpa, vim, spacemacs, etc.
 
 2.  work on install script which sets up all the necessary git repos for
     dotfiles that cannot be managed with submodules
