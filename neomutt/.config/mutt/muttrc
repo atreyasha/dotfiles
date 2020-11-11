@@ -42,4 +42,4 @@ set crypt_opportunistic_encrypt = yes
 set pgp_self_encrypt = yes
 
 # source private email files
-source startup_accounts.muttrc
+source accounts.muttrc
