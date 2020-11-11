@@ -7,7 +7,7 @@
 **** Current
 ***** TODO emacs: clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections
 ***** TODO make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions
-***** bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line
+***** bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones
 
 **** Long-term
 ***** Pam
