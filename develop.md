@@ -22,6 +22,8 @@ Tasks
         up -\> would require understanding each line and then deleting
         unnecessary ones
 
+    4.  fix remote tmux issues
+
 2.  Long-term
 
     1.  Pam
