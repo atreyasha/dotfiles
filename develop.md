@@ -86,6 +86,12 @@ Tasks
 Completed
 ---------
 
+**DONE** gpg-agent dying randomly again -\> put GPG_TTY in
+.zshenv and somewhere important for bash -\> add if statement for logout
+gpg-agent
+
+**CLOSED:** *\[2020-11-11 Wed 20:32\]*
+
 **DONE** invest in a minimal tmux configuration file
 
 **CLOSED:** *\[2020-11-11 Wed 19:48\]*

@@ -1,2 +1,4 @@
 # reload gpg agent in order to remove cached key(s)
-gpg-connect-agent reloadagent /bye
+if pgrep -x gpg-agent &>/dev/null; then
+  gpg-connect-agent reloadagent /bye
+fi

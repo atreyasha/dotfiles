@@ -109,9 +109,17 @@ if command -v ranger &>/dev/null; then
   bind '"\C-r":"ranger-cd\C-m"'
 fi
 
+# if neomutt exists, create binding
+if command -v neomutt &>/dev/null; then
+  bind '"\C-n":"neomutt\C-m"'
+fi
+
 # configure aliases
 alias ls='ls --color=auto'
 alias ll='ls -al'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+# required when reloading interactive shells
+export GPG_TTY="$(tty)"
