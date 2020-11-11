@@ -20,12 +20,6 @@ else
   eval "$(dircolors -b "$HOME/.dircolors")"
 fi
 
-# configure local aliases
-alias vpn_uzh='sudo openconnect --authgroup=ALL --background uzhvpn1.uzh.ch'
-alias vpn_up='sudo openconnect --authgroup=sslvpn --background sslvpn.uni-potsdam.de'
-alias ls='ls --color=auto'
-alias ll='ls -al'
-
 # configure low delay for vim mode change
 export KEYTIMEOUT=1
 
@@ -123,23 +117,38 @@ fi
 # configure command-line edits in editor
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
-
-# function for ranger-cd
-function ranger-cd() {
-  tempfile="$(mktemp -t tmp.XXXXXX)"
-  ranger --choosedir="$tempfile" "${@:-$(pwd)}"
-  test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-      cd -- "$(cat "$tempfile")"
-    fi
-  rm -f -- "$tempfile"
-}
-
-# configure keybindings for ranger-cd and neomutt
-zle -N ranger-cd
 bindkey '^q' push-line-or-edit
-bindkey -s '^r' '^qranger-cd^m'
-bindkey -s '^n' '^qneomutt^m'
+
+# if ranger exists, create ranger-cd useful function and binding
+if command -v ranger &>/dev/null; then
+  # function for ranger-cd
+  function ranger-cd() {
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+      if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+      fi
+    rm -f -- "$tempfile"
+  }
+  # configure keybindings for ranger-cd and neomutt
+  zle -N ranger-cd
+  bindkey -s '^r' '^qranger-cd^m'
+fi
+
+# if neomutt exists, create binding
+if command -v neomutt &>/dev/null; then
+  bindkey -s '^n' '^qneomutt^m'
+fi
 
 # source zsh-clipboard to be able to use system clipboard
 source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
+
+# configure aliases
+alias ls='ls --color=auto'
+alias ll='ls -al'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias vpn_uzh='sudo openconnect --authgroup=ALL --background uzhvpn1.uzh.ch'
+alias vpn_up='sudo openconnect --authgroup=sslvpn --background sslvpn.uni-potsdam.de'

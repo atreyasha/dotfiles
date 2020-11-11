@@ -19,10 +19,6 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# if set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -71,7 +67,6 @@ xterm* | rxvt*)
   PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
   ;;
 *) ;;
-
 esac
 
 # autocompletions and history search
@@ -80,37 +75,11 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 export HISTCONTROL=erasedups
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-  test -r "$HOME/.dircolors" && eval "$(dircolors -b "$HOME/.dircolors")" || eval "$(dircolors -b)"
-  alias ls='ls --color=auto'
-  #alias dir='dir --color=auto'
-  #alias vdir='vdir --color=auto'
-
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
-fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f "$HOME/.bash_aliases" ]; then
-  . "$HOME/.bash_aliases"
+# configure dircolors
+if [ ! -f "$HOME/.dircolors" ]; then
+  eval "$(dircolors -b)"
+else
+  eval "$(dircolors -b "$HOME/.dircolors")"
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -124,16 +93,25 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# ranger-cd shortcut
-function ranger-cd() {
-  tempfile="$(mktemp -t tmp.XXXXXX)"
-  ranger --choosedir="$tempfile" "${@:-$(pwd)}"
-  test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n $(pwd))" ]; then
-      cd -- "$(cat "$tempfile")"
-    fi
-  rm -f -- "$tempfile"
-}
+# if ranger exists, create ranger-cd useful function and binding
+if command -v ranger &>/dev/null; then
+  # ranger-cd shortcut
+  function ranger-cd() {
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+      if [ "$(cat -- "$tempfile")" != "$(echo -n $(pwd))" ]; then
+        cd -- "$(cat "$tempfile")"
+      fi
+    rm -f -- "$tempfile"
+  }
+  # bind Ctrl-r to ranger-cd
+  bind '"\C-r":"ranger-cd\C-m"'
+fi
 
-# This binds Ctrl-r to ranger-cd:
-bind '"\C-r":"ranger-cd\C-m"'
+# configure aliases
+alias ls='ls --color=auto'
+alias ll='ls -al'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
