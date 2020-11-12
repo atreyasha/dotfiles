@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# conditionas for launching picom
+# conditions for launching picom
 if ! pgrep -u "$USER" -x picom &>/dev/null; then
   sleep 1.5
 else
