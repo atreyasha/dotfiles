@@ -11,8 +11,9 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** emacs: clean up `~/.spacemacs.d` and make it
-        organized as per blogpost with various sections
+    1.  **TODO** fix spacemacs conflicts with auto-completion
+        and elpy -\> also improve general company autocompletion flow
+        and trigger it only on user request
 
     2.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
         up -\> would require understanding each line and then deleting
@@ -26,13 +27,10 @@ Tasks
 
     2.  emacs
 
-        1.  fix spacemacs conflicts with auto-completion and elpy -\>
-            also improve general company autocompletion flow and trigger
-            it only on user request
+        1.  emacs: clean up `~/.spacemacs.d` and make it organized as
+            per blogpost with various sections
 
-        2.  work on improving personal org mode tricks and standards
-
-        3.  consider running emacs as a service to have everything
+        2.  consider running emacs as a service to have everything
             synchronized in one run
 
     3.  i3
