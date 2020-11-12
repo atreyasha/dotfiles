@@ -13,7 +13,8 @@ Tasks
 
     1.  **TODO** fix spacemacs conflicts with auto-completion
         and elpy -\> also improve general company autocompletion flow
-        and trigger it only on user request
+        and trigger it only on user request -\> need to understand
+        keybindings better to make this work
 
     2.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
         up -\> would require understanding each line and then deleting
@@ -28,7 +29,8 @@ Tasks
     2.  emacs
 
         1.  emacs: clean up `~/.spacemacs.d` and make it organized as
-            per blogpost with various sections
+            per blogpost with various sections -\> will take time and
+            effort
 
         2.  consider running emacs as a service to have everything
             synchronized in one run
