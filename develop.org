@@ -5,9 +5,8 @@
 ** Tasks
 *** Dotfiles
 **** Current
-***** TODO sort out gpg-agent forgetting keys issue
+***** TODO add user flag to pgrep i3lock cases -> just to make this safer
 ***** TODO emacs: clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections
-***** TODO make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions
 ***** bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones
 
 **** Long-term
@@ -18,6 +17,7 @@
 ****** work on improving personal org mode tricks and standards
 ****** consider running emacs as a service to have everything synchronized in one run
 ***** i3
+****** make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions
 ****** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
 ****** problems with xset dpms when waking from sleep -> perhaps add sleep 1 and then wake dpms
 ***** shell
@@ -36,6 +36,10 @@
 ***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
       
 ** Completed
+***** DONE fix tmux portability and xclip copy issues -> reverted to keep xsel
+      CLOSED: [2020-11-12 Thu 02:31]
+***** DONE sort out gpg-agent forgetting keys issue -> most likely arises from reloadagent command in shell logout scripts
+      CLOSED: [2020-11-12 Thu 01:26]
 ***** DONE gpg-agent dying randomly again -> put GPG_TTY in .zshenv and somewhere important for bash -> add if statement for logout gpg-agent
       CLOSED: [2020-11-11 Wed 20:32]
 ***** DONE invest in a minimal tmux configuration file

@@ -11,16 +11,13 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** sort out gpg-agent forgetting keys issue
+    1.  **TODO** add user flag to pgrep i3lock cases -\> just
+        to make this safer
 
     2.  **TODO** emacs: clean up `~/.spacemacs.d` and make it
         organized as per blogpost with various sections
 
-    3.  **TODO** make all audio channels muted at boot (now
-        only main channel is muted) -\> very complicated because of
-        pulseaudio and alsa simultaneous actions
-
-    4.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
+    3.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
         up -\> would require understanding each line and then deleting
         unnecessary ones
 
@@ -43,11 +40,15 @@ Tasks
 
     3.  i3
 
-        1.  think about using xautolock/xss-lock to circumvent some
+        1.  make all audio channels muted at boot (now only main channel
+            is muted) -\> very complicated because of pulseaudio and
+            alsa simultaneous actions
+
+        2.  think about using xautolock/xss-lock to circumvent some
             manual pid checking and possibly extra sleep:
             <https://github.com/i3/i3lock/issues/275>
 
-        2.  problems with xset dpms when waking from sleep -\> perhaps
+        3.  problems with xset dpms when waking from sleep -\> perhaps
             add sleep 1 and then wake dpms
 
     4.  shell
@@ -87,6 +88,16 @@ Tasks
 
 Completed
 ---------
+
+**DONE** fix tmux portability and xclip copy issues -\>
+reverted to keep xsel
+
+**CLOSED:** *\[2020-11-12 Thu 02:31\]*
+
+**DONE** sort out gpg-agent forgetting keys issue -\> most
+likely arises from reloadagent command in shell logout scripts
+
+**CLOSED:** *\[2020-11-12 Thu 01:26\]*
 
 **DONE** gpg-agent dying randomly again -\> put GPG_TTY in
 .zshenv and somewhere important for bash -\> add if statement for logout
