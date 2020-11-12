@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
-# check for running i3lock
-pid="$(pgrep -x i3lock)"
-
 # execute if no i3lock present
-if [ -z "$pid" ]; then
+if ! pgrep -u "$USER" -x i3lock &>/dev/null; then
   revert() {
     xset dpms 300 300 300
   }

@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
 
-# check for monitor connections
-dp="$(xrandr | grep -e "^DP" | cut -d " " -f 2 | grep -w "connected")"
-vga="$(xrandr | grep -e "^VGA" | cut -d " " -f 2 | grep -w "connected")"
+# find number of connected monitors
+number_connected=$(xrandr | cut -d " " -f 2 | grep -w -c "connected")
+mapfile -t matches < <(find "$HOME/.screenlayout/" -type f -name "*${number_connected}.sh")
 
 # execute based on connection types
-if [ -z "$dp" ] && [ -z "$vga" ]; then
-  "$HOME/.screenlayout/home_1.sh"
-elif [ -z "$dp" ] && [ -n "$vga" ]; then
-  "$HOME/.screenlayout/home_2.sh"
-elif [ -n "$dp" ] && [ -z "$vga" ]; then
-  "$HOME/.screenlayout/home_2.sh"
+if ((${#matches[@]})); then
+  "${matches[0]}"
 else
   xrandr --auto
 fi

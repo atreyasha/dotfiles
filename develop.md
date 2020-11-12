@@ -11,19 +11,16 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** add user flag to pgrep i3lock cases -\> just
-        to make this safer
-
-    2.  **TODO** emacs: clean up `~/.spacemacs.d` and make it
+    1.  **TODO** emacs: clean up `~/.spacemacs.d` and make it
         organized as per blogpost with various sections
 
-    3.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
+    2.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
         up -\> would require understanding each line and then deleting
         unnecessary ones
 
 2.  Long-term
 
-    1.  Pam
+    1.  pam
 
         1.  use pam environment to cache passphrase for ssh and gpg keys
 
@@ -66,15 +63,18 @@ Tasks
         1.  synchronize mime system program defaults to same as
             ranger\'s rifle
 
-    6.  general
+    6.  system
 
-        1.  make scripts determine activee \$DISPLAY environmental
-            variable instead of hard-coding
+        1.  make scripts determine active \$DISPLAY environmental
+            variable instead of hard-coding -\> use for cases where
+            necessary
 
-        2.  port gnupg, ssh, neomutt private dotfiles to private stow
+    7.  general
+
+        1.  port gnupg, ssh, neomutt private dotfiles to private stow
             repo
 
-        3.  reduce the number of dotfiles for a leaner installation
+        2.  reduce the number of dotfiles for a leaner installation
 
 ### System reproducibility
 
@@ -88,6 +88,22 @@ Tasks
 
 Completed
 ---------
+
+**DONE** add user flags to pgrep i3lock cases -\> improve
+other shell scripts too
+
+**CLOSED:** *\[2020-11-12 Thu 14:46\]*
+
+**DONE** clear shell output when logging out -\> useful for
+ssh connections, see debian template -\> useful to have to override
+existing default which may be confusing -\> don\'t do this
+
+**CLOSED:** *\[2020-11-12 Thu 13:17\]*
+
+**DONE** streamline and unify the usage of xsel and xclip -\>
+decided to keep both options as both come in handy
+
+**CLOSED:** *\[2020-11-12 Thu 12:57\]*
 
 **DONE** fix tmux portability and xclip copy issues -\>
 reverted to keep xsel

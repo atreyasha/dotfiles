@@ -5,12 +5,11 @@
 ** Tasks
 *** Dotfiles
 **** Current
-***** TODO add user flag to pgrep i3lock cases -> just to make this safer
 ***** TODO emacs: clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections
 ***** bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones
-
+      
 **** Long-term
-***** Pam
+***** pam
 ****** use pam environment to cache passphrase for ssh and gpg keys
 ***** emacs
 ****** fix spacemacs conflicts with auto-completion and elpy -> also improve general company autocompletion flow and trigger it only on user request
@@ -26,8 +25,9 @@
 ****** special shell-check to ensure all shell tildes are replaced with $HOME
 ***** mimeapps
 ****** synchronize mime system program defaults to same as ranger's rifle
+***** system
+****** make scripts determine active $DISPLAY environmental variable instead of hard-coding -> use for cases where necessary
 ***** general
-****** make scripts determine activee $DISPLAY environmental variable instead of hard-coding
 ****** port gnupg, ssh, neomutt private dotfiles to private stow repo
 ****** reduce the number of dotfiles for a leaner installation
 
@@ -36,6 +36,12 @@
 ***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
       
 ** Completed
+***** DONE add user flags to pgrep i3lock cases -> improve other shell scripts too
+      CLOSED: [2020-11-12 Thu 14:46]
+***** DONE clear shell output when logging out -> useful for ssh connections, see debian template -> useful to have to override existing default which may be confusing -> don't do this
+      CLOSED: [2020-11-12 Thu 13:17]
+***** DONE streamline and unify the usage of xsel and xclip -> decided to keep both options as both come in handy
+      CLOSED: [2020-11-12 Thu 12:57]
 ***** DONE fix tmux portability and xclip copy issues -> reverted to keep xsel
       CLOSED: [2020-11-12 Thu 02:31]
 ***** DONE sort out gpg-agent forgetting keys issue -> most likely arises from reloadagent command in shell logout scripts

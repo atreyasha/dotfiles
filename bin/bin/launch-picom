@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
-# check for running picom
-pid="$(pgrep -x picom)"
-
-# conditionals for launching picom
-if [ -z "$pid" ]; then
+# conditionas for launching picom
+if ! pgrep -u "$USER" -x picom &>/dev/null; then
   sleep 1.5
 else
-  pkill -x picom
+  pkill -u "$USER" -x picom
 fi
 
 # launch picom

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# check for wifi
+# create wifi variable
 wifi="$(nmcli radio wifi)"
 
 # execute based on current wifi status
@@ -10,5 +10,5 @@ else
   nmcli radio wifi off
 fi
 
-# refresh i3blocks
-pkill -SIGRTMIN+8 i3blocks
+# refresh i3blocks internet
+refresh-i3blocks-internet
