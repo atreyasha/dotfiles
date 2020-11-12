@@ -120,6 +120,3 @@ alias ll='ls -al'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
-# required when reloading interactive shells
-export GPG_TTY="$(tty)"
