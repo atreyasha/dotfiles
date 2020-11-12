@@ -141,9 +141,6 @@ if command -v neomutt &>/dev/null; then
   bindkey -s '^n' '^qneomutt^m'
 fi
 
-# source zsh-clipboard to be able to use system clipboard
-source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
-
 # configure aliases
 alias ls='ls --color=auto'
 alias ll='ls -al'
@@ -152,3 +149,6 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias vpn_uzh='sudo openconnect --authgroup=ALL --background uzhvpn1.uzh.ch'
 alias vpn_up='sudo openconnect --authgroup=sslvpn --background sslvpn.uni-potsdam.de'
+
+# source zsh-clipboard to be able to use system clipboard
+source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
