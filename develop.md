@@ -16,7 +16,11 @@ Tasks
         and trigger it only on user request -\> need to understand
         keybindings better to make this work
 
-    2.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
+    2.  **TODO** make all audio channels muted at boot (now
+        only main channel is muted) -\> very complicated because of
+        pulseaudio and alsa simultaneous actions
+
+    3.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
         up -\> would require understanding each line and then deleting
         unnecessary ones
 
@@ -37,15 +41,11 @@ Tasks
 
     3.  i3
 
-        1.  make all audio channels muted at boot (now only main channel
-            is muted) -\> very complicated because of pulseaudio and
-            alsa simultaneous actions
-
-        2.  think about using xautolock/xss-lock to circumvent some
+        1.  think about using xautolock/xss-lock to circumvent some
             manual pid checking and possibly extra sleep:
             <https://github.com/i3/i3lock/issues/275>
 
-        3.  problems with xset dpms when waking from sleep -\> perhaps
+        2.  problems with xset dpms when waking from sleep -\> perhaps
             add sleep 1 and then wake dpms
 
     4.  shell

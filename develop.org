@@ -6,6 +6,7 @@
 *** Dotfiles
 **** Current
 ***** TODO fix spacemacs conflicts with auto-completion and elpy -> also improve general company autocompletion flow and trigger it only on user request -> need to understand keybindings better to make this work
+***** TODO make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions
 ***** bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones
       
 **** Long-term
@@ -15,7 +16,6 @@
 ****** emacs: clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> will take time and effort
 ****** consider running emacs as a service to have everything synchronized in one run
 ***** i3
-****** make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions
 ****** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
 ****** problems with xset dpms when waking from sleep -> perhaps add sleep 1 and then wake dpms
 ***** shell
