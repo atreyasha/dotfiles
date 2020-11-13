@@ -67,9 +67,9 @@ values."
                 python-shell-interpreter-args "-i --simple-prompt"
                 elpy-shell-echo-output nil
                 elpy-rpc-virtualenv-path "~/.spacemacs.d/rpc/elpy/rpc-venv")
-     (auto-completion :variables
-                      auto-completion-complete-with-key-sequence nil
-                      auto-completion-idle-delay nil)
+     ;; (auto-completion :variables
+     ;;                  auto-completion-complete-with-key-sequence nil
+     ;;                  auto-completion-idle-delay nil)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -338,14 +338,6 @@ you should place your code here."
   (add-hook 'ess-mode-hook 'column-enforce-mode)
   ;; wrapping for org-mode lines
   (add-hook 'org-mode-hook 'visual-line-mode)
-  ;; configure auto-completion for elpy
-  (add-hook 'elpy-mode-hook
-            '(lambda ()
-               (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)))
-  ;; configure auto-completion for other layers using company-mode
-  (add-hook 'company-mode-hook
-            '(lambda ()
-               (local-set-key (kbd "M-<tab>") 'helm-company)))
   ;; re-enables native ipython completion to prevent text flooding issue
   (eval-after-load 'python
     '(setq python-shell-completion-native-disabled-interpreters
