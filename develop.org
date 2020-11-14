@@ -5,7 +5,6 @@
 ** Tasks
 *** Dotfiles
 **** Current
-***** TODO fix spacemacs conflicts with auto-completion and elpy -> also improve general company autocompletion flow and trigger it only on user request -> need to understand keybindings better to make this work
 ***** TODO make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions
 ***** bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones
       
@@ -13,7 +12,8 @@
 ***** pam
 ****** use pam environment to cache passphrase for ssh and gpg keys
 ***** emacs
-****** emacs: clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> will take time and effort
+****** migrate to lightweight and lean personal emacs configuration which would be optimized with time
+****** clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> will take time and effort
 ****** consider running emacs as a service to have everything synchronized in one run
 ***** i3
 ****** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
@@ -35,6 +35,8 @@
 ***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
       
 ** Completed
+***** DONE local hack: fix spacemacs conflicts with auto-completion and elpy -> also improve general company autocompletion flow and trigger it only on user request -> need to understand keybindings better to make this work
+      CLOSED: [2020-11-14 Sat 13:05]
 ***** DONE add user flags to pgrep i3lock cases -> improve other shell scripts too
       CLOSED: [2020-11-12 Thu 14:46]
 ***** DONE clear shell output when logging out -> useful for ssh connections, see debian template -> useful to have to override existing default which may be confusing -> don't do this

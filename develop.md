@@ -11,16 +11,11 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** fix spacemacs conflicts with auto-completion
-        and elpy -\> also improve general company autocompletion flow
-        and trigger it only on user request -\> need to understand
-        keybindings better to make this work
-
-    2.  **TODO** make all audio channels muted at boot (now
+    1.  **TODO** make all audio channels muted at boot (now
         only main channel is muted) -\> very complicated because of
         pulseaudio and alsa simultaneous actions
 
-    3.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
+    2.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
         up -\> would require understanding each line and then deleting
         unnecessary ones
 
@@ -32,11 +27,13 @@ Tasks
 
     2.  emacs
 
-        1.  emacs: clean up `~/.spacemacs.d` and make it organized as
-            per blogpost with various sections -\> will take time and
-            effort
+        1.  migrate to lightweight and lean personal emacs configuration
+            which would be optimized with time
 
-        2.  consider running emacs as a service to have everything
+        2.  clean up `~/.spacemacs.d` and make it organized as per
+            blogpost with various sections -\> will take time and effort
+
+        3.  consider running emacs as a service to have everything
             synchronized in one run
 
     3.  i3
@@ -88,6 +85,13 @@ Tasks
 
 Completed
 ---------
+
+**DONE** local hack: fix spacemacs conflicts with
+auto-completion and elpy -\> also improve general company autocompletion
+flow and trigger it only on user request -\> need to understand
+keybindings better to make this work
+
+**CLOSED:** *\[2020-11-14 Sat 13:05\]*
 
 **DONE** add user flags to pgrep i3lock cases -\> improve
 other shell scripts too
