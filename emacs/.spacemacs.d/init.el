@@ -61,7 +61,6 @@ values."
             latex-enable-auto-fill nil
             latex-enable-magic nil
             latex-build-command "LatexMk")
-     ;; load local elpy layer
      (elpy-plus :location local
                 :variables python-shell-interpreter "ipython"
                 python-shell-interpreter-args "-i --simple-prompt"
