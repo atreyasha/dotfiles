@@ -341,9 +341,11 @@ you should place your code here."
   (eval-after-load 'python
     '(setq python-shell-completion-native-disabled-interpreters
            (delete "ipython" python-shell-completion-native-disabled-interpreters)))
+  ;; modify company-complete to helm-company for elpy
   (add-hook 'elpy-mode-hook
             '(lambda ()
                (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)))
+  ;; modify company-complete to helm-company for other layers using company
   (add-hook 'company-mode-hook
             '(lambda ()
                (local-set-key (kbd "M-<tab>") 'helm-company)))

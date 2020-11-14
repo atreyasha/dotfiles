@@ -11,11 +11,21 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** make all audio channels muted at boot (now
-        only main channel is muted) -\> very complicated because of
-        pulseaudio and alsa simultaneous actions
+    1.  **TODO** i3: make all audio channels muted at boot
+        (now only main channel is muted) -\> very complicated because of
+        pulseaudio and alsa simultaneous actions:
+        <https://github.com/alsa-project/alsa-utils/issues/72>
 
-    2.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
+    2.  **TODO** emacs: fix reftex citation to give
+        suggestions without initial regex:
+        <https://github.com/TheBB/company-reftex/issues/7>
+
+    3.  **TODO** emacs: improve autocompletions of latex
+        layer -\> some items such as \\cite and \\section are missing in
+        company but present with helm:
+        <https://github.com/syl20bnr/spacemacs/issues/14134>
+
+    4.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
         up -\> would require understanding each line and then deleting
         unnecessary ones
 
