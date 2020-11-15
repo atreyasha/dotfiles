@@ -23,7 +23,10 @@ Tasks
     3.  **TODO** emacs: improve autocompletions of latex
         layer -\> some items such as \\cite and \\section are missing in
         company but present with helm:
-        <https://github.com/syl20bnr/spacemacs/issues/14134>
+        <https://github.com/syl20bnr/spacemacs/issues/14134> -\> has to
+        do with orders of company-completions which are wrong -\>
+        solution is either to create new layer or modify
+        `company-backends` variable post-initialization
 
     4.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
         up -\> would require understanding each line and then deleting

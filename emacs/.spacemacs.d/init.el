@@ -36,6 +36,7 @@ values."
    ;; ---------------------------------------------------------------
    dotspacemacs-configuration-layers
    '(
+     org
      bibtex
      ruby
      html
@@ -43,7 +44,6 @@ values."
      helm
      emacs-lisp
      themes-megapack
-     org
      (ess :variables ess-use-flymake nil
           ess-indent-with-fancy-comments nil
           ess-eval-visibly 'nowait)
@@ -54,21 +54,21 @@ values."
              shell-default-position 'bottom)
      (spell-checking :variables spell-checking-enable-by-default nil
                      spell-checking-enable-auto-dictionary t)
-     (syntax-checking :variables
-                      syntax-checking-enable-by-default nil
-                      syntax-checking-enable-tooltips nil)
      (latex :variables
             latex-enable-auto-fill nil
             latex-enable-magic nil
             latex-build-command "LatexMk")
+     (syntax-checking :variables
+                      syntax-checking-enable-by-default nil
+                      syntax-checking-enable-tooltips nil)
+     (auto-completion :variables
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-idle-delay nil)
      (elpy-plus :location local
                 :variables python-shell-interpreter "ipython"
                 python-shell-interpreter-args "-i --simple-prompt"
                 elpy-shell-echo-output nil
                 elpy-rpc-virtualenv-path "~/.spacemacs.d/rpc/elpy/rpc-venv")
-     (auto-completion :variables
-                      auto-completion-complete-with-key-sequence nil
-                      auto-completion-idle-delay nil)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these

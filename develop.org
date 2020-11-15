@@ -7,7 +7,7 @@
 **** Current
 ***** TODO i3: make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions: https://github.com/alsa-project/alsa-utils/issues/72
 ***** TODO emacs: fix reftex citation to give suggestions without initial regex: https://github.com/TheBB/company-reftex/issues/7   
-***** TODO emacs: improve autocompletions of latex layer -> some items such as \cite and \section are missing in company but present with helm: https://github.com/syl20bnr/spacemacs/issues/14134
+***** TODO emacs: improve autocompletions of latex layer -> some items such as \cite and \section are missing in company but present with helm: https://github.com/syl20bnr/spacemacs/issues/14134 -> has to do with orders of company-completions which are wrong -> solution is either to create new layer or modify =company-backends= variable post-initialization
 ***** bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones
       
 **** Long-term
