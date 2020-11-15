@@ -6,10 +6,14 @@
 *** Dotfiles
 **** Current
 ***** TODO i3: make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions: https://github.com/alsa-project/alsa-utils/issues/72
-***** TODO emacs: fix reftex citation to give suggestions without initial regex: https://github.com/TheBB/company-reftex/issues/7   
-***** TODO emacs: improve autocompletions of latex layer -> some items such as \cite and \section are missing in company but present with helm: https://github.com/syl20bnr/spacemacs/issues/14134 -> has to do with orders of company-completions which are wrong -> solution is either to create new layer or modify =company-backends= variable post-initialization
+***** TODO emacs: fix reftex citation to give suggestions without initial regex: https://github.com/TheBB/company-reftex/issues/7
+****** change line 214 from =company-reftex-labels= to =company-reftex-citations=
+****** additional problem of cite command with no completion -> related to =reftex-extract-bib-entries-from-thebibliography= definition in reftex -> try to find work-around for empty regex or other cases
+***** TODO emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
+****** wrong order of company-completions -> brute-force solution is to create new layer
+****** lighter solution is to modify =company-backends= variable post-initialization
 ***** bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones
-      
+ 
 **** Long-term
 ***** pam
 ****** use pam environment to cache passphrase for ssh and gpg keys

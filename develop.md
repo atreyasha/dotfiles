@@ -20,13 +20,22 @@ Tasks
         suggestions without initial regex:
         <https://github.com/TheBB/company-reftex/issues/7>
 
+        1.  change line 214 from `company-reftex-labels` to
+            `company-reftex-citations`
+
+        2.  additional problem of cite command with no completion -\>
+            related to `reftex-extract-bib-entries-from-thebibliography`
+            definition in reftex -\> try to find work-around for empty
+            regex or other cases
+
     3.  **TODO** emacs: improve autocompletions of latex
-        layer -\> some items such as \\cite and \\section are missing in
-        company but present with helm:
-        <https://github.com/syl20bnr/spacemacs/issues/14134> -\> has to
-        do with orders of company-completions which are wrong -\>
-        solution is either to create new layer or modify
-        `company-backends` variable post-initialization
+        layer: <https://github.com/syl20bnr/spacemacs/issues/14134>
+
+        1.  wrong order of company-completions -\> brute-force solution
+            is to create new layer
+
+        2.  lighter solution is to modify `company-backends` variable
+            post-initialization
 
     4.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
         up -\> would require understanding each line and then deleting
