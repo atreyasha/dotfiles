@@ -28,6 +28,9 @@ Tasks
             definition in reftex -\> try to find work-around for empty
             regex or other cases
 
+        3.  need to add condition where when prefix is an empty regex
+            -\> then simply list all bib candidates
+
     3.  **TODO** emacs: improve autocompletions of latex
         layer: <https://github.com/syl20bnr/spacemacs/issues/14134>
 
@@ -50,13 +53,14 @@ Tasks
     2.  emacs
 
         1.  migrate to lightweight and lean personal emacs configuration
-            which would be optimized with time
+            which would be optimized with time -\> this might help
+            circumvent many bugs encountered
 
-        2.  clean up `~/.spacemacs.d` and make it organized as per
-            blogpost with various sections -\> will take time and effort
-
-        3.  consider running emacs as a service to have everything
+        2.  consider running emacs as a service to have everything
             synchronized in one run
+
+        3.  clean up `~/.spacemacs.d` and make it organized as per
+            blogpost with various sections -\> will take time and effort
 
     3.  i3
 
