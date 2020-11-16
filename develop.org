@@ -5,23 +5,21 @@
 ** Tasks
 *** Dotfiles
 **** Current
-***** TODO i3: make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions: https://github.com/alsa-project/alsa-utils/issues/72
+***** TODO bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones
 ***** TODO emacs: fix reftex citation to give suggestions without initial regex: https://github.com/TheBB/company-reftex/issues/7
-****** change line 214 from =company-reftex-labels= to =company-reftex-citations=
-****** additional problem of cite command with no completion -> related to =reftex-extract-bib-entries-from-thebibliography= definition in reftex -> try to find work-around for empty regex or other cases
-****** need to add condition where when prefix is an empty regex -> then simply list all bib candidates
-***** TODO emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
+****** add workflow to handle spaces as well -> this normally throws errors of empty regular expression
+***** i3: make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions: https://github.com/alsa-project/alsa-utils/issues/72
+***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** wrong order of company-completions -> brute-force solution is to create new layer
 ****** lighter solution is to modify =company-backends= variable post-initialization
-***** bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones
  
 **** Long-term
 ***** pam
 ****** use pam environment to cache passphrase for ssh and gpg keys
 ***** emacs
 ****** migrate to lightweight and lean personal emacs configuration which would be optimized with time -> this might help circumvent many bugs encountered
-****** consider running emacs as a service to have everything synchronized in one run
 ****** clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> will take time and effort
+****** consider running emacs as a service to have everything synchronized in one run
 ***** i3
 ****** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
 ****** problems with xset dpms when waking from sleep -> perhaps add sleep 1 and then wake dpms

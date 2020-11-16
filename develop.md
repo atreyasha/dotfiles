@@ -11,38 +11,30 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** i3: make all audio channels muted at boot
-        (now only main channel is muted) -\> very complicated because of
-        pulseaudio and alsa simultaneous actions:
-        <https://github.com/alsa-project/alsa-utils/issues/72>
+    1.  **TODO** bash/zsh: reduce redundant code in bash/zsh
+        and clean workflows up -\> would require understanding each line
+        and then deleting unnecessary ones
 
     2.  **TODO** emacs: fix reftex citation to give
         suggestions without initial regex:
         <https://github.com/TheBB/company-reftex/issues/7>
 
-        1.  change line 214 from `company-reftex-labels` to
-            `company-reftex-citations`
+        1.  add workflow to handle spaces as well -\> this normally
+            throws errors of empty regular expression
 
-        2.  additional problem of cite command with no completion -\>
-            related to `reftex-extract-bib-entries-from-thebibliography`
-            definition in reftex -\> try to find work-around for empty
-            regex or other cases
+    3.  i3: make all audio channels muted at boot (now only main channel
+        is muted) -\> very complicated because of pulseaudio and alsa
+        simultaneous actions:
+        <https://github.com/alsa-project/alsa-utils/issues/72>
 
-        3.  need to add condition where when prefix is an empty regex
-            -\> then simply list all bib candidates
-
-    3.  **TODO** emacs: improve autocompletions of latex
-        layer: <https://github.com/syl20bnr/spacemacs/issues/14134>
+    4.  emacs: improve autocompletions of latex layer:
+        <https://github.com/syl20bnr/spacemacs/issues/14134>
 
         1.  wrong order of company-completions -\> brute-force solution
             is to create new layer
 
         2.  lighter solution is to modify `company-backends` variable
             post-initialization
-
-    4.  bash/zsh: reduce redundant code in bash/zsh and clean workflows
-        up -\> would require understanding each line and then deleting
-        unnecessary ones
 
 2.  Long-term
 
@@ -56,11 +48,11 @@ Tasks
             which would be optimized with time -\> this might help
             circumvent many bugs encountered
 
-        2.  consider running emacs as a service to have everything
-            synchronized in one run
-
-        3.  clean up `~/.spacemacs.d` and make it organized as per
+        2.  clean up `~/.spacemacs.d` and make it organized as per
             blogpost with various sections -\> will take time and effort
+
+        3.  consider running emacs as a service to have everything
+            synchronized in one run
 
     3.  i3
 
