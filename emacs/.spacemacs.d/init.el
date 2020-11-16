@@ -347,6 +347,9 @@ you should place your code here."
   (with-eval-after-load 'python
     (setq python-shell-completion-native-disabled-interpreters
           (delete "ipython" python-shell-completion-native-disabled-interpreters)))
+  ;; remove redundant reftex cross-references
+  (with-eval-after-load 'latex
+    (setq reftex-auto-view-crossref nil))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

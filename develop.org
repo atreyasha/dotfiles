@@ -6,8 +6,6 @@
 *** Dotfiles
 **** Current
 ***** TODO bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones
-***** TODO emacs: fix reftex citation to give suggestions without initial regex: https://github.com/TheBB/company-reftex/issues/7
-****** add workflow to handle spaces as well -> this normally throws errors of empty regular expression
 ***** i3: make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions: https://github.com/alsa-project/alsa-utils/issues/72
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** wrong order of company-completions -> brute-force solution is to create new layer
@@ -18,6 +16,7 @@
 ****** use pam environment to cache passphrase for ssh and gpg keys
 ***** emacs
 ****** migrate to lightweight and lean personal emacs configuration which would be optimized with time -> this might help circumvent many bugs encountered
+****** think about adding workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") as well in =company-reftex-citation-candidates=
 ****** clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> will take time and effort
 ****** consider running emacs as a service to have everything synchronized in one run
 ***** i3

@@ -15,19 +15,12 @@ Tasks
         and clean workflows up -\> would require understanding each line
         and then deleting unnecessary ones
 
-    2.  **TODO** emacs: fix reftex citation to give
-        suggestions without initial regex:
-        <https://github.com/TheBB/company-reftex/issues/7>
-
-        1.  add workflow to handle spaces as well -\> this normally
-            throws errors of empty regular expression
-
-    3.  i3: make all audio channels muted at boot (now only main channel
+    2.  i3: make all audio channels muted at boot (now only main channel
         is muted) -\> very complicated because of pulseaudio and alsa
         simultaneous actions:
         <https://github.com/alsa-project/alsa-utils/issues/72>
 
-    4.  emacs: improve autocompletions of latex layer:
+    3.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
         1.  wrong order of company-completions -\> brute-force solution
@@ -48,10 +41,15 @@ Tasks
             which would be optimized with time -\> this might help
             circumvent many bugs encountered
 
-        2.  clean up `~/.spacemacs.d` and make it organized as per
+        2.  think about adding workflow to handle spaces, make case
+            unsensitive and parse bibliography codes better (eg.
+            \"doran2017does\" from \"do\") as well in
+            `company-reftex-citation-candidates`
+
+        3.  clean up `~/.spacemacs.d` and make it organized as per
             blogpost with various sections -\> will take time and effort
 
-        3.  consider running emacs as a service to have everything
+        4.  consider running emacs as a service to have everything
             synchronized in one run
 
     3.  i3
