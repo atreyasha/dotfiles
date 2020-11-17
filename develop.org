@@ -16,7 +16,8 @@
 ****** use pam environment to cache passphrase for ssh and gpg keys
 ***** emacs
 ****** migrate to lightweight and lean personal emacs configuration which would be optimized with time -> this might help circumvent many bugs encountered
-****** think about adding workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") as well in =company-reftex-citation-candidates=
+****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in =company-reftex-citation-candidates=   
+****** add package (eg. =(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))=) in =dotspacemacs-additional-packages= and update packages, delete old package location
 ****** clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> will take time and effort
 ****** consider running emacs as a service to have everything synchronized in one run
 ***** i3

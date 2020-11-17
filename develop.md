@@ -41,15 +41,20 @@ Tasks
             which would be optimized with time -\> this might help
             circumvent many bugs encountered
 
-        2.  think about adding workflow to handle spaces, make case
+        2.  think about improving workflow to handle spaces, make case
             unsensitive and parse bibliography codes better (eg.
-            \"doran2017does\" from \"do\") as well in
+            \"doran2017does\" from \"do\") in
             `company-reftex-citation-candidates`
 
-        3.  clean up `~/.spacemacs.d` and make it organized as per
+        3.  add package (eg.
+            `(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))`)
+            in `dotspacemacs-additional-packages` and update packages,
+            delete old package location
+
+        4.  clean up `~/.spacemacs.d` and make it organized as per
             blogpost with various sections -\> will take time and effort
 
-        4.  consider running emacs as a service to have everything
+        5.  consider running emacs as a service to have everything
             synchronized in one run
 
     3.  i3
