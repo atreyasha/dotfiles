@@ -1,7 +1,7 @@
 #+STARTUP: overview
 #+OPTIONS: ^:nil
 #+OPTIONS: p:t
- 
+
 ** Tasks
 *** Dotfiles
 **** Current
@@ -38,6 +38,8 @@
 ***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
       
 ** Completed
+***** DONE look into conflicting tabbing and insert behaviour for latex enumerate/itemize environment + newline on comments leading to comments becoming non-comments
+      CLOSED: [2020-11-17 Tue 14:38]
 ***** DONE local hack: fix spacemacs conflicts with auto-completion and elpy -> also improve general company autocompletion flow and trigger it only on user request -> need to understand keybindings better to make this work
       CLOSED: [2020-11-14 Sat 13:05]
 ***** DONE add user flags to pgrep i3lock cases -> improve other shell scripts too

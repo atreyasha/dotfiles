@@ -104,6 +104,12 @@ Tasks
 Completed
 ---------
 
+**DONE** look into conflicting tabbing and insert behaviour
+for latex enumerate/itemize environment + newline on comments leading to
+comments becoming non-comments
+
+**CLOSED:** *\[2020-11-17 Tue 14:38\]*
+
 **DONE** local hack: fix spacemacs conflicts with
 auto-completion and elpy -\> also improve general company autocompletion
 flow and trigger it only on user request -\> need to understand
