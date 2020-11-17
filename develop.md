@@ -31,33 +31,28 @@ Tasks
 
 2.  Long-term
 
-    1.  pam
+    1.  emacs
 
-        1.  use pam environment to cache passphrase for ssh and gpg keys
-
-    2.  emacs
-
-        1.  migrate to lightweight and lean personal emacs configuration
-            which would be optimized with time -\> this might help
-            circumvent many bugs encountered
+        1.  clean up `~/.spacemacs.d` and make it organized as per
+            blogpost with various sections -\> will take time and effort
 
         2.  think about improving workflow to handle spaces, make case
             unsensitive and parse bibliography codes better (eg.
             \"doran2017does\" from \"do\") in
-            `company-reftex-citation-candidates`
-
-        3.  add package (eg.
+            `company-reftex-citation-candidates`, for development add
+            package (eg.
             `(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))`)
             in `dotspacemacs-additional-packages` and update packages,
             delete old package location
 
-        4.  clean up `~/.spacemacs.d` and make it organized as per
-            blogpost with various sections -\> will take time and effort
-
-        5.  consider running emacs as a service to have everything
+        3.  consider running emacs as a service to have everything
             synchronized in one run
 
-    3.  i3
+        4.  migrate to lightweight and lean personal emacs configuration
+            which would be optimized with time -\> this might help
+            circumvent many bugs encountered
+
+    2.  i3
 
         1.  think about using xautolock/xss-lock to circumvent some
             manual pid checking and possibly extra sleep:
@@ -66,7 +61,7 @@ Tasks
         2.  problems with xset dpms when waking from sleep -\> perhaps
             add sleep 1 and then wake dpms
 
-    4.  shell
+    3.  shell
 
         1.  consider using different configs for remote and local shells
             by sectioning into personal, core, etc
@@ -76,23 +71,25 @@ Tasks
         3.  special shell-check to ensure all shell tildes are replaced
             with \$HOME
 
-    5.  mimeapps
+    4.  mimeapps
 
         1.  synchronize mime system program defaults to same as
             ranger\'s rifle
 
-    6.  system
+    5.  system(d)
 
         1.  make scripts determine active \$DISPLAY environmental
             variable instead of hard-coding -\> use for cases where
             necessary
 
-    7.  general
+    6.  general
 
-        1.  port gnupg, ssh, neomutt private dotfiles to private stow
+        1.  use pam environment to cache passphrase for ssh and gpg keys
+
+        2.  port gnupg, ssh, neomutt private dotfiles to private stow
             repo
 
-        2.  reduce the number of dotfiles for a leaner installation
+        3.  reduce the number of dotfiles for a leaner installation
 
 ### System reproducibility
 

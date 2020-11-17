@@ -16,6 +16,6 @@
   url = https://github.com/syl20bnr/spacemacs.git
   branch = develop
 [submodule "emacs/.spacemacs.d/layers/spacemacs-elpy"]
-	path = emacs/.spacemacs.d/layers/spacemacs-elpy
-	url = https://github.com/atreyasha/spacemacs-elpy.git
-	branch = main
+  path = emacs/.spacemacs.d/layers/spacemacs-elpy
+  url = https://github.com/atreyasha/spacemacs-elpy.git
+  branch = main
