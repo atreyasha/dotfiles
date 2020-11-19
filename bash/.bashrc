@@ -1,10 +1,6 @@
 # if not running interactively, don't do anything
 [[ $- == *i* ]] || return
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
 # append to the history file, don't overwrite it
 shopt -s histappend
 

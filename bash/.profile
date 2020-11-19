@@ -1,5 +1,9 @@
-# declare important environmental variables
+# bash command-history parameters
+export HISTSIZE=1000
+export HISTFILESIZE=2000
 export HISTCONTROL="erasedups"
+
+# declare important environmental variables
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export EDITOR="vim"
 export TERMINAL="termite"
