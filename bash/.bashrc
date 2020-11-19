@@ -20,22 +20,10 @@ xterm-termite)
   color_prompt="yes"
   tic -x "$HOME/.config/termite/termite.terminfo"
   ;;
+*)
+  color_prompt="yes"
+  ;;
 esac
-
-# option to force color prompt, for example in the login console
-force_color_prompt="yes"
-
-# workflow to force color prompt
-if [ "$force_color_prompt" == "yes" ]; then
-  if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    # we have color support; assume it's compliant with Ecma-48
-    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-    # a case would tend to support setf rather than setaf.)
-    color_prompt="yes"
-  else
-    color_prompt="no"
-  fi
-fi
 
 # create (un)colorized command-line prompt
 if [ "$color_prompt" == "yes" ]; then
@@ -43,7 +31,7 @@ if [ "$color_prompt" == "yes" ]; then
 else
   PS1='\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
+unset color_prompt
 
 # configure dircolors
 if [ ! -f "$HOME/.dircolors" ]; then
