@@ -1,4 +1,5 @@
 # declare important environmental variables
+export HISTCONTROL="erasedups"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export EDITOR="vim"
 export TERMINAL="termite"
