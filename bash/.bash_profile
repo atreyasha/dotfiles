@@ -1,6 +1,7 @@
 # bash command-history parameters
-export HISTSIZE=5000
-export HISTFILESIZE=10000
+export HISTSIZE="5000"
+export HISTFILESIZE="10000"
+export HISTFILE="$HOME/.bash_history"
 export HISTCONTROL="ignoredups"
 export HISTTIMEFORMAT="%F %T: "
 

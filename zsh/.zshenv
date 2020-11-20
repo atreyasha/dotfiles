@@ -1,6 +1,6 @@
 # configure history settings
-export HISTSIZE=5000
-export SAVEHIST=10000
+export HISTSIZE="5000"
+export SAVEHIST="10000"
 export HISTFILE="$HOME/.zsh_history"
 setopt extended_history
 setopt hist_ignore_dups
@@ -8,7 +8,7 @@ setopt hist_find_no_dups
 setopt share_history
 
 # configure low delay for vim mode change
-export KEYTIMEOUT=1
+export KEYTIMEOUT="1"
 
 # declare important environmental variables
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
