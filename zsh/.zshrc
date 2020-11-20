@@ -1,8 +1,3 @@
-# configure history settings
-HISTFILE="$HOME/.histfile"
-HISTSIZE=1000
-SAVEHIST=1000
-
 # configure vim keybindings
 bindkey -v
 
@@ -19,9 +14,6 @@ if [ ! -f "$HOME/.dircolors" ]; then
 else
   eval "$(dircolors -b "$HOME/.dircolors")"
 fi
-
-# configure low delay for vim mode change
-export KEYTIMEOUT=1
 
 # function to return git branch information
 parse_git_branch() {
@@ -151,4 +143,6 @@ alias vpn_uzh='sudo openconnect --authgroup=ALL --background uzhvpn1.uzh.ch'
 alias vpn_up='sudo openconnect --authgroup=sslvpn --background sslvpn.uni-potsdam.de'
 
 # source zsh-clipboard to be able to use system clipboard
-source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
+if [ -f "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh" ]; then
+  . "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
+fi
