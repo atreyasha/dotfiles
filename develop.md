@@ -11,14 +11,14 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** bash/zsh: reduce redundant code in bash/zsh
-        and clean workflows up -\> would require understanding each line
-        and then deleting unnecessary ones
-
-    2.  i3: make all audio channels muted at boot (now only main channel
-        is muted) -\> very complicated because of pulseaudio and alsa
-        simultaneous actions:
+    1.  **TODO** i3: make all audio channels muted at boot
+        (now only main channel is muted) -\> very complicated because of
+        pulseaudio and alsa simultaneous actions:
         <https://github.com/alsa-project/alsa-utils/issues/72>
+
+    2.  zsh: modify up key to refresh history cache for history search,
+        current behaviour requires enter to be pressed -\> see
+        <https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048>
 
     3.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
@@ -103,6 +103,13 @@ Tasks
 
 Completed
 ---------
+
+**DONE** bash/zsh: reduce redundant code in bash/zsh and
+clean workflows up -\> would require understanding each line and then
+deleting unnecessary ones -\> bash more or less done, streamline further
+for zsh configs
+
+**CLOSED:** *\[2020-11-20 Fri 14:22\]*
 
 **DONE** look into conflicting tabbing and insert behaviour
 for latex enumerate/itemize environment + newline on comments leading to

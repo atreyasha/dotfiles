@@ -5,8 +5,8 @@ bindkey -v
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
-setopt COMPLETE_ALIASES
 zstyle ':completion::complete:*' gain-privileges 1
+setopt complete_aliases
 
 # configure dircolors
 if [ ! -f "$HOME/.dircolors" ]; then
@@ -84,7 +84,7 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
   add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
-# configure history search keybindings (source:ghttps://wiki.archlinux.org/index.php/Zsh)
+# configure history search keybindings (source: https://wiki.archlinux.org/index.php/Zsh)
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
