@@ -16,9 +16,13 @@ Tasks
         pulseaudio and alsa simultaneous actions:
         <https://github.com/alsa-project/alsa-utils/issues/72>
 
-    2.  zsh: modify up key to refresh history cache for history search,
-        current behaviour requires enter to be pressed -\> see
+    2.  zsh/bash: modify up key to refresh history cache for history
+        search, current behaviour requires enter to be pressed -\> see
         <https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048>
+
+        1.  workaround already found to update history file on each
+            enter command (with `setopt shared_history` for zsh and
+            extra prompt commands for bash)
 
     3.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
@@ -63,12 +67,15 @@ Tasks
 
     3.  shell
 
-        1.  consider using different configs for remote and local shells
+        1.  bash: improve inputrc where possible and synchronize
+            vim-mode with clipboard buffer
+
+        2.  consider using different configs for remote and local shells
             by sectioning into personal, core, etc
 
-        2.  hook to shfmt on all shell scripts including zsh
+        3.  hook to shfmt on all shell scripts including zsh
 
-        3.  special shell-check to ensure all shell tildes are replaced
+        4.  special shell-check to ensure all shell tildes are replaced
             with \$HOME
 
     4.  mimeapps

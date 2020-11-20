@@ -1,2 +1,0 @@
-# bash: single tab partially completes a word and provides all completions
-set show-all-if-ambiguous on

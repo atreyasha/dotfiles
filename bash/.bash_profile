@@ -11,6 +11,7 @@ export EDITOR="vim"
 export TERMINAL="termite"
 export R_PROFILE_USER="$HOME/.Rprofile"
 export QT_QPA_PLATFORMTHEME="qt5ct"
+export PROMPT_COMMAND="history -a; history -c; history -r"
 
 # update PATH variable
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.emacs.d/bin"
