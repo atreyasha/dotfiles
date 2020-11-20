@@ -5,7 +5,6 @@ export HISTFILE="$HOME/.zsh_history"
 setopt extended_history
 setopt hist_ignore_dups
 setopt hist_find_no_dups
-setopt share_history
 
 # configure low delay for vim mode change
 export KEYTIMEOUT="1"
