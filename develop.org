@@ -7,8 +7,9 @@
 *** Dotfiles
 **** Current
 ***** TODO i3: make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions: https://github.com/alsa-project/alsa-utils/issues/72
-***** zsh/bash: modify up key to refresh history cache for history search, current behaviour requires enter to be pressed -> see https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048
-****** workaround already found to update history file on each enter command (with =setopt shared_history= for zsh and extra prompt commands for bash)
+***** zsh/bash: improve shared history between multiple terminals
+****** zsh: =setopt shared_history=, bash: extra prompt commands =history -a, history -c, history -r=
+****** zsh/bash: modify up and down keys to reload shell history before searches -> see https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** wrong order of company-completions -> brute-force solution is to create new layer
 ****** lighter solution is to modify =company-backends= variable post-initialization

@@ -16,13 +16,14 @@ Tasks
         pulseaudio and alsa simultaneous actions:
         <https://github.com/alsa-project/alsa-utils/issues/72>
 
-    2.  zsh/bash: modify up key to refresh history cache for history
-        search, current behaviour requires enter to be pressed -\> see
-        <https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048>
+    2.  zsh/bash: improve shared history between multiple terminals
 
-        1.  workaround already found to update history file on each
-            enter command (with `setopt shared_history` for zsh and
-            extra prompt commands for bash)
+        1.  zsh: `setopt shared_history`, bash: extra prompt commands
+            `history -a, history -c, history -r`
+
+        2.  zsh/bash: modify up and down keys to reload shell history
+            before searches -\> see
+            <https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048>
 
     3.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
