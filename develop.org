@@ -2,14 +2,10 @@
 #+OPTIONS: ^:nil
 #+OPTIONS: p:t
 
-
 ** Tasks
 *** Dotfiles
 **** Current
-***** TODO i3: make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions: https://github.com/alsa-project/alsa-utils/issues/72
-***** zsh/bash: improve shared history between multiple terminals
-****** zsh: =setopt shared_history=, bash: extra prompt commands =history -a, history -c, history -r=
-****** zsh/bash: modify up and down keys to reload shell history before searches -> see https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048
+***** i3: make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions: https://github.com/alsa-project/alsa-utils/issues/72
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** wrong order of company-completions -> brute-force solution is to create new layer
 ****** lighter solution is to modify =company-backends= variable post-initialization
@@ -24,10 +20,14 @@
 ****** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
 ****** problems with xset dpms when waking from sleep -> perhaps add sleep 1 and then wake dpms
 ***** shell
-****** bash: improve inputrc where possible and synchronize vim-mode with clipboard buffer
+****** zsh/bash: improve shared history between multiple terminals and upon searches
+******* first step for writing to common history file -> zsh: =setopt shared_history=, bash: extra prompt commands ~PROMPT_COMMAND='history -a; history -c; history -r'~
+******* next step is reading from history file -> either press enter, otherwise modify up and down keys to reload shell history before searches -> see https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048, but appears to bug out with 2-period oscillating searches in zsh
+******* try with inc_append_history instread of shared_history, ignore this feature for bash and keep it only for zsh
 ****** consider using different configs for remote and local shells by sectioning into personal, core, etc
 ****** hook to shfmt on all shell scripts including zsh
 ****** special shell-check to ensure all shell tildes are replaced with $HOME
+****** bash: improve inputrc where possible and synchronize vim-mode with clipboard buffer -> might be complicated
 ***** mimeapps
 ****** synchronize mime system program defaults to same as ranger's rifle
 ***** system(d)

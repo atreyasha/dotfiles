@@ -11,21 +11,12 @@ Tasks
 
 1.  Current
 
-    1.  **TODO** i3: make all audio channels muted at boot
-        (now only main channel is muted) -\> very complicated because of
-        pulseaudio and alsa simultaneous actions:
+    1.  i3: make all audio channels muted at boot (now only main channel
+        is muted) -\> very complicated because of pulseaudio and alsa
+        simultaneous actions:
         <https://github.com/alsa-project/alsa-utils/issues/72>
 
-    2.  zsh/bash: improve shared history between multiple terminals
-
-        1.  zsh: `setopt shared_history`, bash: extra prompt commands
-            `history -a, history -c, history -r`
-
-        2.  zsh/bash: modify up and down keys to reload shell history
-            before searches -\> see
-            <https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048>
-
-    3.  emacs: improve autocompletions of latex layer:
+    2.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
         1.  wrong order of company-completions -\> brute-force solution
@@ -68,8 +59,22 @@ Tasks
 
     3.  shell
 
-        1.  bash: improve inputrc where possible and synchronize
-            vim-mode with clipboard buffer
+        1.  zsh/bash: improve shared history between multiple terminals
+            and upon searches
+
+            1.  first step for writing to common history file -\> zsh:
+                `setopt shared_history`, bash: extra prompt commands
+                `PROMPT_COMMAND='history -a; history -c; history -r'`
+
+            2.  next step is reading from history file -\> either press
+                enter, otherwise modify up and down keys to reload shell
+                history before searches -\> see
+                <https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048>,
+                but appears to bug out with 2-period oscillating
+                searches in zsh
+
+            3.  try with inc_append_history instread of shared_history,
+                ignore this feature for bash and keep it only for zsh
 
         2.  consider using different configs for remote and local shells
             by sectioning into personal, core, etc
@@ -78,6 +83,9 @@ Tasks
 
         4.  special shell-check to ensure all shell tildes are replaced
             with \$HOME
+
+        5.  bash: improve inputrc where possible and synchronize
+            vim-mode with clipboard buffer -\> might be complicated
 
     4.  mimeapps
 
