@@ -1,6 +1,11 @@
 # configure vim keybindings
 bindkey -v
 
+# configure history-related options
+setopt extended_history
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
 # configure completions (source: https://wiki.archlinux.org/index.php/Zsh)
 autoload -Uz compinit
 compinit

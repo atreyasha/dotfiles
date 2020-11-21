@@ -2,9 +2,6 @@
 export HISTSIZE="5000"
 export SAVEHIST="10000"
 export HISTFILE="$HOME/.zsh_history"
-setopt extended_history
-setopt hist_ignore_dups
-setopt hist_find_no_dups
 
 # configure low delay for vim mode change
 export KEYTIMEOUT="1"
@@ -18,5 +15,5 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # update PATH variable
 typeset -U PATH path
-path=("$path[@]" "$HOME/bin" "$HOME/.local/bin" "$HOME/.emacs.d/bin" "$(ruby -e 'puts Gem.user_dir')/bin")
+path=("$path[@]" "$HOME/bin" "$HOME/.local/bin" "$(ruby -e 'puts Gem.user_dir')/bin")
 export PATH

@@ -59,7 +59,18 @@ Tasks
 
     3.  shell
 
-        1.  zsh/bash: improve shared history between multiple terminals
+        1.  consider using different configs for remote and local shells
+            by sectioning into personal, core, etc
+
+        2.  hook to shfmt on all shell scripts including zsh
+
+        3.  special shell-check to ensure all shell tildes are replaced
+            with \$HOME
+
+        4.  bash: improve inputrc where possible and synchronize
+            vim-mode with clipboard buffer -\> might be complicated
+
+        5.  zsh/bash: improve shared history between multiple terminals
             and upon searches
 
             1.  first step for writing to common history file -\> zsh:
@@ -75,17 +86,6 @@ Tasks
 
             3.  try with inc_append_history instread of shared_history,
                 ignore this feature for bash and keep it only for zsh
-
-        2.  consider using different configs for remote and local shells
-            by sectioning into personal, core, etc
-
-        3.  hook to shfmt on all shell scripts including zsh
-
-        4.  special shell-check to ensure all shell tildes are replaced
-            with \$HOME
-
-        5.  bash: improve inputrc where possible and synchronize
-            vim-mode with clipboard buffer -\> might be complicated
 
     4.  mimeapps
 
