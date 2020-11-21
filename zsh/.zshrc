@@ -16,7 +16,7 @@ else
 fi
 
 # function to return git branch information
-parse_git_branch() {
+function parse_git_branch {
   branch="$(git symbolic-ref --short HEAD 2> /dev/null)"
   [ -n "$branch" ] && echo " @$branch"
 }
@@ -93,11 +93,11 @@ zle -N down-line-or-beginning-search
 
 # x-term-title (source: https://wiki.archlinux.org/index.php/Zsh)
 autoload -Uz add-zsh-hook
-function xterm_title_precmd () {
+function xterm_title_precmd {
   print -Pn -- '\e]2;%n@%m: %~\a'
   [[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
 }
-function xterm_title_preexec () {
+function xterm_title_preexec {
   print -Pn -- '\e]2;%n@%m: %~ %(!.#.$) ' && print -n -- "${(q)1}\a"
   [[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
 }
@@ -114,7 +114,7 @@ bindkey '^q' push-line-or-edit
 # if ranger exists, create ranger-cd useful function and binding
 if command -v ranger &>/dev/null; then
   # function for ranger-cd
-  function ranger-cd() {
+  function ranger-cd {
     tempfile="$(mktemp -t tmp.XXXXXX)"
     ranger --choosedir="$tempfile" "${@:-$(pwd)}"
     test -f "$tempfile" &&
@@ -123,7 +123,7 @@ if command -v ranger &>/dev/null; then
       fi
     rm -f -- "$tempfile"
   }
-  # configure keybindings for ranger-cd and neomutt
+  # configure keybindings for ranger-cd
   zle -N ranger-cd
   bindkey -s '^r' '^qranger-cd^m'
 fi
