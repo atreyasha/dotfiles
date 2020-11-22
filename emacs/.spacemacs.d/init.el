@@ -331,11 +331,13 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; revert documents to see changes
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
-  ;; 80 character warning in ess
-  (add-hook 'ess-mode-hook 'column-enforce-mode)
   ;; wrapping for org-mode lines
   (add-hook 'org-mode-hook 'visual-line-mode)
-  ;; modify company-complete to helm-company for elpy
+  ;; 80 character warning in ess
+  (add-hook 'ess-mode-hook 'column-enforce-mode)
+  ;; 80 character warning in elpy
+  (add-hook 'elpy-mode-hook 'column-enforce-mode)
+    ;; modify company-complete to helm-company for elpy
   (add-hook 'elpy-mode-hook
             '(lambda ()
                (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)))
