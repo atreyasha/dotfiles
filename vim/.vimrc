@@ -59,6 +59,7 @@ highlight CursorLine term=NONE cterm=NONE ctermbg=0
 let g:ale_enabled = 0
 
 " workaround for bug in search where lines get duplicated
+" see https://github.com/vim/vim/issues/5805 for bug report and workaround 
 autocmd! CursorMoved * execute "let s:temporaryBool = v:hlsearch" | execute "let v:hlsearch = 0" | execute "let v:hlsearch = s:temporaryBool"
 
 " mail filetype text width, need additional command to prevent filetype override

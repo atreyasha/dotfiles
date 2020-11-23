@@ -30,18 +30,22 @@
 ******* try with inc_append_history instread of shared_history, ignore this feature for bash and keep it only for zsh
 ***** mimeapps
 ****** synchronize mime system program defaults to same as ranger's rifle
-***** system(d)
+***** systemd
 ****** make scripts determine active $DISPLAY environmental variable instead of hard-coding -> use for cases where necessary
 ***** general
 ****** use pam environment to cache passphrase for ssh and gpg keys
 ****** port gnupg, ssh, neomutt private dotfiles to private stow repo
-****** reduce the number of dotfiles for a leaner installation
+****** reduce the number of dotfiles for a leaner installation -> for eg. remove =neofetch=, etc.
 
 *** System reproducibility
 ***** work on update script which updates all submodules and git repos to latest upstream commits eg. =git submodule update --init --recursive --remote=, and also updates misc. code bases such as melpa, vim, spacemacs, etc.
 ***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
       
 ** Completed
+***** DONE zsh: remove redundant key bindings
+      CLOSED: [2020-11-22 Sun 14:16]
+***** DONE i3: fix battery script for multiple discharge symbols
+      CLOSED: [2020-11-22 Sun 14:02]
 ***** DONE bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones -> bash more or less done, streamline further for zsh configs
       CLOSED: [2020-11-20 Fri 14:22]
 ***** DONE look into conflicting tabbing and insert behaviour for latex enumerate/itemize environment + newline on comments leading to comments becoming non-comments

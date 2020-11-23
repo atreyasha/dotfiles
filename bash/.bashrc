@@ -7,7 +7,7 @@ shopt -s histappend
 # check the window size after each command and possibly resize
 shopt -s checkwinsize
 
-# set a fancy prompt (non-color, unless we know we "want" color)
+# set terminal-specific prompt and color variables
 case "$TERM" in
 xterm-termite)
   color_prompt="yes"
@@ -18,7 +18,7 @@ xterm-termite)
   ;;
 esac
 
-# create (un)colorized command-line prompt
+# create un-/colorized command-line prompt
 if [ "$color_prompt" == "yes" ]; then
   PS1='\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else

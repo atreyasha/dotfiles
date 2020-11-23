@@ -92,7 +92,7 @@ Tasks
         1.  synchronize mime system program defaults to same as
             ranger\'s rifle
 
-    5.  system(d)
+    5.  systemd
 
         1.  make scripts determine active \$DISPLAY environmental
             variable instead of hard-coding -\> use for cases where
@@ -105,7 +105,8 @@ Tasks
         2.  port gnupg, ssh, neomutt private dotfiles to private stow
             repo
 
-        3.  reduce the number of dotfiles for a leaner installation
+        3.  reduce the number of dotfiles for a leaner installation -\>
+            for eg. remove `neofetch`, etc.
 
 ### System reproducibility
 
@@ -119,6 +120,15 @@ Tasks
 
 Completed
 ---------
+
+**DONE** zsh: remove redundant key bindings
+
+**CLOSED:** *\[2020-11-22 Sun 14:16\]*
+
+**DONE** i3: fix battery script for multiple discharge
+symbols
+
+**CLOSED:** *\[2020-11-22 Sun 14:02\]*
 
 **DONE** bash/zsh: reduce redundant code in bash/zsh and
 clean workflows up -\> would require understanding each line and then
