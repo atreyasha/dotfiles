@@ -69,9 +69,14 @@ if command -v neomutt &>/dev/null; then
   bind '"\C-n":"neomutt\C-m"'
 fi
 
-# configure aliases
+# configure common aliases
 alias ls='ls --color=auto'
 alias ll='ls -al'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+# source private aliases if present
+if [ -f "$HOME/.bash_aliases" ]; then
+  . "$HOME/.bash_aliases"
+fi
