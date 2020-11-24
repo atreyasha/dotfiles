@@ -1,4 +1,4 @@
-# if not running interactively, don't do anything
+# if not running interactively, exit gracefully
 [[ $- == *i* ]] || return
 
 # source modular configurations with specific order

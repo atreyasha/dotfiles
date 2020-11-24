@@ -13,12 +13,7 @@ Tasks
 
     1.  system: disable dpms/dim when video is playing
 
-    2.  bash/zsh: organize configurations files into modular sub-files
-        to be sourced by mains -\> difficult because of many different
-        functionalities in zsh but should be possible with enough
-        scrutiny
-
-    3.  emacs: improve autocompletions of latex layer:
+    2.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
         1.  wrong order of company-completions -\> brute-force solution
@@ -122,6 +117,12 @@ Tasks
 
 Completed
 ---------
+
+**DONE** bash/zsh: organize configurations files into modular
+sub-files to be sourced by mains -\> difficult because of many different
+functionalities in zsh but should be possible with enough scrutiny
+
+**CLOSED:** *\[2020-11-25 Wed 00:47\]*
 
 **DONE** i3: make all audio channels muted at boot (now only
 main channel is muted) -\> very complicated because of pulseaudio and
