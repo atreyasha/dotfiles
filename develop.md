@@ -11,12 +11,7 @@ Tasks
 
 1.  Current
 
-    1.  i3: make all audio channels muted at boot (now only main channel
-        is muted) -\> very complicated because of pulseaudio and alsa
-        simultaneous actions:
-        <https://github.com/alsa-project/alsa-utils/issues/72>
-
-    2.  emacs: improve autocompletions of latex layer:
+    1.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
         1.  wrong order of company-completions -\> brute-force solution
@@ -120,6 +115,17 @@ Tasks
 
 Completed
 ---------
+
+**DONE** i3: make all audio channels muted at boot (now only
+main channel is muted) -\> very complicated because of pulseaudio and
+alsa simultaneous actions:
+<https://github.com/alsa-project/alsa-utils/issues/72>
+
+**CLOSED:** *\[2020-11-24 Tue 14:37\]*
+
+1.  switch to single volume value between different channels -\> will
+    solve all of these problems altogether -\> still challenging to
+    solve
 
 **DONE** zsh: remove redundant key bindings
 

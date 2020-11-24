@@ -5,7 +5,6 @@
 ** Tasks
 *** Dotfiles
 **** Current
-***** i3: make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions: https://github.com/alsa-project/alsa-utils/issues/72
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** wrong order of company-completions -> brute-force solution is to create new layer
 ****** lighter solution is to modify =company-backends= variable post-initialization
@@ -42,6 +41,9 @@
 ***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
       
 ** Completed
+***** DONE i3: make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions: https://github.com/alsa-project/alsa-utils/issues/72
+      CLOSED: [2020-11-24 Tue 14:37]
+****** switch to single volume value between different channels -> will solve all of these problems altogether -> still challenging to solve
 ***** DONE zsh: remove redundant key bindings
       CLOSED: [2020-11-22 Sun 14:16]
 ***** DONE i3: fix battery script for multiple discharge symbols
