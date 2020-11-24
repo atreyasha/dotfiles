@@ -9,7 +9,6 @@
 [ -f "$HOME/.zsh.d/completions" ] && . "$HOME/.zsh.d/completions"
 [ -f "$HOME/.zsh.d/options"     ] && . "$HOME/.zsh.d/options"
 [ -f "$HOME/.zsh.d/aliases"     ] && . "$HOME/.zsh.d/aliases"
-[ -f "$HOME/.zsh.d/private"     ] && . "$HOME/.zsh.d/private"
 
 # source zsh-clipboard to be able to use system clipboard
 [ -f "$HOME/.zsh.d/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh" ] && . "$HOME/.zsh.d/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"

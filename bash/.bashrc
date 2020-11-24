@@ -11,4 +11,3 @@
 [ -f "$HOME/.bash.d/completions" ] && . "$HOME/.bash.d/completions"
 [ -f "$HOME/.bash.d/options"     ] && . "$HOME/.bash.d/options"
 [ -f "$HOME/.bash.d/aliases"     ] && . "$HOME/.bash.d/aliases"
-[ -f "$HOME/.bash.d/private"     ] && . "$HOME/.bash.d/private"
