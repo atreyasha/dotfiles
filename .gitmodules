@@ -16,3 +16,6 @@
   path = emacs/.spacemacs.d/layers/spacemacs-elpy
   url = https://github.com/atreyasha/spacemacs-elpy.git
   branch = main
+[submodule "zsh/.zsh.d/plugins/zsh-system-clipboard"]
+  path = zsh/.zsh.d/plugins/zsh-system-clipboard
+  url = https://github.com/kutsan/zsh-system-clipboard.git
