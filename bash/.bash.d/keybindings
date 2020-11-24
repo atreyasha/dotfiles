@@ -1,0 +1,13 @@
+# history search keybindings
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+# if ranger exists, create ranger-cd useful function and binding
+if command -v ranger &>/dev/null; then
+  bind '"\C-r":"ranger-cd\C-m"'
+fi
+
+# if neomutt exists, create binding
+if command -v neomutt &>/dev/null; then
+  bind '"\C-n":"neomutt\C-m"'
+fi

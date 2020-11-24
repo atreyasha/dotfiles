@@ -1,0 +1,6 @@
+# configure dircolors
+if [ ! -f "$HOME/.dircolors" ]; then
+  eval "$(dircolors -b)"
+else
+  eval "$(dircolors -b "$HOME/.dircolors")"
+fi

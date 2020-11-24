@@ -1,0 +1,7 @@
+# configure history-related options
+setopt extended_history
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# configure completion options
+setopt complete_aliases

@@ -1,0 +1,5 @@
+# configure completions (source: https://wiki.archlinux.org/index.php/zsh#Command_completion)
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
+zstyle ':completion::complete:*' gain-privileges 1

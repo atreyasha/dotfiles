@@ -1,0 +1,17 @@
+# set terminal-specific prompt and color variables
+case "$TERM" in
+xterm-termite)
+  color_prompt="yes"
+  tic -x "$HOME/.config/termite/termite.terminfo"
+  ;;
+*)
+  color_prompt="yes"
+  ;;
+esac
+
+# configure dircolors
+if [ ! -f "$HOME/.dircolors" ]; then
+  eval "$(dircolors -b)"
+else
+  eval "$(dircolors -b "$HOME/.dircolors")"
+fi
