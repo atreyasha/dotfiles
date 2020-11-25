@@ -1,25 +1,6 @@
 # configure vim keybindings
 bindkey -v
 
-# configure command-line edits in editor keybinding
-autoload edit-command-line
-zle -N edit-command-line
-bindkey '^e' edit-command-line
-
-# configure keybinding for clearing and returning line
-bindkey '^q' push-line-or-edit
-
-# if ranger exists, create ranger-cd useful function and binding
-if command -v ranger &>/dev/null; then
-  zle -N ranger-cd
-  bindkey -s '^r' '^qranger-cd^m'
-fi
-
-# if neomutt exists, create binding
-if command -v neomutt &>/dev/null; then
-  bindkey -s '^n' '^qneomutt^m'
-fi
-
 # configure history search keybindings (source: https://wiki.archlinux.org/index.php/zsh#History_search)
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
@@ -65,4 +46,23 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
   }
   add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
   add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+fi
+
+# configure command-line edits in editor keybinding
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+# configure keybinding for clearing and returning line
+bindkey '^q' push-line-or-edit
+
+# if ranger exists, create ranger-cd useful function and binding
+if command -v ranger &>/dev/null; then
+  zle -N ranger-cd
+  bindkey -s '^r' '^qranger-cd^m'
+fi
+
+# if neomutt exists, create binding
+if command -v neomutt &>/dev/null; then
+  bindkey -s '^n' '^qneomutt^m'
 fi
