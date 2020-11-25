@@ -1,7 +1,7 @@
 # set terminal-specific prompt and color variables
 case "$TERM" in
 xterm-termite)
-  if infocmp xterm-termite &>/dev/null; then
+  if ! infocmp xterm-termite &>/dev/null; then
     tic -x "$HOME/.config/termite/termite.terminfo"
   fi
   color_prompt="yes"
