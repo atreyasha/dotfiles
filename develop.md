@@ -23,6 +23,9 @@ Tasks
         2.  lighter solution is to modify `company-backends` variable
             post-initialization
 
+    3.  emacs: fix wrong argument error on `helm-company` post command
+        hook
+
 2.  Long-term
 
     1.  emacs

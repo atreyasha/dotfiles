@@ -337,14 +337,15 @@ you should place your code here."
   (add-hook 'ess-mode-hook 'column-enforce-mode)
   ;; 80 character warning in elpy
   (add-hook 'elpy-mode-hook 'column-enforce-mode)
-    ;; modify company-complete to helm-company for elpy
+  ;; modify company-complete to helm-company for elpy
   (add-hook 'elpy-mode-hook
             '(lambda ()
                (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)))
   ;; modify company-complete to helm-company for other layers using company
-  (add-hook 'company-mode-hook
-            '(lambda ()
-               (local-set-key (kbd "M-<tab>") 'helm-company)))
+  (with-eval-after-load 'company
+    (progn
+      (define-key company-mode-map (kbd "M-<tab>") 'helm-company)
+      (define-key company-active-map (kbd "M-<tab>") 'helm-company)))
   ;; re-enables native ipython completion to prevent text flooding issue
   (with-eval-after-load 'python
     (setq python-shell-completion-native-disabled-interpreters

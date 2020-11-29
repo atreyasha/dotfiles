@@ -9,7 +9,7 @@
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** wrong order of company-completions -> brute-force solution is to create new layer
 ****** lighter solution is to modify =company-backends= variable post-initialization
- 
+***** emacs: fix wrong argument error on =helm-company= post command hook 
 **** Long-term
 ***** emacs
 ****** clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> will take time and effort
