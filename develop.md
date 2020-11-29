@@ -11,7 +11,8 @@ Tasks
 
 1.  Current
 
-    1.  system: disable dpms/dim when video is playing
+    1.  system: disable dpms/dim when video is playing: see bug report
+        <https://github.com/qutebrowser/qutebrowser/issues/5504>
 
     2.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
@@ -47,12 +48,13 @@ Tasks
 
     2.  i3
 
-        1.  think about using xautolock/xss-lock to circumvent some
+        1.  flush screen when waking from sleep -\> execute
+            `xset dpms force on` hook perhaps with `sleep 1` to overcome
+            freeze bug
+
+        2.  think about using xautolock/xss-lock to circumvent some
             manual pid checking and possibly extra sleep:
             <https://github.com/i3/i3lock/issues/275>
-
-        2.  problems with xset dpms when waking from sleep -\> perhaps
-            add sleep 1 and then wake dpms
 
     3.  shell
 
@@ -73,6 +75,7 @@ Tasks
             1.  first step for writing to common history file -\> zsh:
                 `setopt shared_history`, bash: extra prompt commands
                 `PROMPT_COMMAND='history -a; history -c; history -r'`
+                under `hooks`
 
             2.  next step is reading from history file -\> either press
                 enter, otherwise modify up and down keys to reload shell
