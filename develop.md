@@ -30,8 +30,7 @@ Tasks
 
     1.  emacs
 
-        1.  clean up `~/.spacemacs.d` and make it organized as per
-            blogpost with various sections -\> will take time and effort
+        1.  clean up `init.el` and remove many comments
 
         2.  think about improving workflow to handle spaces, make case
             unsensitive and parse bibliography codes better (eg.
@@ -46,8 +45,8 @@ Tasks
             synchronized in one run
 
         4.  migrate to lightweight and lean personal emacs configuration
-            which would be optimized with time -\> this might help
-            circumvent many bugs encountered
+            which would be optimized with time -\> might help circumvent
+            many bugs encountered
 
     2.  i3
 

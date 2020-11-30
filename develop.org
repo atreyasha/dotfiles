@@ -12,10 +12,10 @@
 
 **** Long-term
 ***** emacs
-****** clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> will take time and effort
+****** clean up =init.el= and remove many comments
 ****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in =company-reftex-citation-candidates=, for development add package (eg. =(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))=) in =dotspacemacs-additional-packages= and update packages, delete old package location
 ****** consider running emacs as a service to have everything synchronized in one run
-****** migrate to lightweight and lean personal emacs configuration which would be optimized with time -> this might help circumvent many bugs encountered
+****** migrate to lightweight and lean personal emacs configuration which would be optimized with time -> might help circumvent many bugs encountered
 ***** i3
 ****** flush screen when waking from sleep -> execute =xset dpms force on= hook perhaps with =sleep 1= to overcome freeze bug
 ****** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
