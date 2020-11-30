@@ -5,11 +5,11 @@
 ** Tasks
 *** Dotfiles
 **** Current
-***** system: disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** wrong order of company-completions -> brute-force solution is to create new layer
-****** lighter solution is to modify =company-backends= variable post-initialization
-***** emacs: fix wrong argument error on =helm-company= post command hook 
+****** lighter solution is to modify =company-backends= variable post-initialization -> perhaps with advice over latex init function
+***** emacs: fix wrong argument error on =helm-company= post command hook -> linked to =helm-company= interaction with =company-post-command=: see https://github.com/Sodel-the-Vociferous/helm-company/issues/21
+
 **** Long-term
 ***** emacs
 ****** clean up =~/.spacemacs.d= and make it organized as per blogpost with various sections -> will take time and effort
@@ -30,7 +30,8 @@
 ******* try with inc_append_history instread of shared_history, ignore this feature for bash and keep it only for zsh
 ***** mimeapps
 ****** synchronize mime system program defaults to same as ranger's rifle
-***** systemd
+***** system(d)
+****** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
 ****** make scripts determine active $DISPLAY environmental variable instead of hard-coding -> use for cases where necessary
 ***** general
 ****** use pam environment to cache passphrase for ssh and gpg keys

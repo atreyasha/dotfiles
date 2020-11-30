@@ -11,20 +11,20 @@ Tasks
 
 1.  Current
 
-    1.  system: disable dpms/dim when video is playing: see bug report
-        <https://github.com/qutebrowser/qutebrowser/issues/5504>
-
-    2.  emacs: improve autocompletions of latex layer:
+    1.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
         1.  wrong order of company-completions -\> brute-force solution
             is to create new layer
 
         2.  lighter solution is to modify `company-backends` variable
-            post-initialization
+            post-initialization -\> perhaps with advice over latex init
+            function
 
-    3.  emacs: fix wrong argument error on `helm-company` post command
-        hook
+    2.  emacs: fix wrong argument error on `helm-company` post command
+        hook -\> linked to `helm-company` interaction with
+        `company-post-command`: see
+        <https://github.com/Sodel-the-Vociferous/helm-company/issues/21>
 
 2.  Long-term
 
@@ -95,9 +95,12 @@ Tasks
         1.  synchronize mime system program defaults to same as
             ranger\'s rifle
 
-    5.  systemd
+    5.  system(d)
 
-        1.  make scripts determine active \$DISPLAY environmental
+        1.  disable dpms/dim when video is playing: see bug report
+            <https://github.com/qutebrowser/qutebrowser/issues/5504>
+
+        2.  make scripts determine active \$DISPLAY environmental
             variable instead of hard-coding -\> use for cases where
             necessary
 
