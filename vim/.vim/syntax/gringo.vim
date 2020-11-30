@@ -89,4 +89,3 @@ HiLink gringoKey                Keyword
 delcommand HiLink
 
 let b:current_syntax = "gringo"
-

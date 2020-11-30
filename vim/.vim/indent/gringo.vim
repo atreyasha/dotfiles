@@ -243,4 +243,3 @@ endfunction
 
 let &cpo = s:keepcpo
 unlet s:keepcpo
-
