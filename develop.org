@@ -5,6 +5,7 @@
 ** Tasks
 *** Dotfiles
 **** Current
+***** i3: add capability to detect if headphones or speakers are on master -> then print either headphones or speaker to status bar
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** wrong order of company-completions -> brute-force solution is to create new layer
 ****** lighter solution is to modify =company-backends= variable post-initialization -> perhaps with advice over latex init function

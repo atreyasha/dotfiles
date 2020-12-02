@@ -11,7 +11,10 @@ Tasks
 
 1.  Current
 
-    1.  emacs: improve autocompletions of latex layer:
+    1.  i3: add capability to detect if headphones or speakers are on
+        master -\> then print either headphones or speaker to status bar
+
+    2.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
         1.  wrong order of company-completions -\> brute-force solution
@@ -21,7 +24,7 @@ Tasks
             post-initialization -\> perhaps with advice over latex init
             function
 
-    2.  emacs: fix wrong argument error on `helm-company` post command
+    3.  emacs: fix wrong argument error on `helm-company` post command
         hook -\> linked to `helm-company` interaction with
         `company-post-command`: see
         <https://github.com/Sodel-the-Vociferous/helm-company/issues/21>
