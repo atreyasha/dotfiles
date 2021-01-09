@@ -5,18 +5,19 @@
 ** Tasks
 *** Dotfiles
 **** Current
-***** i3: add capability to detect if headphones or speakers are on master -> then print either headphones or speaker to status bar
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** wrong order of company-completions -> brute-force solution is to create new layer
 ****** lighter solution is to modify =company-backends= variable post-initialization -> perhaps with advice over latex init function
 ***** emacs: fix wrong argument error on =helm-company= post command hook -> linked to =helm-company= interaction with =company-post-command=: see https://github.com/Sodel-the-Vociferous/helm-company/issues/21
+***** i3: add capability to detect if headphones or speakers are on master -> then print either headphones or speaker to status bar
 
 **** Long-term
 ***** emacs
 ****** clean up =init.el= and remove many comments
+****** issue of =elpy= hard-coded =company= backends -> this should instead be soft-coded and easily updated from upstream
+****** migrate to lightweight and lean personal emacs configuration which would be optimized with time -> might help circumvent many bugs encountered such as those with =latex= and =elpy= compatibilities
 ****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in =company-reftex-citation-candidates=, for development add package (eg. =(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))=) in =dotspacemacs-additional-packages= and update packages, delete old package location
 ****** consider running emacs as a service to have everything synchronized in one run
-****** migrate to lightweight and lean personal emacs configuration which would be optimized with time -> might help circumvent many bugs encountered
 ***** i3
 ****** flush screen when waking from sleep -> execute =xset dpms force on= hook perhaps with =sleep 1= to overcome freeze bug
 ****** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275

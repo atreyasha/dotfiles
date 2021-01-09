@@ -4,17 +4,13 @@
     -   [System reproducibility](#system-reproducibility)
 -   [Completed](#completed)
 
-Tasks
------
+## Tasks
 
 ### Dotfiles
 
 1.  Current
 
-    1.  i3: add capability to detect if headphones or speakers are on
-        master -\> then print either headphones or speaker to status bar
-
-    2.  emacs: improve autocompletions of latex layer:
+    1.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
         1.  wrong order of company-completions -\> brute-force solution
@@ -24,10 +20,13 @@ Tasks
             post-initialization -\> perhaps with advice over latex init
             function
 
-    3.  emacs: fix wrong argument error on `helm-company` post command
+    2.  emacs: fix wrong argument error on `helm-company` post command
         hook -\> linked to `helm-company` interaction with
         `company-post-command`: see
         <https://github.com/Sodel-the-Vociferous/helm-company/issues/21>
+
+    3.  i3: add capability to detect if headphones or speakers are on
+        master -\> then print either headphones or speaker to status bar
 
 2.  Long-term
 
@@ -35,7 +34,16 @@ Tasks
 
         1.  clean up `init.el` and remove many comments
 
-        2.  think about improving workflow to handle spaces, make case
+        2.  issue of `elpy` hard-coded `company` backends -\> this
+            should instead be soft-coded and easily updated from
+            upstream
+
+        3.  migrate to lightweight and lean personal emacs configuration
+            which would be optimized with time -\> might help circumvent
+            many bugs encountered such as those with `latex` and `elpy`
+            compatibilities
+
+        4.  think about improving workflow to handle spaces, make case
             unsensitive and parse bibliography codes better (eg.
             \"doran2017does\" from \"do\") in
             `company-reftex-citation-candidates`, for development add
@@ -44,12 +52,8 @@ Tasks
             in `dotspacemacs-additional-packages` and update packages,
             delete old package location
 
-        3.  consider running emacs as a service to have everything
+        5.  consider running emacs as a service to have everything
             synchronized in one run
-
-        4.  migrate to lightweight and lean personal emacs configuration
-            which would be optimized with time -\> might help circumvent
-            many bugs encountered
 
     2.  i3
 
@@ -126,8 +130,7 @@ Tasks
 2.  work on install script which sets up all the necessary git repos for
     dotfiles that cannot be managed with submodules
 
-Completed
----------
+## Completed
 
 **DONE** bash/zsh: organize configurations files into modular
 sub-files to be sourced by mains -\> difficult because of many different
