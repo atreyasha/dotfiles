@@ -52,7 +52,10 @@
             in `dotspacemacs-additional-packages` and update packages,
             delete old package location
 
-        5.  consider running emacs as a service to have everything
+        5.  work on script which updates all emacs packages during
+            system update
+
+        6.  consider running emacs as a service to have everything
             synchronized in one run
 
     2.  i3
