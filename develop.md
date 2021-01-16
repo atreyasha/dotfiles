@@ -10,7 +10,10 @@
 
 1.  Current
 
-    1.  emacs: improve autocompletions of latex layer:
+    1.  pulseaudio/alsa: fix latest bug when switching audio between
+        speakers and jack
+
+    2.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
         1.  wrong order of company-completions -\> brute-force solution
@@ -20,13 +23,17 @@
             post-initialization -\> perhaps with advice over latex init
             function
 
-    2.  emacs: fix wrong argument error on `helm-company` post command
+    3.  emacs: fix wrong argument error on `helm-company` post command
         hook -\> linked to `helm-company` interaction with
         `company-post-command`: see
         <https://github.com/Sodel-the-Vociferous/helm-company/issues/21>
 
-    3.  i3: add capability to detect if headphones or speakers are on
+    4.  i3: add capability to detect if headphones or speakers are on
         master -\> then print either headphones or speaker to status bar
+
+    5.  system: find way to add system level dotfiles to repository and
+        make shell script to separately initialize these without
+        symlinking and instead via a copy command
 
 2.  Long-term
 
