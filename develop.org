@@ -35,6 +35,8 @@
 ******* try with inc_append_history instread of shared_history, ignore this feature for bash and keep it only for zsh
 ***** mimeapps
 ****** synchronize mime system program defaults to same as ranger's rifle
+***** ranger
+****** make =rifle.conf= and =scope.sh= modular and additive as much as this is possible
 ***** system(d)
 ****** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
 ****** make scripts determine active $DISPLAY environmental variable instead of hard-coding -> use for cases where necessary

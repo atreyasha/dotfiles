@@ -111,7 +111,12 @@
         1.  synchronize mime system program defaults to same as
             ranger\'s rifle
 
-    5.  system(d)
+    5.  ranger
+
+        1.  make `rifle.conf` and `scope.sh` modular and additive as
+            much as this is possible
+
+    6.  system(d)
 
         1.  disable dpms/dim when video is playing: see bug report
             <https://github.com/qutebrowser/qutebrowser/issues/5504>
@@ -120,7 +125,7 @@
             variable instead of hard-coding -\> use for cases where
             necessary
 
-    6.  general
+    7.  general
 
         1.  use pam environment to cache passphrase for ssh and gpg keys
 
