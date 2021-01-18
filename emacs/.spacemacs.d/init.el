@@ -340,7 +340,8 @@ you should place your code here."
   ;; modify company-complete to helm-company for elpy
   (add-hook 'elpy-mode-hook
             '(lambda ()
-               (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)))
+               (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)
+               (setq elpy-rpc-timeout 2)))
   ;; modify company-complete to helm-company for other layers using company
   (with-eval-after-load 'company
     (progn
