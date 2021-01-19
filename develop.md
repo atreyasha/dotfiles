@@ -10,10 +10,7 @@
 
 1.  Current
 
-    1.  pulseaudio/alsa: fix latest bug when switching audio between
-        speakers and jack
-
-    2.  emacs: improve autocompletions of latex layer:
+    1.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
         1.  wrong order of company-completions -\> brute-force solution
@@ -23,17 +20,17 @@
             post-initialization -\> perhaps with advice over latex init
             function
 
-    3.  emacs: fix wrong argument error on `helm-company` post command
+    2.  emacs: fix wrong argument error on `helm-company` post command
         hook -\> linked to `helm-company` interaction with
         `company-post-command`: see
         <https://github.com/Sodel-the-Vociferous/helm-company/issues/21>
 
-    4.  i3: add capability to detect if headphones or speakers are on
-        master -\> then print either headphones or speaker to status bar
-
-    5.  system: find way to add system level dotfiles to repository and
+    3.  system: find way to add system level dotfiles to repository and
         make shell script to separately initialize these without
         symlinking and instead via a copy command
+
+    4.  i3: add capability to detect if headphones or speakers are on
+        master -\> then print either headphones or speaker to status bar
 
 2.  Long-term
 
@@ -137,17 +134,21 @@
 
 ### System reproducibility
 
-1.  work on script which does manual update checks on `rifle.conf`,
+1.  use pacdiff hook after system updates to manually fix issues related
+    to new pacman configs -\> need to consider read-only flags and how
+    to solve root vs. user vim configuration
+
+2.  work on script which does manual update checks on `rifle.conf`,
     `scope.sh` and other emacs-hacked files which might require upstream
     updates -\> perhaps perform a diff framework to accept/reject
     upstream changes
 
-2.  work on update script which updates all submodules and git repos to
+3.  work on update script which updates all submodules and git repos to
     latest upstream commits eg.
     `git submodule update --init --recursive --remote`, and also updates
     misc. code bases such as melpa, vim, spacemacs, etc.
 
-3.  work on install script which sets up all the necessary git repos for
+4.  work on install script which sets up all the necessary git repos for
     dotfiles that cannot be managed with submodules
 
 ## Completed
