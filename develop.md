@@ -137,12 +137,17 @@
 
 ### System reproducibility
 
-1.  work on update script which updates all submodules and git repos to
+1.  work on script which does manual update checks on `rifle.conf`,
+    `scope.sh` and other emacs-hacked files which might require upstream
+    updates -\> perhaps perform a diff framework to accept/reject
+    upstream changes
+
+2.  work on update script which updates all submodules and git repos to
     latest upstream commits eg.
     `git submodule update --init --recursive --remote`, and also updates
     misc. code bases such as melpa, vim, spacemacs, etc.
 
-2.  work on install script which sets up all the necessary git repos for
+3.  work on install script which sets up all the necessary git repos for
     dotfiles that cannot be managed with submodules
 
 ## Completed

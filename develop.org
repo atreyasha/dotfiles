@@ -46,9 +46,10 @@
 ****** reduce the number of dotfiles for a leaner installation -> for eg. remove =neofetch=, etc.
 
 *** System reproducibility
+***** work on script which does manual update checks on =rifle.conf=, =scope.sh= and other emacs-hacked files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes
 ***** work on update script which updates all submodules and git repos to latest upstream commits eg. =git submodule update --init --recursive --remote=, and also updates misc. code bases such as melpa, vim, spacemacs, etc.
 ***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
-      
+
 ** Completed
 ***** DONE bash/zsh: organize configurations files into modular sub-files to be sourced by mains -> difficult because of many different functionalities in zsh but should be possible with enough scrutiny
       CLOSED: [2020-11-25 Wed 00:47]
