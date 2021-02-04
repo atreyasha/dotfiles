@@ -134,21 +134,17 @@
 
 ### System reproducibility
 
-1.  use pacdiff hook after system updates to manually fix issues related
-    to new pacman configs -\> need to consider read-only flags and how
-    to solve root vs. user vim configuration
-
-2.  work on script which does manual update checks on `rifle.conf`,
+1.  work on script which does manual update checks on `rifle.conf`,
     `scope.sh` and other emacs-hacked files which might require upstream
     updates -\> perhaps perform a diff framework to accept/reject
     upstream changes
 
-3.  work on update script which updates all submodules and git repos to
+2.  work on update script which updates all submodules and git repos to
     latest upstream commits eg.
     `git submodule update --init --recursive --remote`, and also updates
     misc. code bases such as melpa, vim, spacemacs, etc.
 
-4.  work on install script which sets up all the necessary git repos for
+3.  work on install script which sets up all the necessary git repos for
     dotfiles that cannot be managed with submodules
 
 ## Completed
