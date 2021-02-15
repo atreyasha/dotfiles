@@ -47,6 +47,15 @@ PYGMENTIZE_STYLE=${PYGMENTIZE_STYLE:-autumn}
 OPENSCAD_IMGSIZE=${RNGR_OPENSCAD_IMGSIZE:-1000,1000}
 OPENSCAD_COLORSCHEME=${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}
 
+drop_bigsize() {
+  # source: https://unix.stackexchange.com/a/470017
+  # 51200 == 50 MB * 1024, change this number for different sizes
+  if [[ $(du "${FILE_PATH}" | cut -f1) -gt 51200 ]]; then
+    echo 'Ignoring preview of large file'
+    exit 0
+  fi
+}
+
 handle_extension() {
   case "${FILE_EXTENSION_LOWER}" in
   ## Archive
@@ -111,6 +120,7 @@ handle_extension() {
 
   ## JSON
   json)
+    drop_bigsize
     jq --color-output . "${FILE_PATH}" && exit 5
     python -m json.tool -- "${FILE_PATH}" && exit 5
     ;;
