@@ -50,7 +50,7 @@ OPENSCAD_COLORSCHEME=${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}
 drop_bigsize() {
   # source: https://unix.stackexchange.com/a/470017
   # 51200 == 50 MB * 1024, change this number for different sizes
-  if [[ $(du "${FILE_PATH}" | cut -f1) -gt 51200 ]]; then
+  if [[ $(du "${FILE_PATH}" | cut -f1) -gt 10240 ]]; then
     echo 'Ignoring preview of large file'
     exit 0
   fi
