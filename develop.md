@@ -56,15 +56,18 @@
             should instead be soft-coded and easily updated from
             upstream
 
-        3.  migrate to lightweight and lean personal emacs configuration
+        3.  consider changing to different autocompletion background
+            such as `lsp` to solve legacy issues
+
+        4.  migrate to lightweight and lean personal emacs configuration
             which would be optimized with time such as with `doom` -\>
             might help circumvent many bugs encountered such as those
             with `latex` and `elpy` compatibilities
 
-        4.  work on script which updates all emacs packages during
+        5.  work on script which updates all emacs packages during
             system update
 
-        5.  consider running emacs as a service to have everything
+        6.  consider running emacs as a service to have everything
             synchronized in one run
 
     2.  i3

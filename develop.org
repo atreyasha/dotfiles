@@ -18,6 +18,7 @@
 ***** emacs
 ****** clean up =init.el= and remove many comments
 ****** issue of =elpy= hard-coded =company= backends -> this should instead be soft-coded and easily updated from upstream
+****** consider changing to different autocompletion background such as =lsp= to solve legacy issues
 ****** migrate to lightweight and lean personal emacs configuration which would be optimized with time such as with =doom= -> might help circumvent many bugs encountered such as those with =latex= and =elpy= compatibilities
 ****** work on script which updates all emacs packages during system update
 ****** consider running emacs as a service to have everything synchronized in one run
