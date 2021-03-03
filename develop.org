@@ -8,6 +8,8 @@
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** wrong order of company-completions -> brute-force solution is to create new layer
 ****** lighter solution is to modify =company-backends= variable post-initialization -> perhaps with advice over latex init function
+****** find way to automatically reparse document with =reftex-parse-all= when building document -> will ensure labels are updated for autocompletion as they are currently not refreshed
+****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in =company-reftex-citation-candidates=, for development add package (eg. =(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))=) in =dotspacemacs-additional-packages= and update packages, delete old package location
 ***** emacs: fix wrong argument error on =helm-company= post command hook -> linked to =helm-company= interaction with =company-post-command=: see https://github.com/Sodel-the-Vociferous/helm-company/issues/21
 ***** system: find way to add system level dotfiles to repository and make shell script to separately initialize these without symlinking and instead via a copy command
 ***** i3: add capability to detect if headphones or speakers are on master -> then print either headphones or speaker to status bar
@@ -16,8 +18,7 @@
 ***** emacs
 ****** clean up =init.el= and remove many comments
 ****** issue of =elpy= hard-coded =company= backends -> this should instead be soft-coded and easily updated from upstream
-****** migrate to lightweight and lean personal emacs configuration which would be optimized with time -> might help circumvent many bugs encountered such as those with =latex= and =elpy= compatibilities
-****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in =company-reftex-citation-candidates=, for development add package (eg. =(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))=) in =dotspacemacs-additional-packages= and update packages, delete old package location
+****** migrate to lightweight and lean personal emacs configuration which would be optimized with time such as with =doom= -> might help circumvent many bugs encountered such as those with =latex= and =elpy= compatibilities
 ****** work on script which updates all emacs packages during system update
 ****** consider running emacs as a service to have everything synchronized in one run
 ***** i3
