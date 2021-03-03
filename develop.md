@@ -13,19 +13,21 @@
     1.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
-        1.  wrong order of company-completions -\> brute-force solution
+        1.  if possible, try to merge upstream changes to latex layer
+
+        2.  wrong order of company-completions -\> brute-force solution
             is to create new layer
 
-        2.  lighter solution is to modify `company-backends` variable
+        3.  lighter solution is to modify `company-backends` variable
             post-initialization -\> perhaps with advice over latex init
             function
 
-        3.  find way to automatically reparse document with
+        4.  find way to automatically reparse document with
             `reftex-parse-all` when building document -\> will ensure
             labels are updated for autocompletion as they are currently
-            not refreshed
+            not refreshed -\> can be added to `company-reftex`
 
-        4.  think about improving workflow to handle spaces, make case
+        5.  think about improving workflow to handle spaces, make case
             unsensitive and parse bibliography codes better (eg.
             \"doran2017does\" from \"do\") in
             `company-reftex-citation-candidates`, for development add
@@ -50,19 +52,19 @@
 
     1.  emacs
 
-        1.  clean up `init.el` and remove many comments
-
-        2.  issue of `elpy` hard-coded `company` backends -\> this
-            should instead be soft-coded and easily updated from
-            upstream
-
-        3.  consider changing to different autocompletion background
-            such as `lsp` to solve legacy issues
-
-        4.  migrate to lightweight and lean personal emacs configuration
+        1.  migrate to lightweight and lean personal emacs configuration
             which would be optimized with time such as with `doom` -\>
             might help circumvent many bugs encountered such as those
             with `latex` and `elpy` compatibilities
+
+        2.  consider changing to different autocompletion background
+            such as `lsp` to solve legacy issues
+
+        3.  clean up `init.el` and remove many comments
+
+        4.  issue of `elpy` hard-coded `company` backends -\> this
+            should instead be soft-coded and easily updated from
+            upstream
 
         5.  work on script which updates all emacs packages during
             system update
