@@ -353,9 +353,9 @@ you should place your code here."
           (delete "ipython" python-shell-completion-native-disabled-interpreters)))
   ;; latex layer fine-tuning
   (with-eval-after-load 'latex
-    (setq reftex-auto-view-crossref nil)
-    (setq LaTeX-syntactic-comments nil)
-    (setq LaTeX-item-indent 0))
+    (setq reftex-auto-view-crossref nil
+          LaTeX-syntactic-comments nil
+          LaTeX-item-indent 0))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
