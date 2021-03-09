@@ -346,10 +346,6 @@ you should place your code here."
     (progn
       (define-key company-mode-map (kbd "M-<tab>") 'helm-company)
       (define-key company-active-map (kbd "M-<tab>") 'helm-company)))
-  ;; re-enables native ipython completion to prevent text flooding issue
-  (with-eval-after-load 'python
-    (setq python-shell-completion-native-disabled-interpreters
-          (delete "ipython" python-shell-completion-native-disabled-interpreters)))
   ;; latex layer fine-tuning
   (with-eval-after-load 'latex
     (setq reftex-auto-view-crossref nil
