@@ -63,8 +63,7 @@ values."
                  latex-enable-magic nil
                  latex-build-command "LatexMk")
      (elpy-plus :location local
-                :variables python-shell-interpreter "ipython"
-                python-shell-interpreter-args "-i --simple-prompt"
+                :variables
                 elpy-shell-echo-output nil
                 elpy-rpc-virtualenv-path "~/.spacemacs.d/rpc/elpy/rpc-venv")
      )
