@@ -17,6 +17,7 @@
 
 **** Long-term
 ***** emacs
+****** fix slow response with =ipython= inferior shell
 ****** migrate to lightweight and lean personal emacs configuration which would be optimized with time such as with =doom= -> might help circumvent many bugs encountered such as those with =latex= and =elpy= compatibilities
 ****** consider changing to different autocompletion background such as =lsp= to solve legacy issues
 ****** clean up =init.el= and remove many comments

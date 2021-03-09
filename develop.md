@@ -18,27 +18,28 @@
         2.  wrong order of company-completions -\> brute-force solution
             is to create new layer
 
-        3.  lighter solution is to modify `company-backends` variable
-            post-initialization -\> perhaps with advice over latex init
-            function
+        3.  lighter solution is to modify `company-backends`{.verbatim}
+            variable post-initialization -\> perhaps with advice over
+            latex init function
 
         4.  find way to automatically reparse document with
-            `reftex-parse-all` when building document -\> will ensure
-            labels are updated for autocompletion as they are currently
-            not refreshed -\> can be added to `company-reftex`
+            `reftex-parse-all`{.verbatim} when building document -\>
+            will ensure labels are updated for autocompletion as they
+            are currently not refreshed -\> can be added to
+            `company-reftex`{.verbatim}
 
         5.  think about improving workflow to handle spaces, make case
             unsensitive and parse bibliography codes better (eg.
             \"doran2017does\" from \"do\") in
-            `company-reftex-citation-candidates`, for development add
-            package (eg.
-            `(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))`)
-            in `dotspacemacs-additional-packages` and update packages,
-            delete old package location
+            `company-reftex-citation-candidates`{.verbatim}, for
+            development add package (eg.
+            `(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))`{.verbatim})
+            in `dotspacemacs-additional-packages`{.verbatim} and update
+            packages, delete old package location
 
-    2.  emacs: fix wrong argument error on `helm-company` post command
-        hook -\> linked to `helm-company` interaction with
-        `company-post-command`: see
+    2.  emacs: fix wrong argument error on `helm-company`{.verbatim}
+        post command hook -\> linked to `helm-company`{.verbatim}
+        interaction with `company-post-command`{.verbatim}: see
         <https://github.com/Sodel-the-Vociferous/helm-company/issues/21>
 
     3.  system: find way to add system level dotfiles to repository and
@@ -52,31 +53,34 @@
 
     1.  emacs
 
-        1.  migrate to lightweight and lean personal emacs configuration
-            which would be optimized with time such as with `doom` -\>
-            might help circumvent many bugs encountered such as those
-            with `latex` and `elpy` compatibilities
+        1.  fix slow response with `ipython`{.verbatim} inferior shell
 
-        2.  consider changing to different autocompletion background
-            such as `lsp` to solve legacy issues
+        2.  migrate to lightweight and lean personal emacs configuration
+            which would be optimized with time such as with
+            `doom`{.verbatim} -\> might help circumvent many bugs
+            encountered such as those with `latex`{.verbatim} and
+            `elpy`{.verbatim} compatibilities
 
-        3.  clean up `init.el` and remove many comments
+        3.  consider changing to different autocompletion background
+            such as `lsp`{.verbatim} to solve legacy issues
 
-        4.  issue of `elpy` hard-coded `company` backends -\> this
-            should instead be soft-coded and easily updated from
-            upstream
+        4.  clean up `init.el`{.verbatim} and remove many comments
 
-        5.  work on script which updates all emacs packages during
+        5.  issue of `elpy`{.verbatim} hard-coded `company`{.verbatim}
+            backends -\> this should instead be soft-coded and easily
+            updated from upstream
+
+        6.  work on script which updates all emacs packages during
             system update
 
-        6.  consider running emacs as a service to have everything
+        7.  consider running emacs as a service to have everything
             synchronized in one run
 
     2.  i3
 
         1.  flush screen when waking from sleep -\> execute
-            `xset dpms force on` hook perhaps with `sleep 1` to overcome
-            freeze bug
+            `xset dpms force on`{.verbatim} hook perhaps with
+            `sleep 1`{.verbatim} to overcome freeze bug
 
         2.  think about using xautolock/xss-lock to circumvent some
             manual pid checking and possibly extra sleep:
@@ -99,9 +103,10 @@
             and upon searches
 
             1.  first step for writing to common history file -\> zsh:
-                `setopt shared_history`, bash: extra prompt commands
+                `setopt shared_history`{.verbatim}, bash: extra prompt
+                commands
                 `PROMPT_COMMAND='history -a; history -c; history -r'`
-                under `hooks`
+                under `hooks`{.verbatim}
 
             2.  next step is reading from history file -\> either press
                 enter, otherwise modify up and down keys to reload shell
@@ -120,8 +125,8 @@
 
     5.  ranger
 
-        1.  make `rifle.conf` and `scope.sh` modular and additive as
-            much as this is possible
+        1.  make `rifle.conf`{.verbatim} and `scope.sh`{.verbatim}
+            modular and additive as much as this is possible
 
     6.  system(d)
 
@@ -140,19 +145,19 @@
             repo
 
         3.  reduce the number of dotfiles for a leaner installation -\>
-            for eg. remove `neofetch`, etc.
+            for eg. remove `neofetch`{.verbatim}, etc.
 
 ### System reproducibility
 
-1.  work on script which does manual update checks on `rifle.conf`,
-    `scope.sh` and other emacs-hacked files which might require upstream
-    updates -\> perhaps perform a diff framework to accept/reject
-    upstream changes
+1.  work on script which does manual update checks on
+    `rifle.conf`{.verbatim}, `scope.sh`{.verbatim} and other
+    emacs-hacked files which might require upstream updates -\> perhaps
+    perform a diff framework to accept/reject upstream changes
 
 2.  work on update script which updates all submodules and git repos to
     latest upstream commits eg.
-    `git submodule update --init --recursive --remote`, and also updates
-    misc. code bases such as melpa, vim, spacemacs, etc.
+    `git submodule update --init --recursive --remote`{.verbatim}, and
+    also updates misc. code bases such as melpa, vim, spacemacs, etc.
 
 3.  work on install script which sets up all the necessary git repos for
     dotfiles that cannot be managed with submodules
@@ -289,7 +294,7 @@ properly
 **CLOSED:** *\[2020-11-08 Sun 15:44\]*
 
 **DONE** find ways to reduce hard-coding of configs/dotfiles
-to `/home/shankar` or `~`
+to `/home/shankar`{.verbatim} or `~`{.verbatim}
 
 **CLOSED:** *\[2020-11-08 Sun 02:22\]*
 
