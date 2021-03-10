@@ -8,24 +8,24 @@
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** if possible, try to merge upstream changes to latex layer
 ****** wrong order of company-completions -> brute-force solution is to create new layer
-****** lighter solution is to modify =company-backends= variable post-initialization -> perhaps with advice over latex init function
-****** find way to automatically reparse document with =reftex-parse-all= when building document -> will ensure labels are updated for autocompletion as they are currently not refreshed -> can be added to =company-reftex=
-****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in =company-reftex-citation-candidates=, for development add package (eg. =(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))=) in =dotspacemacs-additional-packages= and update packages, delete old package location
-***** emacs: fix wrong argument error on =helm-company= post command hook -> linked to =helm-company= interaction with =company-post-command=: see https://github.com/Sodel-the-Vociferous/helm-company/issues/21
+****** lighter solution is to modify ~company-backends~ variable post-initialization -> perhaps with advice over latex init function
+****** find way to automatically reparse document with ~reftex-parse-all~ when building document -> will ensure labels are updated for autocompletion as they are currently not refreshed -> can be added to ~company-reftex~
+****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in ~company-reftex-citation-candidates~, for development add package (eg. ~(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))~) in ~dotspacemacs-additional-packages~ and update packages, delete old package location
+***** emacs: fix wrong argument error on ~helm-company~ post command hook -> linked to ~helm-company~ interaction with ~company-post-command~: see https://github.com/Sodel-the-Vociferous/helm-company/issues/21
 ***** system: find way to add system level dotfiles to repository and make shell script to separately initialize these without symlinking and instead via a copy command
 ***** i3: add capability to detect if headphones or speakers are on master -> then print either headphones or speaker to status bar
 
 **** Long-term
 ***** emacs
-****** fix slow response with =ipython= inferior shell -> related to general emacs text printing, see: https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow/603, https://emacs.stackexchange.com/questions/5545/how-to-prevent-slow-down-when-an-inferior-processes-generates-long-lines
-****** migrate to lightweight and lean personal emacs configuration which would be optimized with time such as with =doom= -> might help circumvent many bugs encountered such as those with =latex= and =elpy= compatibilities
-****** consider changing to different autocompletion background such as =lsp= to solve legacy issues
-****** clean up =init.el= and remove many comments
-****** issue of =elpy= hard-coded =company= backends -> this should instead be soft-coded and easily updated from upstream
+****** fix slow response with ~ipython~ inferior shell -> related to general emacs text printing, see: https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow/603, https://emacs.stackexchange.com/questions/5545/how-to-prevent-slow-down-when-an-inferior-processes-generates-long-lines
+****** migrate to lightweight and lean personal emacs configuration which would be optimized with time such as with ~doom~ -> might help circumvent many bugs encountered such as those with ~latex~ and ~elpy~ compatibilities
+****** consider changing to different autocompletion background such as ~lsp~ to solve legacy issues
+****** clean up ~init.el~ and remove many comments
+****** issue of ~elpy~ hard-coded ~company~ backends -> this should instead be soft-coded and easily updated from upstream
 ****** work on script which updates all emacs packages during system update
 ****** consider running emacs as a service to have everything synchronized in one run
 ***** i3
-****** flush screen when waking from sleep -> execute =xset dpms force on= hook perhaps with =sleep 1= to overcome freeze bug
+****** flush screen when waking from sleep -> execute ~xset dpms force on~ hook perhaps with ~sleep 1~ to overcome freeze bug
 ****** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
 ***** shell
 ****** consider using different configs for remote and local shells by sectioning into personal, core, etc
@@ -33,24 +33,24 @@
 ****** special shell-check to ensure all shell tildes are replaced with $HOME
 ****** bash: improve inputrc where possible and synchronize vim-mode with clipboard buffer -> might be complicated
 ****** zsh/bash: improve shared history between multiple terminals and upon searches
-******* first step for writing to common history file -> zsh: =setopt shared_history=, bash: extra prompt commands ~PROMPT_COMMAND='history -a; history -c; history -r'~ under =hooks=
+******* first step for writing to common history file -> zsh: ~setopt shared_history~, bash: extra prompt commands ~PROMPT_COMMAND~'history -a; history -c; history -r'~ under ~hooks~
 ******* next step is reading from history file -> either press enter, otherwise modify up and down keys to reload shell history before searches -> see https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048, but appears to bug out with 2-period oscillating searches in zsh
 ******* try with inc_append_history instread of shared_history, ignore this feature for bash and keep it only for zsh
 ***** mimeapps
 ****** synchronize mime system program defaults to same as ranger's rifle
 ***** ranger
-****** make =rifle.conf= and =scope.sh= modular and additive as much as this is possible
+****** make ~rifle.conf~ and ~scope.sh~ modular and additive as much as this is possible
 ***** system(d)
 ****** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
 ****** make scripts determine active $DISPLAY environmental variable instead of hard-coding -> use for cases where necessary
 ***** general
 ****** use pam environment to cache passphrase for ssh and gpg keys
 ****** port gnupg, ssh, neomutt private dotfiles to private stow repo
-****** reduce the number of dotfiles for a leaner installation -> for eg. remove =neofetch=, etc.
+****** reduce the number of dotfiles for a leaner installation -> for eg. remove ~neofetch~, etc.
 
 *** System reproducibility
-***** work on script which does manual update checks on =rifle.conf=, =scope.sh= and other emacs-hacked files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes
-***** work on update script which updates all submodules and git repos to latest upstream commits eg. =git submodule update --init --recursive --remote=, and also updates misc. code bases such as melpa, vim, spacemacs, etc.
+***** work on script which does manual update checks on ~rifle.conf~, ~scope.sh~ and other emacs-hacked files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes
+***** work on update script which updates all submodules and git repos to latest upstream commits eg. ~git submodule update --init --recursive --remote~, and also updates misc. code bases such as melpa, vim, spacemacs, etc.
 ***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
 
 ** Completed
@@ -100,7 +100,7 @@
       CLOSED: [2020-11-08 Sun 16:06]
 ***** DONE find out i3 default working font and name it properly
       CLOSED: [2020-11-08 Sun 15:44]
-***** DONE find ways to reduce hard-coding of configs/dotfiles to =/home/shankar= or =~=
+***** DONE find ways to reduce hard-coding of configs/dotfiles to ~/home/shankar~ or ~~~
       CLOSED: [2020-11-08 Sun 02:22]
 ***** DONE extract all steps listed in i3 config file for reproducibility -> store them neatly with explanations and commands
       CLOSED: [2020-11-07 Sat 19:19]
