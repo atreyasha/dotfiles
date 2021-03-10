@@ -54,6 +54,9 @@
     1.  emacs
 
         1.  fix slow response with `ipython`{.verbatim} inferior shell
+            -\> related to general emacs text printing, see:
+            <https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow/603>,
+            <https://emacs.stackexchange.com/questions/5545/how-to-prevent-slow-down-when-an-inferior-processes-generates-long-lines>
 
         2.  migrate to lightweight and lean personal emacs configuration
             which would be optimized with time such as with
