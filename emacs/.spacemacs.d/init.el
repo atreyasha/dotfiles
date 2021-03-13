@@ -43,6 +43,7 @@ values."
      yaml
      helm
      emacs-lisp
+     semantic
      themes-megapack
      (auto-completion :variables auto-completion-idle-delay nil)
      (markdown :variables markdown-live-preview-engine 'vmd)
