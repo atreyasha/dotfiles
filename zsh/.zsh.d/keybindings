@@ -1,3 +1,6 @@
+# -*- mode: shell-script -*-
+# vim: syntax=sh
+
 # configure vim keybindings
 bindkey -v
 

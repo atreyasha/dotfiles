@@ -1,3 +1,6 @@
+# -*- mode: shell-script -*-
+# vim: syntax=sh
+
 # ranger-cd function
 function ranger-cd {
   tempfile="$(mktemp -t tmp.XXXXXX)"

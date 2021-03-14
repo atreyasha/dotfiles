@@ -1,3 +1,6 @@
+# -*- mode: shell-script -*-
+# vim: syntax=sh
+
 # x-term-title (source: https://wiki.archlinux.org/index.php/zsh#xterm_title)
 autoload -Uz add-zsh-hook
 if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*) ]]; then

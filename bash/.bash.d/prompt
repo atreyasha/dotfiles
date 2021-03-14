@@ -1,2 +1,5 @@
+# -*- mode: shell-script -*-
+# vim: syntax=sh
+
 # create colorized command-line prompt
 PS1='\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '

@@ -1,3 +1,6 @@
+# -*- mode: shell-script -*-
+# vim: syntax=sh
+
 # configure history-related options
 setopt extended_history
 setopt hist_ignore_dups

@@ -1,3 +1,6 @@
+# -*- mode: shell-script -*-
+# vim: syntax=sh
+
 # configure completions (source: https://wiki.archlinux.org/index.php/zsh#Command_completion)
 autoload -Uz compinit
 compinit

@@ -1,3 +1,6 @@
+# -*- mode: shell-script -*-
+# vim: syntax=sh
+
 # define function for changing prompt depending on zsh vim mode (source and more: https://superuser.com/a/156204)
 function zle-line-init zle-keymap-select {
   prefix="[%F{011}%B%n@%m%f%b:%F{blue}%B%~%b%f$(parse_git_branch)]"

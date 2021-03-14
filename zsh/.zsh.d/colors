@@ -1,3 +1,6 @@
+# -*- mode: shell-script -*-
+# vim: syntax=sh
+
 # set terminfo if this is missing
 if [[ "$TERM" == "xterm-termite" ]]; then
   if ! infocmp xterm-termite &>/dev/null; then
