@@ -13,19 +13,21 @@
     1.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
-        1.  if possible, try to merge upstream changes to latex layer
+        1.  **TODO** find way to automatically reparse
+            document with `reftex-parse-all` when building document -\>
+            will ensure labels are updated for autocompletion as they
+            are currently not refreshed -\> can be added to
+            `company-reftex` directly in a new branch since permission
+            to push is granted
 
-        2.  wrong order of company-completions -\> brute-force solution
+        2.  if possible, try to merge upstream changes to latex layer
+
+        3.  wrong order of company-completions -\> brute-force solution
             is to create new layer
 
-        3.  lighter solution is to modify `company-backends` variable
+        4.  lighter solution is to modify `company-backends` variable
             post-initialization -\> perhaps with advice over latex init
             function
-
-        4.  find way to automatically reparse document with
-            `reftex-parse-all` when building document -\> will ensure
-            labels are updated for autocompletion as they are currently
-            not refreshed -\> can be added to `company-reftex`
 
         5.  think about improving workflow to handle spaces, make case
             unsensitive and parse bibliography codes better (eg.
@@ -40,6 +42,8 @@
         hook -\> linked to `helm-company` interaction with
         `company-post-command`: see
         <https://github.com/Sodel-the-Vociferous/helm-company/issues/21>
+        -\> fix would require looking at `company-post-command` to
+        understand what is failing
 
     3.  system: find way to add system level dotfiles to repository and
         make shell script to separately initialize these without
