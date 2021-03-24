@@ -60,7 +60,6 @@ values."
                       syntax-checking-enable-tooltips nil)
      (latex-plus :location local
                  :variables
-                 latex-enable-auto-fill nil
                  latex-enable-magic nil
                  latex-build-command "LatexMk")
      (elpy-plus :location local
