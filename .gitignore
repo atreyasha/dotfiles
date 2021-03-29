@@ -1,2 +1,5 @@
 # py-cache files
 *.pyc
+
+# vim spell-files
+vim/.vim/spell
