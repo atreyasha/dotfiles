@@ -15,7 +15,7 @@ font pango:DejaVu Sans 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id termite
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -206,11 +206,8 @@ bindsym $mod+Shift+m exec --no-startup-id "refresh-monitor && feh-background"
 bindsym $mod+Shift+b exec "i3_balance_workspace"
 bindsym $mod+b exec "i3_balance_workspace --scope focus"
 
-# start termite with different names for them to be swallowed
-exec --no-startup-id i3-msg workspace $ws1; { termite --name 'vte1' --directory ~ & }; { termite --name 'vte2' --directory ~ & }
-
-# set up layout to absorb terminals
-exec --no-startup-id i3-msg workspace $ws1; append_layout ~/.layouts/layout-WORKSPACE-1-2.json
+# start terminal with different names for them to be swallowed
+exec --no-startup-id i3-msg workspace $ws1; { alacritty --working-directory ~ & }; { alacritty --working-directory ~ & }
 
 # mute sound at i3 startup
 exec --no-startup-id "amixer -q sset Master mute && refresh-i3blocks-audio"
