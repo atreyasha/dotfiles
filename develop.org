@@ -16,6 +16,8 @@
 ***** i3: add capability to detect if headphones or speakers are on master -> then print either headphones or speaker to status bar
 
 **** Long-term
+***** alacritty
+****** keybinding issues: https://github.com/alacritty/alacritty/issues/4111
 ***** emacs
 ****** fix slow response with ~ipython~ inferior shell -> related to general emacs text printing, see: https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow/603, https://emacs.stackexchange.com/questions/5545/how-to-prevent-slow-down-when-an-inferior-processes-generates-long-lines
 ****** migrate to lightweight and lean personal emacs configuration which would be optimized with time such as with ~doom~ -> might help circumvent many bugs encountered such as those with ~latex~ and ~elpy~ compatibilities

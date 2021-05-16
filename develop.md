@@ -54,7 +54,12 @@
 
 2.  Long-term
 
-    1.  emacs
+    1.  alacritty
+
+        1.  keybinding issues:
+            <https://github.com/alacritty/alacritty/issues/4111>
+
+    2.  emacs
 
         1.  fix slow response with `ipython` inferior shell -\> related
             to general emacs text printing, see:
@@ -81,7 +86,7 @@
         7.  consider running emacs as a service to have everything
             synchronized in one run
 
-    2.  i3
+    3.  i3
 
         1.  flush screen when waking from sleep -\> execute
             `xset dpms force on` hook perhaps with `sleep 1` to overcome
@@ -91,7 +96,7 @@
             manual pid checking and possibly extra sleep:
             <https://github.com/i3/i3lock/issues/275>
 
-    3.  shell
+    4.  shell
 
         1.  consider using different configs for remote and local shells
             by sectioning into personal, core, etc
@@ -122,17 +127,17 @@
             3.  try with inc_append_history instread of shared_history,
                 ignore this feature for bash and keep it only for zsh
 
-    4.  mimeapps
+    5.  mimeapps
 
         1.  synchronize mime system program defaults to same as
             ranger\'s rifle
 
-    5.  ranger
+    6.  ranger
 
         1.  make `rifle.conf` and `scope.sh` modular and additive as
             much as this is possible
 
-    6.  system(d)
+    7.  system(d)
 
         1.  disable dpms/dim when video is playing: see bug report
             <https://github.com/qutebrowser/qutebrowser/issues/5504>
@@ -141,7 +146,7 @@
             variable instead of hard-coding -\> use for cases where
             necessary
 
-    7.  general
+    8.  general
 
         1.  use pam environment to cache passphrase for ssh and gpg keys
 
