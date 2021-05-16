@@ -5,7 +5,6 @@
 [ -f "$HOME/.zsh.d/keybindings" ] && . "$HOME/.zsh.d/keybindings"
 
 # source modular configurations with no specific order
-[ -f "$HOME/.zsh.d/colors"      ] && . "$HOME/.zsh.d/colors"
 [ -f "$HOME/.zsh.d/completions" ] && . "$HOME/.zsh.d/completions"
 [ -f "$HOME/.zsh.d/options"     ] && . "$HOME/.zsh.d/options"
 [ -f "$HOME/.zsh.d/aliases"     ] && . "$HOME/.zsh.d/aliases"
