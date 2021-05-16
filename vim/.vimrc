@@ -90,3 +90,6 @@ let g:lightline = {
       \ 'separator': { 'left': ' ', 'right': ' ' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
+
+" temporary fix for https://github.com/amix/vimrc/issues/635
+let g:snipMate = { 'snippet_version' : 1 }
