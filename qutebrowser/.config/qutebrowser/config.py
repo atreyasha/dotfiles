@@ -1085,7 +1085,7 @@ c.downloads.location.directory = "~/downloads"
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
 # c.editor.command = ['gvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
-c.editor.command = ["termite", "-e", "vim {}"]
+c.editor.command = ['i3-sensible-terminal', '-e', 'vim', '{file}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding

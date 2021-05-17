@@ -8,7 +8,7 @@ export HISTTIMEFORMAT="%F %T: "
 # declare important environmental variables
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export EDITOR="vim"
-export TERMINAL="termite"
+export TERMINAL="alacritty"
 export R_PROFILE_USER="$HOME/.Rprofile"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 

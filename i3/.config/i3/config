@@ -15,7 +15,7 @@ font pango:DejaVu Sans 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty --working-directory ~
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal --working-directory ~
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -207,7 +207,7 @@ bindsym $mod+Shift+b exec "i3_balance_workspace"
 bindsym $mod+b exec "i3_balance_workspace --scope focus"
 
 # start terminal with different names for them to be swallowed
-exec --no-startup-id i3-msg workspace $ws1; { alacritty --working-directory ~ & }; { alacritty --working-directory ~ & }
+exec --no-startup-id i3-msg workspace $ws1; { i3-sensible-terminal --working-directory ~ & }; { i3-sensible-terminal --working-directory ~ & }
 
 # mute sound at i3 startup
 exec --no-startup-id "amixer -q sset Master mute && refresh-i3blocks-audio"
