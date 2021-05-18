@@ -57,6 +57,7 @@ set cursorline
 highlight LineNr term=NONE cterm=NONE ctermfg=Grey ctermbg=NONE
 highlight CursorLineNr term=bold cterm=bold ctermbg=0
 highlight CursorLine term=NONE cterm=NONE ctermbg=0
+highlight SpellBad cterm=underline ctermfg=red
 
 " disable linting by default
 let g:ale_enabled = 0
