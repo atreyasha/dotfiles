@@ -1,12 +1,6 @@
 # -*- mode: shell-script -*-
 # vim: syntax=sh
 
-# function to return git branch information
-function parse_git_branch {
-  branch="$(git symbolic-ref --short HEAD 2> /dev/null)"
-  [ -n "$branch" ] && echo " @$branch"
-}
-
 # function for ranger-cd
 function ranger-cd {
   tempfile="$(mktemp -t tmp.XXXXXX)"
