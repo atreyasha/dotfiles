@@ -5,6 +5,7 @@
 [ -f "$HOME/.zsh.d/keybindings" ] && . "$HOME/.zsh.d/keybindings"
 
 # source modular configurations with no specific order
+[ -f "$HOME/.zsh.d/terminfo"    ] && . "$HOME/.zsh.d/terminfo"
 [ -f "$HOME/.zsh.d/completions" ] && . "$HOME/.zsh.d/completions"
 [ -f "$HOME/.zsh.d/options"     ] && . "$HOME/.zsh.d/options"
 [ -f "$HOME/.zsh.d/aliases"     ] && . "$HOME/.zsh.d/aliases"

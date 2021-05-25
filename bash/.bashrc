@@ -6,6 +6,7 @@
 [ -f "$HOME/.bash.d/keybindings" ] && . "$HOME/.bash.d/keybindings"
 
 # source modular configurations with no specific order
+[ -f "$HOME/.bash.d/terminfo"    ] && . "$HOME/.bash.d/terminfo"
 [ -f "$HOME/.bash.d/prompt"      ] && . "$HOME/.bash.d/prompt"
 [ -f "$HOME/.bash.d/completions" ] && . "$HOME/.bash.d/completions"
 [ -f "$HOME/.bash.d/options"     ] && . "$HOME/.bash.d/options"
