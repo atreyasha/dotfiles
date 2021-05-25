@@ -13,23 +13,16 @@
     1.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
-        1.  **TODO** find way to automatically reparse
-            document with `reftex-parse-all` when building document -\>
-            will ensure labels are updated for autocompletion as they
-            are currently not refreshed -\> can be added to
-            `company-reftex` directly in a new branch since permission
-            to push is granted
+        1.  if possible, try to merge upstream changes to latex layer
 
-        2.  if possible, try to merge upstream changes to latex layer
-
-        3.  wrong order of company-completions -\> brute-force solution
+        2.  wrong order of company-completions -\> brute-force solution
             is to create new layer
 
-        4.  lighter solution is to modify `company-backends` variable
+        3.  lighter solution is to modify `company-backends` variable
             post-initialization -\> perhaps with advice over latex init
             function
 
-        5.  think about improving workflow to handle spaces, make case
+        4.  think about improving workflow to handle spaces, make case
             unsensitive and parse bibliography codes better (eg.
             \"doran2017does\" from \"do\") in
             `company-reftex-citation-candidates`, for development add

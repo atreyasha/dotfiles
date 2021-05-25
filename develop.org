@@ -6,7 +6,6 @@
 *** Dotfiles
 **** Current
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
-****** TODO find way to automatically reparse document with ~reftex-parse-all~ when building document -> will ensure labels are updated for autocompletion as they are currently not refreshed -> can be added to ~company-reftex~ directly in a new branch since permission to push is granted
 ****** if possible, try to merge upstream changes to latex layer
 ****** wrong order of company-completions -> brute-force solution is to create new layer
 ****** lighter solution is to modify ~company-backends~ variable post-initialization -> perhaps with advice over latex init function
