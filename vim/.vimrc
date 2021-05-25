@@ -7,6 +7,9 @@ source ~/.vim_runtime/vimrcs/filetypes.vim
 source ~/.vim_runtime/vimrcs/plugins_config.vim
 source ~/.vim_runtime/vimrcs/extended.vim
 
+" set terminal to override background terminal
+set term=xterm-256color
+
 " set spelling languages
 set spelllang=en,de
 
