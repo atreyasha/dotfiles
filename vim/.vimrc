@@ -7,7 +7,7 @@ source ~/.vim_runtime/vimrcs/filetypes.vim
 source ~/.vim_runtime/vimrcs/plugins_config.vim
 source ~/.vim_runtime/vimrcs/extended.vim
 
-" set terminal to override background terminal
+" alacritty fix: set terminal to override background terminal
 set term=xterm-256color
 
 " set spelling languages
@@ -18,7 +18,9 @@ set noshowmode
 
 " clipboard related changes
 set clipboard=unnamedplus
-autocmd VimLeave * call system("xsel -ib", getreg('+'))
+if executable('xsel')
+  autocmd VimLeave * call system("xsel -ib", getreg('+'))
+endif
 
 " line numbers
 set number
