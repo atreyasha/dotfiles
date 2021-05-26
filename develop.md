@@ -10,7 +10,14 @@
 
 1.  Current
 
-    1.  emacs: improve autocompletions of latex layer:
+    1.  neovim: consider changing to neovim to fix issues related to vim
+
+        1.  add suda plugin and find good location to install plugin
+
+        2.  perform all other book-keeping tasks such as conditional
+            aliases, conditional xterm and updating variables
+
+    2.  emacs: improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
 
         1.  if possible, try to merge upstream changes to latex layer
@@ -31,18 +38,18 @@
             in `dotspacemacs-additional-packages` and update packages,
             delete old package location
 
-    2.  emacs: fix wrong argument error on `helm-company` post command
+    3.  emacs: fix wrong argument error on `helm-company` post command
         hook -\> linked to `helm-company` interaction with
         `company-post-command`: see
         <https://github.com/Sodel-the-Vociferous/helm-company/issues/21>
         -\> fix would require looking at `company-post-command` to
         understand what is failing
 
-    3.  system: find way to add system level dotfiles to repository and
+    4.  system: find way to add system level dotfiles to repository and
         make shell script to separately initialize these without
         symlinking and instead via a copy command
 
-    4.  i3: add capability to detect if headphones or speakers are on
+    5.  i3: add capability to detect if headphones or speakers are on
         master -\> then print either headphones or speaker to status bar
 
 2.  Long-term
@@ -161,7 +168,9 @@
     `git submodule update --init --recursive --remote`, and also updates
     misc. code bases such as melpa, vim, spacemacs, etc.
 
-3.  work on install script which sets up all the necessary git repos for
+3.  need to add python script run for updates on `.vim_runtime`
+
+4.  work on install script which sets up all the necessary git repos for
     dotfiles that cannot be managed with submodules
 
 ## Completed

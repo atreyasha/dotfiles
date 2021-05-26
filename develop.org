@@ -5,6 +5,9 @@
 ** Tasks
 *** Dotfiles
 **** Current
+***** neovim: consider changing to neovim to fix issues related to vim
+****** add suda plugin and find good location to install plugin
+****** perform all other book-keeping tasks such as conditional aliases, conditional xterm and updating variables
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** if possible, try to merge upstream changes to latex layer
 ****** wrong order of company-completions -> brute-force solution is to create new layer
@@ -13,7 +16,7 @@
 ***** emacs: fix wrong argument error on ~helm-company~ post command hook -> linked to ~helm-company~ interaction with ~company-post-command~: see https://github.com/Sodel-the-Vociferous/helm-company/issues/21 -> fix would require looking at ~company-post-command~ to understand what is failing
 ***** system: find way to add system level dotfiles to repository and make shell script to separately initialize these without symlinking and instead via a copy command
 ***** i3: add capability to detect if headphones or speakers are on master -> then print either headphones or speaker to status bar
-
+ 
 **** Long-term
 ***** alacritty
 ****** keybinding issues: https://github.com/alacritty/alacritty/issues/4111
@@ -52,6 +55,7 @@
 *** System reproducibility
 ***** work on script which does manual update checks on ~rifle.conf~, ~scope.sh~ and other emacs-hacked files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes
 ***** work on update script which updates all submodules and git repos to latest upstream commits eg. ~git submodule update --init --recursive --remote~, and also updates misc. code bases such as melpa, vim, spacemacs, etc.
+***** need to add python script run for updates on ~.vim_runtime~
 ***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
 
 ** Completed
