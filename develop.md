@@ -19,7 +19,11 @@
         2.  perform all other book-keeping tasks such as conditional
             aliases, conditional xterm and updating variables
 
-        3.  sort out all issues with updating plugins for current vim
+        3.  or consider restarting and developing neovim/vim from the
+            ground up with as little plugins as possible -\> similar
+            push as per emacs
+
+        4.  sort out all issues with updating plugins for current vim
             configs -\> seems like keeping submodules synced should be
             just fine
 
