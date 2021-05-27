@@ -5,9 +5,11 @@
 ** Tasks
 *** Dotfiles
 **** Current
+***** TODO sort and clean dotfile and system notes 
 ***** neovim: consider changing to neovim to fix issues related to vim
 ****** add suda plugin and find good location to install plugin
 ****** perform all other book-keeping tasks such as conditional aliases, conditional xterm and updating variables
+****** sort out all issues with updating plugins for current vim configs -> seems like keeping submodules synced should be just fine
 ***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** if possible, try to merge upstream changes to latex layer
 ****** wrong order of company-completions -> brute-force solution is to create new layer
