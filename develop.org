@@ -4,125 +4,42 @@
 
 ** Tasks
 *** Dotfiles
-**** Current
-***** TODO sort and clean dotfile and system notes 
-***** neovim: consider changing to neovim to fix issues related to vim
-****** add suda plugin and find good location to install plugin
-****** perform all other book-keeping tasks such as conditional aliases, conditional xterm and updating variables
-****** or consider restarting and developing neovim/vim from the ground up with as little plugins as possible -> similar push as per emacs
-****** sort out all issues with updating plugins for current vim configs -> seems like keeping submodules synced should be just fine
-***** emacs: improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
-****** if possible, try to merge upstream changes to latex layer
+**** Neovim
+***** Basic
+****** migrate to neovim to fix upstream issues related to ~alacritty~ 
+****** conditionally alias ~nvim~ to ~vim~ if it exists + conditional ~xterm-256color~ declaration if ~nvim~ is not running + updating variables in dotfiles if necessary
+****** find good location to install ~suda~ plugin to overcome issue: https://github.com/neovim/neovim/issues/12103
+***** Next
+****** re-develop neovim configuration from the ground up by removing all unnecessary plugins 
+****** sort out a clean way of updating all plugins as necessary: https://github.com/amix/vimrc/issues/637
+
+**** Emacs
+***** Change emacs distribution
+****** migrate to lightweight and lean personal emacs configuration which would be optimized with time such as with ~doom~ -> might help circumvent many bugs encountered such as those with ~latex~ and ~elpy~ compatibilities
+***** Work on script which updates all emacs packages during system update
+***** Patch ~company-reftex~
+****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in ~company-reftex-citation-candidates~, for development add package (eg. ~(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))~) in ~dotspacemacs-additional-packages~ and update packages, delete old package location 
+***** Patch ~helm-company~
+****** fix wrong argument error on ~helm-company~ post command hook -> linked to ~helm-company~ interaction with ~company-post-command~: see https://github.com/Sodel-the-Vociferous/helm-company/issues/21 -> fix would require looking at ~company-post-command~ to understand what is failing
+***** Patch ~elpy~
+****** issue of ~elpy~ hard-coded ~company~ backends -> this should instead be soft-coded and easily updated from upstream
+       
+**** Spacemacs
+***** Improve autocompletions of latex layer: https://github.com/syl20bnr/spacemacs/issues/14134
 ****** wrong order of company-completions -> brute-force solution is to create new layer
 ****** lighter solution is to modify ~company-backends~ variable post-initialization -> perhaps with advice over latex init function
-****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in ~company-reftex-citation-candidates~, for development add package (eg. ~(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))~) in ~dotspacemacs-additional-packages~ and update packages, delete old package location
-***** emacs: fix wrong argument error on ~helm-company~ post command hook -> linked to ~helm-company~ interaction with ~company-post-command~: see https://github.com/Sodel-the-Vociferous/helm-company/issues/21 -> fix would require looking at ~company-post-command~ to understand what is failing
-***** system: find way to add system level dotfiles to repository and make shell script to separately initialize these without symlinking and instead via a copy command
-***** i3: add capability to detect if headphones or speakers are on master -> then print either headphones or speaker to status bar
- 
-**** Long-term
-***** alacritty
-****** keybinding issues: https://github.com/alacritty/alacritty/issues/4111
-***** emacs
-****** fix slow response with ~ipython~ inferior shell -> related to general emacs text printing, see: https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow/603, https://emacs.stackexchange.com/questions/5545/how-to-prevent-slow-down-when-an-inferior-processes-generates-long-lines
-****** migrate to lightweight and lean personal emacs configuration which would be optimized with time such as with ~doom~ -> might help circumvent many bugs encountered such as those with ~latex~ and ~elpy~ compatibilities
-****** consider changing to different autocompletion background such as ~lsp~ to solve legacy issues
-****** clean up ~init.el~ and remove many comments
-****** issue of ~elpy~ hard-coded ~company~ backends -> this should instead be soft-coded and easily updated from upstream
-****** work on script which updates all emacs packages during system update
-****** consider running emacs as a service to have everything synchronized in one run
-***** i3
-****** flush screen when waking from sleep -> execute ~xset dpms force on~ hook perhaps with ~sleep 1~ to overcome freeze bug
-****** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
-***** shell
-****** consider using different configs for remote and local shells by sectioning into personal, core, etc
-****** hook to shfmt on all shell scripts including zsh
-****** special shell-check to ensure all shell tildes are replaced with $HOME
-****** bash: improve inputrc where possible and synchronize vim-mode with clipboard buffer -> might be complicated
-****** zsh/bash: improve shared history between multiple terminals and upon searches
-******* first step for writing to common history file -> zsh: ~setopt shared_history~, bash: extra prompt commands ~PROMPT_COMMAND~'history -a; history -c; history -r'~ under ~hooks~
-******* next step is reading from history file -> either press enter, otherwise modify up and down keys to reload shell history before searches -> see https://superuser.com/questions/843138/how-can-i-get-zsh-shared-history-to-work/844048#844048, but appears to bug out with 2-period oscillating searches in zsh
-******* try with inc_append_history instread of shared_history, ignore this feature for bash and keep it only for zsh
-***** mimeapps
-****** synchronize mime system program defaults to same as ranger's rifle
-***** ranger
-****** make ~rifle.conf~ and ~scope.sh~ modular and additive as much as this is possible
-***** system(d)
-****** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
-****** make scripts determine active $DISPLAY environmental variable instead of hard-coding -> use for cases where necessary
-***** general
-****** use pam environment to cache passphrase for ssh and gpg keys
-****** port gnupg, ssh, neomutt private dotfiles to private stow repo
-****** reduce the number of dotfiles for a leaner installation -> for eg. remove ~neofetch~, etc.
+***** Automatically merge upstream changes to latex layer which are coped/modified
 
-*** System reproducibility
-***** work on script which does manual update checks on ~rifle.conf~, ~scope.sh~ and other emacs-hacked files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes
-***** work on update script which updates all submodules and git repos to latest upstream commits eg. ~git submodule update --init --recursive --remote~, and also updates misc. code bases such as melpa, vim, spacemacs, etc.
-***** need to add python script run for updates on ~.vim_runtime~
-***** work on install script which sets up all the necessary git repos for dotfiles that cannot be managed with submodules
+**** I3
+***** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275 
+**** Mimeapps
+***** synchronize mime system program defaults to same as ranger's rifle
+**** System(d)
+***** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
+**** Private
+***** port pass, gnupg, ssh, neomutt private dotfiles to private stow repo
 
-** Completed
-***** DONE bash/zsh: organize configurations files into modular sub-files to be sourced by mains -> difficult because of many different functionalities in zsh but should be possible with enough scrutiny
-      CLOSED: [2020-11-25 Wed 00:47]
-***** DONE i3: make all audio channels muted at boot (now only main channel is muted) -> very complicated because of pulseaudio and alsa simultaneous actions: https://github.com/alsa-project/alsa-utils/issues/72, switch to single volume value between different channels -> will solve all of these problems altogether -> still challenging to solve
-      CLOSED: [2020-11-24 Tue 14:37]
-***** DONE zsh: remove redundant key bindings
-      CLOSED: [2020-11-22 Sun 14:16]
-***** DONE i3: fix battery script for multiple discharge symbols
-      CLOSED: [2020-11-22 Sun 14:02]
-***** DONE bash/zsh: reduce redundant code in bash/zsh and clean workflows up -> would require understanding each line and then deleting unnecessary ones -> bash more or less done, streamline further for zsh configs
-      CLOSED: [2020-11-20 Fri 14:22]
-***** DONE look into conflicting tabbing and insert behaviour for latex enumerate/itemize environment + newline on comments leading to comments becoming non-comments
-      CLOSED: [2020-11-17 Tue 14:38]
-***** DONE local hack: fix spacemacs conflicts with auto-completion and elpy -> also improve general company autocompletion flow and trigger it only on user request -> need to understand keybindings better to make this work
-      CLOSED: [2020-11-14 Sat 13:05]
-***** DONE add user flags to pgrep i3lock cases -> improve other shell scripts too
-      CLOSED: [2020-11-12 Thu 14:46]
-***** DONE clear shell output when logging out -> useful for ssh connections, see debian template -> useful to have to override existing default which may be confusing -> don't do this
-      CLOSED: [2020-11-12 Thu 13:17]
-***** DONE streamline and unify the usage of xsel and xclip -> decided to keep both options as both come in handy
-      CLOSED: [2020-11-12 Thu 12:57]
-***** DONE fix tmux portability and xclip copy issues -> reverted to keep xsel
-      CLOSED: [2020-11-12 Thu 02:31]
-***** DONE sort out gpg-agent forgetting keys issue -> most likely arises from reloadagent command in shell logout scripts
-      CLOSED: [2020-11-12 Thu 01:26]
-***** DONE gpg-agent dying randomly again -> put GPG_TTY in .zshenv and somewhere important for bash -> add if statement for logout gpg-agent
-      CLOSED: [2020-11-11 Wed 20:32]
-***** DONE invest in a minimal tmux configuration file
-      CLOSED: [2020-11-11 Wed 19:48]
-***** DONE bash/zsh: clean up aliases and add if statements to check for certain commands to reduce hard-coding (eg. ranger and neomutt)
-      CLOSED: [2020-11-11 Wed 19:09]
-***** DONE add upstream vim as submodule and then simply source it cleanly + check if somehow possible for spacemacs too (change to .spacemacs.d) -> consider removing env file
-      CLOSED: [2020-11-10 Tue 15:31]
-***** DONE add public ssh and gnupg dotfiles, find a way to source additional file from ssh config
-      CLOSED: [2020-11-10 Tue 13:27]
-***** DONE remove multiple vimrcs and keep only my_configs.vim for simplicity
-      CLOSED: [2020-11-10 Tue 03:52]
-***** DONE consider doing away with .profile if not necessary -> or make this leaner -> lowercase all zshrc comments
-      CLOSED: [2020-11-10 Tue 02:37]
-***** DONE replace tilde with $HOME for standardization in shell scripts -> $HOME is safer as it can be quoted and because it works generally anywhere in a string -> also allows your code to be more portable
-      CLOSED: [2020-11-09 Mon 17:16]
-***** DONE check if possible to flash open dpms when recovering from suspend where lock resulted in dpms down
-      CLOSED: [2020-11-09 Mon 01:40]
-***** DONE standardize or make uniform colors among i3blocks blocklets -> check exact hexes
-      CLOSED: [2020-11-08 Sun 16:06]
-***** DONE find out i3 default working font and name it properly
-      CLOSED: [2020-11-08 Sun 15:44]
-***** DONE find ways to reduce hard-coding of configs/dotfiles to ~/home/shankar~ or ~~~
-      CLOSED: [2020-11-08 Sun 02:22]
-***** DONE extract all steps listed in i3 config file for reproducibility -> store them neatly with explanations and commands
-      CLOSED: [2020-11-07 Sat 19:19]
-***** DONE move all special files elsewhere and add jack file as well
-      CLOSED: [2020-11-07 Sat 15:01]
-***** DONE improve quality and formatting of all code, especially for i3 configs
-      CLOSED: [2020-11-07 Sat 14:47]
-***** DONE change layout names to more agnostic -> make this better
-      CLOSED: [2020-11-05 Thu 13:53]
-***** DONE change background name to simpler one and synchronize throughout all references
-      CLOSED: [2020-11-05 Thu 13:18]
-***** DONE replace simple git repos with submodules -> only done for non-offensive git repos
-      CLOSED: [2020-11-04 Wed 17:15]
-***** DONE Design non-offending stow command for all -> put this in readme
-      CLOSED: [2020-11-04 Wed 16:14]
-***** DONE Dotfile initiative started
-      CLOSED: [2020-11-04 Wed 16:14]
+*** Update sanity
+**** update script which updates all submodules and git repos to latest upstream commits eg. ~git submodule update --init --recursive --remote~
+**** update script for ~emacs~ and ~vim~ packages
+**** update script which does manual update checks on files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes
