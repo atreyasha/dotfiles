@@ -38,10 +38,10 @@
             might help circumvent many bugs encountered such as those
             with `latex` and `elpy` compatibilities
 
-    2.  Work on script which updates all emacs packages during system
-        update
+        2.  work on script which updates all emacs packages during
+            system update
 
-    3.  Patch `company-reftex`
+    2.  Patch `company-reftex`
 
         1.  think about improving workflow to handle spaces, make case
             unsensitive and parse bibliography codes better (eg.
@@ -52,7 +52,7 @@
             in `dotspacemacs-additional-packages` and update packages,
             delete old package location
 
-    4.  Patch `helm-company`
+    3.  Patch `helm-company`
 
         1.  fix wrong argument error on `helm-company` post command hook
             -\> linked to `helm-company` interaction with
@@ -61,7 +61,7 @@
             -\> fix would require looking at `company-post-command` to
             understand what is failing
 
-    5.  Patch `elpy`
+    4.  Patch `elpy`
 
         1.  issue of `elpy` hard-coded `company` backends -\> this
             should instead be soft-coded and easily updated from
@@ -102,6 +102,11 @@
 
     1.  port pass, gnupg, ssh, neomutt private dotfiles to private stow
         repo
+
+8.  Deployment
+
+    1.  develop basic scripts to deploy `stow` on local and remote
+        machines, eg. `local.sh` and `remote.sh`
 
 ### Update sanity
 
