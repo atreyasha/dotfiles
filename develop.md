@@ -119,3 +119,6 @@
 3.  update script which does manual update checks on files which might
     require upstream updates -\> perhaps perform a diff framework to
     accept/reject upstream changes
+
+4.  create pacman hooks to update package lists, otherwise use script
+    for all other updates
