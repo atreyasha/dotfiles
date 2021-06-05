@@ -92,18 +92,30 @@
     2.  Automatically merge upstream changes to latex layer which are
         coped/modified
 
-6.  I3
+6.  Monitor configuration
 
-    1.  think about using xautolock/xss-lock to circumvent some manual
+    1.  use `autorandr` for more automatic monitor configuration
+
+    2.  or alternatively look for another program which only detects
+        without automatically changing -\> perhaps just using
+        `autorandr` python script installed via `pip`
+
+    3.  or perhaps create AUR repository to do this directly
+
+7.  I3
+
+    1.  convert i3-cycle to i3-ipc and port everything to AUR/pypi
+
+    2.  think about using xautolock/xss-lock to circumvent some manual
         pid checking and possibly extra sleep:
         <https://github.com/i3/i3lock/issues/275>
 
-7.  Mimeapps
+8.  Mimeapps
 
     1.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-8.  System(d)
+9.  System(d)
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
@@ -114,7 +126,7 @@
     upstream commits eg.
     `git submodule update --init --recursive --remote`
 
-2.  update script for `emacs` and `vim` packages
+2.  update script for `emacs`, `vim` and `pip` packages
 
 3.  update script which does manual update checks on files which might
     require upstream updates -\> perhaps perform a diff framework to

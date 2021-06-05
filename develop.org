@@ -35,8 +35,13 @@
 ****** lighter solution is to modify ~company-backends~ variable post-initialization -> perhaps with advice over latex init function
 ***** Automatically merge upstream changes to latex layer which are coped/modified
 
+**** Monitor configuration
+***** use ~autorandr~ for more automatic monitor configuration
+***** or alternatively look for another program which only detects without automatically changing -> perhaps just using ~autorandr~ python script installed via ~pip~
+***** or perhaps create AUR repository to do this directly
 **** I3
-***** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275 
+***** convert i3-cycle to i3-ipc and port everything to AUR/pypi
+***** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
 **** Mimeapps
 ***** synchronize mime system program defaults to same as ranger's rifle
 **** System(d)
@@ -44,6 +49,6 @@
 
 *** Update sanity
 **** update script which updates all submodules and git repos to latest upstream commits eg. ~git submodule update --init --recursive --remote~
-**** update script for ~emacs~ and ~vim~ packages
+**** update script for ~emacs~, ~vim~ and ~pip~ packages
 **** update script which does manual update checks on files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes
 **** create pacman hooks to update package lists, otherwise use script for all other updates
