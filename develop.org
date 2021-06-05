@@ -4,6 +4,11 @@
 
 ** Tasks
 *** Dotfiles
+**** TODO Deployment
+***** develop basic scripts to deploy ~stow~ on local and remote machines, eg. ~local.sh~ and ~remote.sh~ 
+**** TODO Private
+***** port pass, gnupg, ssh, neomutt private dotfiles to private stow repo
+
 **** Neovim
 ***** Basic
 ****** migrate to neovim to fix upstream issues related to ~alacritty~ 
@@ -36,10 +41,6 @@
 ***** synchronize mime system program defaults to same as ranger's rifle
 **** System(d)
 ***** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
-**** Private
-***** port pass, gnupg, ssh, neomutt private dotfiles to private stow repo
-**** Deployment
-***** develop basic scripts to deploy ~stow~ on local and remote machines, eg. ~local.sh~ and ~remote.sh~ 
 
 *** Update sanity
 **** update script which updates all submodules and git repos to latest upstream commits eg. ~git submodule update --init --recursive --remote~

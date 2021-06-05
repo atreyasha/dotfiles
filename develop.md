@@ -7,7 +7,17 @@
 
 ### Dotfiles
 
-1.  Neovim
+1.  **TODO** Deployment
+
+    1.  develop basic scripts to deploy `stow` on local and remote
+        machines, eg. `local.sh` and `remote.sh`
+
+2.  **TODO** Private
+
+    1.  port pass, gnupg, ssh, neomutt private dotfiles to private stow
+        repo
+
+3.  Neovim
 
     1.  Basic
 
@@ -29,7 +39,7 @@
         2.  sort out a clean way of updating all plugins as necessary:
             <https://github.com/amix/vimrc/issues/637>
 
-2.  Emacs
+4.  Emacs
 
     1.  Change emacs distribution
 
@@ -67,7 +77,7 @@
             should instead be soft-coded and easily updated from
             upstream
 
-3.  Spacemacs
+5.  Spacemacs
 
     1.  Improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
@@ -82,31 +92,21 @@
     2.  Automatically merge upstream changes to latex layer which are
         coped/modified
 
-4.  I3
+6.  I3
 
     1.  think about using xautolock/xss-lock to circumvent some manual
         pid checking and possibly extra sleep:
         <https://github.com/i3/i3lock/issues/275>
 
-5.  Mimeapps
+7.  Mimeapps
 
     1.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-6.  System(d)
+8.  System(d)
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
-
-7.  Private
-
-    1.  port pass, gnupg, ssh, neomutt private dotfiles to private stow
-        repo
-
-8.  Deployment
-
-    1.  develop basic scripts to deploy `stow` on local and remote
-        machines, eg. `local.sh` and `remote.sh`
 
 ### Update sanity
 
