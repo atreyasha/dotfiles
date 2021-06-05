@@ -130,8 +130,8 @@ mode "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff" {
   bindsym s mode "default"; exec systemctl suspend
   bindsym o exec i3-msg exit
   bindsym l mode "default"; exec i3lock-blur-lock
-  bindsym r exec reboot
-  bindsym p exec poweroff
+  bindsym r exec systemctl reboot
+  bindsym p exec systemctl poweroff
   # exit mode
   bindsym Escape mode "default"
   bindsym Return mode "default"
