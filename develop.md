@@ -136,3 +136,5 @@
 3.  update script for `emacs`, `vim` and `pip` packages
 
 4.  update script for package lists on `arch` repo and pushes afterwards
+
+5.  dump `pip --user` package lists as well during update
