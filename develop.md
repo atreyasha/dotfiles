@@ -94,17 +94,19 @@
 
 6.  Monitor configuration
 
-    1.  use `autorandr` for more automatic monitor configuration
+    1.  use `autorandr` for more automatic monitor configuration -\>
+        modify current monitor workflows
 
-    2.  or alternatively look for another program which only detects
-        without automatically changing -\> perhaps just using
-        `autorandr` python script installed via `pip`
+    2.  install `autorandr` python script via `pip` in the meantime for
+        functionality
 
-    3.  or perhaps create AUR repository to do this directly
+    3.  or perhaps create AUR repository to do this directly:
+        <https://github.com/phillipberndt/autorandr/issues/250>
 
 7.  I3
 
-    1.  convert i3-cycle to i3-ipc and port everything to AUR/pypi
+    1.  port `i3-cycle` backend to `i3ipc` and ship everything to
+        AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
 
     2.  think about using xautolock/xss-lock to circumvent some manual
         pid checking and possibly extra sleep:

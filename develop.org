@@ -36,11 +36,11 @@
 ***** Automatically merge upstream changes to latex layer which are coped/modified
 
 **** Monitor configuration
-***** use ~autorandr~ for more automatic monitor configuration
-***** or alternatively look for another program which only detects without automatically changing -> perhaps just using ~autorandr~ python script installed via ~pip~
-***** or perhaps create AUR repository to do this directly
+***** use ~autorandr~ for more automatic monitor configuration -> modify current monitor workflows
+***** install ~autorandr~ python script via ~pip~ in the meantime for functionality
+***** or perhaps create AUR repository to do this directly: https://github.com/phillipberndt/autorandr/issues/250
 **** I3
-***** convert i3-cycle to i3-ipc and port everything to AUR/pypi
+***** port ~i3-cycle~ backend to ~i3ipc~ and ship everything to AUR/pypi: https://github.com/mota/i3-cycle/issues/3 
 ***** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
 **** Mimeapps
 ***** synchronize mime system program defaults to same as ranger's rifle
