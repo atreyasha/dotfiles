@@ -48,7 +48,7 @@
 ***** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
 
 *** Update sanity
-**** update script which updates all submodules and git repos to latest upstream commits eg. ~git submodule update --init --recursive --remote~
-**** update script for ~emacs~, ~vim~ and ~pip~ packages
+**** update script which updates all submodules and git repos to latest upstream commits eg. ~git submodule update --init --recursive --remote~ and then pushes upstream
 **** update script which does manual update checks on files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes
-**** create pacman hooks to update package lists, otherwise use script for all other updates
+**** update script for ~emacs~, ~vim~ and ~pip~ packages
+**** update script for package lists on ~arch~ repo and pushes afterwards

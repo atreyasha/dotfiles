@@ -126,13 +126,13 @@
 
 1.  update script which updates all submodules and git repos to latest
     upstream commits eg.
-    `git submodule update --init --recursive --remote`
+    `git submodule update --init --recursive --remote` and then pushes
+    upstream
 
-2.  update script for `emacs`, `vim` and `pip` packages
-
-3.  update script which does manual update checks on files which might
+2.  update script which does manual update checks on files which might
     require upstream updates -\> perhaps perform a diff framework to
     accept/reject upstream changes
 
-4.  create pacman hooks to update package lists, otherwise use script
-    for all other updates
+3.  update script for `emacs`, `vim` and `pip` packages
+
+4.  update script for package lists on `arch` repo and pushes afterwards
