@@ -1,12 +1,3 @@
 #!/usr/bin/env bash
 
-# find number of connected monitors
-number_connected=$(xrandr | cut -d " " -f 2 | grep -w -c "connected")
-mapfile -t matches < <(find "$HOME/.screenlayout/" -type f -name "*${number_connected}.sh")
-
-# execute based on connection types
-if ((${#matches[@]})); then
-  "${matches[0]}"
-else
-  xrandr --auto
-fi
+autorandr --change
