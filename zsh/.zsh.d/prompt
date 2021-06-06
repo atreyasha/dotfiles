@@ -9,7 +9,7 @@ zstyle ':vcs_info:git*' formats " @%b"
 
 # set precmd which is executed before each prompt 
 precmd() {
-  vcs_info
+  vcs_info 2>/dev/null
 }
 
 # define function for changing prompt depending on zsh vim mode (source and more: https://superuser.com/a/156204)
