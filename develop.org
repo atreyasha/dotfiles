@@ -36,9 +36,7 @@
 ***** Automatically merge upstream changes to latex layer which are coped/modified
 
 **** Monitor configuration
-***** use ~autorandr~ for more automatic monitor configuration -> modify current monitor workflows
-***** install ~autorandr~ python script via ~pip~ in the meantime for functionality
-***** or perhaps create AUR repository to do this directly: https://github.com/phillipberndt/autorandr/issues/250
+***** create AUR repository for tracking: https://github.com/phillipberndt/autorandr/issues/250
 **** I3
 ***** port ~i3-cycle~ backend to ~i3ipc~ and ship everything to AUR/pypi: https://github.com/mota/i3-cycle/issues/3 
 ***** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/275
@@ -52,4 +50,4 @@
 **** update script which does manual update checks on files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes
 **** update script for ~emacs~, ~vim~ and ~pip~ packages
 **** update script for package lists on ~arch~ repo and pushes afterwards
-**** dump ~pip --user~ package lists as well during update
+**** dump ~pip --user~ package lists as well during update -> ~pip list --format=freeze --user~

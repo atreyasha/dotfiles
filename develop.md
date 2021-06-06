@@ -94,13 +94,7 @@
 
 6.  Monitor configuration
 
-    1.  use `autorandr` for more automatic monitor configuration -\>
-        modify current monitor workflows
-
-    2.  install `autorandr` python script via `pip` in the meantime for
-        functionality
-
-    3.  or perhaps create AUR repository to do this directly:
+    1.  create AUR repository for tracking:
         <https://github.com/phillipberndt/autorandr/issues/250>
 
 7.  I3
@@ -137,4 +131,5 @@
 
 4.  update script for package lists on `arch` repo and pushes afterwards
 
-5.  dump `pip --user` package lists as well during update
+5.  dump `pip --user` package lists as well during update -\>
+    `pip list --format=freeze --user`
