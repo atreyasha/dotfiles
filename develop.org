@@ -51,3 +51,4 @@
 **** update script for ~emacs~, ~vim~ and ~pip~ packages
 **** update script for package lists on ~arch~ repo and pushes afterwards
 **** dump ~pip --user~ package lists as well during update -> ~pip list --format=freeze --user~
+**** coordinate all of these processes with ~monix~ tasks
