@@ -3,3 +3,6 @@
 
 # vim spell-files
 vim/.vim/spell
+
+# pulse cookies
+pulse/.config/pulse/cookie
