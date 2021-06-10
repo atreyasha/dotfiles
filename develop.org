@@ -4,8 +4,6 @@
 
 ** Tasks
 *** Dotfiles
-**** TODO Deployment
-***** develop basic scripts to deploy ~stow~ on local and remote machines, eg. ~local.sh~ and ~remote.sh~ 
 **** TODO Private
 ***** port pass, gnupg, ssh, neomutt private dotfiles to private stow repo
 
