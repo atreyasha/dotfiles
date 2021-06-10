@@ -14,20 +14,34 @@ After cloning this repository, pull all submodules by executing:
 $ git submodule update --init --recursive
 ```
 
-### Usage
+### Installation
 
 This repository uses [GNU Stow](https://www.gnu.org/software/stow/) for managing dotfiles and respective symbolic links.
 
-To deploy all the dotfiles here, we need to provide `stow` with a list of all dotfile directories:
+To deploy all the dotfiles corresponding to the [`monix`](https://github.com/atreyasha/monix) build, execute:
 
 ```shell
-$ stow -v -R -t ~ $(ls -d */)
+$ make install.monix
+```
+
+To deploy a minimal subset of dotfiles on a remote machine, execute:
+
+```shell
+$ make install.remote
 ```
 
 Alternatively, if only a subset of the dotfiles are desired, simply indicate the name of the dotfile directories:
 
 ```shell
-$ stow -v -R -t ~ dotfile_1 dotfile_2 ...
+$ stow -v -R -t ~ <dotfile_1> <dotfile_2> ...
+```
+
+### Uninstallation
+
+To remove all stowed `dotfiles`, execute:
+
+```shell
+$ make uninstall
 ```
 
 ### Development
