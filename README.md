@@ -30,7 +30,7 @@ To deploy a minimal subset of dotfiles on a remote machine, execute:
 $ make install.remote
 ```
 
-Alternatively, if only a subset of the dotfiles are desired, simply indicate the name of the dotfile directories:
+Alternatively, if a custom subset of the dotfiles is desired; simply indicate the name(s) of the dotfile directories:
 
 ```shell
 $ stow -v -R -t ~ <dotfile_1> <dotfile_2> ...
