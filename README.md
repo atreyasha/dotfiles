@@ -1,4 +1,4 @@
-## dotfiles
+# dotfiles
 
 This repository contains dotfiles for a laptop running Arch Linux. The applications include `i3-gaps`, `emacs`, `neomutt` and many more. Below is a screenshot of a sample workspace:
 
@@ -6,7 +6,7 @@ This repository contains dotfiles for a laptop running Arch Linux. The applicati
 <img src="screenshot.png" width="700">
 </p>
 
-### Initialization
+## Initialization
 
 After cloning this repository, pull all submodules by executing:
 
@@ -14,7 +14,7 @@ After cloning this repository, pull all submodules by executing:
 $ git submodule update --init --recursive
 ```
 
-### Installation
+## Installation
 
 This repository uses [GNU Stow](https://www.gnu.org/software/stow/) for managing dotfiles and respective symbolic links.
 
@@ -36,7 +36,7 @@ Alternatively, if a custom subset of the dotfiles is desired; simply indicate th
 $ stow -v -R -t ~ <dotfile_1> <dotfile_2> ...
 ```
 
-### Uninstallation
+## Uninstallation
 
 To remove all stowed `dotfiles`, execute:
 
@@ -44,7 +44,7 @@ To remove all stowed `dotfiles`, execute:
 $ make uninstall
 ```
 
-### Development
+## Development
 
 Check out our development [log](develop.md) for details on upcoming developments.
 
