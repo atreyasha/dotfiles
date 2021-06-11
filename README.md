@@ -10,7 +10,7 @@ This repository contains dotfiles for a laptop running Arch Linux. The applicati
 
 After cloning this repository, pull all submodules by executing:
 
-```shell
+```
 $ git submodule update --init --recursive
 ```
 
@@ -20,19 +20,19 @@ This repository uses [GNU Stow](https://www.gnu.org/software/stow/) for managing
 
 To deploy all the dotfiles corresponding to the [`monix`](https://github.com/atreyasha/monix) build, execute:
 
-```shell
+```
 $ make install.monix
 ```
 
 To deploy a minimal subset of dotfiles on a remote machine, execute:
 
-```shell
+```
 $ make install.remote
 ```
 
 Alternatively, if a custom subset of the dotfiles is desired; simply indicate the name(s) of the dotfile directories:
 
-```shell
+```
 $ stow -v -R -t ~ <dotfile_1> <dotfile_2> ...
 ```
 
@@ -40,7 +40,7 @@ $ stow -v -R -t ~ <dotfile_1> <dotfile_2> ...
 
 To remove all stowed `dotfiles`, execute:
 
-```shell
+```
 $ make uninstall
 ```
 
