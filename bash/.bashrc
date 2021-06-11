@@ -1,13 +1,16 @@
 # if not running interactively, exit gracefully
 [[ $- == *i* ]] || return
 
-# source modular configurations with specific order
-. "$HOME/.bash.d/functions"
-. "$HOME/.bash.d/keybindings"
+# assign bash configs directory
+BASHD="$HOME/.bash.d"
 
-# source modular configurations with no specific order
-. "$HOME/.bash.d/terminfo"
-. "$HOME/.bash.d/prompt"
-. "$HOME/.bash.d/completions"
-. "$HOME/.bash.d/options"
-. "$HOME/.bash.d/aliases"
+# modular configs with order
+. "$BASHD/functions"
+. "$BASHD/keybindings"
+
+# modular configs without order
+. "$BASHD/terminfo"
+. "$BASHD/prompt"
+. "$BASHD/completions"
+. "$BASHD/options"
+. "$BASHD/aliases"

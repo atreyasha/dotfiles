@@ -1,14 +1,17 @@
-# source modular configurations with specific order
-. "$HOME/.zsh.d/functions"
-. "$HOME/.zsh.d/prompt"
-. "$HOME/.zsh.d/hooks"
-. "$HOME/.zsh.d/keybindings"
+# assign zsh configs directory
+ZSHD="$HOME/.zsh.d"
 
-# source modular configurations with no specific order
-. "$HOME/.zsh.d/terminfo"
-. "$HOME/.zsh.d/completions"
-. "$HOME/.zsh.d/options"
-. "$HOME/.zsh.d/aliases"
+# modular configs with order
+. "$ZSHD/functions"
+. "$ZSHD/prompt"
+. "$ZSHD/hooks"
+. "$ZSHD/keybindings"
 
-# source zsh-clipboard to be able to use system clipboard
-. "$HOME/.zsh.d/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
+# modular configs without order
+. "$ZSHD/terminfo"
+. "$ZSHD/completions"
+. "$ZSHD/options"
+. "$ZSHD/aliases"
+
+# zsh-clipboard for system clipboard communication
+. "$ZSHD/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
