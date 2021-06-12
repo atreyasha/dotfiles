@@ -10,7 +10,8 @@
 1.  **TODO** Private
 
     1.  port pass, gnupg, ssh, neomutt private dotfiles to private stow
-        repo
+        repo -\> think of techniques such as private repo, git-secret or
+        git crypt
 
 2.  Neovim
 

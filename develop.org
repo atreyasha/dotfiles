@@ -5,7 +5,7 @@
 ** Tasks
 *** Dotfiles
 **** TODO Private
-***** port pass, gnupg, ssh, neomutt private dotfiles to private stow repo
+***** port pass, gnupg, ssh, neomutt private dotfiles to private stow repo -> think of techniques such as private repo, git-secret or git crypt
 
 **** Neovim
 ***** Basic
