@@ -9,9 +9,15 @@
 
 1.  **TODO** Private
 
-    1.  port pass, gnupg, ssh, neomutt private dotfiles to private stow
-        repo -\> think of techniques such as private repo, git-secret or
-        git crypt
+    1.  use private stow repository encrypted with git crypt
+
+    2.  mbsyncrc, msmtp, accounts.muttrc and individual account muttrcs
+
+    3.  pass directory
+
+    4.  ssh and gnupg keys
+
+    5.  abook
 
 2.  Neovim
 
