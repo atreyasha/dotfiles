@@ -19,7 +19,14 @@
 
     5.  abook
 
-2.  Neovim
+2.  **TODO** Cryptography
+
+    1.  Update relevant dotfiles after creating new GPG key
+
+    2.  Remove ssh related configs since the ultimate plan would be to
+        use GPG for SSH emulation
+
+3.  Neovim
 
     1.  Basic
 
@@ -41,7 +48,7 @@
         2.  sort out a clean way of updating all plugins as necessary:
             <https://github.com/amix/vimrc/issues/637>
 
-3.  Emacs
+4.  Emacs
 
     1.  Change emacs distribution
 
@@ -79,7 +86,7 @@
             should instead be soft-coded and easily updated from
             upstream
 
-4.  Spacemacs
+5.  Spacemacs
 
     1.  Improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
@@ -94,12 +101,12 @@
     2.  Automatically merge upstream changes to latex layer which are
         coped/modified
 
-5.  Monitor configuration
+6.  Monitor configuration
 
     1.  create AUR repository for tracking:
         <https://github.com/phillipberndt/autorandr/issues/250>
 
-6.  I3
+7.  I3
 
     1.  port `i3-cycle` backend to `i3ipc` and ship everything to
         AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
@@ -108,12 +115,12 @@
         pid checking and possibly extra sleep:
         <https://github.com/i3/i3lock/issues/275>
 
-7.  Mimeapps
+8.  Mimeapps
 
     1.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-8.  System(d)
+9.  System(d)
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>

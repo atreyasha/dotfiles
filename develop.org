@@ -11,6 +11,10 @@
 ***** ssh and gnupg keys
 ***** abook
 
+**** TODO Cryptography
+***** Update relevant dotfiles after creating new GPG key
+***** Remove ssh related configs since the ultimate plan would be to use GPG for SSH emulation
+
 **** Neovim
 ***** Basic
 ****** migrate to neovim to fix upstream issues related to ~alacritty~ 
