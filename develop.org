@@ -14,6 +14,11 @@
 **** TODO Cryptography
 ***** Update relevant dotfiles after creating new GPG key
 ***** Remove ssh related configs since the ultimate plan would be to use GPG for SSH emulation
+ 
+**** Git
+***** make separate configurations for local and remote -> perhaps via conditional in git config
+***** conditional should include or exclude signing key and feature -> manage directly in Makefile
+***** or possibly add IncludeIf with extra config for local machine, and without this config for remote
 
 **** Neovim
 ***** Basic

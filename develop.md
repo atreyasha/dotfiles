@@ -26,7 +26,18 @@
     2.  Remove ssh related configs since the ultimate plan would be to
         use GPG for SSH emulation
 
-3.  Neovim
+3.  Git
+
+    1.  make separate configurations for local and remote -\> perhaps
+        via conditional in git config
+
+    2.  conditional should include or exclude signing key and feature
+        -\> manage directly in Makefile
+
+    3.  or possibly add IncludeIf with extra config for local machine,
+        and without this config for remote
+
+4.  Neovim
 
     1.  Basic
 
@@ -48,7 +59,7 @@
         2.  sort out a clean way of updating all plugins as necessary:
             <https://github.com/amix/vimrc/issues/637>
 
-4.  Emacs
+5.  Emacs
 
     1.  Change emacs distribution
 
@@ -86,7 +97,7 @@
             should instead be soft-coded and easily updated from
             upstream
 
-5.  Spacemacs
+6.  Spacemacs
 
     1.  Improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
@@ -101,12 +112,12 @@
     2.  Automatically merge upstream changes to latex layer which are
         coped/modified
 
-6.  Monitor configuration
+7.  Monitor configuration
 
     1.  create AUR repository for tracking:
         <https://github.com/phillipberndt/autorandr/issues/250>
 
-7.  I3
+8.  I3
 
     1.  port `i3-cycle` backend to `i3ipc` and ship everything to
         AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
@@ -115,12 +126,12 @@
         pid checking and possibly extra sleep:
         <https://github.com/i3/i3lock/issues/275>
 
-8.  Mimeapps
+9.  Mimeapps
 
     1.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-9.  System(d)
+10. System(d)
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
