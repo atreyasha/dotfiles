@@ -11,6 +11,7 @@ BASHD="$HOME/.bash.d"
 # modular configs without order
 . "$BASHD/terminfo"
 . "$BASHD/prompt"
+. "$BASHD/hooks"
 . "$BASHD/completions"
 . "$BASHD/options"
 . "$BASHD/aliases"

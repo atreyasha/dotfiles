@@ -7,3 +7,7 @@ if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*|alacritty*) 
   add-zsh-hook -Uz precmd xterm_title_precmd
   add-zsh-hook -Uz preexec xterm_title_preexec
 fi
+
+# update tty for gnupg's pinentry program
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null

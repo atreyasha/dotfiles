@@ -1,0 +1,6 @@
+# -*- mode: shell-script -*-
+# vim: syntax=sh
+
+# update tty for gnupg's pinentry program
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null

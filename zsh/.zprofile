@@ -7,7 +7,10 @@ export HISTFILE="$HOME/.zsh_history"
 export KEYTIMEOUT="1"
 
 # declare important environmental variables
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
 export EDITOR="vim"
 export TERMINAL="alacritty"
 export R_PROFILE_USER="$HOME/.Rprofile"
