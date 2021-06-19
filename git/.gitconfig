@@ -1,7 +1,7 @@
 [user]
   email = 35427332+atreyasha@users.noreply.github.com
   name = Atreya Shankar
-  signingkey = FB88142808F7FAE8!
+  signingkey = 5330BD3D1107E5A6
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
