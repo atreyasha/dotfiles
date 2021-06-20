@@ -2,8 +2,6 @@
 # vim: syntax=sh
 
 # set terminfo if this is missing
-if [ "$TERM" == "alacritty" ]; then
-  if ! infocmp alacritty &>/dev/null; then
+if [ "$TERM" == "alacritty" ] && ! infocmp alacritty &>/dev/null && [ -f "$HOME/.config/alacritty/alacritty.terminfo" ]; then
     tic -x "$HOME/.config/alacritty/alacritty.terminfo"
-  fi
 fi

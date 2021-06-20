@@ -9,5 +9,7 @@ if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*|alacritty*) 
 fi
 
 # update tty for gnupg's pinentry program
-export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null
+if command -v gpg-connect-agent &>/dev/null; then
+  export GPG_TTY=$(tty)
+  gpg-connect-agent --quiet updatestartuptty /bye >/dev/null
+fi
