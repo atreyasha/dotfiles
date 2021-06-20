@@ -7,7 +7,20 @@
 
 ### Dotfiles
 
-1.  **TODO** Private
+1.  **TODO** Git
+
+    1.  make separate configurations for local and remote -\> perhaps
+        via conditional in git config
+
+    2.  conditional should include or exclude signing key and feature
+        -\> manage directly in Makefile
+
+    3.  or possibly add IncludeIf with extra config for local machine,
+        and without this config for remote
+
+    4.  test everything out on s3it -\> try with some pulls etc.
+
+2.  **TODO** Private
 
     1.  use private stow repository encrypted with git crypt
 
@@ -21,31 +34,12 @@
 
     4.  gnupg keys
 
+        1.  other important files such as sshcontrol -\> think of this
+            meticulously
+
     5.  abook
 
-2.  **TODO** Dircolors
-
-    1.  add back `.dircolors` and source this file from bash/zsh if it
-        exists
-
-    2.  add this stow command back for remote system installation
-
-    3.  add an additional if-statement to check for `terminfo` file
-        before loading it -\> make sure other shell configurations look
-        for files\' existence before loading
-
-3.  **TODO** Git
-
-    1.  make separate configurations for local and remote -\> perhaps
-        via conditional in git config
-
-    2.  conditional should include or exclude signing key and feature
-        -\> manage directly in Makefile
-
-    3.  or possibly add IncludeIf with extra config for local machine,
-        and without this config for remote
-
-4.  Neovim
+3.  Neovim
 
     1.  Basic
 
@@ -67,7 +61,7 @@
         2.  sort out a clean way of updating all plugins as necessary:
             <https://github.com/amix/vimrc/issues/637>
 
-5.  Emacs
+4.  Emacs
 
     1.  Change emacs distribution
 
@@ -105,7 +99,7 @@
             should instead be soft-coded and easily updated from
             upstream
 
-6.  Spacemacs
+5.  Spacemacs
 
     1.  Improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
@@ -120,12 +114,12 @@
     2.  Automatically merge upstream changes to latex layer which are
         coped/modified
 
-7.  Monitor configuration
+6.  Monitor configuration
 
     1.  create AUR repository for tracking:
         <https://github.com/phillipberndt/autorandr/issues/250>
 
-8.  I3
+7.  I3
 
     1.  port `i3-cycle` backend to `i3ipc` and ship everything to
         AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
@@ -134,12 +128,12 @@
         pid checking and possibly extra sleep:
         <https://github.com/i3/i3lock/issues/275>
 
-9.  Mimeapps
+8.  Mimeapps
 
     1.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-10. System(d)
+9.  System(d)
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
