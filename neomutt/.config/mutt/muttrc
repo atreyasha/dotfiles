@@ -47,11 +47,5 @@ set pgp_self_encrypt = yes
 # remove (non-cryptographic) email signature
 unset signature
 
-# source email configurations
-source ~/.config/mutt/accounts/1-shankar_up.muttrc
-macro index,pager i1 '<sync-mailbox><enter-command>source ~/.config/mutt/accounts/1-shankar_up.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to mailbox 1"
-macro index,pager i2 '<sync-mailbox><enter-command>source ~/.config/mutt/accounts/2-shankar_uzh.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to mailbox 2"
-macro index,pager i3 '<sync-mailbox><enter-command>source ~/.config/mutt/accounts/3-shankar_gmail.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to mailbox 3"
-
-# assign default PGP key
-set pgp_default_key = 5330BD3D1107E5A6 
+# source email files
+source accounts.muttrc
