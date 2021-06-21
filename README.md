@@ -11,7 +11,7 @@ This repository contains dotfiles for a laptop running Arch Linux. The applicati
 After cloning this repository, pull all submodules by executing:
 
 ```
-$ git submodule update --init --recursive
+$ make init
 ```
 
 ## Installation
