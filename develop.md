@@ -7,20 +7,7 @@
 
 ### Dotfiles
 
-1.  **TODO** Git
-
-    1.  make separate configurations for local and remote -\> perhaps
-        via conditional in git config
-
-    2.  conditional should include or exclude signing key and feature
-        -\> manage directly in Makefile
-
-    3.  or possibly add IncludeIf with extra config for local machine,
-        and without this config for remote
-
-    4.  test everything out on s3it -\> try with some pulls etc.
-
-2.  **TODO** Private
+1.  **TODO** Private
 
     1.  use private stow repository encrypted with git crypt
 
@@ -37,9 +24,24 @@
         1.  other important files such as sshcontrol -\> think of this
             meticulously
 
-    5.  abook
+    5.  ssh host configs
 
-3.  Neovim
+        1.  think about whether these should be in private or public
+            repo
+
+    6.  abook
+
+    7.  current dotfiles configuration mixes non-private user-specific
+        and user-agnostic configurations
+
+        1.  consider moving non-private user-specific configurations
+            into private user-specific repository
+
+        2.  might be more modular this way but will require re-thinking
+
+    8.  (sub)keys are present in three cases: git, neomutt and pass
+
+2.  Neovim
 
     1.  Basic
 
@@ -61,7 +63,7 @@
         2.  sort out a clean way of updating all plugins as necessary:
             <https://github.com/amix/vimrc/issues/637>
 
-4.  Emacs
+3.  Emacs
 
     1.  Change emacs distribution
 
@@ -99,7 +101,7 @@
             should instead be soft-coded and easily updated from
             upstream
 
-5.  Spacemacs
+4.  Spacemacs
 
     1.  Improve autocompletions of latex layer:
         <https://github.com/syl20bnr/spacemacs/issues/14134>
@@ -113,6 +115,13 @@
 
     2.  Automatically merge upstream changes to latex layer which are
         coped/modified
+
+5.  Neomutt
+
+    1.  issue of specified subkey not being used:
+        <https://github.com/neomutt/neomutt/issues/2980>
+
+    2.  update exact subkey when this is fixed
 
 6.  Monitor configuration
 
@@ -137,6 +146,17 @@
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
+
+10. Remote (s3it)
+
+    1.  Issue of properly setting `SSH_AUTH_SOCK` in shell environments
+
+        1.  needs to be updated on remote system
+
+    2.  Problem of old tmux version not working with -X flag
+
+        1.  perhaps this works and a manual update on remote might be
+            needed
 
 ### Update sanity
 

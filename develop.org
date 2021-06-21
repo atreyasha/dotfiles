@@ -4,12 +4,6 @@
 
 ** Tasks
 *** Dotfiles
-**** TODO Git
-***** make separate configurations for local and remote -> perhaps via conditional in git config
-***** conditional should include or exclude signing key and feature -> manage directly in Makefile
-***** or possibly add IncludeIf with extra config for local machine, and without this config for remote
-***** test everything out on s3it -> try with some pulls etc.
-
 **** TODO Private
 ***** use private stow repository encrypted with git crypt 
 ***** mbsyncrc, msmtp and individual account muttrcs
@@ -18,8 +12,14 @@
 ***** pass directory
 ***** gnupg keys
 ****** other important files such as sshcontrol -> think of this meticulously
+***** ssh host configs
+****** think about whether these should be in private or public repo
 ***** abook
-
+***** current dotfiles configuration mixes non-private user-specific and user-agnostic configurations
+****** consider moving non-private user-specific configurations into private user-specific repository
+****** might be more modular this way but will require re-thinking
+***** (sub)keys are present in three cases: git, neomutt and pass
+     
 **** Neovim
 ***** Basic
 ****** migrate to neovim to fix upstream issues related to ~alacritty~ 
@@ -46,6 +46,9 @@
 ****** lighter solution is to modify ~company-backends~ variable post-initialization -> perhaps with advice over latex init function
 ***** Automatically merge upstream changes to latex layer which are coped/modified
 
+**** Neomutt 
+***** issue of specified subkey not being used: https://github.com/neomutt/neomutt/issues/2980
+***** update exact subkey when this is fixed
 **** Monitor configuration
 ***** create AUR repository for tracking: https://github.com/phillipberndt/autorandr/issues/250
 **** I3
@@ -55,6 +58,11 @@
 ***** synchronize mime system program defaults to same as ranger's rifle
 **** System(d)
 ***** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
+**** Remote (s3it)
+***** Issue of properly setting ~SSH_AUTH_SOCK~ in shell environments
+****** needs to be updated on remote system 
+***** Problem of old tmux version not working with -X flag
+****** perhaps this works and a manual update on remote might be needed
 
 *** Update sanity
 **** update script which updates all submodules and git repos to latest upstream commits eg. ~git submodule update --init --recursive --remote~ and then pushes upstream
