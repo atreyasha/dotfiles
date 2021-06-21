@@ -1,4 +1,5 @@
 DOTFILES = $$(ls -d */)
+REMOTE_DOTFILES = alacritty bash dircolors git gnupg htop ranger readline tmux vim
 
 .PHONY: install.monix
 install.monix:
@@ -6,7 +7,7 @@ install.monix:
 
 .PHONY: install.remote
 install.remote:
-	stow -v -R -t ~ alacritty bash dircolors git gnupg htop ranger readline tmux vim
+	stow -v -R -t ~ $(REMOTE_DOTFILES)
 
 .PHONY: uninstall
 uninstall:
