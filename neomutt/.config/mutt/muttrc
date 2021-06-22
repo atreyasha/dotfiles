@@ -44,8 +44,5 @@ set crypt_opportunistic_encrypt = yes
 # PGP encrypted messages will be encrypted for yourself to keep
 set pgp_self_encrypt = yes
 
-# remove (non-cryptographic) email signature
-unset signature
-
 # source email files
 source accounts.muttrc
