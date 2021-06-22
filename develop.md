@@ -123,12 +123,19 @@
 
     2.  update exact subkey when this is fixed
 
-6.  Monitor configuration
+6.  PGP public key
+
+    1.  Host public key on `keys.openpgp.org`
+
+    2.  Add website page for accessing keys manually or via specific
+        keyserver (and not others)
+
+7.  Monitor configuration
 
     1.  create AUR repository for tracking:
         <https://github.com/phillipberndt/autorandr/issues/250>
 
-7.  I3
+8.  I3
 
     1.  port `i3-cycle` backend to `i3ipc` and ship everything to
         AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
@@ -137,26 +144,15 @@
         pid checking and possibly extra sleep:
         <https://github.com/i3/i3lock/issues/275>
 
-8.  Mimeapps
+9.  Mimeapps
 
     1.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-9.  System(d)
+10. System(d)
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
-
-10. Remote (s3it)
-
-    1.  Issue of properly setting `SSH_AUTH_SOCK` in shell environments
-
-        1.  needs to be updated on remote system
-
-    2.  Problem of old tmux version not working with -X flag
-
-        1.  perhaps this works and a manual update on remote might be
-            needed
 
 ### Update sanity
 

@@ -49,6 +49,9 @@
 **** Neomutt 
 ***** issue of specified subkey not being used: https://github.com/neomutt/neomutt/issues/2980
 ***** update exact subkey when this is fixed
+**** PGP public key
+***** Host public key on ~keys.openpgp.org~
+***** Add website page for accessing keys manually or via specific keyserver (and not others)
 **** Monitor configuration
 ***** create AUR repository for tracking: https://github.com/phillipberndt/autorandr/issues/250
 **** I3
@@ -58,11 +61,6 @@
 ***** synchronize mime system program defaults to same as ranger's rifle
 **** System(d)
 ***** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
-**** Remote (s3it)
-***** Issue of properly setting ~SSH_AUTH_SOCK~ in shell environments
-****** needs to be updated on remote system 
-***** Problem of old tmux version not working with -X flag
-****** perhaps this works and a manual update on remote might be needed
 
 *** Update sanity
 **** update script which updates all submodules and git repos to latest upstream commits eg. ~git submodule update --init --recursive --remote~ and then pushes upstream
