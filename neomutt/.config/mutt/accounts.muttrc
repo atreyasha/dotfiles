@@ -8,4 +8,4 @@ macro index,pager i3 '<sync-mailbox><enter-command>source ~/.config/mutt/account
 set pgp_default_key = 0x5330BD3D1107E5A6 
 
 # set email signature
-set signature = signature
+set signature = "~/.signature"
