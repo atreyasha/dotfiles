@@ -51,7 +51,7 @@
 ***** update exact subkey when this is fixed
 **** PGP public key
 ***** Host public key on ~keys.openpgp.org~
-***** Add website page for accessing keys manually or via specific keyserver (and not others)
+***** Add personal website page for accessing keys manually on GitHub or via specific keyserver (and mention not others)
 **** Monitor configuration
 ***** create AUR repository for tracking: https://github.com/phillipberndt/autorandr/issues/250
 **** I3

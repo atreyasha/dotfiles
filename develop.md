@@ -127,8 +127,8 @@
 
     1.  Host public key on `keys.openpgp.org`
 
-    2.  Add website page for accessing keys manually or via specific
-        keyserver (and not others)
+    2.  Add personal website page for accessing keys manually on GitHub
+        or via specific keyserver (and mention not others)
 
 7.  Monitor configuration
 
