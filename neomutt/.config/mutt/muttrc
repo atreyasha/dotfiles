@@ -44,5 +44,10 @@ set crypt_opportunistic_encrypt = yes
 # PGP encrypted messages will be encrypted for yourself to keep
 set pgp_self_encrypt = yes
 
+# set these for shameless top-posting
+# set attribution = "\nOn %d, %n wrote:"
+# set sig_on_top
+# set sig_dashes = no
+
 # source email files
 source accounts.muttrc
