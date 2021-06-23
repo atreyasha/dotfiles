@@ -72,7 +72,7 @@ let g:ale_enabled = 0
 autocmd! CursorMoved * execute "let s:temporaryBool = v:hlsearch" | execute "let v:hlsearch = 0" | execute "let v:hlsearch = s:temporaryBool"
 
 " mail filetype text width, need additional command to prevent filetype override
-autocmd FileType mail setlocal tw=0 | silent! %!cat -s
+autocmd FileType mail setlocal tw=0 | silent %!cat -s
 
 " remove close button and add pipe separators in lightline
 let g:lightline = {
