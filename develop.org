@@ -22,7 +22,7 @@
      
 **** Neovim
 ***** Basic
-****** migrate to neovim to fix upstream issues related to ~alacritty~ 
+****** migrate to neovim to fix upstream issues related to ~alacritty~: https://github.com/alacritty/alacritty/issues/919 
 ****** conditionally alias ~nvim~ to ~vim~ if it exists + conditional ~xterm-256color~ declaration if ~nvim~ is not running + updating variables in dotfiles if necessary
 ****** find good location to install ~suda~ plugin to overcome issue: https://github.com/neovim/neovim/issues/12103
 ***** Next
