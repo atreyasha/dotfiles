@@ -171,6 +171,6 @@
 4.  update script for package lists on `arch` repo and pushes afterwards
 
 5.  dump `pip --user` package lists as well during update -\>
-    `pip list --format=freeze --user`
+    `pip freeze --user`
 
 6.  coordinate all of these processes with `monix` tasks

@@ -67,5 +67,5 @@
 **** update script which does manual update checks on files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes
 **** update script for ~emacs~, ~vim~ and ~pip~ packages
 **** update script for package lists on ~arch~ repo and pushes afterwards
-**** dump ~pip --user~ package lists as well during update -> ~pip list --format=freeze --user~
+**** dump ~pip --user~ package lists as well during update -> ~pip freeze --user~
 **** coordinate all of these processes with ~monix~ tasks
