@@ -360,6 +360,8 @@ you should place your code here."
     (setq reftex-auto-view-crossref nil
           LaTeX-syntactic-comments nil
           LaTeX-item-indent 0))
+  ;; ensure pasted text in region does not replace current register
+  (setq-default evil-kill-on-visual-paste nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
