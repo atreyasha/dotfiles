@@ -31,10 +31,7 @@
 
     6.  abook
 
-    7.  find out how to handle master PGP key since this is a core
-        dependency -\> central backup and maybe paperkey as well
-
-    8.  current dotfiles configuration mixes non-private user-specific
+    7.  current dotfiles configuration mixes non-private user-specific
         and user-agnostic configurations
 
         1.  consider moving non-private user-specific configurations
@@ -54,6 +51,11 @@
             except archived directories (keep those as starting
             mailboxes)
 
+    8.  find out how to handle master PGP key since this is a core
+        dependency
+
+        1.  central backup and maybe paperkey as well
+
 2.  **TODO** Update management scripts
 
     1.  update script which updates all submodules and git repos to
@@ -72,7 +74,27 @@
 
 ### Long-term
 
-1.  i3
+1.  Backup
+
+    1.  reduce size of `personal` directory to keep only important data
+
+    2.  optimize an elegant and portable backup scheduling of the
+        `personal` directory, perhaps using systemd timers with a script
+        that has a failsafe in case of missing drives etc.
+
+    3.  think of possible failures with wrong drive -\> perhaps would be
+        good to have a reminder own notes instead of an automatic backup
+        event
+
+    4.  perhaps use tarballs with `rsync` to ensure only relevant data
+        is updated
+
+    5.  think of separating important and unimportant data -\> only back
+        up the important data
+
+    6.  organize drive to ensure backups all make good sense
+
+2.  i3
 
     1.  port `i3-cycle` backend to `i3ipc` and ship everything to
         AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
@@ -83,14 +105,14 @@
         pid checking and possibly extra sleep:
         <https://github.com/i3/i3lock/issues/207>
 
-2.  Monitor configuration
+3.  Monitor configuration
 
     1.  create `AUR` repository for alternative package management:
         <https://github.com/phillipberndt/autorandr/issues/250>
 
     2.  replace `pypi` package with this implementation
 
-3.  Neovim
+4.  Neovim
 
     1.  Basic
 
@@ -121,7 +143,7 @@
             1.  this is no longer be necessary since plugins are
                 regularly updated upstream
 
-4.  Emacs
+5.  Emacs
 
     1.  Change emacs distribution
 
@@ -174,31 +196,31 @@
         2.  Automatically merge upstream changes to latex layer which
             are coped/modified
 
-5.  Neomutt
+6.  Neomutt
 
     1.  issue of specified subkey not being used:
         <https://github.com/neomutt/neomutt/issues/2980>
 
     2.  update exact subkey when this is fixed
 
-6.  PGP public key
+7.  PGP public key
 
     1.  host public key on `keys.openpgp.org`
 
     2.  add personal website page for accessing keys manually on GitHub
         or via specific keyserver (and mention not others)
 
-7.  Mimeapps
+8.  Mimeapps
 
     1.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-8.  Qutebrowser
+9.  Qutebrowser
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
 
-9.  Generic
+10. Generic
 
     1.  update configuration files with upstream changes (or remove
         upstream templates)

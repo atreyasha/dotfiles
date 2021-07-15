@@ -15,7 +15,6 @@
 ***** ssh host configs
 ****** think about whether these should be in private or public repo
 ***** abook
-***** find out how to handle master PGP key since this is a core dependency -> central backup and maybe paperkey as well
 ***** current dotfiles configuration mixes non-private user-specific and user-agnostic configurations
 ****** consider moving non-private user-specific configurations into private user-specific repository
 ****** might be more modular this way but will require re-thinking
@@ -23,6 +22,8 @@
 ****** replace sourcing accounts.muttrc with an executable which searches for file, if not exits -> port ~accounts.muttrc~ to private repo      
 ****** move ~gitd~ dotfile folder to private repo as well
 ****** make UZH and UP emails fully archived and delete everything except archived directories (keep those as starting mailboxes)
+***** find out how to handle master PGP key since this is a core dependency
+****** central backup and maybe paperkey as well
 
 **** TODO Update management scripts
 ***** update script which updates all submodules and git repos to latest upstream commits eg. ~make update~ and then pushes upstream
@@ -30,8 +31,16 @@
 ***** update script for package lists on ~monix~ repo and pushes afterwards
 ***** dump ~pip --user~ package lists as well during update -> ~pip freeze --user~
 ***** coordinate all of these processes with ~monix~ tasks
-       
+
 *** Long-term
+**** Backup
+***** reduce size of ~personal~ directory to keep only important data 
+***** optimize an elegant and portable backup scheduling of the ~personal~ directory, perhaps using systemd timers with a script that has a failsafe in case of missing drives etc.
+***** think of possible failures with wrong drive -> perhaps would be good to have a reminder own notes instead of an automatic backup event
+***** perhaps use tarballs with ~rsync~ to ensure only relevant data is updated
+***** think of separating important and unimportant data -> only back up the important data
+***** organize drive to ensure backups all make good sense
+
 **** i3
 ***** port ~i3-cycle~ backend to ~i3ipc~ and ship everything to AUR/pypi: https://github.com/mota/i3-cycle/issues/3
 ***** replace ~pypi~ package(s) with this implementation
