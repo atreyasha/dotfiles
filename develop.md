@@ -1,11 +1,11 @@
 ## Table of Contents
 -   [Tasks](#tasks)
-    -   [Dotfiles](#dotfiles)
-    -   [Update sanity](#update-sanity)
+    -   [Next](#next)
+    -   [Long-term](#long-term)
 
 ## Tasks
 
-### Dotfiles
+### Next
 
 1.  **TODO** Private
 
@@ -41,20 +41,71 @@
 
     8.  (sub)keys are present in three cases: git, neomutt and pass
 
-2.  Neovim
+    9.  make UZH and UP emails fully archived and delete everything
+        except archived directories (keep those as starting mailboxes)
+
+    10. replace sourcing accounts.muttrc with an executable which
+        searches for file, if not exits -\> port `accounts.muttrc` to
+        private repo
+
+    11. find out how to handle master PGP key since this is a core
+        dependency -\> central backup and maybe paperkey as well
+
+2.  **TODO** Update management scripts
+
+    1.  update script which updates all submodules and git repos to
+        latest upstream commits eg. `make update` and then pushes
+        upstream
+
+    2.  update script for `emacs`, `vim` and `pip` packages
+
+    3.  update script for package lists on `monix` repo and pushes
+        afterwards
+
+    4.  dump `pip --user` package lists as well during update -\>
+        `pip freeze --user`
+
+    5.  coordinate all of these processes with `monix` tasks
+
+### Long-term
+
+1.  i3
+
+    1.  port `i3-cycle` backend to `i3ipc` and ship everything to
+        AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
+
+    2.  replace `pypi` package(s) with this implementation
+
+    3.  think about using xautolock/xss-lock to circumvent some manual
+        pid checking and possibly extra sleep:
+        <https://github.com/i3/i3lock/issues/207>
+
+2.  Monitor configuration
+
+    1.  create `AUR` repository for alternative package management:
+        <https://github.com/phillipberndt/autorandr/issues/250>
+
+    2.  replace `pypi` package with this implementation
+
+3.  Neovim
 
     1.  Basic
 
-        1.  migrate to neovim to fix upstream issues related to
+        1.  migrate from vim to neovim to fix upstream issues related to
             `alacritty`:
             <https://github.com/alacritty/alacritty/issues/919>
 
-        2.  conditionally alias `nvim` to `vim` if it exists +
-            conditional `xterm-256color` declaration if `nvim` is not
-            running + updating variables in dotfiles if necessary
+        2.  conditionally alias `nvim` to `vim` if it exists
 
-        3.  find good location to install `suda` plugin to overcome
-            issue: <https://github.com/neovim/neovim/issues/12103>
+        3.  conditional `xterm-256color` declaration inside `.vimrc` if
+            `nvim` is not running
+
+            1.  update variables referencing `xterm-256color` or `vim`
+                in dotfiles if necessary
+
+        4.  find good location to install `suda` plugin from `nvim` to
+            overcome issue:
+            <https://github.com/neovim/neovim/issues/12103>
 
     2.  Next
 
@@ -64,7 +115,10 @@
         2.  sort out a clean way of updating all plugins as necessary:
             <https://github.com/amix/vimrc/issues/637>
 
-3.  Emacs
+            1.  this is no longer be necessary since plugins are
+                regularly updated upstream
+
+4.  Emacs
 
     1.  Change emacs distribution
 
@@ -102,20 +156,20 @@
             should instead be soft-coded and easily updated from
             upstream
 
-4.  Spacemacs
+    5.  Spacemacs
 
-    1.  Improve autocompletions of latex layer:
-        <https://github.com/syl20bnr/spacemacs/issues/14134>
+        1.  Improve autocompletions of latex layer:
+            <https://github.com/syl20bnr/spacemacs/issues/14134>
 
-        1.  wrong order of company-completions -\> brute-force solution
-            is to create new layer
+            1.  wrong order of company-completions -\> brute-force
+                solution is to create new layer
 
-        2.  lighter solution is to modify `company-backends` variable
-            post-initialization -\> perhaps with advice over latex init
-            function
+            2.  lighter solution is to modify `company-backends`
+                variable post-initialization -\> perhaps with advice
+                over latex init function
 
-    2.  Automatically merge upstream changes to latex layer which are
-        coped/modified
+        2.  Automatically merge upstream changes to latex layer which
+            are coped/modified
 
 5.  Neomutt
 
@@ -126,51 +180,29 @@
 
 6.  PGP public key
 
-    1.  Host public key on `keys.openpgp.org`
+    1.  host public key on `keys.openpgp.org`
 
-    2.  Add personal website page for accessing keys manually on GitHub
+    2.  add personal website page for accessing keys manually on GitHub
         or via specific keyserver (and mention not others)
 
-7.  Monitor configuration
-
-    1.  create AUR repository for tracking:
-        <https://github.com/phillipberndt/autorandr/issues/250>
-
-8.  I3
-
-    1.  port `i3-cycle` backend to `i3ipc` and ship everything to
-        AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
-
-    2.  think about using xautolock/xss-lock to circumvent some manual
-        pid checking and possibly extra sleep:
-        <https://github.com/i3/i3lock/issues/275>
-
-9.  Mimeapps
+7.  Mimeapps
 
     1.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-10. System(d)
+8.  Qutebrowser
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
 
-### Update sanity
+9.  Generic
 
-1.  update script which updates all submodules and git repos to latest
-    upstream commits eg.
-    `git submodule update --init --recursive --remote` and then pushes
-    upstream
+    1.  update configuration files with upstream changes (or remove
+        upstream templates)
 
-2.  update script which does manual update checks on files which might
-    require upstream updates -\> perhaps perform a diff framework to
-    accept/reject upstream changes
+    2.  update script which does manual update checks on files which
+        might require upstream updates -\> perhaps perform a diff
+        framework to accept/reject upstream changes -\> eg. `spacemacs`
+        latex layer modified files
 
-3.  update script for `emacs`, `vim` and `pip` packages
-
-4.  update script for package lists on `arch` repo and pushes afterwards
-
-5.  dump `pip --user` package lists as well during update -\>
-    `pip freeze --user`
-
-6.  coordinate all of these processes with `monix` tasks
+    3.  examples include spacemacs and qutebrowser
