@@ -116,7 +116,7 @@
     1.  Basic
 
         1.  migrate from vim to neovim to fix upstream issues related to
-            `alacritty`:
+            `terminfo` and `alacritty`:
             <https://github.com/alacritty/alacritty/issues/919>
 
         2.  conditionally alias `nvim` to `vim` if it exists

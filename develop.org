@@ -52,7 +52,7 @@
 
 **** Neovim
 ***** Basic
-****** migrate from vim to neovim to fix upstream issues related to ~alacritty~: https://github.com/alacritty/alacritty/issues/919 
+****** migrate from vim to neovim to fix upstream issues related to ~terminfo~ and ~alacritty~: https://github.com/alacritty/alacritty/issues/919 
 ****** conditionally alias ~nvim~ to ~vim~ if it exists
 ****** conditional ~xterm-256color~ declaration inside ~.vimrc~ if ~nvim~ is not running
 ******* update variables referencing ~xterm-256color~ or ~vim~ in dotfiles if necessary
