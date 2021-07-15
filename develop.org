@@ -15,13 +15,14 @@
 ***** ssh host configs
 ****** think about whether these should be in private or public repo
 ***** abook
+***** find out how to handle master PGP key since this is a core dependency -> central backup and maybe paperkey as well
 ***** current dotfiles configuration mixes non-private user-specific and user-agnostic configurations
 ****** consider moving non-private user-specific configurations into private user-specific repository
 ****** might be more modular this way but will require re-thinking
-***** (sub)keys are present in three cases: git, neomutt and pass
-***** make UZH and UP emails fully archived and delete everything except archived directories (keep those as starting mailboxes)
-***** replace sourcing accounts.muttrc with an executable which searches for file, if not exits -> port ~accounts.muttrc~ to private repo      
-***** find out how to handle master PGP key since this is a core dependency -> central backup and maybe paperkey as well
+****** (sub)keys are present in three cases: git, neomutt and pass
+****** replace sourcing accounts.muttrc with an executable which searches for file, if not exits -> port ~accounts.muttrc~ to private repo      
+****** move ~gitd~ dotfile folder to private repo as well
+****** make UZH and UP emails fully archived and delete everything except archived directories (keep those as starting mailboxes)
 
 **** TODO Update management scripts
 ***** update script which updates all submodules and git repos to latest upstream commits eg. ~make update~ and then pushes upstream

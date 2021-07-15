@@ -31,7 +31,10 @@
 
     6.  abook
 
-    7.  current dotfiles configuration mixes non-private user-specific
+    7.  find out how to handle master PGP key since this is a core
+        dependency -\> central backup and maybe paperkey as well
+
+    8.  current dotfiles configuration mixes non-private user-specific
         and user-agnostic configurations
 
         1.  consider moving non-private user-specific configurations
@@ -39,17 +42,17 @@
 
         2.  might be more modular this way but will require re-thinking
 
-    8.  (sub)keys are present in three cases: git, neomutt and pass
+        3.  (sub)keys are present in three cases: git, neomutt and pass
 
-    9.  make UZH and UP emails fully archived and delete everything
-        except archived directories (keep those as starting mailboxes)
+        4.  replace sourcing accounts.muttrc with an executable which
+            searches for file, if not exits -\> port `accounts.muttrc`
+            to private repo
 
-    10. replace sourcing accounts.muttrc with an executable which
-        searches for file, if not exits -\> port `accounts.muttrc` to
-        private repo
+        5.  move `gitd` dotfile folder to private repo as well
 
-    11. find out how to handle master PGP key since this is a core
-        dependency -\> central backup and maybe paperkey as well
+        6.  make UZH and UP emails fully archived and delete everything
+            except archived directories (keep those as starting
+            mailboxes)
 
 2.  **TODO** Update management scripts
 
