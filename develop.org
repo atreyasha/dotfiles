@@ -28,14 +28,14 @@
 **** TODO Update management scripts
 ***** update script which updates all submodules and git repos to latest upstream commits eg. ~make update~ and then pushes upstream
 ***** update script for ~emacs~, ~vim~ and ~pip~ packages
-***** update script for package lists on ~monix~ repo and pushes afterwards
 ***** dump ~pip --user~ package lists as well during update -> ~pip freeze --user~
+***** update script for package lists and all relevant logs on ~monix~ repo with ~git push~ afterwards
 ***** coordinate all of these processes with ~monix~ tasks
 
 *** Long-term
 **** Backup
 ***** reduce size of ~personal~ directory to keep only important data 
-***** optimize an elegant and portable backup scheduling of the ~personal~ directory, perhaps using systemd timers with a script that has a failsafe in case of missing drives etc.
+***** optimize an elegant backup workflow of the ~personal~ directory with a script, possibly in the private repository
 ***** think of possible failures with wrong drive -> perhaps would be good to have a reminder own notes instead of an automatic backup event
 ***** perhaps use tarballs with ~rsync~ to ensure only relevant data is updated
 ***** think of separating important and unimportant data -> only back up the important data

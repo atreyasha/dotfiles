@@ -64,11 +64,11 @@
 
     2.  update script for `emacs`, `vim` and `pip` packages
 
-    3.  update script for package lists on `monix` repo and pushes
-        afterwards
-
-    4.  dump `pip --user` package lists as well during update -\>
+    3.  dump `pip --user` package lists as well during update -\>
         `pip freeze --user`
+
+    4.  update script for package lists and all relevant logs on `monix`
+        repo with `git push` afterwards
 
     5.  coordinate all of these processes with `monix` tasks
 
@@ -78,9 +78,8 @@
 
     1.  reduce size of `personal` directory to keep only important data
 
-    2.  optimize an elegant and portable backup scheduling of the
-        `personal` directory, perhaps using systemd timers with a script
-        that has a failsafe in case of missing drives etc.
+    2.  optimize an elegant backup workflow of the `personal` directory
+        with a script, possibly in the private repository
 
     3.  think of possible failures with wrong drive -\> perhaps would be
         good to have a reminder own notes instead of an automatic backup
