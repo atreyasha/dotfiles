@@ -9,11 +9,12 @@
 
 1.  **TODO** Fix package structure issue
 
-    1.  keep tree folding and reverse vim spelling, or think of where to
-        put it
-
-    2.  possible to keep --no-folding but re-install everything to
+    1.  possible to keep --no-folding but re-install everything to
         ensure no noise
+
+    2.  figure out workaround for cases where files get overwritten -\>
+        this would not reflect in git history so it would need to be
+        fixed in another way
 
 2.  **TODO** Private
 
@@ -70,13 +71,22 @@
 
     2.  update script for `emacs`, `vim` and `pip` packages
 
-    3.  dump `pip --user` package lists as well during update -\>
+    3.  perhaps re-run `make install.monix` to check for conflicts, or
+        `--adopt` them if required
+
+        1.  this could be necessary with no more folding -\> for example
+            with abook and GTK-related configs
+
+        2.  or make another script which checks and adopts all changes
+            in filesystem, eg. `make check` and `make sync`
+
+    4.  dump `pip --user` package lists as well during update -\>
         `pip freeze --user`
 
-    4.  update script for package lists and all relevant logs on `monix`
+    5.  update script for package lists and all relevant logs on `monix`
         repo with `git push` afterwards
 
-    5.  coordinate all of these processes with `monix` tasks
+    6.  coordinate all of these processes with `monix` tasks
 
 ### Long-term
 
