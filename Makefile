@@ -11,12 +11,12 @@ update:
 
 .PHONY: install.monix
 install.monix:
-	stow -v -R -t ~ $(DOTFILES)
+	stow -v -R -t ~ --no-folding $(DOTFILES)
 
 .PHONY: install.remote
 install.remote:
-	stow -v -R -t ~ $(REMOTE_DOTFILES)
+	stow -v -R -t ~ --no-folding $(REMOTE_DOTFILES)
 
 .PHONY: uninstall
 uninstall:
-	stow -v -D -t ~ $(DOTFILES)
+	stow -v -D -t ~ --no-folding $(DOTFILES)
