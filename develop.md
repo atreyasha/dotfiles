@@ -52,6 +52,10 @@
 
         3.  move `gitd` dotfile folder to private repo as well
 
+        4.  but think again because even base `git` contains personal
+            information, so the distinction has to be different than
+            pure user-specific vs. non-user-specific
+
     7.  make UZH and UP emails fully archived and delete everything
         except archived directories (keep those as starting mailboxes)
 

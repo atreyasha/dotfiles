@@ -23,6 +23,7 @@
 ****** (sub)keys are present in three cases: git, neomutt, pass, signature and autorandr (too)
 ****** replace sourcing accounts.muttrc with an executable which searches for file, if not exits -> port ~accounts.muttrc~ to private repo      
 ****** move ~gitd~ dotfile folder to private repo as well
+****** but think again because even base ~git~ contains personal information, so the distinction has to be different than pure user-specific vs. non-user-specific
 ***** make UZH and UP emails fully archived and delete everything except archived directories (keep those as starting mailboxes)
 ***** populate private stow repository and later encrypt with git crypt
 ***** find out how to handle master PGP key since this is a core dependency
