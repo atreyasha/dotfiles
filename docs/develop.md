@@ -9,12 +9,40 @@
 
 1.  **TODO** Fix package structure issue
 
-    1.  possible to keep --no-folding but re-install everything to
-        ensure no noise
+    1.  New repository structure
 
-    2.  figure out workaround for cases where files get overwritten -\>
-        this would not reflect in git history so it would need to be
-        fixed in another way
+        1.  change repository structure by moving dotfiles to another
+            directory, and creating docs and hooks to allow for standard
+            repo access
+
+        2.  need to experiment to make sure it works
+
+        3.  change submodule directory structures as well -\> replace
+            all conf occurences
+
+    2.  Makefile/readme
+
+        1.  simply Makefile and readme in dotfiles
+
+        2.  add make init to monix for git hooks, and do the same for
+            dotfiles and privates
+
+        3.  change make install.monix to make install, keep same
+            standard across
+
+        4.  apply folding strategy to several dotfiles like emacs,
+            gtk2/3, qt5ct, abook and others
+
+            -   Add own solution to upstream issue if it helps
+
+    3.  Implement workaround for files which get overwritten
+
+        1.  EITHER Use git commands and stow simulation to check for
+            changes to dotfiles
+
+        2.  OR try adopting and doing a git status check
+
+        3.  need to add routine to check this on system update
 
 2.  **TODO** Private
 
@@ -60,7 +88,8 @@
         except archived directories (keep those as starting mailboxes)
 
     8.  populate private stow repository and later encrypt with git
-        crypt
+        crypt -\> figure out which ones to encrypt and how to make the
+        encrypting key portable
 
     9.  find out how to handle master PGP key since this is a core
         dependency
