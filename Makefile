@@ -1,17 +1,18 @@
-DOTFILES = $$(ls -d */)
+DOTFILES = $$(ls -d conf/*/ | xargs -I{} basename {})
 REMOTE_DOTFILES = alacritty bash dircolors git gnupg htop ranger readline tmux vim
 
 .PHONY: init
 init:
+	cp "./hooks/pre-commit" "./.git/hooks/"
 	git submodule update --init --recursive
 
 .PHONY: update
 update:
 	git submodule update --init --recursive --remote
 
-.PHONY: install.monix
-install.monix:
-	stow -v -R -t ~ --no-folding $(DOTFILES)
+.PHONY: install
+install:
+	bash hooks/fold_stow "stow -v -R -d conf -t" "~" "$(DOTFILES)"
 
 .PHONY: install.remote
 install.remote:

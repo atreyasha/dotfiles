@@ -21,7 +21,7 @@ This repository uses [GNU Stow](https://www.gnu.org/software/stow/) for managing
 To deploy all the dotfiles corresponding to the [`monix`](https://github.com/atreyasha/monix) build, execute:
 
 ```
-$ make install.monix
+$ make install
 ```
 
 To deploy a minimal subset of dotfiles on a remote machine, execute:
@@ -46,7 +46,7 @@ $ make uninstall
 
 ## Development
 
-Check out our development [log](develop.md) for details on upcoming developments.
+Check out our development [log](./docs/develop.md) for details on upcoming developments.
 
 <!--  LocalWords:  dotfiles img src png dotfile
  -->
