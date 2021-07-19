@@ -1,4 +1,4 @@
-DOTFILES = $$(ls -d conf/*/ | xargs -I{} basename {})
+DOTFILES = $$(find conf -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' -printf '%f\n')
 REMOTE_DOTFILES = alacritty bash dircolors git gnupg htop ranger readline tmux vim
 
 .PHONY: init
