@@ -8,7 +8,7 @@ This repository contains dotfiles for a minimal Arch Linux build. The applicatio
 
 ## Initialization
 
-After cloning this repository, pull all submodules by executing:
+After cloning this repository, initialize a pre-commit hook and pull all submodules by executing:
 
 ```
 $ make init
