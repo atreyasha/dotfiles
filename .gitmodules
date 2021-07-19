@@ -1,21 +1,21 @@
-[submodule "conf/i3/.config/i3/i3blocks-contrib"]
+[submodule "i3/.config/i3/i3blocks-contrib"]
   path = i3/.config/i3/i3blocks-contrib
   url = https://github.com/vivien/i3blocks-contrib.git
-[submodule "conf/vim/.vim_runtime"]
+[submodule "vim/.vim_runtime"]
   path = vim/.vim_runtime
   url = https://github.com/amix/vimrc.git
-[submodule "conf/ranger/.config/ranger/plugins/ranger_devicons"]
+[submodule "ranger/.config/ranger/plugins/ranger_devicons"]
   path = ranger/.config/ranger/plugins/ranger_devicons
   url = https://github.com/alexanderjeurissen/ranger_devicons.git
   branch = main
-[submodule "conf/emacs/.emacs.d"]
+[submodule "emacs/.emacs.d"]
   path = emacs/.emacs.d
   url = https://github.com/syl20bnr/spacemacs.git
   branch = develop
-[submodule "conf/emacs/.spacemacs.d/layers/spacemacs-elpy"]
+[submodule "emacs/.spacemacs.d/layers/spacemacs-elpy"]
   path = emacs/.spacemacs.d/layers/spacemacs-elpy
   url = https://github.com/atreyasha/spacemacs-elpy.git
   branch = main
-[submodule "conf/zsh/.zsh.d/plugins/zsh-system-clipboard"]
+[submodule "zsh/.zsh.d/plugins/zsh-system-clipboard"]
   path = zsh/.zsh.d/plugins/zsh-system-clipboard
   url = https://github.com/kutsan/zsh-system-clipboard.git
