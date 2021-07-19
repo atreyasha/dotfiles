@@ -4,7 +4,7 @@ set -e
 # usage function
 usage() {
   cat <<EOF
-Usage: fold_stow [-h|--help] <command> <destination> <dotfile> [dotfile...]
+Usage: fold_stow [-h|--help] <command> <source> <destination> <dotfile> [dotfile...]
 
 This script searches for stow dotfiles which require forced folding, and then
 removes target directories in order to allow for successful folding
@@ -14,9 +14,10 @@ add a file called '.fold' on the base directory of the dotfile. Then specify
 relative paths to directories inside the dotfile which should be folded
 
 Required positional arguments:
-  command       Command prefix which should end with the stow flag '-t'
-  destination   Stow target destination directory
-  dotfile       Path to source dotfile(s)
+  command       Stow command prefix excluding '-d' and '-t' flags
+  source        Stow source directory excluding '-d' flag
+  destination   Stow destination or target directory excluding '-t' flag
+  dotfile       Name of dotfile(s)
 
 Optional argument:
   -h, --help    Show this help message and exit
@@ -37,18 +38,20 @@ check_help() {
 fold_stow() {
   # define local variabless
   local command="$1"
-  local destination="${2//\~/$HOME}"
-  local dotfiles="$3"
+  local source="${2//\~/$HOME}"
+  local destination="${3//\~/$HOME}"
+  local dotfiles="$4"
   local dotfiles_nofold=()
   local dotfiles_fold=()
 
   # loop over files and execute logic
   for dotfile in $dotfiles; do
     # check for the existence of .fold
-    if [ -f "$dotfile/.fold" ]; then
+    src_dotfile="$source/$dotfile"
+    if [ -f "$src_dotfile/.fold" ]; then
       # loop through all foldable directories
-      for fold in $(xargs -a "$dotfile/.fold"); do
-        src_fold_directory="$dotfile/$fold"
+      for fold in $(xargs -a "$src_dotfile/.fold"); do
+        src_fold_directory="$src_dotfile/$fold"
         dest_fold_directory="$destination/$fold"
         # prompt to delete directories if they are not symlinks
         if [[ -d "$src_fold_directory" && -d "$dest_fold_directory" && \
@@ -68,17 +71,14 @@ fold_stow() {
 
   # execute stow for folding directories
   if ((${#dotfiles_fold[@]})); then
-    eval "$command $destination --ignore='^\.fold$' ${dotfiles_fold[*]}"
+    eval "$command -d $source -t $destination --ignore='^\.fold$' ${dotfiles_fold[*]}"
   fi
 
   # execute stow for --no-folding directories
   if ((${#dotfiles_nofold[@]})); then
-    eval "$command $destination --no-folding ${dotfiles_nofold[*]}"
+    eval "$command -d $source -t $destination --no-folding ${dotfiles_nofold[*]}"
   fi
 }
 
 check_help "$@"
 fold_stow "$@"
-
-# Tasks:
-# TODO: do test run by no-folding and then folding -> at the end
