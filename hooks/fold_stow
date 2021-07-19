@@ -11,7 +11,7 @@ removes target directories in order to allow for successful folding
 
 To trigger the folding mechanism for a certain stow dotfile directory, simply
 add a file called '.fold' on the base directory of the dotfile. Then specify
-relative paths to directories inside the dotfile which should be folded
+relative paths to directories which should be folded inside the '.fold' file
 
 Required positional arguments:
   command       Stow command prefix excluding '-d' and '-t' flags
