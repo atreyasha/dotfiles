@@ -87,7 +87,8 @@
 
     7.  coordinate all of these processes with `monix` tasks
 
-    8.  implement workaround for files which get overwritten
+    8.  implement workaround for files which get overwritten due to
+        `--no-folding` in stow
 
         1.  EITHER Use git commands and stow simulation to check for
             changes to dotfiles

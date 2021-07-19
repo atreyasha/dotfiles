@@ -35,7 +35,7 @@
 ***** dump ~pip --user~ package lists as well during update -> ~pip freeze --user~
 ***** update script for package lists and all relevant logs on ~monix~ repo with ~git push~ afterwards
 ***** coordinate all of these processes with ~monix~ tasks
-***** implement workaround for files which get overwritten
+***** implement workaround for files which get overwritten due to ~--no-folding~ in stow
 ****** EITHER Use git commands and stow simulation to check for changes to dotfiles
 ****** OR try adopting and doing a git status check
 ****** need to add workflow to check this on system update
