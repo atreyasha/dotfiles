@@ -3,7 +3,7 @@
 This repository contains dotfiles for a minimal Arch Linux build. The applications include `i3-gaps`, `emacs`, `neomutt` and many more. Below is a screenshot of a sample workspace:
 
 <p align="center">
-<img src="screenshot.png" width="700">
+<img src="./docs/screenshot.png" width="700">
 </p>
 
 ## Initialization
