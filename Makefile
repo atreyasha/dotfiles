@@ -12,12 +12,12 @@ update:
 
 .PHONY: install
 install:
-	bash hooks/fold_stow "stow -v -R -d conf -t" "~" "$(DOTFILES)"
+	bash hooks/fold_stow "stow -v -R" "conf" "$$HOME" "$(DOTFILES)"
 
 .PHONY: install.remote
 install.remote:
-	stow -v -R -t ~ --no-folding $(REMOTE_DOTFILES)
+	bash hooks/fold_stow "stow -v -R" "conf" "$$HOME" "$(REMOTE_DOTFILES)"
 
 .PHONY: uninstall
 uninstall:
-	stow -v -D -t ~ --no-folding $(DOTFILES)
+	stow -v -D -d conf -t $$HOME $(DOTFILES)
