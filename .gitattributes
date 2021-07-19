@@ -1,2 +1,2 @@
-ranger/.config/ranger/commands_full.py -linguist-detectable
-qutebrowser/.config/qutebrowser/config.py -linguist-detectable
+conf/ranger/.config/ranger/commands_full.py -linguist-detectable
+conf/qutebrowser/.config/qutebrowser/config.py -linguist-detectable
