@@ -7,44 +7,7 @@
 
 ### Next
 
-1.  **TODO** Fix package structure issue
-
-    1.  New repository structure
-
-        1.  change repository structure by moving dotfiles to another
-            directory, and creating docs and hooks to allow for standard
-            repo access
-
-        2.  need to experiment to make sure it works
-
-        3.  change submodule directory structures as well -\> replace
-            all conf occurences
-
-    2.  Makefile/readme
-
-        1.  simply Makefile and readme in dotfiles
-
-        2.  add make init to monix for git hooks, and do the same for
-            dotfiles and privates
-
-        3.  change make install.monix to make install, keep same
-            standard across
-
-        4.  apply folding strategy to several dotfiles like emacs,
-            gtk2/3, qt5ct, abook and others
-
-            -   Add own solution to upstream issue if it helps
-
-    3.  Implement workaround for files which get overwritten
-
-        1.  EITHER Use git commands and stow simulation to check for
-            changes to dotfiles
-
-        2.  OR try adopting and doing a git status check
-
-        3.  need to add routine to check this on system update
-
-2.  **TODO** Private
+1.  **TODO** Private
 
     1.  pass
 
@@ -96,15 +59,18 @@
 
         1.  central backup and maybe paperkey as well
 
-3.  **TODO** Update management scripts
+2.  **TODO** Update management scripts
 
-    1.  update script which updates all submodules and git repos to
+    1.  apply folding strategy to several dotfiles like emacs, gtk2/3,
+        qt5ct, abook and others
+
+    2.  update script which updates all submodules and git repos to
         latest upstream commits eg. `make update` and then pushes
         upstream
 
-    2.  update script for `emacs`, `vim` and `pip` packages
+    3.  update script for `emacs`, `vim` and `pip` packages
 
-    3.  perhaps re-run `make install.monix` to check for conflicts, or
+    4.  perhaps re-run `make install.monix` to check for conflicts, or
         `--adopt` them if required
 
         1.  this could be necessary with no more folding -\> for example
@@ -113,13 +79,22 @@
         2.  or make another script which checks and adopts all changes
             in filesystem, eg. `make check` and `make sync`
 
-    4.  dump `pip --user` package lists as well during update -\>
+    5.  dump `pip --user` package lists as well during update -\>
         `pip freeze --user`
 
-    5.  update script for package lists and all relevant logs on `monix`
+    6.  update script for package lists and all relevant logs on `monix`
         repo with `git push` afterwards
 
-    6.  coordinate all of these processes with `monix` tasks
+    7.  coordinate all of these processes with `monix` tasks
+
+    8.  implement workaround for files which get overwritten
+
+        1.  EITHER Use git commands and stow simulation to check for
+            changes to dotfiles
+
+        2.  OR try adopting and doing a git status check
+
+        3.  need to add workflow to check this on system update
 
 ### Long-term
 

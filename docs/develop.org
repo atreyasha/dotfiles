@@ -4,25 +4,6 @@
 
 ** Tasks
 *** Next
-**** TODO Fix package structure issue 
-***** New repository structure 
-****** change repository structure by moving dotfiles to another directory, and creating docs and hooks to allow for standard repo access
-****** need to experiment to make sure it works 
-****** change submodule directory structures as well -> replace all conf occurences
-
-***** Makefile/readme
-****** simply Makefile and readme in dotfiles
-****** add make init to monix for git hooks, and do the same for dotfiles and privates
-****** change make install.monix to make install, keep same standard across
-****** apply folding strategy to several dotfiles like emacs, gtk2/3, qt5ct, abook and others
-
-- Add own solution to upstream issue if it helps
-
-***** Implement workaround for files which get overwritten
-****** EITHER Use git commands and stow simulation to check for changes to dotfiles
-****** OR try adopting and doing a git status check
-****** need to add routine to check this on system update
-
 **** TODO Private
 ***** pass
 ***** abook -> figure out how to handle this as it gets overwritten
@@ -45,6 +26,7 @@
 ****** central backup and maybe paperkey as well
 
 **** TODO Update management scripts
+***** apply folding strategy to several dotfiles like emacs, gtk2/3, qt5ct, abook and others
 ***** update script which updates all submodules and git repos to latest upstream commits eg. ~make update~ and then pushes upstream
 ***** update script for ~emacs~, ~vim~ and ~pip~ packages
 ***** perhaps re-run ~make install.monix~ to check for conflicts, or ~--adopt~ them if required
@@ -53,7 +35,11 @@
 ***** dump ~pip --user~ package lists as well during update -> ~pip freeze --user~
 ***** update script for package lists and all relevant logs on ~monix~ repo with ~git push~ afterwards
 ***** coordinate all of these processes with ~monix~ tasks
-
+***** implement workaround for files which get overwritten
+****** EITHER Use git commands and stow simulation to check for changes to dotfiles
+****** OR try adopting and doing a git status check
+****** need to add workflow to check this on system update
+      
 *** Long-term
 **** Backup
 ***** reduce size of ~personal~ directory to keep only important data 
