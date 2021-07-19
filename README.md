@@ -33,7 +33,7 @@ $ make install.remote
 Alternatively, if a custom subset of the dotfiles is desired; simply indicate the name(s) of the dotfile directories:
 
 ```
-$ stow -v -R -t ~ <dotfile_1> <dotfile_2> ...
+$ stow -v -R -d conf -t ~ <dotfile_1> <dotfile_2> ...
 ```
 
 ## Uninstallation
