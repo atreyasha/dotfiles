@@ -99,5 +99,4 @@
 **** Generic
 ***** update configuration files with upstream changes (or remove upstream templates)
 ***** update script which does manual update checks on files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes -> eg. ~spacemacs~ latex layer modified files
-***** examples include spacemacs and qutebrowser 
-      
+***** examples include spacemacs, qutebrowser and ranger

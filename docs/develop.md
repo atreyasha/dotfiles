@@ -254,4 +254,4 @@
         framework to accept/reject upstream changes -\> eg. `spacemacs`
         latex layer modified files
 
-    3.  examples include spacemacs and qutebrowser
+    3.  examples include spacemacs, qutebrowser and ranger
