@@ -1,2 +1,9 @@
-# py-cache files
+# pycache
 *.pyc
+
+# ranger-devicons
+conf/ranger/.config/ranger/plugins/__init__.py
+
+# spacemacs
+conf/emacs/.spacemacs.d/rpc/
+conf/emacs/.spacemacs.d/.spacemacs.env
