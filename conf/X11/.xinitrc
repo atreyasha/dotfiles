@@ -38,5 +38,11 @@ feh-background &
 xset dpms 300 300 300
 setxkbmap -layout de
 unclutter --timeout 1 &
+
+# disable autorepeat for volume keys
+# NOTE: keycodes found by disabling volume bindings in i3
+# and then using xev to isolate specific keycodes
 seq 121 123 | xargs -n 1 xset -r
+
+# launch i3
 exec i3
