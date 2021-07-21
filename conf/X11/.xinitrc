@@ -10,27 +10,27 @@ sysmodmap="/etc/X11/xinit/.Xmodmap"
 
 # merge in defaults and keymaps
 if [ -f "$sysresources" ]; then
-    xrdb -merge "$sysresources"
+  xrdb -merge "$sysresources"
 fi
 
 if [ -f "$sysmodmap" ]; then
-    xmodmap "$sysmodmap"
+  xmodmap "$sysmodmap"
 fi
 
 if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
+  xrdb -merge "$userresources"
 fi
 
 if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
+  xmodmap "$usermodmap"
 fi
 
 # start some nice programs
 if [ -d "/etc/X11/xinit/xinitrc.d" ] ; then
- for filename in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$filename" ] && . "$filename"
- done
- unset filename
+  for filename in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+    [ -x "$filename" ] && . "$filename"
+  done
+  unset filename
 fi
 
 # start user's X programs
