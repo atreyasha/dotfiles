@@ -48,11 +48,11 @@ set pgp_self_encrypt = yes
 set ssl_starttls = yes
 set ssl_force_tls = yes
 
-# assign default PGP key
-set pgp_default_key = 0x5330BD3D1107E5A6 
-
 # set email signature
 set signature = "~/.signature"
+
+# assign default PGP key
+set pgp_default_key = 0x5330BD3D1107E5A6 
 
 # source email configurations
 source ~/.config/mutt/accounts/1-shankar_gmail.muttrc
