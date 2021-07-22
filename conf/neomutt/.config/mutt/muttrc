@@ -2,17 +2,17 @@
 source /usr/share/mutt-wizard/mutt-wizard.muttrc
 
 # set preferred text editor
-set editor=vim
+set editor = vim
 
 # set formats for index and the sidebar
-set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
+set index_format = "%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
 set sidebar_format = '%D%?F? [%F]?%* %?N?%N/? %?S?%S?'
 
 # set sensible date format
-set date_format="%d/%m/%y %I:%M%p"
+set date_format = "%d/%m/%y %I:%M%p"
 
 # prevent scrolling outside of pager
-set pager_stop=yes
+set pager_stop = yes
 
 # number of index lines to show
 set pager_index_lines = 10
