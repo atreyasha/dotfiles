@@ -36,7 +36,6 @@ fi
 # start user's X programs
 feh-background &
 xset dpms 300 300 300
-setxkbmap -layout de
 unclutter --timeout 1 &
 
 # disable autorepeat for volume keys
