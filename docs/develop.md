@@ -15,6 +15,12 @@
 
     2.  update script for `emacs`, `vim` and `pip` packages
 
+        1.  `vim` and `pip` can be done easily via git submodules and
+            `pip` CLI
+
+        2.  `emacs` would require submodules update and spacemacs
+            package updates as well
+
     3.  perhaps re-run `make install.monix` to check for conflicts, or
         `--adopt` them if required
 
@@ -43,14 +49,15 @@
         3.  OR try to fold directory which gets overwritten -\> eg.
             emacs, gtk2/3, qt5ct, abook and others
 
-        4.  OR consider purchasing a yubikey to manage GPG keys
-
-        5.  need to add workflow to check this on system update -\> or
+        4.  need to add workflow to check this on system update -\> or
             do this periodically via timer or to-do-note
 
-        6.  think about how files are overwritten in `dotfiles` and
+        5.  think about how files are overwritten in `dotfiles` and
             whether folds are always necessary, eg. for `mimeapps` and
             `abook`
+
+        6.  add `test` commands for all repositories for sanity checks
+            during system updates
 
 ### Long-term
 
@@ -82,6 +89,8 @@
             public/private keys and trust databases
 
         3.  consider printing key as final failsafe using `paperkey`
+
+        4.  consider purchasing a yubikey to manage GPG keys
 
     8.  emails
 
@@ -206,7 +215,8 @@
         specifically when `i` and `d` are suffixed on commands
 
     3.  consider adding check-stats or sync-mailbox command after moving
-        or copying -\> to update all statistics -\> maybe issue for `mw`
+        or copying -\> to update all statistics -\> maybe raise issue/PR
+        for `mw`
 
     4.  improve other formatting with extended lines given
         `named-mailbox`, and other optimizations with commands, see:
@@ -217,16 +227,9 @@
     5.  issue of specified subkey not being used:
         <https://github.com/neomutt/neomutt/issues/2980>
 
-    6.  update exact subkey when this is fixed
+        1.  update exact subkey when this is fixed
 
-7.  Mimeapps/mailcap
-
-    1.  add mailcap helpers in `conf` and coordinate with mimetypes
-
-    2.  synchronize mime system program defaults to same as ranger\'s
-        rifle
-
-8.  PGP public key
+7.  PGP keys
 
     1.  host public key on `keys.openpgp.org` or `keybase.io`
 
@@ -234,6 +237,13 @@
         or via specific keyserver (and mention not others)
 
     3.  consider adding PGP key-id to GitHub page
+
+8.  Mimeapps/mailcap
+
+    1.  add mailcap helpers in `conf` and coordinate with mimetypes
+
+    2.  synchronize mime system program defaults to same as ranger\'s
+        rifle
 
 9.  Qutebrowser
 

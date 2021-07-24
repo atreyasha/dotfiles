@@ -7,6 +7,8 @@
 **** TODO Update management scripts
 ***** update script which updates all submodules and git repos to latest upstream commits eg. ~make update~ and then pushes upstream
 ***** update script for ~emacs~, ~vim~ and ~pip~ packages
+****** ~vim~ and ~pip~ can be done easily via git submodules and ~pip~ CLI
+****** ~emacs~ would require submodules update and spacemacs package updates as well
 ***** perhaps re-run ~make install.monix~ to check for conflicts, or ~--adopt~ them if required
 ****** this could be necessary with no more folding -> for example with abook and GTK-related configs
 ****** or make another script which checks and adopts all changes in filesystem, eg. ~make check~ and ~make sync~
@@ -17,9 +19,9 @@
 ****** EITHER use git commands and stow simulation to check for changes to dotfiles
 ****** OR try adopting and doing a git status check
 ****** OR try to fold directory which gets overwritten -> eg. emacs, gtk2/3, qt5ct, abook and others
-****** OR consider purchasing a yubikey to manage GPG keys
 ****** need to add workflow to check this on system update -> or do this periodically via timer or to-do-note
 ****** think about how files are overwritten in ~dotfiles~ and whether folds are always necessary, eg. for ~mimeapps~ and ~abook~ 
+****** add ~test~ commands for all repositories for sanity checks during system updates
 
 *** Long-term
 **** Backup
@@ -33,6 +35,7 @@
 ****** only hard backups should be personal files and GPG keys for unlocking everything else
 ****** think of backup scheduling and structure for GPG, such as public/private keys and trust databases
 ****** consider printing key as final failsafe using ~paperkey~
+****** consider purchasing a yubikey to manage GPG keys
 ***** emails
 ****** back up neomutt emails as well, since they could be good-to-keep
 
@@ -78,18 +81,19 @@
 ****** maybe can use for-loop with command-mode to create this quickly
 ****** consider removing junk for shortening configs
 ***** raise issue on similar keys being acculumated in help pages -> specifically when ~i~ and ~d~ are suffixed on commands
-***** consider adding check-stats or sync-mailbox command after moving or copying -> to update all statistics -> maybe issue for ~mw~
+***** consider adding check-stats or sync-mailbox command after moving or copying -> to update all statistics -> maybe raise issue/PR for ~mw~
 ***** improve other formatting with extended lines given ~named-mailbox~, and other optimizations with commands, see: https://github.com/jindraj/dotfiles/tree/master/.neomutt
 ****** consider integrating ~notmuch~ in the future
 ***** issue of specified subkey not being used: https://github.com/neomutt/neomutt/issues/2980
-***** update exact subkey when this is fixed
-**** Mimeapps/mailcap
-***** add mailcap helpers in ~conf~ and coordinate with mimetypes
-***** synchronize mime system program defaults to same as ranger's rifle
-**** PGP public key
+****** update exact subkey when this is fixed
+
+**** PGP keys
 ***** host public key on ~keys.openpgp.org~ or ~keybase.io~
 ***** add personal website page for accessing keys manually on GitHub or via specific keyserver (and mention not others)
 ***** consider adding PGP key-id to GitHub page
+**** Mimeapps/mailcap
+***** add mailcap helpers in ~conf~ and coordinate with mimetypes
+***** synchronize mime system program defaults to same as ranger's rifle
 **** Qutebrowser
 ***** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
 **** Generic
