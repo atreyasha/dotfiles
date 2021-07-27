@@ -224,7 +224,10 @@
 
         1.  consider integrating `notmuch` in the future
 
-    5.  issue of specified subkey not being used:
+    5.  issue of repeated compose command after send:
+        <https://github.com/neomutt/neomutt/issues/2091>
+
+    6.  issue of specified subkey not being used:
         <https://github.com/neomutt/neomutt/issues/2980>
 
         1.  update exact subkey when this is fixed

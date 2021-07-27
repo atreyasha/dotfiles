@@ -84,9 +84,10 @@
 ***** consider adding check-stats or sync-mailbox command after moving or copying -> to update all statistics -> maybe raise issue/PR for ~mw~
 ***** improve other formatting with extended lines given ~named-mailbox~, and other optimizations with commands, see: https://github.com/jindraj/dotfiles/tree/master/.neomutt
 ****** consider integrating ~notmuch~ in the future
+***** issue of repeated compose command after send: https://github.com/neomutt/neomutt/issues/2091
 ***** issue of specified subkey not being used: https://github.com/neomutt/neomutt/issues/2980
 ****** update exact subkey when this is fixed
-
+       
 **** PGP keys
 ***** host public key on ~keys.openpgp.org~ or ~keybase.io~
 ***** add personal website page for accessing keys manually on GitHub or via specific keyserver (and mention not others)
