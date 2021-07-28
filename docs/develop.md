@@ -7,95 +7,72 @@
 
 ### Next
 
-1.  **TODO** Update management scripts
+1.  **TODO** System upgrade
 
-    1.  update script which updates all submodules and git repos to
-        latest upstream commits eg. `make update` and then pushes
-        upstream
+    1.  add `test` commands for all repositories
 
-    2.  update script for `emacs`, `vim` and `pip` packages
+        1.  use `stow` simulation without verbosity and check exit code
 
-        1.  `vim` and `pip` can be done easily via git submodules and
-            `pip` CLI
+    2.  update all miscellaneous packages
 
-        2.  `emacs` would require submodules update and spacemacs
-            package updates as well
+        1.  update all submodules with `make update`, including `vim`
+            and `emacs`
 
-    3.  perhaps re-run `make install.monix` to check for conflicts, or
-        `--adopt` them if required
+        2.  `pip` can be updated with `pip install -U` CLI
 
-        1.  this could be necessary with no more folding -\> for example
-            with abook and GTK-related configs
+        3.  `spacemacs` packages would require manual command:
+            <https://emacs.stackexchange.com/questions/41786/update-spacemacs-packages-from-the-command-line>
 
-        2.  or make another script which checks and adopts all changes
-            in filesystem, eg. `make check` and `make sync`
-
-    4.  dump `pip --user` package lists as well during update -\>
+    3.  dump new `pip --user` package lists after update -\>
         `pip freeze --user`
 
-    5.  update script for package lists and all relevant logs on `monix`
-        repo with `git push` afterwards
+    4.  use `yay` for system upgrade followed by miscellaneous upgrades
+        and `pip` tracking
 
-    6.  coordinate all of these processes with `monix` tasks
+        1.  run all tests for three repositories and print these out
+            clearly
 
-    7.  implement workaround for files which get overwritten due to
-        `--no-folding` in stow
+        2.  consider piping output away since this could meddle with
+            important messages such as `pacman` hooks outputs
 
-        1.  EITHER use git commands and stow simulation to check for
-            changes to dotfiles
+2.  **TODO** Backup
 
-        2.  OR try adopting and doing a git status check
+    1.  Framework
 
-        3.  OR try to fold directory which gets overwritten -\> eg.
-            emacs, gtk2/3, qt5ct, abook and others
+        1.  perhaps use `rsync` with tarballs to ensure only relevant
+            data is updated
 
-        4.  need to add workflow to check this on system update -\> or
-            do this periodically via timer or to-do-note
+        2.  clean external hard-drive and organize folders there
 
-        5.  think about how files are overwritten in `dotfiles` and
-            whether folds are always necessary, eg. for `mimeapps` and
-            `abook`
+        3.  back-up `personal` directory, `gnupg` keys and neomutt email
+            archives
 
-        6.  add `test` commands for all repositories for sanity checks
-            during system updates
+            1.  think of any other important data to back up -\> inspect
+                drive for templates
+
+            2.  consider moving mail archives to `personal` for easier
+                backups
+
+            3.  consider printing key as final failsafe using `paperkey`
+
+            4.  consider purchasing a yubikey to manage GPG keys
+
+    2.  Scheduling
+
+        1.  schedule backups with timer or via manual notes
+
+        2.  think of script to backup and deploy
 
 ### Long-term
 
-1.  Backup
+1.  Sync
 
-    1.  reduce size of `personal` directory to keep only important data
+    1.  implement `sync` in case repository tests fail
 
-    2.  optimize an elegant backup workflow of the `personal` directory
-        with a script, possibly in the private repository
+        1.  `adopt` files via stow and perform a git status check
 
-    3.  perhaps would be good to have a reminder own notes instead of an
-        automatic backup event scheduled -\> think of possible failures
-        with wrong drive
-
-    4.  perhaps use tarballs with `rsync` to ensure only relevant data
-        is updated
-
-    5.  think of separating important and unimportant data -\> only back
-        up the important data
-
-    6.  organize drive to ensure backups all make good sense
-
-    7.  gnupg
-
-        1.  only hard backups should be personal files and GPG keys for
-            unlocking everything else
-
-        2.  think of backup scheduling and structure for GPG, such as
-            public/private keys and trust databases
-
-        3.  consider printing key as final failsafe using `paperkey`
-
-        4.  consider purchasing a yubikey to manage GPG keys
-
-    8.  emails
-
-        1.  back up neomutt emails as well, since they could be
-            good-to-keep
+        2.  force fold directory where file gets overwritten -\> eg.
+            gtk2/3, qt5ct etc.
 
 2.  i3
 
@@ -255,12 +232,15 @@
 
 10. Generic
 
-    1.  update configuration files with upstream changes (or remove
-        upstream templates)
+    1.  best way to foce-fold would be to stow all with `--no-folding`
+        and then re-do with `fold_stow`
 
     2.  update script which does manual update checks on files which
         might require upstream updates -\> perhaps perform a diff
         framework to accept/reject upstream changes -\> eg. `spacemacs`
         latex layer modified files
 
-    3.  examples include spacemacs, qutebrowser and ranger
+        1.  update configuration files with upstream changes (or remove
+            upstream templates)
+
+        2.  examples include spacemacs, qutebrowser and ranger
