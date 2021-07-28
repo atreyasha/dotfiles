@@ -21,3 +21,7 @@ install.remote:
 .PHONY: uninstall
 uninstall:
 	stow -v -D -d conf -t $$HOME $(DOTFILES)
+
+.PHONY: test
+test:
+	stow -R -n --no-folding --ignore='^\.fold$$' -d conf -t $$HOME $(DOTFILES)
