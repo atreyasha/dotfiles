@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+set -e
+
+find_help() {
+  # check for helper flags
+  for arg; do
+    if [ "$arg" == "--help" ] || [ "$arg" == "-h" ]; then
+      usage
+      exit 0
+    fi
+  done
+}
+
+upgrade_all_pacman() {
+  # this will upgrade all pacman package
+  # since we use yay, this also updates foreign packages
+  yay -Syu
+}
+
+upgrade_all_pip() {
+  # upgrade all pip packages
+  # source: https://stackoverflow.com/a/3452888
+  outdated_pkgs="$(pip list --outdated --format=freeze --user)"
+  if [ -n "$outdated_pkgs"  ]; then
+    # iterate through outdated packages
+    # filter and update them using pip
+    printf "%s\n" "$outdated_pkgs" | \
+      grep -v '^\-e' | \
+      cut -d = -f 1 | \
+      xargs -n1 pip install --user -U
+
+    # update package list
+    pip list --format=freeze --user | tee "$HOME/monix/pkg/requirements.txt"
+  fi
+}
+
+update_submodules() {
+  # this updates all submodules in the `dotfiles` repo
+  make -C "$HOME/dotfiles" update
+}
+
+update_spacemacs_pkgs() {
+  # prepare spacemacs packages for actual update on the next emacs launch
+  # source: https://emacs.stackexchange.com/a/45923
+  emacs --batch -l "$HOME/.emacs.d/init.el" --eval="(configuration-layer/update-packages t)"
+}
+
+test_repos() {
+  # perform unit tests in important repositories
+  make -C "$HOME/dotfiles" test
+  make -C "$HOME/privates" test
+  make -C "$HOME/monix" test
+}
+
+main() {
+  # upgrade all pacman packages
+  printf "%s\n" "Upgrading pacman and aur packages"
+  upgrade_all_pacman
+
+  # upgrade all pip packages
+  printf "%s\n" "Upgrading all pip packages"
+  upgrade_all_pip
+
+  # update dotfile submodules
+  printf "%s\n" "Updating git submodules of dotfiles"
+  update_submodules
+
+  # prepare spacemacs packages for updates
+  printf "%s\n" "Preparing Spacemacs packages for update"
+  update_spacemacs_pkgs
+}
+
+# overall workflow
+find_help "$@"
+main
+
+# Tasks:
+# TODO: think of how to tally and work with tests -> some nice of viewing results and handling them -> consider outputing colored logs so passing and failing cases are clear
+# TODO: think of how to handle cases where certain repo directories are missing or in wrong location -> maybe do a directory check beforehand, or update documentation such that repos are always present
+# TODO: add failure cases for each test to ensure whole script does not fail bacause of `set -e`
+# TODO: add a comprehensive usage script with some command-line options
