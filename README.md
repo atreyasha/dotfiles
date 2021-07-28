@@ -36,6 +36,14 @@ Alternatively, if a custom subset of the dotfiles is desired; simply indicate th
 $ stow -v -R -d conf -t ~ <dotfile_1> <dotfile_2> ...
 ```
 
+## Test
+
+To test the deployment of `dotfiles`, execute:
+
+```
+$ make test
+```
+
 ## Uninstallation
 
 To remove all stowed `dotfiles`, execute:
