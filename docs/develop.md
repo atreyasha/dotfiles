@@ -23,7 +23,9 @@
         4.  ensure all `$USER` are replaced with `$HOME` to avoid
             hard-coding
 
-        5.  add this as an extra test case, could be useful so one does
+        5.  replace `sh` with `bash` where possible
+
+        6.  add this as an extra test case, could be useful so one does
             not have to remember it always
 
 2.  **TODO** Backup

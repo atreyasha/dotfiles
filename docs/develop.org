@@ -10,8 +10,9 @@
 ****** add weblink to repo in usage script for ~system-upgrade~ as well for clarity
 ****** ensure that all tildes are replaced with ~$HOME~, as much as possible
 ****** ensure all ~$USER~ are replaced with ~$HOME~ to avoid hard-coding
+****** replace ~sh~ with ~bash~ where possible
 ****** add this as an extra test case, could be useful so one does not have to remember it always
-      
+
 **** TODO Backup
 ***** Framework
 ****** perhaps use ~rsync~ with tarballs to ensure only relevant data is updated
