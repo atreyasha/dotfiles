@@ -4,22 +4,19 @@
 
 ** Tasks
 *** Next
-**** TODO System upgrade
-***** add ~test~ commands for all repositories
-****** use ~stow~ simulation without verbosity and check exit code
-***** update all miscellaneous packages
-****** update all submodules with ~make update~, including ~vim~ and ~emacs~
-****** ~pip~ can be updated with ~pip install -U~ CLI
-****** ~spacemacs~ packages would require manual command: https://emacs.stackexchange.com/questions/41786/update-spacemacs-packages-from-the-command-line
-***** dump new ~pip --user~ package lists after update -> ~pip freeze --user~
-***** use ~yay~ for system upgrade followed by miscellaneous upgrades and ~pip~ tracking
-****** run all tests for three repositories and print these out clearly
-****** consider piping output away since this could meddle with important messages such as ~pacman~ hooks outputs 
-
+**** TODO Consistency
+***** all three repositories -> ~dotfiles~, ~privates~ and ~monix~ 
+****** add reminder in all readmes to clone in ~$HOME~ directory (this is hard-coded)
+****** add weblink to repo in usage script for ~system-upgrade~ as well for clarity
+****** ensure that all tildes are replaced with ~$HOME~, as much as possible
+****** ensure all ~$USER~ are replaced with ~$HOME~ to avoid hard-coding
+****** add this as an extra test case, could be useful so one does not have to remember it always
+      
 **** TODO Backup
 ***** Framework
 ****** perhaps use ~rsync~ with tarballs to ensure only relevant data is updated
 ****** clean external hard-drive and organize folders there
+******* clean up local drive to make space as well
 ****** back-up ~personal~ directory, ~gnupg~ keys and neomutt email archives
 ******* think of any other important data to back up -> inspect drive for templates
 ******* consider moving mail archives to ~personal~ for easier backups
@@ -28,7 +25,7 @@
 ***** Scheduling
 ****** schedule backups with timer or via manual notes
 ****** think of script to backup and deploy
- 
+       
 *** Long-term
 **** Sync
 ***** implement ~sync~ in case repository tests fail

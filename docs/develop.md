@@ -7,33 +7,24 @@
 
 ### Next
 
-1.  **TODO** System upgrade
+1.  **TODO** Consistency
 
-    1.  add `test` commands for all repositories
+    1.  all three repositories -\> `dotfiles`, `privates` and `monix`
 
-        1.  use `stow` simulation without verbosity and check exit code
+        1.  add reminder in all readmes to clone in `$HOME` directory
+            (this is hard-coded)
 
-    2.  update all miscellaneous packages
+        2.  add weblink to repo in usage script for `system-upgrade` as
+            well for clarity
 
-        1.  update all submodules with `make update`, including `vim`
-            and `emacs`
+        3.  ensure that all tildes are replaced with `$HOME`, as much as
+            possible
 
-        2.  `pip` can be updated with `pip install -U` CLI
+        4.  ensure all `$USER` are replaced with `$HOME` to avoid
+            hard-coding
 
-        3.  `spacemacs` packages would require manual command:
-            <https://emacs.stackexchange.com/questions/41786/update-spacemacs-packages-from-the-command-line>
-
-    3.  dump new `pip --user` package lists after update -\>
-        `pip freeze --user`
-
-    4.  use `yay` for system upgrade followed by miscellaneous upgrades
-        and `pip` tracking
-
-        1.  run all tests for three repositories and print these out
-            clearly
-
-        2.  consider piping output away since this could meddle with
-            important messages such as `pacman` hooks outputs
+        5.  add this as an extra test case, could be useful so one does
+            not have to remember it always
 
 2.  **TODO** Backup
 
@@ -43,6 +34,8 @@
             data is updated
 
         2.  clean external hard-drive and organize folders there
+
+            1.  clean up local drive to make space as well
 
         3.  back-up `personal` directory, `gnupg` keys and neomutt email
             archives
