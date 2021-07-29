@@ -1,6 +1,22 @@
 #!/usr/bin/env bash
 set -e
 
+# usage function
+usage() {
+  cat <<EOF
+Usage: system-upgrade
+
+This script functions as an extended wrapper around pacman in order
+to conduct a full system upgrade. The script updates git submodules
+of dotfiles, followed by emacs and pip packages. Finally, this script
+upgrades all pacman/aur packages and conducts tests of all important
+repositories.
+
+Note: This script assumes the presence of three git repositories in the
+'\$HOME' directory; specifically 'dotfiles', 'privates' and 'monix'.
+EOF
+}
+
 find_help() {
   # check for helper flags
   for arg; do
@@ -11,8 +27,28 @@ find_help() {
   done
 }
 
+printf_log() {
+  # declare local variable
+  local status="$1"
+  local message="$2"
+  local bold normal red green
+  bold="$(tput bold)"
+  normal="$(tput sgr0)"
+  red="$(tput setaf 1)"
+  green="$(tput setaf 2)"
+
+  # print conditionally
+  if [ "$status" = "info" ]; then
+    printf "%s\n" "$bold=> $message$normal"
+  elif [ "$status" = "success" ]; then
+    printf "%s\n" "$bold$green=> $message$normal"
+  elif [ "$status" = "failure" ]; then
+    printf "%s\n" "$bold$red=> $message$normal"
+  fi
+}
+
 upgrade_all_pacman() {
-  # this will upgrade all pacman package
+  # this will upgrade all pacman packages
   # since we use yay, this also updates foreign packages
   yay -Syu
 }
@@ -21,7 +57,7 @@ upgrade_all_pip() {
   # upgrade all pip packages
   # source: https://stackoverflow.com/a/3452888
   outdated_pkgs="$(pip list --outdated --format=freeze --user)"
-  if [ -n "$outdated_pkgs"  ]; then
+  if [ -n "$outdated_pkgs" ]; then
     # iterate through outdated packages
     # filter and update them using pip
     printf "%s\n" "$outdated_pkgs" | \
@@ -45,37 +81,45 @@ update_spacemacs_pkgs() {
   emacs --batch -l "$HOME/.emacs.d/init.el" --eval="(configuration-layer/update-packages t)"
 }
 
-test_repos() {
-  # perform unit tests in important repositories
-  make -C "$HOME/dotfiles" test
-  make -C "$HOME/privates" test
-  make -C "$HOME/monix" test
+test_repository(){
+  # declare local variable
+  local path="$1"
+
+  # test repository and log results
+  if [ -d "$path" ]; then
+    if make -C "$1" test; then
+      printf_log "success" "$(basename "$path") test successful"
+    else
+      printf_log "failure" "$(basename "$path") test failure"
+    fi
+    git -C "$path" status -s 2>/dev/null || true
+  fi
 }
 
 main() {
-  # upgrade all pacman packages
-  printf "%s\n" "Upgrading pacman and aur packages"
-  upgrade_all_pacman
-
-  # upgrade all pip packages
-  printf "%s\n" "Upgrading all pip packages"
-  upgrade_all_pip
-
   # update dotfile submodules
-  printf "%s\n" "Updating git submodules of dotfiles"
+  printf_log "info" "Updating git submodules"
   update_submodules
 
   # prepare spacemacs packages for updates
-  printf "%s\n" "Preparing Spacemacs packages for update"
+  printf_log "info" "Preparing emacs packages"
   update_spacemacs_pkgs
+
+  # upgrade all pip packages
+  printf_log "info" "Upgrading pip packages"
+  upgrade_all_pip
+
+  # upgrade all pacman packages
+  printf_log "info" "Upgrading pacman/aur packages"
+  upgrade_all_pacman
+
+  # test all three repositories
+  printf_log "info" "Testing repositories"
+  test_repository "$HOME/dotfiles"
+  test_repository "$HOME/privates"
+  test_repository "$HOME/monix"
 }
 
 # overall workflow
 find_help "$@"
 main
-
-# Tasks:
-# TODO: think of how to tally and work with tests -> some nice of viewing results and handling them -> consider outputing colored logs so passing and failing cases are clear
-# TODO: think of how to handle cases where certain repo directories are missing or in wrong location -> maybe do a directory check beforehand, or update documentation such that repos are always present
-# TODO: add failure cases for each test to ensure whole script does not fail bacause of `set -e`
-# TODO: add a comprehensive usage script with some command-line options
