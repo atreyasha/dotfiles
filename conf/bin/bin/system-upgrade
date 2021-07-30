@@ -77,7 +77,7 @@ update_submodules() {
 update_spacemacs_pkgs() {
   # prepare spacemacs packages for actual update on the next emacs launch
   # source: https://emacs.stackexchange.com/a/45923
-  if [ -f "$HOME/.emacs.s/init.el" ]; then
+  if [ -f "$HOME/.emacs.d/init.el" ]; then
     emacs --batch -l "$HOME/.emacs.d/init.el" --eval="(configuration-layer/update-packages t)"
   fi
 }
