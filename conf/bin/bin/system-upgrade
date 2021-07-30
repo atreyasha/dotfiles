@@ -11,6 +11,9 @@ to conduct a full system upgrade. The script updates git submodules
 of dotfiles, followed by emacs and pip packages. Finally, this script
 upgrades all pacman/aur packages and conducts tests of all important
 repositories.
+
+Optional argument:
+  -h, --help    Show this help message and exit
 EOF
 }
 
