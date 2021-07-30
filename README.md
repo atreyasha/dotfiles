@@ -1,6 +1,6 @@
 # dotfiles
 
-This repository contains dotfiles for a minimal Arch Linux build. The applications include `i3-gaps`, `emacs`, `neomutt` and many more. Below is a screenshot of a sample workspace:
+This repository contains dotfiles for a minimal Arch Linux build called [`monix`](https://github.com/atreyasha/monix). Dotfiles include `i3-gaps`, `emacs`, `neomutt` and many more. Below is a screenshot of a sample workspace:
 
 <p align="center">
 <img src="./docs/screenshot.png" width="700">
@@ -8,32 +8,28 @@ This repository contains dotfiles for a minimal Arch Linux build. The applicatio
 
 ## Initialization
 
-After cloning this repository, initialize a pre-commit hook and pull all submodules by executing:
+Clone this repository in your `$HOME` directory. Next, pull all submodules and initialize a pre-commit hook by executing:
 
 ```
 $ make init
 ```
 
+**Note:** In order to benefit from all the features of this repository, it is recommended to use and clone this repository alongside [`monix`](https://github.com/atreyasha/monix) in the `$HOME` directory
+
 ## Installation
 
 This repository uses [GNU Stow](https://www.gnu.org/software/stow/) for managing dotfiles and respective symbolic links.
 
-To deploy all the dotfiles corresponding to the [`monix`](https://github.com/atreyasha/monix) build, execute:
+To deploy all dotfiles, execute:
 
 ```
 $ make install
 ```
 
-To deploy a minimal subset of dotfiles on a remote machine, execute:
+To deploy an opinionated subset of dotfiles for a remote machine, execute:
 
 ```
 $ make install.remote
-```
-
-Alternatively, if a custom subset of the dotfiles is desired; simply indicate the name(s) of the dotfile directories:
-
-```
-$ stow -v -R -d conf -t ~ <dotfile_1> <dotfile_2> ...
 ```
 
 ## Test
