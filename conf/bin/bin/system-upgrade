@@ -91,7 +91,7 @@ test_repository() {
 
   # test repository and log results
   if [ -d "$path" ]; then
-    if make -C "$1" test; then
+    if make -C "$path" test; then
       printf_log "success" "$(basename "$path") test successful"
     else
       printf_log "failure" "$(basename "$path") test failure"
