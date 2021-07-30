@@ -14,8 +14,6 @@ Clone this repository in your `$HOME` directory. Next, pull all submodules and i
 $ make init
 ```
 
-**Note:** In order to benefit from all the features of this repository, it is recommended to clone [`monix`](https://github.com/atreyasha/monix) alongside this repository in your `$HOME` directory
-
 ## Installation
 
 This repository uses [GNU Stow](https://www.gnu.org/software/stow/) for managing dotfiles and respective symbolic links.
@@ -51,6 +49,3 @@ $ make uninstall
 ## Development
 
 Check out our development [log](./docs/develop.md) for details on upcoming developments.
-
-<!--  LocalWords:  dotfiles img src png dotfile
- -->
