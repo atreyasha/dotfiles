@@ -14,7 +14,7 @@ Clone this repository in your `$HOME` directory. Next, pull all submodules and i
 $ make init
 ```
 
-**Note:** In order to benefit from all the features of this repository, it is recommended to use and clone this repository alongside [`monix`](https://github.com/atreyasha/monix) in your `$HOME` directory
+**Note:** In order to benefit from all the features of this repository, it is recommended to use this repository alongside [`monix`](https://github.com/atreyasha/monix) in your `$HOME` directory
 
 ## Installation
 
