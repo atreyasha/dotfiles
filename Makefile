@@ -25,3 +25,7 @@ uninstall:
 .PHONY: test
 test:
 	stow -R -n --no-folding --ignore='^\.fold$$' -d conf -t $$HOME $(DOTFILES)
+	! grep -rI "$$USER" --exclude-dir="emacs" conf &>/dev/null
+	! grep -rI "$$HOME" --exclude-dir="emacs" conf &>/dev/null
+	! grep -rI "/bin/sh" --exclude-dir=".vim_runtime" --exclude-dir="emacs" --exclude-dir="i3blocks-contrib" conf &>/dev/null
+	! grep -rI "[^%]~[^%]" --exclude-dir="zsh-system-clipboard" conf/zsh conf/bash &> /dev/null
