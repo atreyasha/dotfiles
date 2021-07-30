@@ -11,9 +11,6 @@ to conduct a full system upgrade. The script updates git submodules
 of dotfiles, followed by emacs and pip packages. Finally, this script
 upgrades all pacman/aur packages and conducts tests of all important
 repositories.
-
-Note: This script assumes the presence of three git repositories in the
-'\$HOME' directory; specifically 'dotfiles', 'privates' and 'monix'.
 EOF
 }
 
@@ -63,20 +60,26 @@ upgrade_all_pip() {
     printf "%s\n" "$outdated_pkgs" | grep -v '^\-e' | cut -d = -f 1 |
       xargs -n1 pip install --user -U
 
-    # update package list
-    pip list --format=freeze --user | tee "$HOME/monix/pkg/requirements.txt"
+    # update pip package list
+    if [ -d "$HOME/monix" ]; then
+      pip list --format=freeze --user | tee "$HOME/monix/pkg/requirements.txt"
+    fi
   fi
 }
 
 update_submodules() {
   # this updates all submodules in the `dotfiles` repo
-  make -C "$HOME/dotfiles" update
+  if [ -d "$HOME/dotfiles" ]; then
+    make -C "$HOME/dotfiles" update
+  fi
 }
 
 update_spacemacs_pkgs() {
   # prepare spacemacs packages for actual update on the next emacs launch
   # source: https://emacs.stackexchange.com/a/45923
-  emacs --batch -l "$HOME/.emacs.d/init.el" --eval="(configuration-layer/update-packages t)"
+  if [ -f "$HOME/.emacs.s/init.el" ]; then
+    emacs --batch -l "$HOME/.emacs.d/init.el" --eval="(configuration-layer/update-packages t)"
+  fi
 }
 
 test_repository() {
