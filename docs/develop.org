@@ -4,15 +4,6 @@
 
 ** Tasks
 *** Next
-**** TODO Consistency
-***** all three repositories -> ~dotfiles~, ~privates~ and ~monix~ 
-****** add reminder in all readmes to clone in ~$HOME~ directory (this is hard-coded)
-****** add weblink to repo in usage script for ~system-upgrade~ as well for clarity
-****** ensure that all tildes are replaced with ~$HOME~, as much as possible
-****** ensure all ~$USER~ are replaced with ~$HOME~ to avoid hard-coding
-****** replace ~sh~ with ~bash~ where possible
-****** add this as an extra test case, could be useful so one does not have to remember it always
-
 **** TODO Backup
 ***** Framework
 ****** perhaps use ~rsync~ with tarballs to ensure only relevant data is updated
@@ -20,7 +11,7 @@
 ******* clean up local drive to make space as well
 ****** back-up ~personal~ directory, ~gnupg~ keys and neomutt email archives
 ******* think of any other important data to back up -> inspect drive for templates
-******* consider moving mail archives to ~personal~ for easier backups
+******* consider moving mail archives to ~personal~ for easier backups, or delete them
 ******* consider printing key as final failsafe using ~paperkey~
 ******* consider purchasing a yubikey to manage GPG keys
 ***** Scheduling
@@ -28,11 +19,16 @@
 ****** think of script to backup and deploy
        
 *** Long-term
+**** New test cases
+***** Test for force-folded directories -> can re-use existing ~fold_stow~ script
+***** Test whether symlinks are already created or not as yet -> this is missing from current tests
+***** Can be used for both ~dotfiles~ and ~privates~ and can be done after basic ~stow~ test
+
 **** Sync
 ***** implement ~sync~ in case repository tests fail
 ****** ~adopt~ files via stow and perform a git status check
 ****** force fold directory where file gets overwritten -> eg. gtk2/3, qt5ct etc.
-
+      
 **** i3
 ***** port ~i3-cycle~ backend to ~i3ipc~ and ship everything to AUR/pypi: https://github.com/mota/i3-cycle/issues/3
 ***** replace ~pypi~ package(s) with this implementation
@@ -74,6 +70,7 @@
 ***** reformat binding and unbinding schemes for each account to be more modular, consistent, portable and to re-use variables where possible
 ****** maybe can use for-loop with command-mode to create this quickly
 ****** consider removing junk for shortening configs
+****** think of how to make this work better and less repetitive
 ***** raise issue on similar keys being acculumated in help pages -> specifically when ~i~ and ~d~ are suffixed on commands
 ***** consider adding check-stats or sync-mailbox command after moving or copying -> to update all statistics -> maybe raise issue/PR for ~mw~
 ***** improve other formatting with extended lines given ~named-mailbox~, and other optimizations with commands, see: https://github.com/jindraj/dotfiles/tree/master/.neomutt
@@ -91,8 +88,8 @@
 ***** synchronize mime system program defaults to same as ranger's rifle
 **** Qutebrowser
 ***** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
-**** Generic
+**** Generic management
 ***** best way to foce-fold would be to stow all with ~--no-folding~ and then re-do with ~fold_stow~
 ***** update script which does manual update checks on files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes -> eg. ~spacemacs~ latex layer modified files
 ****** update configuration files with upstream changes (or remove upstream templates)
-****** examples include spacemacs, qutebrowser and ranger
+****** examples include spacemacs ~init.el~, qutebrowser ~config.py~ and ranger ~scope.sh~ and ~rifle.conf~

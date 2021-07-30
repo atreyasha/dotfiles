@@ -7,28 +7,7 @@
 
 ### Next
 
-1.  **TODO** Consistency
-
-    1.  all three repositories -\> `dotfiles`, `privates` and `monix`
-
-        1.  add reminder in all readmes to clone in `$HOME` directory
-            (this is hard-coded)
-
-        2.  add weblink to repo in usage script for `system-upgrade` as
-            well for clarity
-
-        3.  ensure that all tildes are replaced with `$HOME`, as much as
-            possible
-
-        4.  ensure all `$USER` are replaced with `$HOME` to avoid
-            hard-coding
-
-        5.  replace `sh` with `bash` where possible
-
-        6.  add this as an extra test case, could be useful so one does
-            not have to remember it always
-
-2.  **TODO** Backup
+1.  **TODO** Backup
 
     1.  Framework
 
@@ -46,7 +25,7 @@
                 drive for templates
 
             2.  consider moving mail archives to `personal` for easier
-                backups
+                backups, or delete them
 
             3.  consider printing key as final failsafe using `paperkey`
 
@@ -60,7 +39,18 @@
 
 ### Long-term
 
-1.  Sync
+1.  New test cases
+
+    1.  Test for force-folded directories -\> can re-use existing
+        `fold_stow` script
+
+    2.  Test whether symlinks are already created or not as yet -\> this
+        is missing from current tests
+
+    3.  Can be used for both `dotfiles` and `privates` and can be done
+        after basic `stow` test
+
+2.  Sync
 
     1.  implement `sync` in case repository tests fail
 
@@ -69,7 +59,7 @@
         2.  force fold directory where file gets overwritten -\> eg.
             gtk2/3, qt5ct etc.
 
-2.  i3
+3.  i3
 
     1.  port `i3-cycle` backend to `i3ipc` and ship everything to
         AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
@@ -80,14 +70,14 @@
         pid checking and possibly extra sleep:
         <https://github.com/i3/i3lock/issues/207>
 
-3.  Monitor configuration
+4.  Monitor configuration
 
     1.  create `AUR` repository for alternative package management:
         <https://github.com/phillipberndt/autorandr/issues/250>
 
     2.  replace `pypi` package with this implementation
 
-4.  Neovim
+5.  Neovim
 
     1.  Basic
 
@@ -119,7 +109,7 @@
             1.  this is no longer be necessary since plugins are
                 regularly updated upstream
 
-5.  Emacs
+6.  Emacs
 
     1.  Change emacs distribution
 
@@ -172,7 +162,7 @@
         2.  Automatically merge upstream changes to latex layer which
             are coped/modified
 
-6.  Neomutt
+7.  Neomutt
 
     1.  reformat binding and unbinding schemes for each account to be
         more modular, consistent, portable and to re-use variables where
@@ -182,6 +172,8 @@
             quickly
 
         2.  consider removing junk for shortening configs
+
+        3.  think of how to make this work better and less repetitive
 
     2.  raise issue on similar keys being acculumated in help pages -\>
         specifically when `i` and `d` are suffixed on commands
@@ -204,7 +196,7 @@
 
         1.  update exact subkey when this is fixed
 
-7.  PGP keys
+8.  PGP keys
 
     1.  host public key on `keys.openpgp.org` or `keybase.io`
 
@@ -213,19 +205,19 @@
 
     3.  consider adding PGP key-id to GitHub page
 
-8.  Mimeapps/mailcap
+9.  Mimeapps/mailcap
 
     1.  add mailcap helpers in `conf` and coordinate with mimetypes
 
     2.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-9.  Qutebrowser
+10. Qutebrowser
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
 
-10. Generic
+11. Generic management
 
     1.  best way to foce-fold would be to stow all with `--no-folding`
         and then re-do with `fold_stow`
@@ -238,4 +230,5 @@
         1.  update configuration files with upstream changes (or remove
             upstream templates)
 
-        2.  examples include spacemacs, qutebrowser and ranger
+        2.  examples include spacemacs `init.el`, qutebrowser
+            `config.py` and ranger `scope.sh` and `rifle.conf`
