@@ -31,6 +31,9 @@
 
             4.  consider purchasing a yubikey to manage GPG keys
 
+            5.  store remote sensing repositories for possible future
+                task and find way to store thesis with images
+
     2.  Scheduling
 
         1.  schedule backups with timer or via manual notes
@@ -217,7 +220,46 @@
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
 
-11. Generic management
+11. GitHub
+
+    1.  Consider purging LFS data and replacing with another source
+
+        1.  only useful if LFS bandwidth quota is being eaten up,
+            otherwise current status is fine
+
+        2.  DGM\'s LFS data can definitely be purged as this is not
+            necessary -\> need to update several readmes
+
+            1.  partially done with `git filter-repo`, need to change
+                documentation now
+
+        3.  SAM\'s LFS data will be more problematic since an existing
+            DOI and release is already created
+
+            1.  altering files and commit histories would require a new
+                DOI and release -\> perhaps should do this later than
+                earlier
+
+        4.  need to test that no LFS data gets consumed with mock clones
+
+            1.  can be done by cross-verifying LFS bandwidth in billing
+
+        5.  OR consider recreating these repos for a cleaner deletion
+
+        6.  OR alternatively consider deleting old repositories with
+            outdated structures and coding styles
+
+            1.  remaining ones may have worse coding style but are still
+                valuable in terms of contributions
+
+    2.  Think of usefulness of RS-repositories
+
+        1.  perhaps knowledge can be synthesized into a single
+            repository with shape files and dates on which they apply
+
+        2.  think of how to host RS thesis and if this even makes sense
+
+12. Generic management
 
     1.  best way to foce-fold would be to stow all with `--no-folding`
         and then re-do with `fold_stow`

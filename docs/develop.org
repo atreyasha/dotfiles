@@ -14,10 +14,11 @@
 ******* consider moving mail archives to ~personal~ for easier backups, or delete them
 ******* consider printing key as final failsafe using ~paperkey~
 ******* consider purchasing a yubikey to manage GPG keys
+******* store remote sensing repositories for possible future task and find way to store thesis with images
 ***** Scheduling
 ****** schedule backups with timer or via manual notes
 ****** think of script to backup and deploy
-       
+
 *** Long-term
 **** New test cases
 ***** Test for force-folded directories -> can re-use existing ~fold_stow~ script
@@ -88,6 +89,21 @@
 ***** synchronize mime system program defaults to same as ranger's rifle
 **** Qutebrowser
 ***** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
+**** GitHub
+***** Consider purging LFS data and replacing with another source
+****** only useful if LFS bandwidth quota is being eaten up, otherwise current status is fine 
+****** DGM's LFS data can definitely be purged as this is not necessary -> need to update several readmes
+******* partially done with ~git filter-repo~, need to change documentation now
+****** SAM's LFS data will be more problematic since an existing DOI and release is already created
+******* altering files and commit histories would require a new DOI and release -> perhaps should do this later than earlier
+****** need to test that no LFS data gets consumed with mock clones
+******* can be done by cross-verifying LFS bandwidth in billing
+****** OR consider recreating these repos for a cleaner deletion
+****** OR alternatively consider deleting old repositories with outdated structures and coding styles
+******* remaining ones may have worse coding style but are still valuable in terms of contributions
+***** Think of usefulness of RS-repositories
+****** perhaps knowledge can be synthesized into a single repository with shape files and dates on which they apply 
+****** think of how to host RS thesis and if this even makes sense
 **** Generic management
 ***** best way to foce-fold would be to stow all with ~--no-folding~ and then re-do with ~fold_stow~
 ***** update script which does manual update checks on files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes -> eg. ~spacemacs~ latex layer modified files
