@@ -17,7 +17,7 @@ Optional argument:
 EOF
 }
 
-find_help() {
+check_help() {
   # check for helper flags
   for arg; do
     if [ "$arg" == "--help" ] || [ "$arg" == "-h" ]; then
@@ -125,5 +125,5 @@ main() {
 }
 
 # overall workflow
-find_help "$@"
+check_help "$@"
 main
