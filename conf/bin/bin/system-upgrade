@@ -4,11 +4,11 @@ set -e
 # usage function
 usage() {
   cat <<EOF
-Usage: system-upgrade
+Usage: system-upgrade [option...]
 
 This script functions as an extended wrapper around pacman in order
 to conduct a full system upgrade. The script updates git submodules
-of dotfiles, followed by emacs and pip packages. Finally, this script
+of dotfiles, followed by emacs and pip packages. Next, this script
 upgrades all pacman/aur packages and conducts tests of all important
 repositories.
 
@@ -17,17 +17,22 @@ Optional argument:
 EOF
 }
 
-check_help() {
-  # check for helper flags
-  for arg; do
-    if [ "$arg" == "--help" ] || [ "$arg" == "-h" ]; then
-      usage
-      exit 0
-    fi
+parser() {
+  while [[ -n "$1" ]]; do
+    case "$1" in
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      --no-backup)
+        BACKUP=0
+        ;;
+    esac
+    shift
   done
 }
 
-printf_log() {
+logger() {
   # declare local variable
   local status="$1"
   local message="$2"
@@ -92,9 +97,9 @@ test_repository() {
   # test repository and log results
   if [ -d "$path" ]; then
     if make -C "$path" test; then
-      printf_log "success" "$(basename "$path") test successful"
+      logger "success" "$(basename "$path") test successful"
     else
-      printf_log "failure" "$(basename "$path") test failure"
+      logger "failure" "$(basename "$path") test failure"
     fi
     git -C "$path" status -s 2>/dev/null || true
   fi
@@ -102,28 +107,28 @@ test_repository() {
 
 main() {
   # update dotfile submodules
-  printf_log "info" "Updating git submodules"
+  logger "info" "Updating git submodules"
   update_submodules
 
   # prepare spacemacs packages for updates
-  printf_log "info" "Preparing emacs packages"
+  logger "info" "Preparing emacs packages"
   update_spacemacs_pkgs
 
   # upgrade all pip packages
-  printf_log "info" "Upgrading pip packages"
+  logger "info" "Upgrading pip packages"
   upgrade_all_pip
 
   # upgrade all pacman packages
-  printf_log "info" "Upgrading pacman/aur packages"
+  logger "info" "Upgrading pacman/aur packages"
   upgrade_all_pacman
 
   # test all three repositories
-  printf_log "info" "Testing repositories"
+  logger "info" "Testing repositories"
   test_repository "$HOME/dotfiles"
   test_repository "$HOME/privates"
   test_repository "$HOME/monix"
 }
 
 # overall workflow
-check_help "$@"
+parser "$@"
 main
