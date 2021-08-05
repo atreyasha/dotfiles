@@ -1,1 +1,2 @@
 conf/qutebrowser/.config/qutebrowser/config.py -linguist-detectable
+conf/ranger/.config/ranger/scope.sh -linguist-detectable
