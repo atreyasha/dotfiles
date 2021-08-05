@@ -28,4 +28,4 @@ test:
 	! git grep -rI "$$USER" conf &>/dev/null
 	! git grep -rI "$$HOME" conf &>/dev/null
 	! git grep -rI "/bin/sh" conf &>/dev/null
-	! git grep -rI "[^%]~[^%]" conf/zsh conf/bash &> /dev/null
+	! git grep -rI "[^%]~[^%]" conf/zsh conf/bash conf/bin &> /dev/null
