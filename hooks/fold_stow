@@ -14,13 +14,13 @@ add a file called '.fold' on the base directory of the dotfile. Then specify
 relative paths to directories which should be folded inside the '.fold' file
 
 Required positional arguments:
-  command       Stow command prefix excluding '-d' and '-t' flags
-  source        Stow source directory excluding '-d' flag
-  destination   Stow destination or target directory excluding '-t' flag
-  dotfile       Name of dotfile(s)
+  command     <str>   Stow command prefix excluding '-d' and '-t' flags
+  source      <str>   Stow source directory excluding '-d' flag
+  destination <str>   Stow destination or target directory excluding '-t' flag
+  dotfile     <str>   Name of dotfile(s)
 
 Optional argument:
-  -h, --help    Show this help message and exit
+  -h, --help  <flag>  Show this help message and exit
 EOF
 }
 

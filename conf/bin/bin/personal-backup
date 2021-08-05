@@ -10,27 +10,21 @@ This script backs up a personal data directory into an external
 hard drive. In addition, it optionally backs up all PGP keys.
 
 Optional arguments:
-  --mountpoint    <path>
-                  This option specifies the path to a mountpoint
-  --no-pgp        <flag>
-                  This option disables the backing up of all PGP keys
-  --retain-mount  <flag>
-                  This option disables the default unmounting of a
-                  filesystem which was mounted during the execution
-                  of this script
-  --source        <path>
-                  This option specifies the path to a directory which
-                  should be backed up. For most purposes, it is
-                  recommended to avoid a trailing slash on this path
-                  as this could result in unintended consequences when
-                  using 'rsync'
-  --target        <path>
-                  This option specifies a relative path which is appended
-                  to the specified mountpoint
-  --uuid          <str>
-                  This option specifies the UUID of the external drive
-                  where backups should be conducted
-  -h, --help      Show this help message and exit
+  --mountpoint   <path>  This option specifies the path to a mountpoint
+  --no-pgp       <flag>  This option disables the backing up of all PGP keys
+  --retain-mount <flag>  This option disables the default unmounting of a
+                         filesystem which was mounted during the execution
+                         of this script
+  --source       <path>  This option specifies the path to a directory which
+                         should be backed up. For most purposes, it is
+                         recommended to avoid a trailing slash on this path
+                         as this could result in unintended consequences when
+                         using 'rsync'
+  --target       <path>  This option specifies a relative path which is appended
+                         to the specified mountpoint
+  --uuid         <str>   This option specifies the UUID of the external drive
+                         where backups should be conducted
+  -h, --help     <flag>  Show this help message and exit
 EOF
 }
 

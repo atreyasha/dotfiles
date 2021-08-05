@@ -14,8 +14,8 @@ repositories. Finally, this script optionally backs up important user
 data.
 
 Options:
-  --no-backup  Ignore personal backup after upgrade routine
-  -h, --help   Show this help message and exit
+  --no-backup <flag>  Ignore personal backup after upgrade routine
+  -h, --help  <flag>  Show this help message and exit
 EOF
 }
 
