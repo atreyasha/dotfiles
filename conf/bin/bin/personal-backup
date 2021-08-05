@@ -1,0 +1,141 @@
+#!/usr/bin/env bash
+set -e
+
+# usage function
+usage() {
+  cat <<EOF
+Usage: personal-backup [option...]
+
+This script backs up a personal data directory into an external
+hard drive. In addition, it optionally backs up all PGP keys.
+
+Optional arguments:
+  --mountpoint    <path>
+                  This option specifies the path to a mountpoint
+  --no-pgp        <flag>
+                  This option disables the backing up of all PGP keys
+  --retain-mount  <flag>
+                  This option disables the default unmounting of a
+                  filesystem which was mounted during the execution
+                  of this script
+  --source        <path>
+                  This option specifies the path to a directory which
+                  should be backed up. For most purposes, it is
+                  recommended to avoid a trailing slash on this path
+                  as this could result in unintended consequences when
+                  using 'rsync'
+  --target        <path>
+                  This option specifies a relative path which is appended
+                  to the specified mountpoint
+  --uuid          <str>
+                  This option specifies the UUID of the external drive
+                  where backups should be conducted
+  -h, --help      Show this help message and exit
+EOF
+}
+
+parser() {
+  while [[ -n "$1" ]]; do
+    case "$1" in
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      --no-pgp)
+        BACKUP_PGP=0
+        ;;
+      --retain-mount)
+        RETAIN_MOUNT=1
+        ;;
+      --uuid)
+        shift
+        UUID="$1"
+        ;;
+      --mountpoint)
+        shift
+        MOUNTPOINT="$1"
+        ;;
+      --source)
+        shift
+        BACKUP_SOURCE="$1"
+        ;;
+      --target)
+        shift
+        BACKUP_TARGET_DIR="$1"
+        ;;
+    esac
+    shift
+  done
+}
+
+main() {
+  # declare local variables
+  local filesystem mountpoint ans
+
+  # extract filesystem that matches UUID
+  filesystem="$(findfs UUID="$UUID" 2>/dev/null)" || true
+
+  # check if filesystem is plugged in
+  if [ -n "$filesystem" ]; then
+    # if it is plugged in, find its mountpoint
+    mountpoint="$(findmnt -nr -o target -S "$filesystem" 2>/dev/null)" || true
+    # check if filesystem is already mounted
+    if [ -n "$mountpoint" ]; then
+      # if it is already mounted, replace MOUNTPOINT
+      MOUNTPOINT="$mountpoint"
+      unset mountpoint
+    else
+      # if it is not mounted, we can mount it
+      # but first check if desired MOUNTPOINT is already in use
+      if mountpoint "$MOUNTPOINT" &>/dev/null; then
+        # since MOUNTPOINT is in use, prompt for another option
+        read -rp "Mountpoint $MOUNTPOINT is in use, specify another mountpoint: " ans
+        MOUNTPOINT="$ans"
+        unset ans
+        # execute main recursively
+        main
+      else
+        # if MOUNTPOINT is not in use, use it to mount filesystem
+        sudo mkdir -p "$MOUNTPOINT"
+        sudo mount "$filesystem" "$MOUNTPOINT"
+        if ((!RETAIN_MOUNT)); then
+          UNMOUNT_AFTER=1
+        fi
+      fi
+    fi
+
+    # backup personal directory
+    sudo mkdir -p "$MOUNTPOINT/$BACKUP_TARGET_DIR"
+    sudo rsync -a --delete --info=progress2 "$BACKUP_SOURCE" "$MOUNTPOINT/$BACKUP_TARGET_DIR"
+
+    # backup PGP keys
+    if ((BACKUP_PGP)); then
+      sudo mkdir -p "$MOUNTPOINT/$PGP_TARGET_DIR"
+      gpg --export --armor |
+        sudo tee "$MOUNTPOINT/$PGP_TARGET_DIR/public-keys-backup.asc"
+      gpg --export-secret-keys --armor |
+        sudo tee "$MOUNTPOINT/$PGP_TARGET_DIR/private-keys-backup.asc"
+      gpg --export-ownertrust |
+        sudo tee "$MOUNTPOINT/$PGP_TARGET_DIR/trustdb-backup.txt"
+    fi
+
+    # if filesystem was explicitly mounted, unmount it
+    if ((UNMOUNT_AFTER)); then
+      sudo umount "$filesystem"
+    fi
+  fi
+}
+
+# declare global variable(s)
+BACKUP_PGP=1
+UNMOUNT_AFTER=0
+RETAIN_MOUNT=0
+UUID="48FA0061FA004E1E"
+MOUNTPOINT="/mnt/backup"
+BACKUP_SOURCE="$HOME/desktop/personal"
+BACKUP_TARGET_DIR="backup_shankar"
+PGP_TARGET_DIR="$BACKUP_TARGET_DIR/pgp"
+
+# overall workflow
+parser "$@"
+main

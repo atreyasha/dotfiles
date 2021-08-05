@@ -10,10 +10,12 @@ This script functions as an extended wrapper around pacman in order
 to conduct a full system upgrade. The script updates git submodules
 of dotfiles, followed by emacs and pip packages. Next, this script
 upgrades all pacman/aur packages and conducts tests of all important
-repositories.
+repositories. Finally, this script optionally backs up important user
+data.
 
-Optional argument:
-  -h, --help    Show this help message and exit
+Options:
+  --no-backup  Ignore personal backup after upgrade routine
+  -h, --help   Show this help message and exit
 EOF
 }
 
@@ -127,7 +129,16 @@ main() {
   test_repository "$HOME/dotfiles"
   test_repository "$HOME/privates"
   test_repository "$HOME/monix"
+
+  # execute backup if allowed
+  if ((BACKUP)); then
+    logger "info" "Backing up personal data and keys"
+    personal-backup
+  fi
 }
+
+# declare global variable(s)
+BACKUP=1
 
 # overall workflow
 parser "$@"
