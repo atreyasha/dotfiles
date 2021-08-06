@@ -57,6 +57,9 @@ parser() {
         shift
         BACKUP_TARGET_DIR="$1"
         ;;
+      *)
+        printf "%s\n" "Unknown option $1"
+        exit 1
     esac
     shift
   done
@@ -72,10 +75,12 @@ main() {
   # check if filesystem is plugged in
   if [ -n "$filesystem" ]; then
     # if it is plugged in, find its mountpoint
+    printf "%s\n" "==> UUID:$UUID corresponds to $filesystem"
     mountpoint="$(findmnt -nr -o target -S "$filesystem" 2>/dev/null)" || true
     # check if filesystem is already mounted
     if [ -n "$mountpoint" ]; then
       # if it is already mounted, replace MOUNTPOINT
+      printf "%s\n" "==> $filesystem is already mounted on $mountpoint"
       MOUNTPOINT="$mountpoint"
       unset mountpoint
     else
@@ -90,6 +95,7 @@ main() {
         main
       else
         # if MOUNTPOINT is not in use, use it to mount filesystem
+        printf "%s\n" "==> Mounting $filesystem on $MOUNTPOINT"
         sudo mkdir -p "$MOUNTPOINT"
         sudo mount "$filesystem" "$MOUNTPOINT"
         if ((!RETAIN_MOUNT)); then
@@ -99,11 +105,13 @@ main() {
     fi
 
     # backup personal directory
+    printf "%s\n" "==> Backing up personal data"
     sudo mkdir -p "$MOUNTPOINT/$BACKUP_TARGET_DIR"
     sudo rsync -a --delete --info=progress2 "$BACKUP_SOURCE" "$MOUNTPOINT/$BACKUP_TARGET_DIR"
 
     # backup PGP keys
     if ((BACKUP_PGP)); then
+      printf "%s\n" "==> Backing up PGP keys"
       sudo mkdir -p "$MOUNTPOINT/$PGP_TARGET_DIR"
       gpg --export --armor |
         sudo tee "$MOUNTPOINT/$PGP_TARGET_DIR/public-keys-backup.asc" &>/dev/null
@@ -115,8 +123,12 @@ main() {
 
     # if filesystem was explicitly mounted, unmount it
     if ((UNMOUNT_AFTER)); then
+      printf "%s\n" "==> Unmounting $filesystem from $MOUNTPOINT"
       sudo umount "$filesystem"
     fi
+  else
+    printf "%s\n" "==> Filesystem with UUID:$UUID not found"
+    return 1
   fi
 }
 
