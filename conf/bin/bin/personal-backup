@@ -106,11 +106,11 @@ main() {
     if ((BACKUP_PGP)); then
       sudo mkdir -p "$MOUNTPOINT/$PGP_TARGET_DIR"
       gpg --export --armor |
-        sudo tee "$MOUNTPOINT/$PGP_TARGET_DIR/public-keys-backup.asc"
+        sudo tee "$MOUNTPOINT/$PGP_TARGET_DIR/public-keys-backup.asc" &>/dev/null
       gpg --export-secret-keys --armor |
-        sudo tee "$MOUNTPOINT/$PGP_TARGET_DIR/private-keys-backup.asc"
+        sudo tee "$MOUNTPOINT/$PGP_TARGET_DIR/private-keys-backup.asc" &>/dev/null
       gpg --export-ownertrust |
-        sudo tee "$MOUNTPOINT/$PGP_TARGET_DIR/trustdb-backup.txt"
+        sudo tee "$MOUNTPOINT/$PGP_TARGET_DIR/trustdb-backup.txt" &>/dev/null
     fi
 
     # if filesystem was explicitly mounted, unmount it
@@ -127,7 +127,7 @@ RETAIN_MOUNT=0
 UUID="48FA0061FA004E1E"
 MOUNTPOINT="/mnt/backup"
 BACKUP_SOURCE="$HOME/desktop/personal"
-BACKUP_TARGET_DIR="backup_shankar"
+BACKUP_TARGET_DIR="backup_main"
 PGP_TARGET_DIR="$BACKUP_TARGET_DIR/pgp"
 
 # overall workflow
