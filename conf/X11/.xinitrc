@@ -35,8 +35,9 @@ fi
 
 # start user's X programs
 feh-background &
-xset dpms 300 300 300
 unclutter --timeout 1 &
+xset s off
+xset dpms 300 0 0
 
 # disable autorepeat for volume keys
 # NOTE: keycodes found by disabling volume bindings in i3
