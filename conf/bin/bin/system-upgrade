@@ -29,6 +29,9 @@ parser() {
       --no-backup)
         BACKUP=0
         ;;
+      *)
+        printf "%s\n" "Unknown option $1"
+        exit 1
     esac
     shift
   done
@@ -48,9 +51,9 @@ logger() {
   if [ "$status" = "info" ]; then
     printf "%s\n" "$bold=> $message$normal"
   elif [ "$status" = "success" ]; then
-    printf "%s\n" "$bold$green=> $message$normal"
+    printf "%s\n" "$bold$green==> $message$normal"
   elif [ "$status" = "failure" ]; then
-    printf "%s\n" "$bold$red=> $message$normal"
+    printf "%s\n" "$bold$red==> $message$normal"
   fi
 }
 
@@ -135,8 +138,12 @@ main() {
 
   # execute backup if allowed
   if ((BACKUP)); then
-    logger "info" "Backing up personal data and keys"
-    personal-backup
+    logger "info" "Backing up personal data"
+    if personal-backup; then
+      logger "success" "Personal backup successful"
+    else
+      logger "failure" "Personal backup failure"
+    fi
   fi
 }
 
