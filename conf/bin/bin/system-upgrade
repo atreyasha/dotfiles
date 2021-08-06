@@ -6,12 +6,12 @@ usage() {
   cat <<EOF
 Usage: system-upgrade [option...]
 
-This script functions as an extended wrapper around pacman in order
-to conduct a full system upgrade. The script updates git submodules
-of dotfiles, followed by emacs and pip packages. Next, this script
-upgrades all pacman/aur packages and conducts tests of all important
-repositories. Finally, this script optionally backs up important user
-data.
+This script functions as an extended wrapper around pacman in
+order to conduct a full system upgrade. This script firstly updates
+git submodules of dotfiles. Next, it upgrades emacs, pip packages
+and pacman/aur packages; followed by tests of all important
+repositories. Finally, this script (optionally) backs up important
+user data.
 
 Options:
   --no-backup <flag>  Ignore personal backup after upgrade routine
@@ -56,7 +56,7 @@ logger() {
 
 upgrade_all_pacman() {
   # this will upgrade all pacman packages
-  # since we use yay, this also updates foreign packages
+  # since we use yay, this also upgrades foreign packages
   yay -Syu
 }
 
@@ -66,7 +66,7 @@ upgrade_all_pip() {
   outdated_pkgs="$(pip list --outdated --format=freeze --user)"
   if [ -n "$outdated_pkgs" ]; then
     # iterate through outdated packages
-    # filter and update them using pip
+    # filter and upgrade them using pip
     printf "%s\n" "$outdated_pkgs" | grep -v '^\-e' | cut -d = -f 1 |
       xargs -n1 pip install --user -U
 
@@ -84,11 +84,14 @@ update_submodules() {
   fi
 }
 
-update_spacemacs_pkgs() {
-  # prepare spacemacs packages for actual update on the next emacs launch
+upgrade_spacemacs_pkgs() {
+  # upgrade spacemacs packages
   # source: https://emacs.stackexchange.com/a/45923
   if [ -f "$HOME/.emacs.d/init.el" ]; then
-    emacs --batch -l "$HOME/.emacs.d/init.el" --eval="(configuration-layer/update-packages t)"
+    # repeat command twice to both prepare and upgrade emacs packages
+    for i in $(seq 2); do
+      emacs --batch -l "$HOME/.emacs.d/init.el" --eval="(configuration-layer/update-packages t)"
+    done
   fi
 }
 
@@ -112,9 +115,9 @@ main() {
   logger "info" "Updating git submodules"
   update_submodules
 
-  # prepare spacemacs packages for updates
-  logger "info" "Preparing emacs packages"
-  update_spacemacs_pkgs
+  # upgrade emacs packages
+  logger "info" "Upgrading emacs packages"
+  upgrade_spacemacs_pkgs
 
   # upgrade all pip packages
   logger "info" "Upgrading pip packages"
