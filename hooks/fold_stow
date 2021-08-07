@@ -24,35 +24,47 @@ Optional argument:
 EOF
 }
 
-# check for help
-check_help() {
+parser() {
+  local arg
+
+  # check for -h|--help flags
   for arg; do
-    if [ "$arg" == "--help" ] || [ "$arg" == "-h" ]; then
+    if [[ "$arg" =~ ^-h$|^--help$ ]]; then
       usage
       exit 0
     fi
   done
+
+  # check number of arguments
+  if [ $# -lt 4 ]; then
+    printf "%s\n\n" "Incorrect number of arguments supplied"
+    usage
+    exit 1
+  fi
+
+  # assign positional arguments as global variables
+  COMMAND="$1"
+  SOURCE="${2//\~/$HOME}"
+  DESTINATION="${3//\~/$HOME}"
+  DOTFILES="$4"
 }
 
 # main function
-fold_stow() {
-  # define local variabless
-  local command="$1"
-  local source="${2//\~/$HOME}"
-  local destination="${3//\~/$HOME}"
-  local dotfiles="$4"
+main() {
+  # define local variables
+  local dotfile fold
   local dotfiles_nofold=()
   local dotfiles_fold=()
 
   # loop over files and execute logic
-  for dotfile in $dotfiles; do
+  for dotfile in $DOTFILES; do
     # check for the existence of .fold
-    src_dotfile="$source/$dotfile"
+    src_dotfile="$SOURCE/$dotfile"
     if [ -f "$src_dotfile/.fold" ]; then
       # loop through all foldable directories
       for fold in $(xargs -a "$src_dotfile/.fold"); do
         src_fold_directory="$src_dotfile/$fold"
-        dest_fold_directory="$destination/$fold"
+        dest_fold_directory="$DESTINATION/$fold"
         # prompt to delete directories if they are not symlinks
         if [[ -d "$src_fold_directory" && -d "$dest_fold_directory" && \
                 ! -L "$dest_fold_directory" ]]; then
@@ -63,22 +75,24 @@ fold_stow() {
           fi
         fi
       done
+      # append foldable dotfile
       dotfiles_fold+=("$dotfile")
     else
+      # otherwise, append non-foldable dotfile
       dotfiles_nofold+=("$dotfile")
     fi
   done
 
   # execute stow for folding directories
   if ((${#dotfiles_fold[@]})); then
-    eval "$command -d $source -t $destination --ignore='^\.fold$' ${dotfiles_fold[*]}"
+    eval "$COMMAND -d $SOURCE -t $DESTINATION --ignore='^\.fold$' ${dotfiles_fold[*]}"
   fi
 
   # execute stow for --no-folding directories
   if ((${#dotfiles_nofold[@]})); then
-    eval "$command -d $source -t $destination --no-folding ${dotfiles_nofold[*]}"
+    eval "$COMMAND -d $SOURCE -t $DESTINATION --no-folding ${dotfiles_nofold[*]}"
   fi
 }
 
-check_help "$@"
-fold_stow "$@"
+parser "$@"
+main
