@@ -4,37 +4,30 @@
 
 ** Tasks
 *** Next
-**** TODO Backup
-***** Framework
-****** perhaps use ~rsync~ with tarballs to ensure only relevant data is updated
-****** clean external hard-drive and organize folders there
-******* clean up local drive to make space as well
-****** back-up ~personal~ directory, ~gnupg~ keys and neomutt email archives
-******* think of any other important data to back up -> inspect drive for templates
-******* consider moving mail archives to ~personal~ for easier backups, or delete them
-******* consider printing key as final failsafe using ~paperkey~
-******* consider purchasing a yubikey to manage GPG keys
-******* store remote sensing repositories for possible future task and find way to store thesis with images
-***** Scheduling
-****** schedule backups with timer or via manual notes
-****** think of script to backup and deploy
+**** TODO Shell/Bin
+***** update ~fold_stow~ to use ~main~ function
+****** improve parsing and management of variables
+****** copy new ~fold-stow~ to ~privates~
+***** add more extensive formatting with usage to all bin scripts
+****** not all should have ~set -e~ though, for example not ~pre-sleep-hook~
+****** make scripts more idiomatic and easier to understand with upstream source links for motivation
+****** so there would be no need to keep looking up documentation later on -> try to do this for all configurations in ~monix~ and ~dotfiles~
+***** make ~bash_profile~ PATH declaration unique -> necessary for cases with tmux and new login shells: https://unix.stackexchange.com/questions/40749/remove-duplicate-path-entries-with-awk-command
+****** add source to script as well
+***** ~killall~ only works for one user: https://superuser.com/questions/137207/how-to-kill-a-process-started-with-a-different-user-without-being-root-or-sudoer
+****** add this to script with source
 
-*** Long-term
-**** New test cases
-***** Test for force-folded directories -> can re-use existing ~fold_stow~ script
-***** Test whether symlinks are already created or not as yet -> this is missing from current tests
-***** Can be used for both ~dotfiles~ and ~privates~ and can be done after basic ~stow~ test
-
-**** Sync
-***** implement ~sync~ in case repository tests fail
-****** ~adopt~ files via stow and perform a git status check
-****** force fold directory where file gets overwritten -> eg. gtk2/3, qt5ct etc.
-      
-**** i3
+**** TODO i3
+***** centralize how ~xset~ is executed and reverted such that all configurations are in one place
+****** this would require changes to ~i3lock-blur-lock~ and perhaps renaming it to ~i3lock-blur~
+****** perhaps can have default floating around as environmental variable, or elsewhere
+***** consider using lower i3blocks signals for logic
+****** parse them with ~sed~ in ~bin~ scripts for refreshing
 ***** port ~i3-cycle~ backend to ~i3ipc~ and ship everything to AUR/pypi: https://github.com/mota/i3-cycle/issues/3
-***** replace ~pypi~ package(s) with this implementation
-***** think about using xautolock/xss-lock to circumvent some manual pid checking and possibly extra sleep: https://github.com/i3/i3lock/issues/207
-
+****** replace ~pypi~ package(s) with this implementation
+***** ~xss-lock~ is not ideal since it gets triggered by DPMS and screensaver events which cannot be internally disabled: https://wiki.archlinux.org/title/Power_management#Sleep_hooks
+       
+*** Long-term
 **** Monitor configuration
 ***** create ~AUR~ repository for alternative package management: https://github.com/phillipberndt/autorandr/issues/250
 ***** replace ~pypi~ package with this implementation
@@ -79,7 +72,22 @@
 ***** issue of repeated compose command after send: https://github.com/neomutt/neomutt/issues/2091
 ***** issue of specified subkey not being used: https://github.com/neomutt/neomutt/issues/2980
 ****** update exact subkey when this is fixed
-       
+
+**** Test cases
+***** test for force-folded directories -> can re-use existing ~fold_stow~ script
+***** test whether symlinks are already created or not as yet -> this is missing from current tests
+***** can be used for both ~dotfiles~ and ~privates~ and can be done after basic ~stow~ test
+**** Sync
+***** implement ~sync~ in case repository tests fail
+****** ~adopt~ files via stow and perform a git status check
+****** force fold directory where file gets overwritten -> eg. gtk2/3, qt5ct etc.
+**** Backup
+***** clean up local drive
+***** figure out how to preserve/return appropriate permission when syncing back and forth
+****** might need to alter mount options for drive
+***** try reformatting hard drive and encrypting
+****** this would require a different workflow and back-up scripts would need to be changed
+***** consider purchasing a yubikey to manage GPG keys
 **** PGP keys
 ***** host public key on ~keys.openpgp.org~ or ~keybase.io~
 ***** add personal website page for accessing keys manually on GitHub or via specific keyserver (and mention not others)
@@ -90,22 +98,15 @@
 **** Qutebrowser
 ***** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
 **** GitHub
-***** Consider purging LFS data and replacing with another source
-****** only useful if LFS bandwidth quota is being eaten up, otherwise current status is fine 
-****** DGM's LFS data can definitely be purged as this is not necessary -> need to update several readmes
-******* partially done with ~git filter-repo~, need to change documentation now
-****** SAM's LFS data will be more problematic since an existing DOI and release is already created
-******* altering files and commit histories would require a new DOI and release -> perhaps should do this later than earlier
-****** need to test that no LFS data gets consumed with mock clones
-******* can be done by cross-verifying LFS bandwidth in billing
-****** OR consider recreating these repos for a cleaner deletion
-****** OR alternatively consider deleting old repositories with outdated structures and coding styles
-******* remaining ones may have worse coding style but are still valuable in terms of contributions
-***** Think of usefulness of RS-repositories
+***** consider usefulness of RS-repositories
 ****** perhaps knowledge can be synthesized into a single repository with shape files and dates on which they apply 
+****** this could also be in the form of a new data set for Himalayan forest cover reflectances
 ****** think of how to host RS thesis and if this even makes sense
+***** consider purging SAM's 2 (1 deleted and 1 present) LFS files and replace with linked data
+****** SAM's LFS data will be more problematic since an existing DOI and release is already created
+****** need to test that no LFS data gets consumed with mock clones 
 **** Generic management
-***** best way to foce-fold would be to stow all with ~--no-folding~ and then re-do with ~fold_stow~
+***** best way to force-fold would be to stow all with ~--no-folding~ and then re-do with ~fold_stow~
 ***** update script which does manual update checks on files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes -> eg. ~spacemacs~ latex layer modified files
-****** update configuration files with upstream changes (or remove upstream templates)
-****** examples include spacemacs ~init.el~, qutebrowser ~config.py~ and ranger ~scope.sh~ and ~rifle.conf~
+****** update configuration files with upstream changes (or remove upstream templates and keep barebones configurations)
+****** examples include spacemacs ~init.el~, qutebrowser ~config.py~, ranger ~scope.sh~ and ~rifle.conf~ and picom ~picom.conf~

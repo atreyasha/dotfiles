@@ -7,80 +7,71 @@
 
 ### Next
 
-1.  **TODO** Backup
+1.  **TODO** Shell/Bin
 
-    1.  Framework
+    1.  update `fold_stow` to use `main` function
 
-        1.  perhaps use `rsync` with tarballs to ensure only relevant
-            data is updated
+        1.  improve parsing and management of variables
 
-        2.  clean external hard-drive and organize folders there
+        2.  copy new `fold-stow` to `privates`
 
-            1.  clean up local drive to make space as well
+    2.  add more extensive formatting with usage to all bin scripts
 
-        3.  back-up `personal` directory, `gnupg` keys and neomutt email
-            archives
+        1.  not all should have `set -e` though, for example not
+            `pre-sleep-hook`
 
-            1.  think of any other important data to back up -\> inspect
-                drive for templates
+        2.  make scripts more idiomatic and easier to understand with
+            upstream source links for motivation
 
-            2.  consider moving mail archives to `personal` for easier
-                backups, or delete them
+        3.  so there would be no need to keep looking up documentation
+            later on -\> try to do this for all configurations in
+            `monix` and `dotfiles`
 
-            3.  consider printing key as final failsafe using `paperkey`
+    3.  make `bash_profile` PATH declaration unique -\> necessary for
+        cases with tmux and new login shells:
+        <https://unix.stackexchange.com/questions/40749/remove-duplicate-path-entries-with-awk-command>
 
-            4.  consider purchasing a yubikey to manage GPG keys
+        1.  add source to script as well
 
-            5.  store remote sensing repositories for possible future
-                task and find way to store thesis with images
+    4.  `killall` only works for one user:
+        <https://superuser.com/questions/137207/how-to-kill-a-process-started-with-a-different-user-without-being-root-or-sudoer>
 
-    2.  Scheduling
+        1.  add this to script with source
 
-        1.  schedule backups with timer or via manual notes
+2.  **TODO** i3
 
-        2.  think of script to backup and deploy
+    1.  centralize how `xset` is executed and reverted such that all
+        configurations are in one place
+
+        1.  this would require changes to `i3lock-blur-lock` and perhaps
+            renaming it to `i3lock-blur`
+
+        2.  perhaps can have default floating around as environmental
+            variable, or elsewhere
+
+    2.  consider using lower i3blocks signals for logic
+
+        1.  parse them with `sed` in `bin` scripts for refreshing
+
+    3.  port `i3-cycle` backend to `i3ipc` and ship everything to
+        AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
+
+        1.  replace `pypi` package(s) with this implementation
+
+    4.  `xss-lock` is not ideal since it gets triggered by DPMS and
+        screensaver events which cannot be internally disabled:
+        <https://wiki.archlinux.org/title/Power_management#Sleep_hooks>
 
 ### Long-term
 
-1.  New test cases
-
-    1.  Test for force-folded directories -\> can re-use existing
-        `fold_stow` script
-
-    2.  Test whether symlinks are already created or not as yet -\> this
-        is missing from current tests
-
-    3.  Can be used for both `dotfiles` and `privates` and can be done
-        after basic `stow` test
-
-2.  Sync
-
-    1.  implement `sync` in case repository tests fail
-
-        1.  `adopt` files via stow and perform a git status check
-
-        2.  force fold directory where file gets overwritten -\> eg.
-            gtk2/3, qt5ct etc.
-
-3.  i3
-
-    1.  port `i3-cycle` backend to `i3ipc` and ship everything to
-        AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
-
-    2.  replace `pypi` package(s) with this implementation
-
-    3.  think about using xautolock/xss-lock to circumvent some manual
-        pid checking and possibly extra sleep:
-        <https://github.com/i3/i3lock/issues/207>
-
-4.  Monitor configuration
+1.  Monitor configuration
 
     1.  create `AUR` repository for alternative package management:
         <https://github.com/phillipberndt/autorandr/issues/250>
 
     2.  replace `pypi` package with this implementation
 
-5.  Neovim
+2.  Neovim
 
     1.  Basic
 
@@ -112,7 +103,7 @@
             1.  this is no longer be necessary since plugins are
                 regularly updated upstream
 
-6.  Emacs
+3.  Emacs
 
     1.  Change emacs distribution
 
@@ -165,7 +156,7 @@
         2.  Automatically merge upstream changes to latex layer which
             are coped/modified
 
-7.  Neomutt
+4.  Neomutt
 
     1.  reformat binding and unbinding schemes for each account to be
         more modular, consistent, portable and to re-use variables where
@@ -199,6 +190,42 @@
 
         1.  update exact subkey when this is fixed
 
+5.  Test cases
+
+    1.  test for force-folded directories -\> can re-use existing
+        `fold_stow` script
+
+    2.  test whether symlinks are already created or not as yet -\> this
+        is missing from current tests
+
+    3.  can be used for both `dotfiles` and `privates` and can be done
+        after basic `stow` test
+
+6.  Sync
+
+    1.  implement `sync` in case repository tests fail
+
+        1.  `adopt` files via stow and perform a git status check
+
+        2.  force fold directory where file gets overwritten -\> eg.
+            gtk2/3, qt5ct etc.
+
+7.  Backup
+
+    1.  clean up local drive
+
+    2.  figure out how to preserve/return appropriate permission when
+        syncing back and forth
+
+        1.  might need to alter mount options for drive
+
+    3.  try reformatting hard drive and encrypting
+
+        1.  this would require a different workflow and back-up scripts
+            would need to be changed
+
+    4.  consider purchasing a yubikey to manage GPG keys
+
 8.  PGP keys
 
     1.  host public key on `keys.openpgp.org` or `keybase.io`
@@ -222,46 +249,27 @@
 
 11. GitHub
 
-    1.  Consider purging LFS data and replacing with another source
-
-        1.  only useful if LFS bandwidth quota is being eaten up,
-            otherwise current status is fine
-
-        2.  DGM\'s LFS data can definitely be purged as this is not
-            necessary -\> need to update several readmes
-
-            1.  partially done with `git filter-repo`, need to change
-                documentation now
-
-        3.  SAM\'s LFS data will be more problematic since an existing
-            DOI and release is already created
-
-            1.  altering files and commit histories would require a new
-                DOI and release -\> perhaps should do this later than
-                earlier
-
-        4.  need to test that no LFS data gets consumed with mock clones
-
-            1.  can be done by cross-verifying LFS bandwidth in billing
-
-        5.  OR consider recreating these repos for a cleaner deletion
-
-        6.  OR alternatively consider deleting old repositories with
-            outdated structures and coding styles
-
-            1.  remaining ones may have worse coding style but are still
-                valuable in terms of contributions
-
-    2.  Think of usefulness of RS-repositories
+    1.  consider usefulness of RS-repositories
 
         1.  perhaps knowledge can be synthesized into a single
             repository with shape files and dates on which they apply
 
-        2.  think of how to host RS thesis and if this even makes sense
+        2.  this could also be in the form of a new data set for
+            Himalayan forest cover reflectances
+
+        3.  think of how to host RS thesis and if this even makes sense
+
+    2.  consider purging SAM\'s 2 (1 deleted and 1 present) LFS files
+        and replace with linked data
+
+        1.  SAM\'s LFS data will be more problematic since an existing
+            DOI and release is already created
+
+        2.  need to test that no LFS data gets consumed with mock clones
 
 12. Generic management
 
-    1.  best way to foce-fold would be to stow all with `--no-folding`
+    1.  best way to force-fold would be to stow all with `--no-folding`
         and then re-do with `fold_stow`
 
     2.  update script which does manual update checks on files which
@@ -270,7 +278,8 @@
         latex layer modified files
 
         1.  update configuration files with upstream changes (or remove
-            upstream templates)
+            upstream templates and keep barebones configurations)
 
         2.  examples include spacemacs `init.el`, qutebrowser
-            `config.py` and ranger `scope.sh` and `rifle.conf`
+            `config.py`, ranger `scope.sh` and `rifle.conf` and picom
+            `picom.conf`
