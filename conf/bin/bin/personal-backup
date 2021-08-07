@@ -128,7 +128,7 @@ main() {
     fi
   else
     printf "%s\n" "==> Filesystem with UUID:$UUID not found"
-    return 1
+    exit 1
   fi
 }
 
