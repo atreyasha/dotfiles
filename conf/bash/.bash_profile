@@ -26,11 +26,27 @@ export EDITOR="vim"
 export TERMINAL="alacritty"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
-# update PATH variable
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+# define append_env_path function
+# source: https://unix.stackexchange.com/a/282433
+# purpose is to prevent $PATH duplicates
+append_env_path() {
+  case ":$PATH:" in
+    *":$1:"*)
+      true
+      ;;
+    *)
+      PATH="$PATH:$1"
+      ;;
+  esac
+}
+
+# update PATH variable and export
+append_env_path "$HOME/bin"
+append_env_path "$HOME/.local/bin"
 if command -v ruby &>/dev/null; then
-  export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+  append_env_path "$(ruby -e 'puts Gem.user_dir')/bin"
 fi
+export PATH
 
 # source .bashrc
 . "$HOME/.bashrc"
