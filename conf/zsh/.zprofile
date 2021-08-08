@@ -7,6 +7,7 @@ export HISTFILE="$HOME/.zsh_history"
 export KEYTIMEOUT="1"
 
 # conditional variable for gpg's ssh-agent emulation
+# source: https://wiki.archlinux.org/title/GnuPG#SSH_agent
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ] && command -v gpgconf &>/dev/null; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
