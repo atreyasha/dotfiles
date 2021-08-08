@@ -25,6 +25,7 @@ EOF
 }
 
 parser() {
+  # assign local variable
   local arg
 
   # check for -h|--help flags
@@ -94,5 +95,6 @@ main() {
   fi
 }
 
+# overall workflow
 parser "$@"
 main
