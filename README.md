@@ -3,7 +3,7 @@
 This repository contains dotfiles for a minimal Arch Linux build called [`monix`](https://github.com/atreyasha/monix). Dotfiles include `i3-gaps`, `emacs`, `neomutt` and many more. Below is a screenshot of a sample workspace:
 
 <p align="center">
-<img src="./docs/screenshot.png" width="700">
+<img src="./docs/screenshot.png" width="800">
 </p>
 
 ## Initialization
