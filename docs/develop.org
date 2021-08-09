@@ -4,33 +4,31 @@
 
 ** Tasks
 *** Next
-**** TODO Shell/Bin
-***** update ~fold_stow~ to use ~main~ function
-****** improve parsing and management of variables
-****** copy new ~fold-stow~ to ~privates~
-***** add more extensive formatting with usage to all bin scripts
-****** not all should have ~set -e~ though, for example not ~pre-sleep-hook~
-****** make scripts more idiomatic and easier to understand with upstream source links for motivation
-****** so there would be no need to keep looking up documentation later on -> try to do this for all configurations in ~monix~ and ~dotfiles~
-***** make ~bash_profile~ PATH declaration unique -> necessary for cases with tmux and new login shells: https://unix.stackexchange.com/questions/40749/remove-duplicate-path-entries-with-awk-command
-****** add source to script as well
-***** ~killall~ only works for one user: https://superuser.com/questions/137207/how-to-kill-a-process-started-with-a-different-user-without-being-root-or-sudoer
-****** add this to script with source
+**** TODO Bin
+***** justify all non-trivial scripts
+****** add upstream source with comments so future justifications are easy to find
+****** look through configurations in both ~monix~ and ~dotfiles~
+***** consistency and idiomaticness
+****** update ~refresh-i3blocks-\*~ scripts
+******* use lower real-time signals in ~i3blocks.conf~, eg. 1-3
+******* replace alll with single script containing parser and usage which can either read signal from conf or input manually
+******* update ~udev~ and ~acpi~ rules for these changes
+****** ~.xinitrc~ and ~i3lock-blur-lock~
+******* rename ~i3lock-blur-lock~ to ~i3lock-blur~ and change reference in ~i3~ config
+******* add ~xset~ configurations in a global location which can be accessed by both scripts for synchronization
+****** if applicable with sufficient SLOC, add usage and parser to scripts and make them re-usable/inter-dependent
+******* eg. combine ~i3lock~ and ~pre-sleep-hook~ into single script with different arguments given context 
+******* be mindful of global ~set -e~, for example not in ~pre-sleep-hook~
+******* possible to delete ~refresh-monitor~ script and place command in ~i3~ config
 
-**** TODO i3
-***** centralize how ~xset~ is executed and reverted such that all configurations are in one place
-****** this would require changes to ~i3lock-blur-lock~ and perhaps renaming it to ~i3lock-blur~
-****** perhaps can have default floating around as environmental variable, or elsewhere
-***** consider using lower i3blocks signals for logic
-****** parse them with ~sed~ in ~bin~ scripts for refreshing
+*** Long-term
+**** i3
 ***** port ~i3-cycle~ backend to ~i3ipc~ and ship everything to AUR/pypi: https://github.com/mota/i3-cycle/issues/3
 ****** replace ~pypi~ package(s) with this implementation
-***** ~xss-lock~ is not ideal since it gets triggered by DPMS and screensaver events which cannot be internally disabled: https://wiki.archlinux.org/title/Power_management#Sleep_hooks
-       
-*** Long-term
+
 **** Monitor configuration
 ***** create ~AUR~ repository for alternative package management: https://github.com/phillipberndt/autorandr/issues/250
-***** replace ~pypi~ package with this implementation
+****** replace ~pypi~ package with this implementation
 
 **** Neovim
 ***** Basic
@@ -82,7 +80,7 @@
 ****** ~adopt~ files via stow and perform a git status check
 ****** force fold directory where file gets overwritten -> eg. gtk2/3, qt5ct etc.
 **** Backup
-***** clean up local drive
+***** clean up local drive and remove unnecessary content
 ***** figure out how to preserve/return appropriate permission when syncing back and forth
 ****** might need to alter mount options for drive
 ***** try reformatting hard drive and encrypting

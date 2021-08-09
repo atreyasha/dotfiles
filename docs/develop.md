@@ -7,71 +7,64 @@
 
 ### Next
 
-1.  **TODO** Shell/Bin
+1.  **TODO** Bin
 
-    1.  update `fold_stow` to use `main` function
+    1.  justify all non-trivial scripts
 
-        1.  improve parsing and management of variables
+        1.  add upstream source with comments so future justifications
+            are easy to find
 
-        2.  copy new `fold-stow` to `privates`
+        2.  look through configurations in both `monix` and `dotfiles`
 
-    2.  add more extensive formatting with usage to all bin scripts
+    2.  consistency and idiomaticness
 
-        1.  not all should have `set -e` though, for example not
-            `pre-sleep-hook`
+        1.  update `refresh-i3blocks-\*` scripts
 
-        2.  make scripts more idiomatic and easier to understand with
-            upstream source links for motivation
+            1.  use lower real-time signals in `i3blocks.conf`, eg. 1-3
 
-        3.  so there would be no need to keep looking up documentation
-            later on -\> try to do this for all configurations in
-            `monix` and `dotfiles`
+            2.  replace alll with single script containing parser and
+                usage which can either read signal from conf or input
+                manually
 
-    3.  make `bash_profile` PATH declaration unique -\> necessary for
-        cases with tmux and new login shells:
-        <https://unix.stackexchange.com/questions/40749/remove-duplicate-path-entries-with-awk-command>
+            3.  update `udev` and `acpi` rules for these changes
 
-        1.  add source to script as well
+        2.  `.xinitrc` and `i3lock-blur-lock`
 
-    4.  `killall` only works for one user:
-        <https://superuser.com/questions/137207/how-to-kill-a-process-started-with-a-different-user-without-being-root-or-sudoer>
+            1.  rename `i3lock-blur-lock` to `i3lock-blur` and change
+                reference in `i3` config
 
-        1.  add this to script with source
+            2.  add `xset` configurations in a global location which can
+                be accessed by both scripts for synchronization
 
-2.  **TODO** i3
+        3.  if applicable with sufficient SLOC, add usage and parser to
+            scripts and make them re-usable/inter-dependent
 
-    1.  centralize how `xset` is executed and reverted such that all
-        configurations are in one place
+            1.  eg. combine `i3lock` and `pre-sleep-hook` into single
+                script with different arguments given context
 
-        1.  this would require changes to `i3lock-blur-lock` and perhaps
-            renaming it to `i3lock-blur`
+            2.  be mindful of global `set -e`, for example not in
+                `pre-sleep-hook`
 
-        2.  perhaps can have default floating around as environmental
-            variable, or elsewhere
+            3.  possible to delete `refresh-monitor` script and place
+                command in `i3` config
 
-    2.  consider using lower i3blocks signals for logic
+### Long-term
 
-        1.  parse them with `sed` in `bin` scripts for refreshing
+1.  i3
 
-    3.  port `i3-cycle` backend to `i3ipc` and ship everything to
+    1.  port `i3-cycle` backend to `i3ipc` and ship everything to
         AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
 
         1.  replace `pypi` package(s) with this implementation
 
-    4.  `xss-lock` is not ideal since it gets triggered by DPMS and
-        screensaver events which cannot be internally disabled:
-        <https://wiki.archlinux.org/title/Power_management#Sleep_hooks>
-
-### Long-term
-
-1.  Monitor configuration
+2.  Monitor configuration
 
     1.  create `AUR` repository for alternative package management:
         <https://github.com/phillipberndt/autorandr/issues/250>
 
-    2.  replace `pypi` package with this implementation
+        1.  replace `pypi` package with this implementation
 
-2.  Neovim
+3.  Neovim
 
     1.  Basic
 
@@ -103,7 +96,7 @@
             1.  this is no longer be necessary since plugins are
                 regularly updated upstream
 
-3.  Emacs
+4.  Emacs
 
     1.  Change emacs distribution
 
@@ -156,7 +149,7 @@
         2.  Automatically merge upstream changes to latex layer which
             are coped/modified
 
-4.  Neomutt
+5.  Neomutt
 
     1.  reformat binding and unbinding schemes for each account to be
         more modular, consistent, portable and to re-use variables where
@@ -190,7 +183,7 @@
 
         1.  update exact subkey when this is fixed
 
-5.  Test cases
+6.  Test cases
 
     1.  test for force-folded directories -\> can re-use existing
         `fold_stow` script
@@ -201,7 +194,7 @@
     3.  can be used for both `dotfiles` and `privates` and can be done
         after basic `stow` test
 
-6.  Sync
+7.  Sync
 
     1.  implement `sync` in case repository tests fail
 
@@ -210,9 +203,9 @@
         2.  force fold directory where file gets overwritten -\> eg.
             gtk2/3, qt5ct etc.
 
-7.  Backup
+8.  Backup
 
-    1.  clean up local drive
+    1.  clean up local drive and remove unnecessary content
 
     2.  figure out how to preserve/return appropriate permission when
         syncing back and forth
@@ -226,7 +219,7 @@
 
     4.  consider purchasing a yubikey to manage GPG keys
 
-8.  PGP keys
+9.  PGP keys
 
     1.  host public key on `keys.openpgp.org` or `keybase.io`
 
@@ -235,19 +228,19 @@
 
     3.  consider adding PGP key-id to GitHub page
 
-9.  Mimeapps/mailcap
+10. Mimeapps/mailcap
 
     1.  add mailcap helpers in `conf` and coordinate with mimetypes
 
     2.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-10. Qutebrowser
+11. Qutebrowser
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
 
-11. GitHub
+12. GitHub
 
     1.  consider usefulness of RS-repositories
 
@@ -267,7 +260,7 @@
 
         2.  need to test that no LFS data gets consumed with mock clones
 
-12. Generic management
+13. Generic management
 
     1.  best way to force-fold would be to stow all with `--no-folding`
         and then re-do with `fold_stow`
