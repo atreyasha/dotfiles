@@ -3,10 +3,10 @@
 # execute if no i3lock present
 if ! pgrep -u "$USER" -x i3lock &>/dev/null; then
   revert() {
-    xset dpms 300 300 300
+    xset dpms 300 0 0
   }
   trap revert HUP INT TERM
-  xset +dpms dpms 15 15 15
+  xset +dpms dpms 15 0 0
   sleep 0.1
   i3lock-fancy-rapid 5 3 -n
   revert
