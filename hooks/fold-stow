@@ -4,7 +4,7 @@ set -e
 # usage function
 usage() {
   cat <<EOF
-Usage: fold_stow [-h|--help] <command> <source> <destination> <dotfile> [dotfile...]
+Usage: fold-stow [-h|--help] <command> <source> <destination> <dotfile> [dotfile...]
 
 This script searches for stow dotfiles which require forced folding, and then
 removes target directories in order to allow for successful folding
