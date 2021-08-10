@@ -3,8 +3,8 @@
 #+OPTIONS: p:t
 
 ** Tasks
-*** Next
-**** TODO Bin
+*** Long-term
+**** Bin
 ***** justify all non-trivial scripts
 ****** add upstream source with comments so future justifications are easy to find
 ****** look through configurations in both ~monix~ and ~dotfiles~
@@ -16,12 +16,12 @@
 ****** ~.xinitrc~ and ~i3lock-blur-lock~
 ******* rename ~i3lock-blur-lock~ to ~i3lock-blur~ and change reference in ~i3~ config
 ******* add ~xset~ configurations in a global location which can be accessed by both scripts for synchronization
+******* consider adding ~xset~ pre and post settings to ~pre-sleep~ service -> not sure if this is worth it
 ****** if applicable with sufficient SLOC, add usage and parser to scripts and make them re-usable/inter-dependent
 ******* eg. combine ~i3lock~ and ~pre-sleep-hook~ into single script with different arguments given context 
 ******* be mindful of global ~set -e~, for example not in ~pre-sleep-hook~
 ******* possible to delete ~refresh-monitor~ script and place command in ~i3~ config
-
-*** Long-term
+       
 **** i3
 ***** port ~i3-cycle~ backend to ~i3ipc~ and ship everything to AUR/pypi: https://github.com/mota/i3-cycle/issues/3
 ****** replace ~pypi~ package(s) with this implementation
@@ -96,6 +96,12 @@
 **** Qutebrowser
 ***** disable dpms/dim when video is playing: see bug report https://github.com/qutebrowser/qutebrowser/issues/5504
 **** GitHub
+***** licenses
+****** look into source-code licenses required for ~dotfiles~ -> perhaps these need to be updated 
+****** no need to add GPLv3 license to ~dotfiles~ since this repo is considered an aggregate
+******* ~emacs~/~spacemacs~ functions independently, so it is sufficient that ~spacemacs-elpy~ uses GPLv3
+***** consider improving quality of all ~memory-daemon~ code
+****** testing might be difficult
 ***** consider usefulness of RS-repositories
 ****** perhaps knowledge can be synthesized into a single repository with shape files and dates on which they apply 
 ****** this could also be in the form of a new data set for Himalayan forest cover reflectances

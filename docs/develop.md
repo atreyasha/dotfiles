@@ -1,13 +1,12 @@
 ## Table of Contents
 -   [Tasks](#tasks)
-    -   [Next](#next)
     -   [Long-term](#long-term)
 
 ## Tasks
 
-### Next
+### Long-term
 
-1.  **TODO** Bin
+1.  Bin
 
     1.  justify all non-trivial scripts
 
@@ -36,6 +35,9 @@
             2.  add `xset` configurations in a global location which can
                 be accessed by both scripts for synchronization
 
+            3.  consider adding `xset` pre and post settings to
+                `pre-sleep` service -\> not sure if this is worth it
+
         3.  if applicable with sufficient SLOC, add usage and parser to
             scripts and make them re-usable/inter-dependent
 
@@ -48,23 +50,21 @@
             3.  possible to delete `refresh-monitor` script and place
                 command in `i3` config
 
-### Long-term
-
-1.  i3
+2.  i3
 
     1.  port `i3-cycle` backend to `i3ipc` and ship everything to
         AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
 
         1.  replace `pypi` package(s) with this implementation
 
-2.  Monitor configuration
+3.  Monitor configuration
 
     1.  create `AUR` repository for alternative package management:
         <https://github.com/phillipberndt/autorandr/issues/250>
 
         1.  replace `pypi` package with this implementation
 
-3.  Neovim
+4.  Neovim
 
     1.  Basic
 
@@ -96,7 +96,7 @@
             1.  this is no longer be necessary since plugins are
                 regularly updated upstream
 
-4.  Emacs
+5.  Emacs
 
     1.  Change emacs distribution
 
@@ -149,7 +149,7 @@
         2.  Automatically merge upstream changes to latex layer which
             are coped/modified
 
-5.  Neomutt
+6.  Neomutt
 
     1.  reformat binding and unbinding schemes for each account to be
         more modular, consistent, portable and to re-use variables where
@@ -183,7 +183,7 @@
 
         1.  update exact subkey when this is fixed
 
-6.  Test cases
+7.  Test cases
 
     1.  test for force-folded directories -\> can re-use existing
         `fold_stow` script
@@ -194,7 +194,7 @@
     3.  can be used for both `dotfiles` and `privates` and can be done
         after basic `stow` test
 
-7.  Sync
+8.  Sync
 
     1.  implement `sync` in case repository tests fail
 
@@ -203,7 +203,7 @@
         2.  force fold directory where file gets overwritten -\> eg.
             gtk2/3, qt5ct etc.
 
-8.  Backup
+9.  Backup
 
     1.  clean up local drive and remove unnecessary content
 
@@ -219,7 +219,7 @@
 
     4.  consider purchasing a yubikey to manage GPG keys
 
-9.  PGP keys
+10. PGP keys
 
     1.  host public key on `keys.openpgp.org` or `keybase.io`
 
@@ -228,21 +228,36 @@
 
     3.  consider adding PGP key-id to GitHub page
 
-10. Mimeapps/mailcap
+11. Mimeapps/mailcap
 
     1.  add mailcap helpers in `conf` and coordinate with mimetypes
 
     2.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-11. Qutebrowser
+12. Qutebrowser
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
 
-12. GitHub
+13. GitHub
 
-    1.  consider usefulness of RS-repositories
+    1.  licenses
+
+        1.  look into source-code licenses required for `dotfiles` -\>
+            perhaps these need to be updated
+
+        2.  no need to add GPLv3 license to `dotfiles` since this repo
+            is considered an aggregate
+
+            1.  `emacs~/~spacemacs` functions independently, so it is
+                sufficient that `spacemacs-elpy` uses GPLv3
+
+    2.  consider improving quality of all `memory-daemon` code
+
+        1.  testing might be difficult
+
+    3.  consider usefulness of RS-repositories
 
         1.  perhaps knowledge can be synthesized into a single
             repository with shape files and dates on which they apply
@@ -252,7 +267,7 @@
 
         3.  think of how to host RS thesis and if this even makes sense
 
-    2.  consider purging SAM\'s 2 (1 deleted and 1 present) LFS files
+    4.  consider purging SAM\'s 2 (1 deleted and 1 present) LFS files
         and replace with linked data
 
         1.  SAM\'s LFS data will be more problematic since an existing
@@ -260,7 +275,7 @@
 
         2.  need to test that no LFS data gets consumed with mock clones
 
-13. Generic management
+14. Generic management
 
     1.  best way to force-fold would be to stow all with `--no-folding`
         and then re-do with `fold_stow`
