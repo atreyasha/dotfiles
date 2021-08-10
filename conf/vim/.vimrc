@@ -1,3 +1,6 @@
+" early-load all user-defined plugins
+packloadall
+
 " add git submodule for code base
 set runtimepath+=~/.vim_runtime
 
