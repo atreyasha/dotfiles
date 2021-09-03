@@ -69,7 +69,7 @@ bindsym $mod+c focus child
 set $ws1 "1: Terminal "
 set $ws2 "2: Browser "
 set $ws3 "3: Emacs ξ"
-set $ws4 "4"
+set $ws4 "4: Comms "
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -227,11 +227,15 @@ bar {
 }
 
 # assign window types to specific workspaces
-assign [class="Firefox"] $ws2
 assign [class="firefox"] $ws2
+assign [class="Firefox"] $ws2
 assign [class="qutebrowser"] $ws2
-assign [class="Emacs"] $ws3
 assign [class="emacs"] $ws3
+assign [class="Emacs"] $ws3
+assign [class="telegram-desktop"] $ws4
+assign [class="TelegramDesktop"] $ws4
+assign [class="microsoft teams - preview"] $ws4
+assign [class="Microsoft Teams - Preview"] $ws4
 
 # gaps-specific details
 for_window [class="^.*"] border pixel 2.5
