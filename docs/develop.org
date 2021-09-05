@@ -7,6 +7,7 @@
 **** Rofi
 ***** fix parsing error by updating configuration file for good
 ***** upgrade rofi and remove entry from pacman ignore list
+***** remove entry from monix ~Makefile~
 
 **** Bin
 ***** justify all non-trivial scripts

@@ -12,6 +12,8 @@
 
     2.  upgrade rofi and remove entry from pacman ignore list
 
+    3.  remove entry from monix `Makefile`
+
 2.  Bin
 
     1.  justify all non-trivial scripts
