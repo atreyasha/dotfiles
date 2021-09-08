@@ -211,6 +211,11 @@
         2.  force fold directory where file gets overwritten -\> eg.
             gtk2/3, qt5ct etc.
 
+    2.  add a system test option as a script which tests all important
+        repositories and performs git status
+
+        1.  this might help ensure pip packages are checked
+
 10. Backup
 
     1.  clean up local drive and remove unnecessary content
