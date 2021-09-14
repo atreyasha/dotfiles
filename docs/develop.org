@@ -53,6 +53,7 @@
 ****** work on script which updates all emacs packages during system update
 ***** Patch ~company-reftex~
 ****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in ~company-reftex-citation-candidates~, for development add package (eg. ~(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))~) in ~dotspacemacs-additional-packages~ and update packages, delete old package location 
+****** think about removing ~(reftex-access-scan-info)~ before ~parse-all~ since this seems to be redundant, but would need more in-depth knowledge to figure this out
 ***** Patch ~helm-company~
 ****** fix wrong argument error on ~helm-company~ post command hook -> linked to ~helm-company~ interaction with ~company-post-command~: see https://github.com/Sodel-the-Vociferous/helm-company/issues/21 -> fix would require looking at ~company-post-command~ to understand what is failing
 ***** Patch ~elpy~
@@ -88,6 +89,7 @@
 ****** this might help ensure pip packages are checked
 **** Backup
 ***** clean up local drive and remove unnecessary content
+***** add new feature where GPG keys are compared for diffs before backing up -> if even possible
 ***** figure out how to preserve/return appropriate permission when syncing back and forth
 ****** might need to alter mount options for drive
 ***** try reformatting hard drive and encrypting

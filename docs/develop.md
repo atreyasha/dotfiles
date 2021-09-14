@@ -127,6 +127,10 @@
             in `dotspacemacs-additional-packages` and update packages,
             delete old package location
 
+        2.  think about removing `(reftex-access-scan-info)` before
+            `parse-all` since this seems to be redundant, but would need
+            more in-depth knowledge to figure this out
+
     3.  Patch `helm-company`
 
         1.  fix wrong argument error on `helm-company` post command hook
@@ -220,17 +224,20 @@
 
     1.  clean up local drive and remove unnecessary content
 
-    2.  figure out how to preserve/return appropriate permission when
+    2.  add new feature where GPG keys are compared for diffs before
+        backing up -\> if even possible
+
+    3.  figure out how to preserve/return appropriate permission when
         syncing back and forth
 
         1.  might need to alter mount options for drive
 
-    3.  try reformatting hard drive and encrypting
+    4.  try reformatting hard drive and encrypting
 
         1.  this would require a different workflow and back-up scripts
             would need to be changed
 
-    4.  consider purchasing a yubikey to manage GPG keys
+    5.  consider purchasing a yubikey to manage GPG keys
 
 11. PGP keys
 
