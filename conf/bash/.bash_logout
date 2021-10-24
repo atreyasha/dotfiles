@@ -7,7 +7,7 @@ if [ "$SHLVL" -le 1 ]; then
     # then kill gpg-agent when logging out
     # NOTE: killall can only kill user owned processes:
     # https://superuser.com/questions/137207
-    killall gpg-agent
+    pkill -u "$USER" -x gpg-agent
   fi
   # clear the console for privacy reasons
   clear

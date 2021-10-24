@@ -5,9 +5,9 @@ if [ "$SHLVL" -le 1 ]; then
   if [ -n "$SSH_CONNECTION" ]; then
     # if a ssh-connection is detected
     # then kill gpg-agent when logging out
-    # NOTE: killall can only kill user owned processes:
+    # NOTE: only possible to kill own processes:
     # https://superuser.com/questions/137207
-    killall gpg-agent
+    pkill -u "$USER" -x gpg-agent
   fi
   # clear the console for privacy reasons
   clear
