@@ -4,6 +4,10 @@
 
 ** Tasks
 *** Long-term
+**** System-upgrade 
+***** revert ~emacs~ command to double non-interactive evaluation after bugfix upstream
+***** see: https://github.com/syl20bnr/spacemacs/issues/15186 
+
 **** Rofi
 ***** fix parsing error by updating configuration file for good
 ***** upgrade rofi and remove entry from pacman ignore list
