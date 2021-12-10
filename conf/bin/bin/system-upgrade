@@ -88,10 +88,16 @@ update_submodules() {
 }
 
 upgrade_spacemacs_pkgs() {
+  # assign local variable
+  local index
+
   # upgrade spacemacs packages
   # source: https://emacs.stackexchange.com/a/45923
   if [ -f "$HOME/.emacs.d/init.el" ]; then
-    emacs -l "$HOME/.emacs.d/init.el" --eval="(progn (configuration-layer/update-packages) (spacemacs/kill-emacs))"
+    # repeat command twice to both prepare and upgrade emacs packages
+    for index in $(seq 2); do
+      emacs --batch -l "$HOME/.emacs.d/init.el" --eval="(configuration-layer/update-packages t)"
+    done
   fi
 }
 
