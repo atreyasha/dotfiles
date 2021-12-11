@@ -6,14 +6,7 @@
 
 ### Long-term
 
-1.  System-upgrade
-
-    1.  revert `emacs` command to double non-interactive evaluation
-        after bugfix upstream
-
-    2.  see: <https://github.com/syl20bnr/spacemacs/issues/15186>
-
-2.  Rofi
+1.  Rofi
 
     1.  fix parsing error by updating configuration file for good
 
@@ -21,7 +14,7 @@
 
     3.  remove entry from monix `Makefile`
 
-3.  Bin
+2.  Bin
 
     1.  justify all non-trivial scripts
 
@@ -65,21 +58,21 @@
             3.  possible to delete `refresh-monitor` script and place
                 command in `i3` config
 
-4.  i3
+3.  i3
 
     1.  port `i3-cycle` backend to `i3ipc` and ship everything to
         AUR/pypi: <https://github.com/mota/i3-cycle/issues/3>
 
         1.  replace `pypi` package(s) with this implementation
 
-5.  Monitor configuration
+4.  Monitor configuration
 
     1.  create `AUR` repository for alternative package management:
         <https://github.com/phillipberndt/autorandr/issues/250>
 
         1.  replace `pypi` package with this implementation
 
-6.  Neovim
+5.  Neovim
 
     1.  Basic
 
@@ -111,7 +104,7 @@
             1.  this is no longer be necessary since plugins are
                 regularly updated upstream
 
-7.  Emacs
+6.  Emacs
 
     1.  Change emacs distribution
 
@@ -168,7 +161,7 @@
         2.  Automatically merge upstream changes to latex layer which
             are coped/modified
 
-8.  Neomutt
+7.  Neomutt
 
     1.  reformat binding and unbinding schemes for each account to be
         more modular, consistent, portable and to re-use variables where
@@ -202,7 +195,7 @@
 
         1.  update exact subkey when this is fixed
 
-9.  Test cases
+8.  Test cases
 
     1.  test for force-folded directories -\> can re-use existing
         `fold_stow` script
@@ -213,7 +206,7 @@
     3.  can be used for both `dotfiles` and `privates` and can be done
         after basic `stow` test
 
-10. Sync
+9.  Sync
 
     1.  implement `sync` in case repository tests fail
 
@@ -227,7 +220,7 @@
 
         1.  this might help ensure pip packages are checked
 
-11. Backup
+10. Backup
 
     1.  clean up local drive and remove unnecessary content
 
@@ -246,7 +239,7 @@
 
     5.  consider purchasing a yubikey to manage GPG keys
 
-12. PGP keys
+11. PGP keys
 
     1.  host public key on `keys.openpgp.org` or `keybase.io`
 
@@ -255,19 +248,19 @@
 
     3.  consider adding PGP key-id to GitHub page
 
-13. Mimeapps/mailcap
+12. Mimeapps/mailcap
 
     1.  add mailcap helpers in `conf` and coordinate with mimetypes
 
     2.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-14. Qutebrowser
+13. Qutebrowser
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
 
-15. GitHub
+14. GitHub
 
     1.  licenses
 
@@ -302,16 +295,19 @@
 
         2.  need to test that no LFS data gets consumed with mock clones
 
-16. Generic management
+15. Generic management
 
-    1.  best way to force-fold would be to stow all with `--no-folding`
+    1.  think about whether three repos should be set up in
+        environmental variables instead of hard-coded
+
+    2.  best way to force-fold would be to stow all with `--no-folding`
         and then re-do with `fold_stow`
 
-    2.  consider adding more dotfiles to forced stow category,
+    3.  consider adding more dotfiles to forced stow category,
         especially those where files get actively overwritten -\> for
         example GTK
 
-    3.  update script which does manual update checks on files which
+    4.  update script which does manual update checks on files which
         might require upstream updates -\> perhaps perform a diff
         framework to accept/reject upstream changes -\> eg. `spacemacs`
         latex layer modified files

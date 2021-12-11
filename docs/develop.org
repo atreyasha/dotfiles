@@ -4,10 +4,6 @@
 
 ** Tasks
 *** Long-term
-**** System-upgrade 
-***** revert ~emacs~ command to double non-interactive evaluation after bugfix upstream
-***** see: https://github.com/syl20bnr/spacemacs/issues/15186 
-
 **** Rofi
 ***** fix parsing error by updating configuration file for good
 ***** upgrade rofi and remove entry from pacman ignore list
@@ -123,6 +119,7 @@
 ****** SAM's LFS data will be more problematic since an existing DOI and release is already created
 ****** need to test that no LFS data gets consumed with mock clones 
 **** Generic management
+***** think about whether three repos should be set up in environmental variables instead of hard-coded 
 ***** best way to force-fold would be to stow all with ~--no-folding~ and then re-do with ~fold_stow~
 ***** consider adding more dotfiles to forced stow category, especially those where files get actively overwritten -> for example GTK
 ***** update script which does manual update checks on files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes -> eg. ~spacemacs~ latex layer modified files
