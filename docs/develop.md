@@ -303,6 +303,12 @@
     2.  best way to force-fold would be to stow all with `--no-folding`
         and then re-do with `fold_stow`
 
+        1.  this will fix issue of child directories being folded at a
+            parent-level inadvertently, which might be problematic
+
+        2.  all fold scripts must be updated to reflect across all
+            repositories
+
     3.  consider adding more dotfiles to forced stow category,
         especially those where files get actively overwritten -\> for
         example GTK
