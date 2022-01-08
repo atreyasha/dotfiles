@@ -309,6 +309,8 @@
         2.  all fold scripts must be updated to reflect across all
             repositories
 
+        3.  add `vim-syntax-clingo` to folded framework
+
     3.  consider adding more dotfiles to forced stow category,
         especially those where files get actively overwritten -\> for
         example GTK

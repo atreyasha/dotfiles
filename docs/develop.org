@@ -123,6 +123,7 @@
 ***** best way to force-fold would be to stow all with ~--no-folding~ and then re-do with ~fold_stow~
 ****** this will fix issue of child directories being folded at a parent-level inadvertently, which might be problematic
 ****** all fold scripts must be updated to reflect across all repositories
+****** add ~vim-syntax-clingo~ to folded framework
 ***** consider adding more dotfiles to forced stow category, especially those where files get actively overwritten -> for example GTK
 ***** update script which does manual update checks on files which might require upstream updates -> perhaps perform a diff framework to accept/reject upstream changes -> eg. ~spacemacs~ latex layer modified files
 ****** update configuration files with upstream changes (or remove upstream templates and keep barebones configurations)
