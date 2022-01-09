@@ -232,8 +232,8 @@ assign [class="Firefox"] $ws2
 assign [class="qutebrowser"] $ws2
 assign [class="emacs"] $ws3
 assign [class="Emacs"] $ws3
-assign [class="telegram-desktop"] $ws4
-assign [class="TelegramDesktop"] $ws4
+assign [class="signal"] $ws4
+assign [class="Signal"] $ws4
 assign [class="microsoft teams - preview"] $ws4
 assign [class="Microsoft Teams - Preview"] $ws4
 
