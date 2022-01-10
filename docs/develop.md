@@ -212,13 +212,13 @@
 
         1.  `adopt` files via stow and perform a git status check
 
-        2.  force fold directory where file gets overwritten -\> eg.
-            gtk2/3, qt5ct etc.
-
     2.  add a system test option as a script which tests all important
         repositories and performs git status
 
-        1.  this might help ensure pip packages are checked
+        1.  this would also improve quick tests and can be used in a
+            modular fashion by `system-upgrade`
+
+        2.  this might help ensure pip packages are checked
 
 10. Backup
 
@@ -300,16 +300,12 @@
     1.  think about whether three repos should be set up in
         environmental variables instead of hard-coded
 
-    2.  best way to force-fold would be to stow all with `--no-folding`
-        and then re-do with `fold_stow`
+    2.  improve parsing of `fold-stow` in `dotfiles` and `privates`
 
-        1.  this will fix issue of child directories being folded at a
-            parent-level inadvertently, which might be problematic
+        1.  improve parser by defining default commands to prevent wrong
+            usage
 
-        2.  all fold scripts must be updated to reflect across all
-            repositories
-
-        3.  add `vim-syntax-clingo` to folded framework
+        2.  provide CLI options to overwrite options
 
     3.  consider adding more dotfiles to forced stow category,
         especially those where files get actively overwritten -\> for
