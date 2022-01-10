@@ -47,18 +47,20 @@ parser() {
   COMMAND="$1"
   SOURCE="${2//\~/$HOME}"
   DESTINATION="${3//\~/$HOME}"
-  DOTFILES="$4"
+  mapfile -t DOTFILES <<< "$4"
 }
 
 # main function
 main() {
   # define local variables
   local dotfile fold
-  local dotfiles_nofold=()
   local dotfiles_fold=()
 
+  # execute stow with --no-folding to create all symlinks and parents
+  eval "$COMMAND -d $SOURCE -t $DESTINATION --no-folding --ignore='^\.fold$' ${DOTFILES[*]}"
+
   # loop over files and execute logic
-  for dotfile in $DOTFILES; do
+  for dotfile in "${DOTFILES[@]}"; do
     # check for the existence of .fold
     src_dotfile="$SOURCE/$dotfile"
     if [ -f "$src_dotfile/.fold" ]; then
@@ -69,29 +71,18 @@ main() {
         # prompt to delete directories if they are not symlinks
         if [[ -d "$src_fold_directory" && -d "$dest_fold_directory" && \
                 ! -L "$dest_fold_directory" ]]; then
-          read -rp "Delete $dest_fold_directory for folding? (y/N): " ans
-          # only delete if answer is y or Y
-          if [[ "$ans" == [yY] ]]; then
-            rm -rf "$dest_fold_directory"
-          fi
+          printf "%s\n" "Deleting $dest_fold_directory for folding"
+          rm -rf "$dest_fold_directory"
         fi
       done
       # append foldable dotfile
       dotfiles_fold+=("$dotfile")
-    else
-      # otherwise, append non-foldable dotfile
-      dotfiles_nofold+=("$dotfile")
     fi
   done
 
   # execute stow for folding directories
   if ((${#dotfiles_fold[@]})); then
     eval "$COMMAND -d $SOURCE -t $DESTINATION --ignore='^\.fold$' ${dotfiles_fold[*]}"
-  fi
-
-  # execute stow for --no-folding directories
-  if ((${#dotfiles_nofold[@]})); then
-    eval "$COMMAND -d $SOURCE -t $DESTINATION --no-folding ${dotfiles_nofold[*]}"
   fi
 }
 
