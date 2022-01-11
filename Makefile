@@ -1,5 +1,5 @@
 DOTFILES = $$(find conf -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' -printf '%f\n')
-REMOTE_DOTFILES = alacritty bash dircolors git gnupg htop ranger readline tmux vim
+REMOTE_DOTFILES = $$(printf '%s\n' alacritty bash dircolors git gnupg htop ranger readline tmux vim)
 
 .PHONY: init
 init:
