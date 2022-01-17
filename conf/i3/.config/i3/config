@@ -234,8 +234,8 @@ assign [class="emacs"] $ws3
 assign [class="Emacs"] $ws3
 assign [class="signal"] $ws4
 assign [class="Signal"] $ws4
-assign [class="microsoft teams - preview"] $ws4
-assign [class="Microsoft Teams - Preview"] $ws4
+assign [class="zoom"] $ws4
+assign [class="Zoom"] $ws4
 
 # gaps-specific details
 for_window [class="^.*"] border pixel 2.5
