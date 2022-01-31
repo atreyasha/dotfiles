@@ -236,6 +236,8 @@ assign [class="signal"] $ws4
 assign [class="Signal"] $ws4
 assign [class="zoom"] $ws4
 assign [class="Zoom"] $ws4
+assign [class="pulseUI"] $ws4
+assign [class="PulseUI"] $ws4
 
 # gaps-specific details
 for_window [class="^.*"] border pixel 2.5
