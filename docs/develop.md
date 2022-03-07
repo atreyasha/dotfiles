@@ -8,14 +8,17 @@
 
 1.  Bin
 
-    1.  justify all non-trivial scripts
+    1.  look into changing cursor colors on upgrade command -\> likely
+        `spacemacs` issue
+
+    2.  justify all non-trivial scripts
 
         1.  add upstream source with comments so future justifications
             are easy to find
 
         2.  look through configurations in both `monix` and `dotfiles`
 
-    2.  consistency and idiomaticness
+    3.  consistency and idiomaticness
 
         1.  update `refresh-i3blocks-\*` scripts
 
@@ -268,24 +271,6 @@
     2.  consider improving quality of all `memory-daemon` code
 
         1.  testing might be difficult
-
-    3.  consider usefulness of RS-repositories
-
-        1.  perhaps knowledge can be synthesized into a single
-            repository with shape files and dates on which they apply
-
-        2.  this could also be in the form of a new data set for
-            Himalayan forest cover reflectances
-
-        3.  think of how to host RS thesis and if this even makes sense
-
-    4.  consider purging SAM\'s 2 (1 deleted and 1 present) LFS files
-        and replace with linked data
-
-        1.  SAM\'s LFS data will be more problematic since an existing
-            DOI and release is already created
-
-        2.  need to test that no LFS data gets consumed with mock clones
 
 14. Generic management
 

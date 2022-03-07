@@ -5,6 +5,7 @@
 ** Tasks
 *** Long-term
 **** Bin
+***** look into changing cursor colors on upgrade command -> likely ~spacemacs~ issue
 ***** justify all non-trivial scripts
 ****** add upstream source with comments so future justifications are easy to find
 ****** look through configurations in both ~monix~ and ~dotfiles~
@@ -106,13 +107,6 @@
 ******* ~emacs~/~spacemacs~ functions independently, so it is sufficient that ~spacemacs-elpy~ uses GPLv3
 ***** consider improving quality of all ~memory-daemon~ code
 ****** testing might be difficult
-***** consider usefulness of RS-repositories
-****** perhaps knowledge can be synthesized into a single repository with shape files and dates on which they apply 
-****** this could also be in the form of a new data set for Himalayan forest cover reflectances
-****** think of how to host RS thesis and if this even makes sense
-***** consider purging SAM's 2 (1 deleted and 1 present) LFS files and replace with linked data
-****** SAM's LFS data will be more problematic since an existing DOI and release is already created
-****** need to test that no LFS data gets consumed with mock clones 
 **** Generic management
 ***** think about whether three repos should be set up in environmental variables instead of hard-coded 
 ***** improve parsing of ~fold-stow~ in ~dotfiles~ and ~privates~
