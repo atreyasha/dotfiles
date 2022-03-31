@@ -210,7 +210,7 @@ bindsym $mod+b exec "i3_balance_workspace --scope focus"
 exec --no-startup-id i3-msg workspace $ws1; { i3-sensible-terminal --working-directory ~ & }; { i3-sensible-terminal --working-directory ~ & }
 
 # mute sound at i3 startup
-exec --no-startup-id "amixer -q sset Master mute && refresh-i3blocks-audio"
+exec --no-startup-id "amixer -q sset Master 50% && amixer -q sset Master mute && refresh-i3blocks-audio"
 
 # check monitors and reset wallpaper at startup
 exec --no-startup-id "refresh-monitor && feh-background" 
