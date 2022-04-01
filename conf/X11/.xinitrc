@@ -40,8 +40,8 @@ xset s off
 xset dpms 300 0 0
 
 # disable autorepeat for volume keys
-# NOTE: keycodes found by disabling volume bindings in i3
-# and then using xev to isolate specific keycodes
+# NOTE: keycodes found by using `xmodmap -pke | grep Volume`
+# and `xmodmap -pke | grep Mute`
 seq 121 123 | xargs -n 1 xset -r
 
 # launch i3
