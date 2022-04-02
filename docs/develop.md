@@ -272,23 +272,28 @@
 
         1.  testing might be difficult
 
+    3.  add testing to `git-hooks` scripts
+
 14. Generic management
 
-    1.  think about whether three repos should be set up in
+    1.  try to reduce hard-coding in workflows overall -\> if possible
+        try to make things inferred
+
+    2.  think about whether three repos should be set up in
         environmental variables instead of hard-coded
 
-    2.  improve parsing of `fold-stow` in `dotfiles` and `privates`
+    3.  improve parsing of `fold-stow` in `dotfiles` and `privates`
 
         1.  improve parser by defining default commands to prevent wrong
             usage
 
         2.  provide CLI options to overwrite options
 
-    3.  consider adding more dotfiles to forced stow category,
+    4.  consider adding more dotfiles to forced stow category,
         especially those where files get actively overwritten -\> for
         example GTK
 
-    4.  update script which does manual update checks on files which
+    5.  update script which does manual update checks on files which
         might require upstream updates -\> perhaps perform a diff
         framework to accept/reject upstream changes -\> eg. `spacemacs`
         latex layer modified files
