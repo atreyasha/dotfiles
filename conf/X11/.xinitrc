@@ -40,9 +40,8 @@ xset s off
 xset dpms 300 0 0
 
 # disable autorepeat for volume keys
-# NOTE: keycodes found by using `xmodmap -pke | grep Volume`
-# and `xmodmap -pke | grep Mute`
-seq 121 123 | xargs -n 1 xset -r
+xmodmap -pke | grep -E  "(XF86Audio[A-Za-z]+Volume|XF86AudioMute)"  \
+  | cut -d " " -f 2 | xargs -n 1 xset -r
 
 # launch i3
 exec i3
