@@ -4,6 +4,7 @@ REMOTE_DOTFILES = $$(printf '%s\n' alacritty bash dircolors git gnupg htop range
 .PHONY: init
 init:
 	cp "./hooks/pre-commit" "./.git/hooks/"
+	cp "./hooks/post-commit" "./.git/hooks/"
 	git submodule update --init --recursive
 
 .PHONY: update
