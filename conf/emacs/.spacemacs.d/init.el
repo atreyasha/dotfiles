@@ -560,6 +560,8 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; disable show-paren-mode enabled by default in Emacs 28
+  (show-paren-mode 0)
   ;; disable writing of undo-tree history to local file
   (setq undo-tree-auto-save-history nil)
   ;; revert documents to see changes
