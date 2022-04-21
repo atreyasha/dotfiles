@@ -26,6 +26,11 @@
 **** i3
 ***** port ~i3-cycle~ backend to ~i3ipc~ and ship everything to AUR/pypi: https://github.com/mota/i3-cycle/issues/3
 ****** replace ~pypi~ package(s) with this implementation
+***** migrate to ~i3status-rust~
+****** use SIGUSR1 to force update of blocks
+****** remove all other custom scripts and i3blocks-contrib submodule
+****** figure out how to achieve similar level of control and customization
+****** update dotfile tasks as well to remove i3blocks or migrate these as well
 
 **** Monitor configuration
 ***** create ~AUR~ repository for alternative package management: https://github.com/phillipberndt/autorandr/issues/250

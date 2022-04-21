@@ -60,6 +60,19 @@
 
         1.  replace `pypi` package(s) with this implementation
 
+    2.  migrate to `i3status-rust`
+
+        1.  use SIGUSR1 to force update of blocks
+
+        2.  remove all other custom scripts and i3blocks-contrib
+            submodule
+
+        3.  figure out how to achieve similar level of control and
+            customization
+
+        4.  update dotfile tasks as well to remove i3blocks or migrate
+            these as well
+
 3.  Monitor configuration
 
     1.  create `AUR` repository for alternative package management:
