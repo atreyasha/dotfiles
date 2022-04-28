@@ -207,7 +207,13 @@
 
         1.  `adopt` files via stow and perform a git status check
 
-    2.  add a system test option as a script which tests all important
+    2.  adjust `system-upgrade` to possibly ignore backup stage when not
+        necessary on new machine
+
+        1.  or enable selectively only on primary machine and not on
+            downstream ones
+
+    3.  add a system test option as a script which tests all important
         repositories and performs git status
 
         1.  this would also improve quick tests and can be used in a
