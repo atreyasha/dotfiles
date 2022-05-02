@@ -573,7 +573,7 @@ you should place your code here."
   (add-hook 'elpy-mode-hook 'column-enforce-mode)
   ;; modify company-complete to helm-company for elpy
   (add-hook 'elpy-mode-hook
-            '(lambda ()
+            (lambda ()
                (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)
                (setq elpy-rpc-timeout 2)))
   ;; modify company-complete to helm-company for other layers using company
