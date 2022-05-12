@@ -19,7 +19,7 @@ function zle-line-init zle-keymap-select {
   SUFFIX="${vcs_info_msg_0_}]"
 
   # strip right-hand-side to get everything on the left
-  if [[ "$PROMPT" == *"$PREFIX"* ]]; then
+  if [[ "$PROMPT" == *"$PREFIX"* && "$PROMPT" != "$PREFIX"* ]]; then
     PREFIX="${PROMPT//"$PREFIX"*/"$PREFIX"}"
   fi
 
