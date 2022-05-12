@@ -8,12 +8,10 @@ zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:git*' formats " @%b"
 
 # set precmd which is executed before each prompt 
-precmd() {
+function precmd {
+  # compute vcs information and hide errors
   vcs_info 2>/dev/null
-}
 
-# define function for changing prompt depending on zsh vim mode (source and more: https://superuser.com/a/156204)
-function zle-line-init zle-keymap-select {
   # define command prompt prefix and suffix
   PREFIX="[%F{011}%B%n@%m%f%b:%F{blue}%B%~%b%f"
   SUFFIX="${vcs_info_msg_0_}]"
@@ -22,7 +20,10 @@ function zle-line-init zle-keymap-select {
   if [[ "$PROMPT" == *"$PREFIX"* && "$PROMPT" != "$PREFIX"* ]]; then
     PREFIX="${PROMPT//"$PREFIX"*/"$PREFIX"}"
   fi
+}
 
+# define function for changing prompt depending on zsh vim mode (source and more: https://superuser.com/a/156204)
+function zle-line-init zle-keymap-select {
   # create new prompt based on keymap
   case ${KEYMAP} in
     (vicmd)
