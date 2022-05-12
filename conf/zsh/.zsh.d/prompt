@@ -14,12 +14,23 @@ precmd() {
 
 # define function for changing prompt depending on zsh vim mode (source and more: https://superuser.com/a/156204)
 function zle-line-init zle-keymap-select {
-  prefix="[%F{011}%B%n@%m%f%b:%F{blue}%B%~%b%f${vcs_info_msg_0_}]"
+  # define command prompt prefix and suffix
+  PREFIX="[%F{011}%B%n@%m%f%b:%F{blue}%B%~%b%f"
+  SUFFIX="${vcs_info_msg_0_}]"
+
+  # strip right-hand-side to get everything on the left
+  if [[ "$PROMPT" == *"$PREFIX"* ]]; then
+    PREFIX="${PROMPT//"$PREFIX"*/"$PREFIX"}"
+  fi
+
+  # create new prompt based on keymap
   case ${KEYMAP} in
     (vicmd)
-      PROMPT="$prefix%F{green}%#%f " ;;
+      PROMPT="${PREFIX}${SUFFIX}%F{green}%#%f "
+      ;;
     (*)
-      PROMPT="$prefix%# " ;;
+      PROMPT="${PREFIX}${SUFFIX}%# "
+      ;;
   esac
   zle reset-prompt
 }
