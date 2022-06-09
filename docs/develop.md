@@ -203,7 +203,7 @@
 
         1.  update exact subkey when this is fixed
 
-7.  Test cases
+7.  Tests and syncing
 
     1.  test for force-folded directories -\> can re-use existing
         `fold_stow` script
@@ -214,19 +214,17 @@
     3.  can be used for both `dotfiles` and `privates` and can be done
         after basic `stow` test
 
-8.  Sync
-
-    1.  implement `sync` in case repository tests fail
+    4.  implement `sync` in case repository tests fail
 
         1.  `adopt` files via stow and perform a git status check
 
-    2.  adjust `system-upgrade` to possibly ignore backup stage when not
+    5.  adjust `system-upgrade` to possibly ignore backup stage when not
         necessary on new machine
 
         1.  or enable selectively only on primary machine and not on
             downstream ones
 
-    3.  add a system test option as a script which tests all important
+    6.  add a system test option as a script which tests all important
         repositories and performs git status
 
         1.  this would also improve quick tests and can be used in a
@@ -234,7 +232,7 @@
 
         2.  this might help ensure pip packages are checked
 
-9.  Backup
+8.  Backup
 
     1.  clean up local drive and remove unnecessary content
 
@@ -253,7 +251,7 @@
 
     5.  consider purchasing a yubikey to manage GPG keys
 
-10. PGP keys
+9.  PGP keys
 
     1.  host public key on `keys.openpgp.org` or `keybase.io`
 
@@ -262,19 +260,19 @@
 
     3.  consider adding PGP key-id to GitHub page
 
-11. Mimeapps/mailcap
+10. Mimeapps/mailcap
 
     1.  add mailcap helpers in `conf` and coordinate with mimetypes
 
     2.  synchronize mime system program defaults to same as ranger\'s
         rifle
 
-12. Qutebrowser
+11. Qutebrowser
 
     1.  disable dpms/dim when video is playing: see bug report
         <https://github.com/qutebrowser/qutebrowser/issues/5504>
 
-13. GitHub
+12. GitHub
 
     1.  licenses
 
@@ -293,7 +291,7 @@
 
     3.  add testing to `git-hooks` scripts
 
-14. Generic management
+13. Generic management
 
     1.  try to reduce hard-coding in workflows overall -\> if possible
         try to make things inferred

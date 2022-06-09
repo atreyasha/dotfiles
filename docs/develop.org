@@ -78,11 +78,10 @@
 ***** issue of specified subkey not being used: https://github.com/neomutt/neomutt/issues/2980
 ****** update exact subkey when this is fixed
 
-**** Test cases
+**** Tests and syncing
 ***** test for force-folded directories -> can re-use existing ~fold_stow~ script
 ***** test whether symlinks are already created or not as yet -> this is missing from current tests
 ***** can be used for both ~dotfiles~ and ~privates~ and can be done after basic ~stow~ test
-**** Sync
 ***** implement ~sync~ in case repository tests fail
 ****** ~adopt~ files via stow and perform a git status check
 ***** adjust ~system-upgrade~ to possibly ignore backup stage when not necessary on new machine
