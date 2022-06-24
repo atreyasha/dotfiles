@@ -113,7 +113,9 @@
 ******* ~emacs~/~spacemacs~ functions independently, so it is sufficient that ~spacemacs-elpy~ uses GPLv3
 ***** consider improving quality of all ~memory-daemon~ code
 ****** testing might be difficult
-***** add testing to ~git-hooks~ scripts
+***** update hooks repository
+****** add testing to ~git-hooks~ scripts
+****** only process files when there are no more changes unstaged 
 **** Generic management
 ***** try to reduce hard-coding in workflows overall -> if possible try to make things inferred
 ***** think about whether three repos should be set up in environmental variables instead of hard-coded 

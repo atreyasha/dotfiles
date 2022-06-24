@@ -289,7 +289,11 @@
 
         1.  testing might be difficult
 
-    3.  add testing to `git-hooks` scripts
+    3.  update hooks repository
+
+        1.  add testing to `git-hooks` scripts
+
+        2.  only process files when there are no more changes unstaged
 
 13. Generic management
 
