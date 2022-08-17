@@ -7,8 +7,6 @@ configuration {
 	line-margin: 0;
 	line-padding: 1;
 	separator-style: "none";
-	kb-row-tab: "";
-	kb-row-select: "Tab";
 }
 @theme "gruvbox-dark-hard"
 
