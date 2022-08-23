@@ -569,6 +569,8 @@ you should place your code here."
   ;; wrapping for org-mode lines
   (add-hook 'org-mode-hook 'visual-line-mode)
   ;; 80 character warning in ess
+  (add-hook 'sh-mode-hook 'column-enforce-mode)
+  ;; 80 character warning in ess
   (add-hook 'ess-mode-hook 'column-enforce-mode)
   ;; 80 character warning in elpy
   (add-hook 'elpy-mode-hook 'column-enforce-mode)
