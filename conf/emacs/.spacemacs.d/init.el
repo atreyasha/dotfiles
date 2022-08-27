@@ -40,6 +40,7 @@ This function should only modify configuration layer settings."
      helm
      emacs-lisp
      themes-megapack
+     shell-scripts
      (auto-completion :variables auto-completion-idle-delay nil)
      (markdown :variables markdown-live-preview-engine 'vmd)
      (ess :variables ess-use-flymake nil
@@ -50,15 +51,14 @@ This function should only modify configuration layer settings."
              shell-default-position 'bottom)
      (spell-checking :variables spell-checking-enable-by-default nil
                      spell-checking-enable-auto-dictionary t)
-     (syntax-checking :variables
-                      syntax-checking-enable-by-default nil
-                      syntax-checking-enable-tooltips nil)
+     (syntax-checking :variables syntax-checking-enable-tooltips nil)
      (latex-plus :location local
                  :variables
                  latex-enable-magic nil
                  latex-build-command "LatexMk")
      (elpy-plus :location local
                 :variables
+                elpy-formatter "black"
                 python-shell-interpreter "ipython"
                 python-shell-interpreter-args "-i --simple-prompt"
                 elpy-shell-echo-output nil
@@ -564,6 +564,8 @@ you should place your code here."
   (show-paren-mode 0)
   ;; disable writing of undo-tree history to local file
   (setq undo-tree-auto-save-history nil)
+  ;; edit syntax checking command for elpy
+  (setq elpy-syntax-check-command "flake8 --max-line-length 88")
   ;; revert documents to see changes
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
   ;; wrapping for org-mode lines
@@ -574,28 +576,27 @@ you should place your code here."
   (add-hook 'ess-mode-hook 'column-enforce-mode)
   ;; 80 character warning in elpy
   (add-hook 'elpy-mode-hook 'column-enforce-mode)
-  ;; modify company-complete to helm-company for elpy
-  (add-hook 'elpy-mode-hook
-            (lambda ()
-               (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)
-               (setq elpy-rpc-timeout 2)))
+  ;; add a custom elpy-mode hook
+  (defun custom-elpy-mode-hook ()
+    (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)
+    (make-local-variable 'column-enforce-column)
+    (setq column-enforce-column 88))
+  (add-hook 'elpy-mode-hook 'custom-elpy-mode-hook)
+  ;; modify shfmt arguments on sh-mode
+  (with-eval-after-load 'shell
+    (setq shfmt-arguments '("-i" "2")))
   ;; modify company-complete to helm-company for other layers using company
   (with-eval-after-load 'company
     (progn
       (define-key company-mode-map (kbd "M-<tab>") 'helm-company)
       (define-key company-active-map (kbd "M-<tab>") 'helm-company)))
-  ;; re-enables native ipython completion to prevent text flooding issue
-  (with-eval-after-load 'python
-    (setq python-shell-completion-native-disabled-interpreters
-          (delete "ipython" python-shell-completion-native-disabled-interpreters)))
   ;; latex layer fine-tuning
   (with-eval-after-load 'latex
     (setq reftex-auto-view-crossref nil
           LaTeX-syntactic-comments nil
           LaTeX-item-indent 0))
   ;; ensure pasted text in region does not replace current register
-  (setq-default evil-kill-on-visual-paste nil)
-  )
+  (setq-default evil-kill-on-visual-paste nil))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
