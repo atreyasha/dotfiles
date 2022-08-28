@@ -562,41 +562,56 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; disable show-paren-mode enabled by default in Emacs 28
   (show-paren-mode 0)
+
+  ;; ensure pasted text in region does not replace current register
+  ;; source: https://stackoverflow.com/questions/18172728
+  (setq-default evil-kill-on-visual-paste nil)
+
   ;; disable writing of undo-tree history to local file
   (setq undo-tree-auto-save-history nil)
+
   ;; edit syntax checking command for elpy
   (setq elpy-syntax-check-command "flake8 --max-line-length 88")
+
   ;; revert documents to see changes
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
   ;; wrapping for org-mode lines
   (add-hook 'org-mode-hook 'visual-line-mode)
+
   ;; 80 character warning in ess
   (add-hook 'sh-mode-hook 'column-enforce-mode)
+
   ;; 80 character warning in ess
   (add-hook 'ess-mode-hook 'column-enforce-mode)
-  ;; 80 character warning in elpy
-  (add-hook 'elpy-mode-hook 'column-enforce-mode)
-  ;; add a custom elpy-mode hook
+
+  ;; add a custom elpy-mode hook and use sharp-quote
+  ;; NOTE: use a buffer-local variable to not affect other buffers
+  ;; source: https://www.emacswiki.org/emacs/BufferLocalVariable
+  ;; source: https://emacs.stackexchange.com/questions/35988
   (defun custom-elpy-mode-hook ()
     (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)
     (make-local-variable 'column-enforce-column)
-    (setq column-enforce-column 88))
-  (add-hook 'elpy-mode-hook 'custom-elpy-mode-hook)
+    (setq column-enforce-column 88)
+    (column-enforce-mode))
+  (add-hook 'elpy-mode-hook #'custom-elpy-mode-hook)
+
   ;; modify shfmt arguments on sh-mode
   (with-eval-after-load 'shell
     (setq shfmt-arguments '("-i" "2")))
+
   ;; modify company-complete to helm-company for other layers using company
+  ;; NOTE: we don't need progn in with-eval-after-load
+  ;; source: https://stackoverflow.com/questions/21880139/what-is-with-eval-after-load-in-emacs-lisp
   (with-eval-after-load 'company
-    (progn
-      (define-key company-mode-map (kbd "M-<tab>") 'helm-company)
-      (define-key company-active-map (kbd "M-<tab>") 'helm-company)))
+    (define-key company-mode-map (kbd "M-<tab>") 'helm-company)
+    (define-key company-active-map (kbd "M-<tab>") 'helm-company))
+
   ;; latex layer fine-tuning
   (with-eval-after-load 'latex
     (setq reftex-auto-view-crossref nil
           LaTeX-syntactic-comments nil
-          LaTeX-item-indent 0))
-  ;; ensure pasted text in region does not replace current register
-  (setq-default evil-kill-on-visual-paste nil))
+          LaTeX-item-indent 0)))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
