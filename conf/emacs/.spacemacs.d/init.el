@@ -62,7 +62,7 @@ This function should only modify configuration layer settings."
                 python-shell-interpreter "ipython"
                 python-shell-interpreter-args "-i --simple-prompt"
                 elpy-shell-echo-output nil
-                elpy-rpc-virtualenv-path "~/.spacemacs.d/rpc/elpy/rpc-venv")
+                elpy-rpc-virtualenv-path 'current)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
