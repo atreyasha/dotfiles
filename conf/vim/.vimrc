@@ -4,6 +4,9 @@ packloadall
 " add git submodule for code base
 set runtimepath+=~/.vim_runtime
 
+" define blacklist for pathogen
+let g:pathogen_blacklist = ["ale", "jedi-vim"]
+
 " source upstream defaults
 source ~/.vim_runtime/vimrcs/basic.vim
 source ~/.vim_runtime/vimrcs/filetypes.vim
@@ -66,9 +69,6 @@ highlight LineNr term=NONE cterm=NONE ctermfg=Grey ctermbg=NONE
 highlight CursorLineNr term=bold cterm=bold ctermbg=0
 highlight CursorLine term=NONE cterm=NONE ctermbg=0
 highlight SpellBad cterm=underline ctermfg=red
-
-" disable linting by default
-let g:ale_enabled = 0
 
 " workaround for bug in search where lines get duplicated
 " see https://github.com/vim/vim/issues/5805 for bug report and workaround 
