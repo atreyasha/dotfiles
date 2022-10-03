@@ -611,7 +611,10 @@ you should place your code here."
   (with-eval-after-load 'latex
     (setq reftex-auto-view-crossref nil
           LaTeX-syntactic-comments nil
-          LaTeX-item-indent 0)))
+          LaTeX-item-indent 0
+          reftex-enable-partial-scans t
+          reftex-save-parse-info t
+          reftex-use-multiple-selection-buffers t)))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
