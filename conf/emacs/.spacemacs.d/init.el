@@ -589,12 +589,16 @@ you should place your code here."
   ;; NOTE: use a buffer-local variable to not affect other buffers
   ;; source: https://www.emacswiki.org/emacs/BufferLocalVariable
   ;; source: https://emacs.stackexchange.com/questions/35988
+  ;; source: https://stackoverflow.com/a/2736153
   (defun custom-elpy-mode-hook ()
-    (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)
     (make-local-variable 'column-enforce-column)
     (setq column-enforce-column 88)
     (column-enforce-mode))
   (add-hook 'elpy-mode-hook #'custom-elpy-mode-hook)
+
+  ;; modify isort arguments
+  (with-eval-after-load 'elpy
+    (setq python-isort-arguments '("--profile" "black" "--stdout" "--atomic" "-")))
 
   ;; modify shfmt arguments on sh-mode
   (with-eval-after-load 'shell
