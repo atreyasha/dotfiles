@@ -591,6 +591,7 @@ you should place your code here."
   ;; source: https://emacs.stackexchange.com/questions/35988
   ;; source: https://stackoverflow.com/a/2736153
   (defun custom-elpy-mode-hook ()
+    (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)
     (make-local-variable 'column-enforce-column)
     (setq column-enforce-column 88)
     (column-enforce-mode))
