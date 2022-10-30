@@ -570,9 +570,6 @@ you should place your code here."
   ;; disable writing of undo-tree history to local file
   (setq undo-tree-auto-save-history nil)
 
-  ;; edit syntax checking command for elpy
-  (setq elpy-syntax-check-command "flake8 --max-line-length 88")
-
   ;; revert documents to see changes
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
