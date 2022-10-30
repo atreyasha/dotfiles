@@ -597,10 +597,6 @@ you should place your code here."
     (column-enforce-mode))
   (add-hook 'elpy-mode-hook #'custom-elpy-mode-hook)
 
-  ;; modify isort arguments
-  (with-eval-after-load 'elpy
-    (setq python-isort-arguments '("--profile" "black" "--stdout" "--atomic" "-")))
-
   ;; modify shfmt arguments on sh-mode
   (with-eval-after-load 'shell
     (setq shfmt-arguments '("-i" "2")))
