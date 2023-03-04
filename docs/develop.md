@@ -1,6 +1,6 @@
 ## Table of Contents
--   [Tasks](#tasks)
-    -   [Long-term](#long-term)
+-   [Tasks](#tasks){#toc-tasks}
+    -   [Long-term](#long-term){#toc-long-term}
 
 ## Tasks
 
@@ -309,6 +309,8 @@
             usage
 
         2.  provide CLI options to overwrite options
+
+        3.  use `stow` by default and just manage argument inputs
 
     4.  consider adding more dotfiles to forced stow category,
         especially those where files get actively overwritten -\> for
