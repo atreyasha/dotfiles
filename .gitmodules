@@ -1,9 +1,6 @@
 [submodule "i3blocks-contrib"]
   path = conf/i3/.config/i3/i3blocks-contrib
   url = https://github.com/vivien/i3blocks-contrib.git
-[submodule "vimrc"]
-  path = conf/vim/.vim_runtime
-  url = https://github.com/amix/vimrc.git
 [submodule "ranger_devicons"]
   path = conf/ranger/.config/ranger/plugins/ranger_devicons
   url = https://github.com/alexanderjeurissen/ranger_devicons.git
@@ -22,3 +19,7 @@
 [submodule "vim-syntax-clingo"]
   path = conf/vim/.vim/pack/plugins/start/vim-syntax-clingo
   url = https://github.com/rkaminsk/vim-syntax-clingo.git
+[submodule "conf/vim/.vim_runtime"]
+  path = conf/vim/.vim_runtime
+  url = https://github.com/atreyasha/vimrc
+  branch = master
