@@ -101,6 +101,8 @@
             overcome issue:
             <https://github.com/neovim/neovim/issues/12103>
 
+        5.  or otherwise migrate away from vim towards fully emacs
+
     2.  Next
 
         1.  re-develop neovim configuration from the ground up by

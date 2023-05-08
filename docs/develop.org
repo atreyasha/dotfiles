@@ -43,6 +43,7 @@
 ****** conditional ~xterm-256color~ declaration inside ~.vimrc~ if ~nvim~ is not running
 ******* update variables referencing ~xterm-256color~ or ~vim~ in dotfiles if necessary
 ****** find good location to install ~suda~ plugin from ~nvim~ to overcome issue: https://github.com/neovim/neovim/issues/12103
+****** or otherwise migrate away from vim towards fully emacs
 ***** Next
 ****** re-develop neovim configuration from the ground up by removing all unnecessary plugins 
 ****** sort out a clean way of updating all plugins as necessary: https://github.com/amix/vimrc/issues/637
