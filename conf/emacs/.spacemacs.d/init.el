@@ -41,6 +41,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      themes-megapack
      shell-scripts
+     docker
      (auto-completion :variables auto-completion-idle-delay nil)
      (markdown :variables markdown-live-preview-engine 'vmd)
      (ess :variables ess-use-flymake nil
