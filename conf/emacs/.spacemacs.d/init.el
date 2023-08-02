@@ -32,38 +32,45 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     python
      org
+     latex
      bibtex
-     ruby
-     html
      yaml
      helm
      emacs-lisp
      themes-megapack
      shell-scripts
      docker
-     (auto-completion :variables auto-completion-idle-delay nil)
-     (markdown :variables markdown-live-preview-engine 'vmd)
-     (ess :variables ess-use-flymake nil
-          ess-indent-with-fancy-comments nil
-          ess-eval-visibly 'nowait)
+     lsp
+     prettier
+     (html :variables
+           css-enable-lsp t
+           html-enable-lsp t
+           web-fmt-tool 'prettier)
+     (javascript :variables
+                 javascript-backend 'lsp
+                 javascript-lsp-linter nil
+                 javascript-fmt-tool 'prettier
+                 node-add-modules-path t
+                 js2-basic-offset 2
+                 js-indent-level 2
+                 js2-mode-show-strict-warnings nil
+                 js2-mode-show-parse-errors nil)
+     (vue :variables
+          vue-backend 'dumb)
+     (auto-completion :variables
+                      auto-completion-idle-delay nil)
+     (markdown :variables
+               markdown-live-preview-engine 'vmd)
      (shell :variables
              shell-default-height 30
              shell-default-position 'bottom)
-     (spell-checking :variables spell-checking-enable-by-default nil
+     (spell-checking :variables
+                     spell-checking-enable-by-default nil
                      spell-checking-enable-auto-dictionary t)
-     (syntax-checking :variables syntax-checking-enable-tooltips nil)
-     (latex-plus :location local
-                 :variables
-                 latex-enable-magic nil
-                 latex-build-command "LatexMk")
-     (elpy-plus :location local
-                :variables
-                elpy-formatter "black"
-                python-shell-interpreter "ipython"
-                python-shell-interpreter-args "-i --simple-prompt"
-                elpy-shell-echo-output nil
-                elpy-rpc-virtualenv-path 'current)
+     (syntax-checking :variables
+                      syntax-checking-enable-tooltips nil)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -579,21 +586,6 @@ you should place your code here."
 
   ;; 80 character warning in ess
   (add-hook 'sh-mode-hook 'column-enforce-mode)
-
-  ;; 80 character warning in ess
-  (add-hook 'ess-mode-hook 'column-enforce-mode)
-
-  ;; add a custom elpy-mode hook and use sharp-quote
-  ;; NOTE: use a buffer-local variable to not affect other buffers
-  ;; source: https://www.emacswiki.org/emacs/BufferLocalVariable
-  ;; source: https://emacs.stackexchange.com/questions/35988
-  ;; source: https://stackoverflow.com/a/2736153
-  (defun custom-elpy-mode-hook ()
-    (define-key elpy-mode-map (kbd "M-<tab>") 'helm-company)
-    (make-local-variable 'column-enforce-column)
-    (setq column-enforce-column 88)
-    (column-enforce-mode))
-  (add-hook 'elpy-mode-hook #'custom-elpy-mode-hook)
 
   ;; modify org variables
   (with-eval-after-load 'org
