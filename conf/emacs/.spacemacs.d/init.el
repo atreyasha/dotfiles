@@ -59,7 +59,7 @@ This function should only modify configuration layer settings."
                  js2-mode-show-strict-warnings nil
                  js2-mode-show-parse-errors nil)
      (vue :variables
-          vue-backend 'dumb)
+          vue-backend 'lsp)
      (auto-completion :variables
                       auto-completion-idle-delay nil)
      (markdown :variables
