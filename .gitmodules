@@ -9,10 +9,6 @@
   path = conf/emacs/.emacs.d
   url = https://github.com/syl20bnr/spacemacs.git
   branch = develop
-[submodule "spacemacs-elpy"]
-  path = conf/emacs/.spacemacs.d/layers/spacemacs-elpy
-  url = https://github.com/atreyasha/spacemacs-elpy.git
-  branch = main
 [submodule "zsh-system-clipboard"]
   path = conf/zsh/.zsh.d/plugins/zsh-system-clipboard
   url = https://github.com/kutsan/zsh-system-clipboard.git
