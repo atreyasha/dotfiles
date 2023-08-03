@@ -45,6 +45,9 @@ This function should only modify configuration layer settings."
      docker
      lsp
      prettier
+     (json :variables
+           json-fmt-tool 'prettier
+           json-backend nil)
      (html :variables
            css-enable-lsp t
            html-enable-lsp t
