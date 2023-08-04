@@ -127,7 +127,8 @@
             system update
 
         3.  try to make `emacs` persistent replacement for `vim` with
-            terminal navigation
+            terminal navigation -\> then we can uninstall vim or keep
+            very minimal configuration
 
     2.  Patch `company-reftex`
 

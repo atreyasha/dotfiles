@@ -53,7 +53,7 @@
 ***** Change emacs distribution
 ****** migrate to lightweight and lean personal emacs configuration which would be optimized with time such as with ~doom~ -> might help circumvent many bugs encountered such as those with ~latex~ and ~elpy~ compatibilities
 ****** work on script which updates all emacs packages during system update
-****** try to make ~emacs~ persistent replacement for ~vim~ with terminal navigation
+****** try to make ~emacs~ persistent replacement for ~vim~ with terminal navigation -> then we can uninstall vim or keep very minimal configuration
 ***** Patch ~company-reftex~
 ****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in ~company-reftex-citation-candidates~, for development add package (eg. ~(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))~) in ~dotspacemacs-additional-packages~ and update packages, delete old package location 
 ****** think about removing ~(reftex-access-scan-info)~ before ~parse-all~ since this seems to be redundant, but would need more in-depth knowledge to figure this out
