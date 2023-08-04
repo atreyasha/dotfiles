@@ -99,3 +99,6 @@ let g:lightline = {
 
 " temporary fix for https://github.com/amix/vimrc/issues/635
 let g:snipMate = { 'snippet_version' : 1 }
+
+" override for javascript folding
+au FileType javascript setl nofen
