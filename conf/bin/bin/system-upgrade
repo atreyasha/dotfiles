@@ -71,7 +71,8 @@ upgrade_all_pip() {
     sys; print('\n'.join([x['name'] for x in json.load(sys.stdin)]))")"
   if [ -n "$outdated_pkgs" ]; then
     # iterate through outdated packages
-    printf "%s\n" "$outdated_pkgs" | xargs -n1 pip install --user -U
+    printf "%s\n" "$outdated_pkgs" | xargs -n1 pip install \
+      --user --break-system-packages -U
 
     # update pip package list
     if [ -d "$HOME/monix" ]; then
