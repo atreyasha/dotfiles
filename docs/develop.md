@@ -126,6 +126,9 @@
         2.  work on script which updates all emacs packages during
             system update
 
+        3.  try to make `emacs` persistent replacement for `vim` with
+            terminal navigation
+
     2.  Patch `company-reftex`
 
         1.  think about improving workflow to handle spaces, make case

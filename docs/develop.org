@@ -45,7 +45,7 @@
 ****** find good location to install ~suda~ plugin from ~nvim~ to overcome issue: https://github.com/neovim/neovim/issues/12103
 ****** or otherwise migrate away from vim towards fully emacs
 ***** Next
-****** re-develop neovim configuration from the ground up by removing all unnecessary plugins 
+****** re-develop neovim configuration from the ground up by removing all unnecessary plugins
 ****** sort out a clean way of updating all plugins as necessary: https://github.com/amix/vimrc/issues/637
 ******* this is no longer be necessary since plugins are regularly updated upstream
 
@@ -53,6 +53,7 @@
 ***** Change emacs distribution
 ****** migrate to lightweight and lean personal emacs configuration which would be optimized with time such as with ~doom~ -> might help circumvent many bugs encountered such as those with ~latex~ and ~elpy~ compatibilities
 ****** work on script which updates all emacs packages during system update
+****** try to make ~emacs~ persistent replacement for ~vim~ with terminal navigation
 ***** Patch ~company-reftex~
 ****** think about improving workflow to handle spaces, make case unsensitive and parse bibliography codes better (eg. "doran2017does" from "do") in ~company-reftex-citation-candidates~, for development add package (eg. ~(company-reftex :location (recipe :fetcher github :repo "atreyasha/company-reftex"))~) in ~dotspacemacs-additional-packages~ and update packages, delete old package location 
 ****** think about removing ~(reftex-access-scan-info)~ before ~parse-all~ since this seems to be redundant, but would need more in-depth knowledge to figure this out
