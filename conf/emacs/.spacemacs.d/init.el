@@ -621,6 +621,10 @@ you should place your code here."
     (define-key company-mode-map (kbd "M-<tab>") 'helm-company)
     (define-key company-active-map (kbd "M-<tab>") 'helm-company))
 
+  ;; disable warnings on lsp server missing
+  (with-eval-after-load 'lsp-mode
+    (setq lsp-warn-no-matched-clients nil))
+
   ;; latex layer fine-tuning
   (with-eval-after-load 'latex
     (setq reftex-auto-view-crossref nil
