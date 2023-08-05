@@ -7,18 +7,18 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:git*' formats " @%b"
 
-# set precmd which is executed before each prompt 
+# set precmd which is executed before each prompt
 function precmd {
   # compute vcs information and hide errors
   vcs_info 2>/dev/null
 
   # define command prompt prefix and suffix
-  PREFIX="[%F{011}%B%n@%m%f%b:%F{blue}%B%~%b%f"
-  SUFFIX="${vcs_info_msg_0_}]"
+  _PREFIX="[%F{011}%B%n@%m%f%b:%F{blue}%B%~%b%f"
+  _SUFFIX="${vcs_info_msg_0_}]"
 
   # strip right-hand-side to get everything on the left
-  if [[ "$PROMPT" == *"$PREFIX"* && "$PROMPT" != "$PREFIX"* ]]; then
-    PREFIX="${PROMPT//"$PREFIX"*/"$PREFIX"}"
+  if [[ "$PROMPT" == *"$_PREFIX"* && "$PROMPT" != "$_PREFIX"* ]]; then
+    _PREFIX="${PROMPT//"$_PREFIX"*/"$_PREFIX"}"
   fi
 }
 
@@ -27,10 +27,10 @@ function zle-line-init zle-keymap-select {
   # create new prompt based on keymap
   case ${KEYMAP} in
     (vicmd)
-      PROMPT="${PREFIX}${SUFFIX}%F{green}%#%f "
+      PROMPT="${_PREFIX}${_SUFFIX}%F{green}%#%f "
       ;;
     (*)
-      PROMPT="${PREFIX}${SUFFIX}%# "
+      PROMPT="${_PREFIX}${_SUFFIX}%# "
       ;;
   esac
   zle reset-prompt
