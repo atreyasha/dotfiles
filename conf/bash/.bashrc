@@ -15,3 +15,6 @@ BASHD="$HOME/.bash.d"
 . "$BASHD/completions"
 . "$BASHD/options"
 . "$BASHD/aliases"
+
+# modular plugins
+. "$BASHD/plugins/nvm"

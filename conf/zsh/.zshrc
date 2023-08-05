@@ -15,3 +15,4 @@ ZSHD="$HOME/.zsh.d"
 
 # zsh-clipboard for system clipboard communication
 . "$ZSHD/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
+. "$ZSHD/plugins/nvm"
