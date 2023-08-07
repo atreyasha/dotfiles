@@ -41,10 +41,11 @@ This function should only modify configuration layer settings."
      helm
      emacs-lisp
      themes-megapack
-     shell-scripts
      docker
      lsp
      prettier
+     (shell-scripts :variables
+                    shell-scripts-backend nil)
      (json :variables
            json-fmt-tool 'prettier
            json-backend nil)
