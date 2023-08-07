@@ -626,6 +626,10 @@ you should place your code here."
   (with-eval-after-load 'lsp-mode
     (setq lsp-warn-no-matched-clients nil))
 
+  ;; change indent size for CSS
+  (with-eval-after-load 'css-mode
+    (setq css-indent-offset 2))
+
   ;; latex layer fine-tuning
   (with-eval-after-load 'latex
     (setq reftex-auto-view-crossref nil
