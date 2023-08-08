@@ -52,6 +52,7 @@ This function should only modify configuration layer settings."
      (html :variables
            css-enable-lsp t
            html-enable-lsp t
+           scss-enable-lsp t
            web-fmt-tool 'prettier)
      (javascript :variables
                  javascript-backend 'lsp
