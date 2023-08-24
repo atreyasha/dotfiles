@@ -33,7 +33,10 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     python
+     (python :variables
+             python-backend 'lsp
+             python-test-runner nil
+             python-formatter 'black)
      org
      latex
      bibtex
