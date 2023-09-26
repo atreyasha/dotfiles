@@ -846,7 +846,7 @@ config.load_autoconfig(False)
 ## QtWebEngine, writing the clipboard as response to a user interaction
 ## is always allowed.
 ## Type: Bool
-c.content.javascript.can_access_clipboard = True
+c.content.javascript.clipboard = "access-paste"
 
 ## Allow JavaScript to close tabs.
 ## Type: Bool
