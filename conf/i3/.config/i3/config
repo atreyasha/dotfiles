@@ -118,6 +118,9 @@ bindsym XF86MonBrightnessDown exec "light -U 10"
 # toggle on wifi signal
 bindsym $mod+Shift+w exec "toggle-radio"
 
+# toggle keyboard layout
+bindsym $mod+Shift+k exec "toggle-key-layout"
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# switch actual layout
+xkb-switch -n
+
+# refresh i3blocks key layout
+refresh-i3blocks-key-layout
