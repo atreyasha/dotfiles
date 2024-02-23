@@ -109,13 +109,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q sset Master unmute 
 # toggle audio mute
 bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master toggle && refresh-i3blocks-audio"
 
-# Screen brightness controls
+# screen brightness controls
 # increase screen brightness
 bindsym XF86MonBrightnessUp exec "light -A 10"
 # decrease screen brightness
 bindsym XF86MonBrightnessDown exec "light -U 10"
 
-# Turn on wifi signal
+# toggle on wifi signal
 bindsym $mod+Shift+w exec "toggle-radio"
 
 # reload the configuration file
@@ -200,7 +200,7 @@ mode "swap selected container" {
 bindsym $mod+q exec --no-startup-id qutebrowser
 
 # change monitors based on new connection
-bindsym $mod+Shift+m exec --no-startup-id "refresh-monitor && feh-background" 
+bindsym $mod+Shift+m exec --no-startup-id "refresh-monitor && feh-background"
 
 # balance workspace
 bindsym $mod+Shift+b exec "i3_balance_workspace"
@@ -213,7 +213,7 @@ exec --no-startup-id i3-msg workspace $ws1; { i3-sensible-terminal --working-dir
 exec --no-startup-id "amixer -q sset Master 50% && amixer -q sset Master mute && refresh-i3blocks-audio"
 
 # check monitors and reset wallpaper at startup
-exec --no-startup-id "refresh-monitor && feh-background" 
+exec --no-startup-id "refresh-monitor && feh-background"
 
 # startup picom for better graphics and stop flickering
 exec_always --no-startup-id "launch-picom"
