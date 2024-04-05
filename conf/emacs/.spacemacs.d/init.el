@@ -59,16 +59,13 @@ This function should only modify configuration layer settings."
            web-fmt-tool 'prettier)
      (javascript :variables
                  javascript-backend 'lsp
-                 javascript-lsp-linter nil
                  javascript-fmt-tool 'prettier
                  node-add-modules-path t
                  js2-basic-offset 2
                  js-indent-level 2
                  js2-mode-show-strict-warnings nil
                  js2-mode-show-parse-errors nil)
-     (vue :variables
-          vue-backend 'lsp
-          vue-ignore-lsp-diagnostics t)
+     react
      (auto-completion :variables
                       auto-completion-idle-delay nil)
      (markdown :variables
