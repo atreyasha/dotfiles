@@ -1143,7 +1143,7 @@ c.editor.command = ['i3-sensible-terminal', '-e', 'vim', '{file}']
 ## either a float value with a "pt" suffix, or an integer value with a
 ## "px" suffix.
 ## Type: String
-# c.fonts.default_size = '10pt'
+c.fonts.default_size = '11pt'
 
 ## Font used for the downloadbar.
 ## Type: Font
@@ -1943,7 +1943,7 @@ c.url.start_pages = ['https://www.google.com']
 
 ## Default zoom level.
 ## Type: Perc
-# c.zoom.default = '100%'
+c.zoom.default = '110%'
 
 ## Available zoom levels.
 ## Type: List of Perc

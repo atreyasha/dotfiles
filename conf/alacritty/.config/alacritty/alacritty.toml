@@ -6,7 +6,7 @@ foreground = "#dcdccc"
 WINIT_X11_SCALE_FACTOR = "1.0"
 
 [font]
-size = 11.0
+size = 12.0
 
 [font.bold]
 family = "BitstromWera Nerd Font Mono"

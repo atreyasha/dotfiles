@@ -1,6 +1,6 @@
 configuration {
 	modi: "drun";
-	font: "mono 10";
+	font: "mono 11";
 	bw: 0;
 	location: 1;
 	disable-history: false;
