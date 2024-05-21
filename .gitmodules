@@ -12,9 +12,6 @@
 [submodule "zsh-system-clipboard"]
   path = conf/zsh/.zsh.d/plugins/zsh-system-clipboard
   url = https://github.com/kutsan/zsh-system-clipboard.git
-[submodule "vim-syntax-clingo"]
-  path = conf/vim/.vim/pack/plugins/start/vim-syntax-clingo
-  url = https://github.com/rkaminsk/vim-syntax-clingo.git
 [submodule "conf/vim/.vim_runtime"]
   path = conf/vim/.vim_runtime
   url = https://github.com/atreyasha/vimrc
