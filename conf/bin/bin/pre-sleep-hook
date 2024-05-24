@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# execute if no i3lock present
-if ! pgrep -u "$USER" -x i3lock &>/dev/null; then
-  sleep 0.1
-  i3lock-fancy-rapid 5 3
-fi
