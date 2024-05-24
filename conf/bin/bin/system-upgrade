@@ -14,7 +14,7 @@ repositories. Finally, this script (optionally) backs up important
 user data.
 
 Options:
-  --no-backup <flag>  Ignore personal backup after upgrade routine
+  --no-backup <flag>  Ignore system backup after upgrade routine
   -h, --help  <flag>  Show this help message and exit
 EOF
 }
@@ -142,11 +142,11 @@ main() {
 
   # execute backup if allowed
   if ((BACKUP)); then
-    logger "info" "Backing up personal data"
-    if personal-backup; then
-      logger "success" "Personal backup successful"
+    logger "info" "Backing up system data"
+    if system-backup; then
+      logger "success" "System backup successful"
     else
-      logger "failure" "Personal backup failure"
+      logger "failure" "System backup failure"
     fi
   fi
 }

@@ -4,9 +4,9 @@ set -e
 # usage function
 usage() {
   cat <<EOF
-Usage: personal-backup [option...]
+Usage: system-backup [option...]
 
-This script backs up a personal data directory into an external
+This script backs up a data directory into an external
 hard drive. In addition, it optionally backs up all PGP keys.
 
 Optional arguments:
@@ -104,8 +104,8 @@ main() {
       fi
     fi
 
-    # backup personal directory
-    printf "%s\n" "==> Backing up personal data"
+    # backup data directory
+    printf "%s\n" "==> Backing up system data"
     sudo mkdir -p "$MOUNTPOINT/$BACKUP_TARGET_DIR"
     sudo rsync -a --delete --info=progress2 "$BACKUP_SOURCE" "$MOUNTPOINT/$BACKUP_TARGET_DIR"
 
