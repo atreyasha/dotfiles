@@ -1,6 +1,0 @@
-.include /etc/pulse/default.pa
-
-### unload module for device restoration
-.ifexists module-device-restore.so
-  unload-module module-device-restore
-.endif
