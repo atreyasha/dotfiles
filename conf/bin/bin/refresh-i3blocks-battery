@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-pkill -SIGRTMIN+9 -x i3blocks
