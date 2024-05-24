@@ -130,9 +130,9 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e mode "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff"
 mode "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff" {
   # commands inside mode
-  bindsym s mode "default"; exec --no-startup-id "i3lock-lock-wrapper & sleep 1; systemctl suspend"
+  bindsym s mode "default"; exec --no-startup-id "i3lock-wrapper & sleep 1; systemctl suspend"
   bindsym o exec --no-startup-id i3-msg exit
-  bindsym l mode "default"; exec --no-startup-id i3lock-lock-wrapper
+  bindsym l mode "default"; exec --no-startup-id i3lock-wrapper
   bindsym r exec --no-startup-id systemctl reboot
   bindsym p exec --no-startup-id systemctl poweroff
   # exit mode
