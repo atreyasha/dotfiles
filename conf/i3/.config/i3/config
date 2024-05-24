@@ -116,10 +116,10 @@ bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 10"
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 10"
 
 # toggle on wifi signal
-bindsym $mod+Shift+w exec --no-startup-id "toggle-radio"
+bindsym $mod+Shift+w exec --no-startup-id "toggle-wifi && refresh-i3blocks-internet"
 
 # toggle keyboard layout
-bindsym $mod+Shift+k exec --no-startup-id "toggle-key-layout"
+bindsym $mod+Shift+k exec --no-startup-id "xkb-switch -n && refresh-i3blocks-keyboard"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -130,9 +130,9 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e mode "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff"
 mode "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff" {
   # commands inside mode
-  bindsym s mode "default"; exec --no-startup-id "i3lock-blur-lock & sleep 1; systemctl suspend"
+  bindsym s mode "default"; exec --no-startup-id "i3lock-lock-wrapper & sleep 1; systemctl suspend"
   bindsym o exec --no-startup-id i3-msg exit
-  bindsym l mode "default"; exec --no-startup-id i3lock-blur-lock
+  bindsym l mode "default"; exec --no-startup-id i3lock-lock-wrapper
   bindsym r exec --no-startup-id systemctl reboot
   bindsym p exec --no-startup-id systemctl poweroff
   # exit mode
@@ -203,7 +203,7 @@ mode "swap selected container" {
 bindsym $mod+q exec --no-startup-id qutebrowser
 
 # change monitors based on new connection
-bindsym $mod+Shift+m exec --no-startup-id "refresh-monitor && feh-background"
+bindsym $mod+Shift+m exec --no-startup-id "autorandr --change && feh-background"
 
 # balance workspace
 bindsym $mod+Shift+b exec --no-startup-id "i3_balance_workspace"
@@ -216,10 +216,10 @@ exec --no-startup-id i3-msg workspace $ws1; { i3-sensible-terminal --working-dir
 exec --no-startup-id "amixer -q sset Master 50% && amixer -q sset Master mute && refresh-i3blocks-audio"
 
 # check monitors and reset wallpaper at startup
-exec --no-startup-id "refresh-monitor && feh-background"
+exec --no-startup-id "autorandr --change && feh-background"
 
 # startup picom for better graphics and stop flickering
-exec_always --no-startup-id "launch-picom"
+exec_always --no-startup-id "picom-wrapper"
 
 # start i3bar to display a workspace bar
 bar {

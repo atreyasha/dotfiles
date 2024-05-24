@@ -9,6 +9,3 @@ if [ "$wifi" = "disabled" ]; then
 else
   nmcli radio wifi off
 fi
-
-# refresh i3blocks internet
-refresh-i3blocks-internet
