@@ -116,7 +116,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 10"
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 10"
 
 # toggle on wifi signal
-bindsym $mod+Shift+w exec --no-startup-id "toggle-wifi && refresh-i3blocks-internet"
+bindsym $mod+Shift+w exec --no-startup-id "wifi toggle && refresh-i3blocks-internet"
 
 # toggle keyboard layout
 bindsym $mod+Shift+k exec --no-startup-id "xkb-switch -n && refresh-i3blocks-keyboard"
