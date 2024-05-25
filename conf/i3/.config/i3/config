@@ -21,7 +21,9 @@ bindsym $mod+Return exec --no-startup-id i3-sensible-terminal --working-director
 bindsym $mod+Shift+q kill
 
 # launch rofi on the focused monitor
-bindsym $mod+d exec --no-startup-id "i3-msg -t get_workspaces | jq '.[] | select(.focused==true).output' | xargs -I{} rofi -monitor {} -show drun -config ~/.config/rofi/config_drun"
+bindsym $mod+d exec --no-startup-id "i3-msg -t get_workspaces | \
+  jq '.[] | select(.focused==true).output' | \
+  xargs -I{} rofi -monitor {} -show drun -config ~/.config/rofi/config_drun"
 
 # use i3-cycle from pip to cycle around windows
 bindsym $mod+Left exec --no-startup-id i3-cycle left
