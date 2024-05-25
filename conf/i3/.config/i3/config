@@ -104,20 +104,15 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # Pulse Audio controls
 # unmute and increase sound volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id \
-  "amixer -q sset Master unmute && \
-  amixer -q sset Master 5%+ && \
-  pkill -SIGRTMIN+10 -x i3blocks"
+  "amixer -q sset Master unmute && amixer -q sset Master 5%+"
 
 # unmute and decrease sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id \
-  "amixer -q sset Master unmute && \
-  amixer -q sset Master 5%- && \
-  pkill -SIGRTMIN+10 -x i3blocks"
+  "amixer -q sset Master unmute && amixer -q sset Master 5%-"
 
 # toggle audio mute
 bindsym XF86AudioMute exec --no-startup-id \
-  "amixer -q sset Master toggle && \
-  pkill -SIGRTMIN+10 -x i3blocks"
+  "amixer -q sset Master toggle"
 
 # screen brightness controls
 # increase screen brightness
@@ -128,12 +123,12 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 10"
 # toggle on wifi signal
 bindsym $mod+Shift+w exec --no-startup-id \
   "wifi toggle && \
-  pkill -SIGRTMIN+8 -x i3blocks"
+  pkill -SIGRTMIN+8 -x i3status-rs"
 
 # toggle keyboard layout
 bindsym $mod+Shift+k exec --no-startup-id \
   "xkb-switch -n && \
-  pkill -SIGRTMIN+9 -x i3blocks"
+  pkill -SIGRTMIN+9 -x i3status-rs"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -238,7 +233,7 @@ exec_always --no-startup-id "picom-wrapper"
 # start i3bar to display a workspace bar
 bar {
   # output primary
-  status_command "SCRIPT_DIR=~/.config/i3/i3blocks-contrib SCRIPT_DIR_CUSTOM=~/.config/i3/custom-scripts i3blocks -c ~/.config/i3/i3blocks.conf"
+  status_command i3status-rs ~/.config/i3/config.toml
   # specify bar position
   position top
 }
