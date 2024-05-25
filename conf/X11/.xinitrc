@@ -38,7 +38,6 @@ feh-background &
 unclutter --timeout 1 &
 xset s off
 xset dpms 300 0 0
-light -N 10
 
 # launch i3
 exec i3
