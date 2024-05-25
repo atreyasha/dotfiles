@@ -38,6 +38,7 @@ signal = 8
 
 [[block]]
 block = "net"
+format = " $icon ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K) "
 inactive_format = ""
 signal = 8
 
