@@ -1,5 +1,4 @@
 # -*- mode: shell-script -*-
-# vim: syntax=sh
 
 # enabling and setting git info var to be used in prompt config
 # source: https://medium.com/pareture/simplest-zsh-prompt-configs-for-git-branch-name-3d01602a6f33

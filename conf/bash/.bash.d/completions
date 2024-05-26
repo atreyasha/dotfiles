@@ -1,5 +1,4 @@
 # -*- mode: shell-script -*-
-# vim: syntax=sh
 
 # enable programmable completion features
 if ! shopt -oq posix; then

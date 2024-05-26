@@ -1,5 +1,4 @@
 # -*- mode: shell-script -*-
-# vim: syntax=sh
 
 # set terminfo if this is missing
 if [ "$TERM" == "alacritty" ] && ! infocmp alacritty &>/dev/null && [ -f "$HOME/.config/alacritty/alacritty.terminfo" ]; then

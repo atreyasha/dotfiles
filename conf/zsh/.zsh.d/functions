@@ -1,5 +1,4 @@
 # -*- mode: shell-script -*-
-# vim: syntax=sh
 
 # function for ranger-cd
 function ranger-cd {

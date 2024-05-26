@@ -1,5 +1,4 @@
 # -*- mode: shell-script -*-
-# vim: syntax=sh
 
 # update tty for gnupg's pinentry program
 if command -v gpg-connect-agent &>/dev/null; then

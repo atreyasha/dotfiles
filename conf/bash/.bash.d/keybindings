@@ -1,5 +1,4 @@
 # -*- mode: shell-script -*-
-# vim: syntax=sh
 
 # history search keybindings
 bind '"\e[A": history-search-backward'
