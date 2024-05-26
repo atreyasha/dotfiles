@@ -13,12 +13,12 @@ update:
 
 .PHONY: install
 install:
-	bash hooks/fold-stow "stow -v -R" "conf" "$$HOME" "$(DOTFILES)"
+	./hooks/fold-stow "stow -v -R" "conf" "$$HOME" "$(DOTFILES)"
 	chmod 700 "$$HOME/.gnupg"
 
 .PHONY: install.remote
 install.remote:
-	bash hooks/fold-stow "stow -v -R" "conf" "$$HOME" "$(REMOTE_DOTFILES)"
+	./hooks/fold-stow "stow -v -R" "conf" "$$HOME" "$(REMOTE_DOTFILES)"
 	chmod 700 "$$HOME/.gnupg"
 
 .PHONY: uninstall
