@@ -59,6 +59,7 @@ signal = 8
 block = "battery"
 format = " $icon $percentage {($time)|} "
 driver = "upower"
+device = ""  # forces upower to not use DisplayDevice
 
 [[block]]
 block = "time"
