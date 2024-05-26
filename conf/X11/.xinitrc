@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
 # -*- mode: shell-script -*-
-# vim: syntax=sh
 
 # define useful variables
 userresources="$HOME/.Xresources"
