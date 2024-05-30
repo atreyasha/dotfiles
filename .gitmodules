@@ -9,7 +9,7 @@
 [submodule "zsh-system-clipboard"]
   path = conf/zsh/.zsh.d/plugins/zsh-system-clipboard
   url = https://github.com/kutsan/zsh-system-clipboard.git
-[submodule "vimrc"]
-  path = conf/vim/.vim_runtime
-  url = https://github.com/atreyasha/vimrc
+[submodule "vim-commentary"]
+  path = conf/vim/.vim/pack/tpope/start/vim-commentary
+  url = https://github.com/tpope/vim-commentary.git
   branch = master
