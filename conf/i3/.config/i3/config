@@ -72,7 +72,7 @@ set $ws1 "1: Terminal "
 set $ws2 "2: Browser "
 set $ws3 "3: Emacs ξ"
 set $ws4 "4: Comms "
-set $ws5 "5"
+set $ws5 "5: VirtualBox 💻"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -252,6 +252,7 @@ assign [class="signal"] $ws4
 assign [class="Signal"] $ws4
 assign [class="zoom"] $ws4
 assign [class="Zoom"] $ws4
+assign [class="VirtualBox Manager"] $ws5
 
 # gaps-specific details
 for_window [class="^.*"] border pixel 2.5
