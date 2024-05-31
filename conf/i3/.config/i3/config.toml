@@ -60,6 +60,7 @@ block = "battery"
 format = " $icon $percentage {($time)|} "
 driver = "upower"
 device = ""  # forces upower to not use DisplayDevice
+empty_threshold = -1  # empty battery will not be shown
 
 [[block]]
 block = "time"
