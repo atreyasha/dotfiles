@@ -47,6 +47,7 @@ This function should only modify configuration layer settings."
      docker
      lsp
      prettier
+     nixos
      (shell-scripts :variables
                     shell-scripts-backend nil)
      (json :variables
