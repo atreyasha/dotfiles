@@ -253,6 +253,7 @@ assign [class="Signal"] $ws4
 assign [class="zoom"] $ws4
 assign [class="Zoom"] $ws4
 assign [class="VirtualBox Manager"] $ws5
+assign [class="VirtualBox Machine"] $ws5
 
 # gaps-specific details
 for_window [class="^.*"] border pixel 2.5
