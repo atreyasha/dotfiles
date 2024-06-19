@@ -28,31 +28,25 @@ style = "Regular"
 action = "ScrollPageUp"
 key = "PageUp"
 mode = "~Alt"
-mods = "Shift|Control"
+mods = "Control|Shift"
 
 [[keyboard.bindings]]
 action = "ScrollPageDown"
 key = "PageDown"
 mode = "~Alt"
-mods = "Shift|Control"
+mods = "Control|Shift"
 
 [[keyboard.bindings]]
 action = "ScrollLineUp"
 key = "Up"
 mode = "~Alt"
-mods = "Shift|Control"
+mods = "Control|Shift"
 
 [[keyboard.bindings]]
 action = "ScrollLineDown"
 key = "Down"
 mode = "~Alt"
-mods = "Shift|Control"
-
-[[keyboard.bindings]]
-action = "Last"
-key = 5
-mode = "Vi|~Search"
-mods = "Shift"
+mods = "Control|Shift"
 
 [window]
 opacity = 0.97
