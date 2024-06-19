@@ -13,3 +13,7 @@
   path = conf/vim/.vim/pack/tpope/start/vim-commentary
   url = https://github.com/tpope/vim-commentary.git
   branch = master
+[submodule "vim-lastplace"]
+  path = conf/vim/.vim/pack/plugins/start/vim-commentary
+  url = https://github.com/farmergreg/vim-lastplace.git
+  branch = master
