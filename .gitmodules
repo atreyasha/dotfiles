@@ -10,7 +10,7 @@
   path = conf/zsh/.zsh.d/plugins/zsh-system-clipboard
   url = https://github.com/kutsan/zsh-system-clipboard.git
 [submodule "vim-commentary"]
-  path = conf/vim/.vim/pack/tpope/start/vim-commentary
+  path = conf/vim/.vim/pack/plugins/start/vim-commentary
   url = https://github.com/tpope/vim-commentary.git
   branch = master
 [submodule "vim-lastplace"]
