@@ -31,7 +31,6 @@ set numberwidth=2
 set shiftwidth=2
 set tabstop=2
 set tw=0
-set expandtab
 set cursorline
 
 " enable persistent undo
