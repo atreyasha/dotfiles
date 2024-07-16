@@ -36,7 +36,7 @@ feh-background &
 xss-lock --transfer-sleep-lock -- i3lock-wrapper &
 unclutter --timeout 1 &
 xset s off
-xset dpms 300 0 0
+xset dpms 900 0 0
 
 # launch i3
 exec i3

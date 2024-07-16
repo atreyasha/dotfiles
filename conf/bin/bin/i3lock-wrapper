@@ -10,7 +10,7 @@ pre_lock() {
 
 post_lock() {
   # restore dpms timers
-  xset dpms 300 0 0
+  xset dpms 900 0 0
 }
 
 kill_i3lock() {
