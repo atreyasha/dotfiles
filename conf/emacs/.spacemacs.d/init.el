@@ -617,13 +617,6 @@ you should place your code here."
   (with-eval-after-load 'shell
     (setq shfmt-arguments '("-i" "2")))
 
-  ;; modify company-complete to helm-company for other layers using company
-  ;; NOTE: we don't need progn in with-eval-after-load
-  ;; source: https://stackoverflow.com/questions/21880139/what-is-with-eval-after-load-in-emacs-lisp
-  (with-eval-after-load 'company
-    (define-key company-mode-map (kbd "M-<tab>") 'helm-company)
-    (define-key company-active-map (kbd "M-<tab>") 'helm-company))
-
   ;; disable warnings on lsp server missing
   (with-eval-after-load 'lsp-mode
     (setq lsp-warn-no-matched-clients nil))
