@@ -1,14 +1,19 @@
+#!/bin/sh
 # -*- mode: shell-script -*-
 
 # define useful variables
-userresources="$HOME/.Xresources"
-usermodmap="$HOME/.Xmodmap"
 sysresources="/etc/X11/xinit/.Xresources"
 sysmodmap="/etc/X11/xinit/.Xmodmap"
+userresources="$HOME/.Xresources"
+usermodmap="$HOME/.Xmodmap"
 
 # merge in defaults and keymaps
 if [ -f "$sysresources" ]; then
-  xrdb -merge "$sysresources"
+  if [ -x /usr/bin/cpp ] ; then
+    xrdb -merge "$sysresources"
+  else
+    xrdb -nocpp -merge "$sysresources"
+  fi
 fi
 
 if [ -f "$sysmodmap" ]; then
@@ -16,7 +21,11 @@ if [ -f "$sysmodmap" ]; then
 fi
 
 if [ -f "$userresources" ]; then
-  xrdb -merge "$userresources"
+  if [ -x /usr/bin/cpp ] ; then
+    xrdb -merge "$userresources"
+  else
+    xrdb -nocpp -merge "$userresources"
+  fi
 fi
 
 if [ -f "$usermodmap" ]; then
