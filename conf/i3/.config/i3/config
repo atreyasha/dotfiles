@@ -23,7 +23,7 @@ bindsym $mod+Shift+q kill
 # launch rofi on the focused monitor
 bindsym $mod+d exec --no-startup-id "i3-msg -t get_workspaces | \
   jq '.[] | select(.focused==true).output' | \
-  xargs -I{} rofi -monitor {} -show drun -config ~/.config/rofi/config_drun"
+  xargs -I{} rofi -monitor {} -show drun
 
 # focus/cycle around workspace windows
 bindsym $mod+Left focus left
