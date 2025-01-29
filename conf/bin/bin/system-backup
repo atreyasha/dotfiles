@@ -107,7 +107,7 @@ main() {
     # backup data directory
     printf "%s\n" "==> Backing up system data"
     sudo mkdir -p "$MOUNTPOINT/$BACKUP_TARGET_DIR"
-    sudo rsync -a --delete --info=progress2 "$BACKUP_SOURCE" "$MOUNTPOINT/$BACKUP_TARGET_DIR"
+    sudo rsync -a --info=progress2 "$BACKUP_SOURCE" "$MOUNTPOINT/$BACKUP_TARGET_DIR"
 
     # backup PGP keys
     if ((BACKUP_PGP)); then
