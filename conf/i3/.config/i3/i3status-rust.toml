@@ -8,22 +8,10 @@ icons = "awesome4"
 
 [[block]]
 block = "sound"
-[[block.click]]
-button = "right"
-[[block.click]]
-button = "up"
-[[block.click]]
-button = "down"
 
 [[block]]
 block = "backlight"
 invert_icons = true
-[[block.click]]
-button = "left"
-[[block.click]]
-button = "up"
-[[block.click]]
-button = "down"
 
 [[block]]
 block = "cpu"
