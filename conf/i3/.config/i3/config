@@ -217,19 +217,19 @@ bar {
 }
 
 # assign window types to specific workspaces
-assign [class="firefox"] $ws2
-assign [class="Firefox"] $ws2
-assign [class="qutebrowser"] $ws2
-assign [class="emacs"] $ws3
-assign [class="Emacs"] $ws3
-assign [class="signal"] $ws4
-assign [class="Signal"] $ws4
-assign [class="zoom"] $ws4
-assign [class="Zoom"] $ws4
-assign [class="VirtualBox Manager"] $ws5
-assign [class="VirtualBox Machine"] $ws5
-assign [class="vmware"] $ws5
-assign [class="Vmware"] $ws5
+assign [class="^firefox$"] $ws2
+assign [class="^Firefox$"] $ws2
+assign [class="^qutebrowser$"] $ws2
+assign [class="^emacs$"] $ws3
+assign [class="^Emacs$"] $ws3
+assign [class="^signal$"] $ws4
+assign [class="^Signal$"] $ws4
+assign [class="^zoom$"] $ws4
+assign [class="^Zoom$"] $ws4
+assign [class="^VirtualBox Manager$"] $ws5
+assign [class="^VirtualBox Machine$"] $ws5
+assign [class="^vmware$"] $ws5
+assign [class="^Vmware$"] $ws5
 
 # gaps-specific details
 for_window [class="^.*"] border pixel 2.5
