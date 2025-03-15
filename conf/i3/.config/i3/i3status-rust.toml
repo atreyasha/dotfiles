@@ -8,10 +8,13 @@ icons = "awesome4"
 
 [[block]]
 block = "sound"
+step_width = 0
 
 [[block]]
 block = "backlight"
 invert_icons = true
+cycle = []
+step_width = 0
 
 [[block]]
 block = "cpu"
